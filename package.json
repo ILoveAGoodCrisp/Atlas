@@ -1,0 +1,25 @@
+{
+    "name": "h3script",
+    "displayName": "h3Script",
+    "description": "Provides syntax highlighting support for Halo 3 Scripting",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.61.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "hsc",
+            "aliases": ["h3script", "hsc"],
+            "extensions": [".hsc"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "hsc",
+            "scopeName": "source.hsc",
+            "path": "./syntaxes/hsc.tmLanguage.json"
+        }]
+    }
+}
