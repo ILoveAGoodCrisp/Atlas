@@ -3,11 +3,11 @@
 	"name": "h3script",
 	"patterns": [
 		{
-			"include": "#code"
+			"include": "#scriptContainer"
 		}
 	],
 	"repository": {
-		"code":{
+		"scriptContainer":{
 			"patterns":[
 				{
 					"include": "#comment"
@@ -27,9 +27,6 @@
 				}
 			},
 			"patterns": [
-				{
-					"include": "#code"
-				},
 				{
 					"include": "#comment"
 				},
@@ -72,11 +69,11 @@
 		"comment":{
 			"patterns": [
 				{
-					"name": "comment",
+					"name": "comment.line",
 					"begin": ";[^*]",
 					"end": "$\\n?",
 					"captures":{
-						"1":{
+						"0":{
 							"name": "comment.line"
 						}
 					}
@@ -86,7 +83,7 @@
 					"begin": ";\\*",
 					"end": "\\*;",
 					"captures":{
-						"1":{
+						"0":{
 							"name": "comment.block"
 						}
 					}
