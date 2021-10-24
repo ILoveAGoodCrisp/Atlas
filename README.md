@@ -19,7 +19,9 @@ H3Script provides syntax highlighting for the following types:
 - HaloScript functions (i.e. ai_place, object_create...)
 - Script names, the extension will apply highlighting to words which refer to a user defined script name.
 
-![image](https://user-images.githubusercontent.com/80323148/138604306-2eea3697-71eb-4338-a9f0-09bf3ee8bda4.png)
+The image below is an example made using Atlas, a theme designed for H3Script with an aim to mimic the style Bungie used when developing Halo 3.
+
+![image](https://user-images.githubusercontent.com/80323148/138604371-b440cda6-f943-403f-a314-91c68c982383.png)
 
 
 ### 1.0.0
