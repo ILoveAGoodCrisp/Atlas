@@ -2,8 +2,6 @@
 
 Provides syntax highlighting support for Halo 3 Scripting.
 
-#features
-
 H3Script provides syntax highlighting for the following types:
 
 - Commments
@@ -23,7 +21,6 @@ H3Script provides syntax highlighting for the following types:
 The image below is an example made using Atlas, a theme designed for H3Script with an aim to mimic the style Bungie used when developing Halo 3.
 
 ![image](https://user-images.githubusercontent.com/80323148/138606292-b5709879-f77b-44f2-9d16-f6292f47806e.png)
-
 
 ### 1.0.0
 

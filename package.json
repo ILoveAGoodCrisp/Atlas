@@ -1,13 +1,30 @@
 {
     "name": "h3script",
-    "displayName": "h3Script",
+    "displayName": "H3script",
+    "publisher": "Crisp",
+    "author": {
+		"name": "Crisp"
+	},
     "description": "Provides syntax highlighting support for Halo 3 Scripting",
+    "keywords": [ "hsc", "haloscript", "language", "blamscript", "halo3script", "h3script"],
+    "galleryBanner": {
+		"color": "#007acc",
+		"theme": "dark"
+	},
+    "preview": true,
     "version": "0.0.1",
+    "license": "MIT",
+    "icon": "h3script_icon_small.png",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ILoveAGoodCrisp/H3Script"
+    },
     "engines": {
         "vscode": "^1.61.0"
     },
     "categories": [
-        "Programming Languages"
+        "Programming Languages",
+        "Language Packs"
     ],
     "contributes": {
         "languages": [{
