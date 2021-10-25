@@ -123,7 +123,7 @@
 		"boolean":{
 			"patterns":[
 				{
-					"name": "constant.character",
+					"name": "entity.name.tag",
 					"match": "(?i)\\b(true|false|on|off)\\b"
 				}
 			]
@@ -147,7 +147,7 @@
 		"enum":{
 			"patterns":[
 				{
-					"name": "constant.language",
+					"name": "entity.name.tag",
 					"match": "(?i)\\b(easy|normal|heroic|legendary|default|player|human|covenant|flood|sentinel|heretic|prophet|guilty|unused9|unused10|unused11|unused12|unused13|unused14|unused15|mp_team_red|mp_team_blue|mp_team_green|mp_team_yellow|mp_team_purple|mp_team_orange|mp_team_brown|mp_team_grey|controller1|controller2|controller3|controller4|standard|community|boxer|green_thumb|professional|evolved|community2|universal_recon|universal_reclaimer|universal_zoom_and_shoot|universal_bumper_jumper|universal_green_fingers|standard|south_paw|legacy|legacy_south_paw|player_color_00|player_color_01|player_color_02|player_color_03|player_color_04|player_color_05|player_color_06|player_color_07|player_color_08|player_color_09|player_color_10|player_color_11|player_color_12|player_color_13|player_color_14|player_color_15|player_color_16|player_color_17|player_color_18|player_color_19|player_color_20|player_color_21|player_color_22|player_color_23|player_color_24|player_color_25|player_color_26|player_color_27|player_color_28|player_color_29|player_color_30|player_color_31|sp_masterchief|sp_dervish|mp_masterchief|mp_elite|coop_elite|monitor|default|headset|anonymous|automatic|enabled|disabled|elite|jackal|grunt|hunter|engineer|assassin|player|marine|crew|combat_form|infection_form|carrier_form|monitor|sentinel|none|mounted_weapon|brute|prophet|bugger|juggernaut|pure_form_stealth|pure_form_tank|pure_form_ranged|scarab|guardian|standard|minor_damage|medium_damage|major_damage|destroyed|verbose|status|message|warning|error|critical|player|biped)\\b"
 				}
 			]
