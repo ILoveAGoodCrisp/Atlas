@@ -10,13 +10,13 @@ H3Script provides syntax highlighting for the following types:
 - Operators
 - Booleans
 - Class (i.e. Script / Global types)
-- Script type (i.e. startup, static...)
+- Script type (e.g. startup, static...)
 - Enumerated values, such as 'heroic' which represents a number
-- Value types (i.e. void, real, ai...)
-- Engine globals, which are global variables that can be used without the user needing to declare them (i.e. game_speed, ai_current_actor)
-- HaloScript functions (i.e. ai_place, object_create...)
+- Value types (e.g. void, real, ai...)
+- Engine globals, which are global variables that can be used without the user needing to declare them (e.g. game_speed, ai_current_actor)
+- HaloScript functions (e.g. ai_place, object_create...)
 - Script names, the extension will apply highlighting to words which refer to a user defined script name.
-- Any item using the foreground colour is assumed to be a global variable or a reference to an object defined in a scenario tag. 
+- Any item using the foreground colour is assumed to be a global variable or a reference to an entity defined in a scenario tag (e.g. an object name or ai objective). 
 
 The image below is an example made using Atlas, a theme designed for H3Script with an aim to mimic the style Bungie used when developing Halo 3.
 
