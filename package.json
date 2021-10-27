@@ -5,7 +5,7 @@
     "author": {
 		"name": "Crisp"
 	},
-    "description": "Provides syntax highlighting support for Halo 3 Scripting",
+    "description": "An extension that provides syntax highlighting support for Halo 3 Scripting. Compatiable with other interations of Halo Script.",
     "keywords": [ "hsc", "haloscript", "language", "blamscript", "halo3script", "h3script"],
     "galleryBanner": {
 		"color": "#007acc",

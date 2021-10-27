@@ -18,7 +18,7 @@ H3Script provides syntax highlighting for the following types:
 - Script names, the extension will apply highlighting to words which refer to a user defined script name.
 - Any item using the foreground colour is assumed to be a global variable or a reference to an entity defined in a scenario tag (e.g. an object name or ai objective). 
 
-The image below is an example made using Atlas, a theme designed for H3Script. Atlas can be found [here]([here](https://marketplace.visualstudio.com/items?itemName=Crisp.Atlas)).
+The image below is an example made using Atlas, a theme designed for H3Script. Atlas can be found [here](https://marketplace.visualstudio.com/items?itemName=Crisp.atlas).
 
 ![image](https://user-images.githubusercontent.com/80323148/139127460-063c393b-d2c3-4f75-be5c-f2717913b8bc.png)
 
