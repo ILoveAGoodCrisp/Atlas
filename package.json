@@ -31,7 +31,7 @@
     "contributes": {
         "languages": [{
             "id": "hsc",
-            "aliases": ["h3script", "hsc"],
+            "aliases": ["hscript", "hsc"],
             "extensions": [".hsc"],
             "configuration": "./language-configuration.json"
         }],
