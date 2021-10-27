@@ -1,12 +1,13 @@
 {
-    "name": "h3script",
-    "displayName": "H3script",
+    "name": "atlas",
+    "displayName": "Atlas",
     "publisher": "Crisp",
     "author": {
 		"name": "Crisp"
 	},
-    "description": "An extension that provides syntax highlighting support for Halo 3 Scripting. Compatiable with other interations of Halo Script.",
-    "keywords": [ "hsc", "haloscript", "language", "blamscript", "halo3script", "h3script"],
+    "qna": "false",
+    "description": "An extension that provides syntax highlighting support for Halo Script. Atlas comes with an optional theme designed to highlight every part of the language",
+    "keywords": [ "hsc", "haloscript", "language", "blamscript", "halo3script", "h3script", "theme", "atlas", "halo script", "halo mod tools"],
     "galleryBanner": {
 		"color": "#007acc",
 		"theme": "dark"
@@ -14,17 +15,18 @@
     "preview": true,
     "version": "1.0.0",
     "license": "MIT",
-    "icon": "h3script_icon_small.png",
+    "icon": "atlas_icon_small.png",
     "repository": {
         "type": "git",
-        "url": "https://github.com/ILoveAGoodCrisp/H3Script"
+        "url": "https://github.com/ILoveAGoodCrisp/Atlas"
     },
     "engines": {
         "vscode": "^1.61.0"
     },
     "categories": [
         "Programming Languages",
-        "Language Packs"
+        "Language Packs",
+        "Themes"
     ],
     "contributes": {
         "languages": [{
