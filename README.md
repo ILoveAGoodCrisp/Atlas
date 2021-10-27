@@ -25,3 +25,7 @@ The image below is an example made using Atlas, a theme designed for H3Script wi
 ### 1.0.0
 
 Initial release
+
+#Known issues
+
+- Script name highlighting will be incorrectly applied where the name is expected two parameters after the function name, and the first parameter is attained using an expression group.
