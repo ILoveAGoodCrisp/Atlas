@@ -20,7 +20,7 @@ H3Script provides syntax highlighting for the following types:
 
 The image below is an example made using Atlas, a theme designed for H3Script with an aim to mimic the style Bungie used when developing Halo 3.
 
-![image](https://user-images.githubusercontent.com/80323148/138737044-eba831d5-7c78-4e82-8e1e-ac934b1ff8d5.png)
+![image](https://user-images.githubusercontent.com/80323148/139125240-15ab0106-c991-40ab-a752-040e5482d4b4.png)
 
 ### 1.0.0
 
