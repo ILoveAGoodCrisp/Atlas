@@ -37,6 +37,13 @@
             "language": "hsc",
             "scopeName": "source.hsc",
             "path": "./syntaxes/hsc.tmLanguage.json"
-        }]
+        }],
+        "themes": [
+            {
+                "label": "Atlas",
+                "uiTheme": "vs-dark",
+                "path": "./themes/Atlas-color-theme.json"
+            }
+        ]
     }
 }
