@@ -20,7 +20,7 @@ H3Script provides syntax highlighting for the following types:
 
 The image below is an example made using Atlas, a theme designed for H3Script.
 
-![image](https://user-images.githubusercontent.com/80323148/139125240-15ab0106-c991-40ab-a752-040e5482d4b4.png)
+![image](https://user-images.githubusercontent.com/80323148/139127460-063c393b-d2c3-4f75-be5c-f2717913b8bc.png)
 
 ### 1.0.0
 
