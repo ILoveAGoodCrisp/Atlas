@@ -1,8 +1,7 @@
-# h3script README
 
-Provides syntax highlighting support for Halo Script.
+Atlas Provides syntax highlighting support for Halo Script.
 
-Atlas provides syntax highlighting for the following types:
+Syntax highlighting is provided for the following types:
 
 - Commments
 - Numbers
@@ -18,7 +17,7 @@ Atlas provides syntax highlighting for the following types:
 - Script names, the extension will apply highlighting to words which refer to a user defined script name.
 - Any item using the foreground colour is assumed to be a global variable or a reference to an entity defined in a scenario tag (e.g. an object name or ai objective). 
 
-The image below is an example made using packaged theme.
+The image below is an example made using the packaged theme.
 
 ![image](https://user-images.githubusercontent.com/80323148/139127460-063c393b-d2c3-4f75-be5c-f2717913b8bc.png)
 
