@@ -12,7 +12,6 @@
 		"color": "#007acc",
 		"theme": "dark"
 	},
-    "preview": true,
     "version": "1.0.0",
     "license": "MIT",
     "icon": "atlas_icon_small.png",
