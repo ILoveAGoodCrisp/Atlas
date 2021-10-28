@@ -1,5 +1,5 @@
 
-Atlas Provides syntax highlighting support for Halo Script.
+Atlas Provides syntax highlighting support for Halo Script. Halos 1 - 3 are currently supported, and future support for other halo titles is planned as official mod tools are released for those games.
 
 Syntax highlighting is provided for the following types:
 
