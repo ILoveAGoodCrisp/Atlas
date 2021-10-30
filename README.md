@@ -3,7 +3,7 @@ Atlas Provides syntax highlighting support for Halo Script. Halos 1 - 3 are curr
 
 Syntax highlighting is provided for the following types:
 
-- Commments
+- Comments
 - Numbers
 - Strings
 - Operators
