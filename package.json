@@ -6,7 +6,7 @@
 		"name": "Crisp"
 	},
     "qna": "false",
-    "description": "An extension that provides syntax highlighting support for Halo Script. Atlas comes with an optional theme designed to specifically for the language.",
+    "description": "Atlas is an extension that provides syntax highlighting support for Halo Script. Atlas comes with an optional theme designed to specifically for the language.",
     "keywords": [ "hsc", "haloscript", "language", "blamscript", "halo3script", "h3script", "theme", "atlas", "halo script", "halo mod tools"],
     "galleryBanner": {
 		"color": "#007acc",
@@ -45,6 +45,13 @@
                 "uiTheme": "vs-dark",
                 "path": "./themes/Atlas-color-theme.json"
             }
-        ]
+        ],
+        "snippets": [
+			{
+				"language": "hsc",
+				"path": "./snippets.json"
+			}
+		]
+        
     }
 }
