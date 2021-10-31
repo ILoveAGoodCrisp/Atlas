@@ -46,6 +46,7 @@ global - creates a template for inserting a global variable
 
 loop - generates a template for loop
 
+![](snippets.gif)
 
 **Syntax highlighting** 
 
