@@ -1,4 +1,4 @@
-**Atlas** provides the the following forms of support for Halo Script interations in Halos 1 through 3:
+**Atlas** provides the the following forms of support for Halo Script interations (Atlas currently supports Halo 1, Halo 2, and Halo 3)
 - Autocomplete features using intellisense
 - Full function descriptions, return types, and parameters for halo script functions. 
 - Value type listings through intellisense. Type # for a list of value types (e.g. a list of teams)
