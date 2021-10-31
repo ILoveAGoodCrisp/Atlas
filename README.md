@@ -17,7 +17,9 @@ The theme can be enabled through the VSCode toolbar by selecting File>Preference
 
 Ctrl+Spacebar is the default shortcut to use intellisense. Once enabled you will be able to see a list autocomplete options each time you begin typing. Press Ctrl+Spacebar again to turn this function off.
 
-You can use your arrow keys to navigate the autocomplete options, if not already showing, you can press Ctrl+Spacebar again to see details of the function. Below is a breakdown of the snippet details.
+You can use your arrow keys to navigate the autocomplete options, if not already showing, you can press Ctrl+Spacebar again to see details of the function. After confirming the selection with tab or enter, you will see the function name along with its parameters. You can use tab to jump between parameters and type to overwrite them.
+
+Below is a breakdown of the snippet details.
 
 ![intellisense guide](https://user-images.githubusercontent.com/80323148/139600531-a1ffd041-1a76-4869-835f-515a06ed436a.png)
 
