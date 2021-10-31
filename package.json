@@ -5,7 +5,6 @@
     "author": {
 		"name": "Crisp"
 	},
-    "qna": "false",
     "description": "A Visual Studio Code extension which provides syntax highlighting, intellisense integration, function definitions/parameters, value type listings, and other various support for Halo Script.",
     "keywords": [ "hsc", "haloscript", "language", "blamscript", "halo3script", "h3script", "theme", "atlas", "halo script", "halo mod tools"],
     "galleryBanner": {
