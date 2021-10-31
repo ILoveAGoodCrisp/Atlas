@@ -30,7 +30,7 @@
     "contributes": {
         "languages": [{
             "id": "hsc",
-            "aliases": ["hscript", "hsc"],
+            "aliases": ["halo-script", "hsc"],
             "extensions": [".hsc"],
             "configuration": "./language-configuration.json"
         }],
