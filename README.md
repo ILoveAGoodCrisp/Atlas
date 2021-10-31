@@ -11,20 +11,40 @@ Future support for other halo titles is planned as official mod tools are releas
 
 **Enabling the theme**
 
-The theme can be enabled through the toolbar as below, and then selecting "Atlas". Alternatively you can bring up the theme select menu using Ctrl+K followed by Ctrl+T
-
-![image](https://user-images.githubusercontent.com/80323148/139600755-b96bc830-83ce-46a5-b046-3de39619ce54.png)
-
+The theme can be enabled through the toolbar as below by selecting File>Preferences>Color Theme, and then selecting "Atlas". Alternatively you can bring up the theme select menu using Ctrl+K followed by Ctrl+T
 
 **Using intellisense with Atlas**
 
 Ctrl+Spacebar is the default shortcut to use intellisense. Once enabled by default you will be able to see a list autocomplete options each time you begin typing. Press Ctrl+Spacebar again to turn this function off.
 
-You can use your arrow keys to navigate the autocomplete options, if not already showing, you can press Ctrl+Spacebar again to see details of the function. Below is a breakdown of the details section.
+You can use your arrow keys to navigate the autocomplete options, if not already showing, you can press Ctrl+Spacebar again to see details of the function. Below is a breakdown of the details section. Fromt the command palette you can search for the Insert Snippet command (note that the cog beside the command will let you assign a shortcut to this, which I recommend).
 
 ![intellisense guide](https://user-images.githubusercontent.com/80323148/139600531-a1ffd041-1a76-4869-835f-515a06ed436a.png)
 
 **Inserting snippets with the command palette**
+
+Any autocomplete function can also be input via snippets using the command palette. By default the command palette can be accessed by the shortcut Ctrl+Shift+P or through the menu by selecting View> Command Palette. The Insert Snippet command is an alternative way or inserting functions and quick templates, and allows your to also search descriptions to find options.
+
+![image](https://user-images.githubusercontent.com/80323148/139602116-91bf4cb6-02cc-47cc-b2f3-54d332bc0315.png)
+
+Also provided along with functions are value type lists and some templates. Value type lists always begin with #
+
+![image](https://user-images.githubusercontent.com/80323148/139602166-72c50624-9d9f-44d0-b127-5f4ef60dc4c6.png)
+
+The following templates are available, these can either be selected through snippets or using intellisense:
+
+startup - creates an empty startup script
+dormant - creates an empty dormant script
+continuous - creates an empty continuous script
+static - creates an empty static script
+static-w/parameter - creates an empty static script with a single parameter
+command_script - creates an empty command_script
+stub - creates an empty stub script
+stub-w/parameter - creates an empty stub script with a single parameter
+
+global - creates a template for inserting a global variable
+
+loop - generates a template for loop
 
 
 Syntax highlighting is provided for the following types:
