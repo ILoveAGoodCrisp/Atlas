@@ -1,4 +1,4 @@
-Atlas provides the the following forms of support for Halo Script interations in Halos 1 through 3:
+**Atlas** provides the the following forms of support for Halo Script interations in Halos 1 through 3:
 - Autocomplete features using intellisense
 - Full function descriptions, return types, and parameters for halo script functions. 
 - Value type listings through intellisense. Type # for a list of value types (e.g. a list of teams)
@@ -47,6 +47,8 @@ global - creates a template for inserting a global variable
 loop - generates a template for loop
 
 
+**Syntax highlighting** 
+
 Syntax highlighting is provided for the following types:
 
 - Comments
@@ -61,7 +63,9 @@ Syntax highlighting is provided for the following types:
 - Engine globals, which are global variables that can be used without the user needing to declare them (e.g. game_speed, ai_current_actor)
 - HaloScript functions (e.g. ai_place, object_create...)
 - Script names, the extension will apply highlighting to words which refer to a user defined script name.
-- Any item using the foreground colour is assumed to be a global variable or a reference to an entity defined in a scenario tag (e.g. an object name or ai objective). 
+- Any item using the foreground colour is assumed to be a global variable, tag, or a reference to an entity defined in a scenario tag (e.g. an object name or ai objective). 
+
+There is small level of error checking in use by the highlighter, for example the "+" in (1 + 4) would not be highlighted, as this is an incorrect placement for a function.
 
 The image below is an example made using the packaged theme.
 
