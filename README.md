@@ -46,7 +46,7 @@ stub-w/parameter - creates an empty stub script with a single parameter
 
 global - creates a template for inserting a global variable
 
-loop - generates a template for loop
+loop - generates a template for a loop
 
 ![](snippets.gif)
 
