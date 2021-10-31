@@ -1,11 +1,11 @@
-**Atlas** provides the the following forms of support for Halo Script interations (Atlas currently supports Halo 1, Halo 2, and Halo 3)
+**Atlas** provides the the following forms of support for Halo Script interations (Atlas currently supports Halo 1, Halo 2, and Halo 3).
 - Autocomplete features using intellisense
-- Full function descriptions, return types, and parameters for halo script functions. 
+- Full function descriptions, return types, and parameters for Halo Script functions. 
 - Value type listings through intellisense. Type # for a list of value types (e.g. a list of teams)
 - A theme specifically designed for the language
 - Syntax highlighting
 
-Future support for other halo titles is planned as official mod tools are released for those games.
+Future support for other Halo titles is planned as official mod tools are released for those games.
 
 **======Guide=======**
 
