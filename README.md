@@ -1,4 +1,4 @@
-**Atlas** provides the the following forms of support for Halo Script interations (Atlas currently supports Halo 1, Halo 2, and Halo 3).
+**Atlas** provides the the following forms of support for Halo Script iterations (Atlas currently supports Halo 1, Halo 2, and Halo 3).
 - Autocomplete features using intellisense
 - Full function descriptions, return types, and parameters for Halo Script functions. 
 - Value type listings through intellisense. Type # for a list of value types (e.g. a list of teams)
@@ -70,7 +70,7 @@ There is small level of error checking in use by the highlighter, for example th
 
 The image below is an example made using the packaged theme.
 
-![image](https://user-images.githubusercontent.com/80323148/139127460-063c393b-d2c3-4f75-be5c-f2717913b8bc.png)
+![image](https://user-images.githubusercontent.com/80323148/139603848-8e18e41e-30e6-431c-9509-c0cdc50c781b.png)
 
 ### 1.0.0
 
