@@ -13,6 +13,10 @@ Future support for other Halo titles is planned as official mod tools are releas
 
 The theme can be enabled through the VSCode toolbar by selecting File>Preferences>Color Theme, and then selecting "Atlas". Alternatively, you can bring up the theme select menu using Ctrl+K followed by Ctrl+T
 
+**Auto-formatting**
+
+You can press enter before a closing parenthesis ")" to automatically drop that parenthesis two lines and indent a new line for you to type on. Additionally, you can hit ctrl+enter while inside of a line to quickly create a new line directly below the current.
+
 **Using intellisense with Atlas**
 
 Ctrl+Spacebar is the default shortcut to use intellisense. Once enabled you will be able to see a list autocomplete options each time you begin typing. Press Ctrl+Spacebar again to turn this function off.
@@ -25,7 +29,7 @@ Below is a breakdown of the snippet details.
 
 **Inserting snippets with the command palette**
 
-Any autocomplete function can also be input via snippets using the command palette. By default the command palette can be accessed by the shortcut Ctrl+Shift+P or through the menu by selecting View>Command Palette. The Insert Snippet command is an alternative way to insert functions and quick templates for Halo Script, and allows you to also search function descriptions.
+Any autocomplete function can also be input via snippets using the command palette. By default the command palette can be accessed by the shortcut Ctrl+Shift+P or through the menu by selecting View>Command Palette. The Insert Snippet command is an alternative way to insert functions and quick templates for Halo Script, and allows you to also search function descriptions. You can assign this a hotkey by clicking the cog icon next to the insert snippets option.
 
 ![image](https://user-images.githubusercontent.com/80323148/139602116-91bf4cb6-02cc-47cc-b2f3-54d332bc0315.png)
 
@@ -36,12 +40,19 @@ Provided alongside function details are value type lists and templates. Value ty
 The following templates are available, these can either be selected through snippets or using intellisense:
 
 startup - creates an empty startup script
+
 dormant - creates an empty dormant script
+
 continuous - creates an empty continuous script
+
 static - creates an empty static script
+
 static-w/parameter - creates an empty static script with a single parameter
+
 command_script - creates an empty command_script
+
 stub - creates an empty stub script
+
 stub-w/parameter - creates an empty stub script with a single parameter
 
 global - creates a template for inserting a global variable
@@ -74,9 +85,9 @@ The image below is an example made using the packaged theme.
 
 ![image](https://user-images.githubusercontent.com/80323148/139603848-8e18e41e-30e6-431c-9509-c0cdc50c781b.png)
 
-### 1.0.0
+### 1.0.1
 
-Initial release
+Update
 
 #Known issues
 
