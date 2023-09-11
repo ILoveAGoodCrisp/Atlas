@@ -1,0 +1,289 @@
+{
+    "startup": {
+		"prefix": "startup",
+		"body": [
+			"script startup ${1|script_name|}()", "\t$0", "end"
+		],
+		"description": "Generates an empty startup script"
+	},
+    "dormant": {
+		"prefix": "dormant",
+		"body": [
+			"script dormant ${1|script_name|}()", "\t$0", "end"
+		],
+		"description": "Generates an empty dormant script"
+	},
+    "continuous": {
+		"prefix": "continuous",
+		"body": [
+			"script continuous ${1|script_name|}()", "\t$0", "end"
+		],
+		"description": "Generates an empty continuous script"
+	},
+    "command_script": {
+		"prefix": "command_script",
+		"body": [
+			"script continuous ${1|script_name|}()", "\t$0", "end"
+		],
+		"description": "Generates an empty command script"
+	},
+    "static": {
+		"prefix": "static",
+		"body": [
+			"script static ${1|void,boolean,real,short,long,string,string_id,ai,object,unit,vehicle,weapon,device,scenery,effect_scenery,object_list,object_name,unit_name,vehicle_name,weapon_name,device_name,scenery_name,sound,effect,damage,looping_sound,animation_graph,damage_effect,object_definition,script,unit_seat_mapping,trigger_volume,cutscene_flag,cutscene_camera_point,cutscene_title,cutscene_recording,device_group,point_reference,point_set_reference,ai_command_list,ai_command_script,ai_behavior,ai_orders,ai_line,starting_profile,conversation,team,mp_team,skull,sound_event,player,zone_set,designer_zone,style,folder,bitmap,shader,render_model,structure_definition,lightmap_definition,cinematic_definition,cinematic_scene_definition,cinematic_scene_data_definition,cinematic_transition_definition,bink_definition,cui_screen_definition,any_tag,any_tag_not_resolving,game_difficulty,controller,button_preset,joystick_preset,player_color,player_model_choice,voice_output_setting,voice_mask,subtitle_setting,actor_type,model_state,event,character_physics,firing_point_evaluator,damage_region,currency_type,delivery_method,wave_difficulty,firefight_goal,firefight_wave_type,font,text_justification,text_alignment,text_drop_shadow_type,havok_group,effect_scenery_name,cinematic_lightprobe,animation_budget_reference,looping_sound_budget_reference,sound_budget_reference,function_name,passthrough|} ${2|script_name|}()", "\t$0", "end"
+		],
+		"description": "enerates an empty static script"
+	},
+    "stub": {
+		"prefix": "stub",
+		"body": [
+			"script static ${1|void,boolean,real,short,long,string,string_id,ai,object,unit,vehicle,weapon,device,scenery,effect_scenery,object_list,object_name,unit_name,vehicle_name,weapon_name,device_name,scenery_name,sound,effect,damage,looping_sound,animation_graph,damage_effect,object_definition,script,unit_seat_mapping,trigger_volume,cutscene_flag,cutscene_camera_point,cutscene_title,cutscene_recording,device_group,point_reference,point_set_reference,ai_command_list,ai_command_script,ai_behavior,ai_orders,ai_line,starting_profile,conversation,team,mp_team,skull,sound_event,player,zone_set,designer_zone,style,folder,bitmap,shader,render_model,structure_definition,lightmap_definition,cinematic_definition,cinematic_scene_definition,cinematic_scene_data_definition,cinematic_transition_definition,bink_definition,cui_screen_definition,any_tag,any_tag_not_resolving,game_difficulty,controller,button_preset,joystick_preset,player_color,player_model_choice,voice_output_setting,voice_mask,subtitle_setting,actor_type,model_state,event,character_physics,firing_point_evaluator,damage_region,currency_type,delivery_method,wave_difficulty,firefight_goal,firefight_wave_type,font,text_justification,text_alignment,text_drop_shadow_type,havok_group,effect_scenery_name,cinematic_lightprobe,animation_budget_reference,looping_sound_budget_reference,sound_budget_reference,function_name,passthrough|} ${2|script_name|}()", "\t$0", "end"
+		],
+		"description": "Generates an empty stub script"
+	},
+    "static_parameter": {
+		"prefix": "static_parameter",
+		"body": [
+			"script static ${1|void,boolean,real,short,long,string,string_id,ai,object,unit,vehicle,weapon,device,scenery,effect_scenery,object_list,object_name,unit_name,vehicle_name,weapon_name,device_name,scenery_name,sound,effect,damage,looping_sound,animation_graph,damage_effect,object_definition,script,unit_seat_mapping,trigger_volume,cutscene_flag,cutscene_camera_point,cutscene_title,cutscene_recording,device_group,point_reference,point_set_reference,ai_command_list,ai_command_script,ai_behavior,ai_orders,ai_line,starting_profile,conversation,team,mp_team,skull,sound_event,player,zone_set,designer_zone,style,folder,bitmap,shader,render_model,structure_definition,lightmap_definition,cinematic_definition,cinematic_scene_definition,cinematic_scene_data_definition,cinematic_transition_definition,bink_definition,cui_screen_definition,any_tag,any_tag_not_resolving,game_difficulty,controller,button_preset,joystick_preset,player_color,player_model_choice,voice_output_setting,voice_mask,subtitle_setting,actor_type,model_state,event,character_physics,firing_point_evaluator,damage_region,currency_type,delivery_method,wave_difficulty,firefight_goal,firefight_wave_type,font,text_justification,text_alignment,text_drop_shadow_type,havok_group,effect_scenery_name,cinematic_lightprobe,animation_budget_reference,looping_sound_budget_reference,sound_budget_reference,function_name,passthrough|} ${2|script_name|}(${3|boolean,real,short,long,string,string_id,ai,object,unit,vehicle,weapon,device,scenery,effect_scenery,object_list,object_name,unit_name,vehicle_name,weapon_name,device_name,scenery_name,sound,effect,damage,looping_sound,animation_graph,damage_effect,object_definition,script,unit_seat_mapping,trigger_volume,cutscene_flag,cutscene_camera_point,cutscene_title,cutscene_recording,device_group,point_reference,point_set_reference,ai_command_list,ai_command_script,ai_behavior,ai_orders,ai_line,starting_profile,conversation,team,mp_team,skull,sound_event,player,zone_set,designer_zone,style,folder,bitmap,shader,render_model,structure_definition,lightmap_definition,cinematic_definition,cinematic_scene_definition,cinematic_scene_data_definition,cinematic_transition_definition,bink_definition,cui_screen_definition,any_tag,any_tag_not_resolving,game_difficulty,controller,button_preset,joystick_preset,player_color,player_model_choice,voice_output_setting,voice_mask,subtitle_setting,actor_type,model_state,event,character_physics,firing_point_evaluator,damage_region,currency_type,delivery_method,wave_difficulty,firefight_goal,firefight_wave_type,font,text_justification,text_alignment,text_drop_shadow_type,havok_group,effect_scenery_name,cinematic_lightprobe,animation_budget_reference,looping_sound_budget_reference,sound_budget_reference,function_name|} ${4|parameter_name|})", "\t$0", "end"
+		],
+		"description": "Generates an empty static script with a single parameter"
+	},
+    "stub_parameter": {
+		"prefix": "stub_parameter",
+		"body": [
+			"script stub ${1|void,boolean,real,short,long,string,string_id,ai,object,unit,vehicle,weapon,device,scenery,effect_scenery,object_list,object_name,unit_name,vehicle_name,weapon_name,device_name,scenery_name,sound,effect,damage,looping_sound,animation_graph,damage_effect,object_definition,script,unit_seat_mapping,trigger_volume,cutscene_flag,cutscene_camera_point,cutscene_title,cutscene_recording,device_group,point_reference,point_set_reference,ai_command_list,ai_command_script,ai_behavior,ai_orders,ai_line,starting_profile,conversation,team,mp_team,skull,sound_event,player,zone_set,designer_zone,style,folder,bitmap,shader,render_model,structure_definition,lightmap_definition,cinematic_definition,cinematic_scene_definition,cinematic_scene_data_definition,cinematic_transition_definition,bink_definition,cui_screen_definition,any_tag,any_tag_not_resolving,game_difficulty,controller,button_preset,joystick_preset,player_color,player_model_choice,voice_output_setting,voice_mask,subtitle_setting,actor_type,model_state,event,character_physics,firing_point_evaluator,damage_region,currency_type,delivery_method,wave_difficulty,firefight_goal,firefight_wave_type,font,text_justification,text_alignment,text_drop_shadow_type,havok_group,effect_scenery_name,cinematic_lightprobe,animation_budget_reference,looping_sound_budget_reference,sound_budget_reference,function_name,passthrough|} ${2|script_name|}(${3|boolean,real,short,long,string,string_id,ai,object,unit,vehicle,weapon,device,scenery,effect_scenery,object_list,object_name,unit_name,vehicle_name,weapon_name,device_name,scenery_name,sound,effect,damage,looping_sound,animation_graph,damage_effect,object_definition,script,unit_seat_mapping,trigger_volume,cutscene_flag,cutscene_camera_point,cutscene_title,cutscene_recording,device_group,point_reference,point_set_reference,ai_command_list,ai_command_script,ai_behavior,ai_orders,ai_line,starting_profile,conversation,team,mp_team,skull,sound_event,player,zone_set,designer_zone,style,folder,bitmap,shader,render_model,structure_definition,lightmap_definition,cinematic_definition,cinematic_scene_definition,cinematic_scene_data_definition,cinematic_transition_definition,bink_definition,cui_screen_definition,any_tag,any_tag_not_resolving,game_difficulty,controller,button_preset,joystick_preset,player_color,player_model_choice,voice_output_setting,voice_mask,subtitle_setting,actor_type,model_state,event,character_physics,firing_point_evaluator,damage_region,currency_type,delivery_method,wave_difficulty,firefight_goal,firefight_wave_type,font,text_justification,text_alignment,text_drop_shadow_type,havok_group,effect_scenery_name,cinematic_lightprobe,animation_budget_reference,looping_sound_budget_reference,sound_budget_reference,function_name|} ${4|parameter_name|})", "\t$0", "end"
+		],
+		"description": "Generates an empty stub scrip with a single parametert"
+	},
+	"global": {
+		"prefix": "global",
+		"body": [
+			"global ${1|boolean,real,short,long,string,string_id,ai,object,unit,vehicle,weapon,device,scenery,effect_scenery,object_list,object_name,unit_name,vehicle_name,weapon_name,device_name,scenery_name,sound,effect,damage,looping_sound,animation_graph,damage_effect,object_definition,script,unit_seat_mapping,trigger_volume,cutscene_flag,cutscene_camera_point,cutscene_title,cutscene_recording,device_group,point_reference,point_set_reference,ai_command_list,ai_command_script,ai_behavior,ai_orders,ai_line,starting_profile,conversation,team,mp_team,skull,sound_event,player,zone_set,designer_zone,style,folder,bitmap,shader,render_model,structure_definition,lightmap_definition,cinematic_definition,cinematic_scene_definition,cinematic_scene_data_definition,cinematic_transition_definition,bink_definition,cui_screen_definition,any_tag,any_tag_not_resolving,game_difficulty,controller,button_preset,joystick_preset,player_color,player_model_choice,voice_output_setting,voice_mask,subtitle_setting,actor_type,model_state,event,character_physics,firing_point_evaluator,damage_region,currency_type,delivery_method,wave_difficulty,firefight_goal,firefight_wave_type,font,text_justification,text_alignment,text_drop_shadow_type,havok_group,effect_scenery_name,cinematic_lightprobe,animation_budget_reference,looping_sound_budget_reference,sound_budget_reference,function_name|} ${2|name|} ${3|false,true,none,0|};"
+		],
+        "description": "Generates an template Global"
+	},
+	"local": {
+		"prefix": "local",
+		"body": [
+			"global ${1|boolean,real,short,long,string,string_id,ai,object,unit,vehicle,weapon,device,scenery,effect_scenery,object_list,object_name,unit_name,vehicle_name,weapon_name,device_name,scenery_name,sound,effect,damage,looping_sound,animation_graph,damage_effect,object_definition,script,unit_seat_mapping,trigger_volume,cutscene_flag,cutscene_camera_point,cutscene_title,cutscene_recording,device_group,point_reference,point_set_reference,ai_command_list,ai_command_script,ai_behavior,ai_orders,ai_line,starting_profile,conversation,team,mp_team,skull,sound_event,player,zone_set,designer_zone,style,folder,bitmap,shader,render_model,structure_definition,lightmap_definition,cinematic_definition,cinematic_scene_definition,cinematic_scene_data_definition,cinematic_transition_definition,bink_definition,cui_screen_definition,any_tag,any_tag_not_resolving,game_difficulty,controller,button_preset,joystick_preset,player_color,player_model_choice,voice_output_setting,voice_mask,subtitle_setting,actor_type,model_state,event,character_physics,firing_point_evaluator,damage_region,currency_type,delivery_method,wave_difficulty,firefight_goal,firefight_wave_type,font,text_justification,text_alignment,text_drop_shadow_type,havok_group,effect_scenery_name,cinematic_lightprobe,animation_budget_reference,looping_sound_budget_reference,sound_budget_reference,function_name|} ${2|name|} ${3|false,true,none,0|};"
+		],
+        "description": "Generates an template Local"
+	},
+    "value_type":{
+        "prefix": "value_type",
+        "body": [
+            "${1|void,boolean,real,short,long,string,string_id,ai,object,unit,vehicle,weapon,device,scenery,effect_scenery,object_list,object_name,unit_name,vehicle_name,weapon_name,device_name,scenery_name,sound,effect,damage,looping_sound,animation_graph,damage_effect,object_definition,script,unit_seat_mapping,trigger_volume,cutscene_flag,cutscene_camera_point,cutscene_title,cutscene_recording,device_group,point_reference,point_set_reference,ai_command_list,ai_command_script,ai_behavior,ai_orders,ai_line,starting_profile,conversation,team,mp_team,skull,sound_event,player,zone_set,designer_zone,style,folder,bitmap,shader,render_model,structure_definition,lightmap_definition,cinematic_definition,cinematic_scene_definition,cinematic_scene_data_definition,cinematic_transition_definition,bink_definition,cui_screen_definition,any_tag,any_tag_not_resolving,game_difficulty,controller,button_preset,joystick_preset,player_color,player_model_choice,voice_output_setting,voice_mask,subtitle_setting,actor_type,model_state,event,character_physics,firing_point_evaluator,damage_region,currency_type,delivery_method,wave_difficulty,firefight_goal,firefight_wave_type,font,text_justification,text_alignment,text_drop_shadow_type,havok_group,effect_scenery_name,cinematic_lightprobe,animation_budget_reference,looping_sound_budget_reference,sound_budget_reference,function_name,passthrough|}"
+        ]
+    },
+	"loop": {
+		"prefix": "loop",
+		"body": [
+			"repeat", "\t${0}", "until(${1|false|}, ${3|1|});"
+		],
+		"description": "Generates an template loop"
+	},
+    "team": {
+        "prefix": "team",
+        "body": [
+            "${1|default,player,human,covenant,brute,mule,spare,covenant_player,forerunner|}"
+        ]
+    },
+    "mp_team": {
+        "prefix": "mp_team",
+        "body": [
+            "${1|mp_team_red,mp_team_blue,mp_team_green,mp_team_yellow,mp_team_purple,mp_team_orange,mp_team_brown,mp_team_grey|}"
+        ]
+    },
+    "skull": {
+        "prefix": "skull",
+        "body": [
+            "${1|skull_iron,skull_black_eye,skull_tough_luck,skull_catch,skull_fog,skull_famine,skull_thunderstorm,skull_tilt,skull_mythic,skull_assassin,skull_blind,skull_superman,skull_birthday_party,skull_daddy,skull_red,skull_yellow,skull_blue|}"
+        ]
+    },
+    "player": {
+        "prefix": "player",
+        "body": [
+            "${1|player0,player1,player2,player3,player4,player5,player6,player7,player8,player9,player10,player11,player12,player13,player14,player15|}"
+        ]
+    },
+    "game_difficulty": {
+        "prefix": "game_difficulty",
+        "body": [
+            "${1|easy,normal,heroic,legendary|}"
+        ]
+    },
+    "controller": {
+        "prefix": "controller",
+        "body": [
+            "${1|controller1,controller2,controller3,controller4|}"
+        ]
+    },
+    "button_preset": {
+        "prefix": "button_preset",
+        "body": [
+            "${1|standard,southpaw,boxer,green_thumb,universal_recon,universal_reclaimer,universal_zoom_and_shoot,universal_bumper_jumper,universal_green_fingers|}"
+        ]
+    },
+    "joystick_preset": {
+        "prefix": "joystick_preset",
+        "body": [
+            "${1|standard,south_paw,legacy,legacy_south_paw|}"
+        ]
+    },
+    "player_color": {
+        "prefix": "player_color",
+        "body": [
+            "${1|player_color_00,player_color_01,player_color_02,player_color_03,player_color_04,player_color_05,player_color_06,player_color_07,player_color_08,player_color_09,player_color_10,player_color_11,player_color_12,player_color_13,player_color_14,player_color_15,player_color_16,player_color_17,player_color_18,player_color_19,player_color_20,player_color_21,player_color_22,player_color_23,player_color_24,player_color_25,player_color_26,player_color_27,player_color_28,player_color_29,player_color_30,player_color_31|}"
+        ]
+    },
+    "player_model_choice": {
+        "prefix": "player_model_choice",
+        "body": [
+            "${1|spartan,elite|}"
+        ]
+    },
+    "voice_output_setting": {
+        "prefix": "voice_output_setting",
+        "body": [
+            "${1|headset,headset_and_speakers,speakers|}"
+        ]
+    },
+    "voice_mask": {
+        "prefix": "voice_mask",
+        "body": [
+            "${1|none,anonymous|}"
+        ]
+    },
+    "subtitle_setting": {
+        "prefix": "subtitle_setting",
+        "body": [
+            "${1|automatic,enabled,disabled|}"
+        ]
+    },
+    "actor_type": {
+        "prefix": "actor_type",
+        "body": [
+            "${1|none,player,marine,crew,spartan,elite,jackal,grunt,brute,hunter,prophet,bugger,scarab,engineer,skirmisher,bishop,knight,pawn,rook,mule,mounted_weapon,octopus|}"
+        ]
+    },
+    "model_state": {
+        "prefix": "model_state",
+        "body": [
+            "${1|standard,minor_damage,medium_damage,major_damage,destroyed|}"
+        ]
+    },
+    "event": {
+        "prefix": "event",
+        "body": [
+            "${1|verbose,status,message,warning,error,critical|}"
+        ]
+    },
+    "character_physics": {
+        "prefix": "character_physics",
+        "body": [
+            "${1|none,player,biped|}"
+        ]
+    },
+    "firing_point_evaluator": {
+        "prefix": "firing_point_evaluator",
+        "body": [
+            "${1|INVALID,attack_avoid_overhead,attack_dangerousenemy,attack_idealrange,attack_leader_distance,attack_same_frame_of_reference,attack_weaponrange,combat_cue,combatmove_elevation,combatmove_follow_unit,combatmove_lineoffire,combatmove_lineoffire_occluded,cover_near_friends,current_position,current_destination,cover_fight,danger_zone,directional_movement,facing,fireteam_leader,flag_preferences,flank,flee_to_leader,friendly,friend_bunkering,goal_points_only,goal_preferences,heatmap,hide_equipment,idle_wander,inertia_preservation,leadership,movement_planning,move_into_danger_zone,move_distance,move_localized,multi_target,pack_stalk,panic_closetotarget,panic_targetdistance,pathfinding,perch_preferences,postsearch_prefer_original,previously_discarded,pursuit_search_pattern,ranged_fight,squad_patrol_search,stalking,stimulus,task_direction,threat_axis_nearby,threat_axis_quarter,threat_axis_spring,threat_axis_spring_reject,threat_axis_third,score,too_far_from_leader,vehicle_move_distance,vehicle_pickup,wall_leanable,3d_path_available,attack_visible,attack_visible_los_optional,guard_cover,hide_cover,uncover_visible,vehicle_hide_cover,cover_fight_post,obstacle|}"
+        ]
+    },
+    "damage_region": {
+        "prefix": "damage_region",
+        "body": [
+            "${1|gut,chest,head,left_shoulder,left_arm,left_leg,left_foot,right_shoulder,right_arm,right_leg,right_foot|}"
+        ]
+    },
+    "currency_type": {
+        "prefix": "currency_type",
+        "body": [
+            "${1|cookies,xp|}"
+        ]
+    },
+    "delivery_method": {
+        "prefix": "delivery_method",
+        "body": [
+            "${1|dropship,monster_closet,drop_pod,test_spawn|}"
+        ]
+    },
+    "wave_difficulty": {
+        "prefix": "wave_difficulty",
+        "body": [
+            "${1|easy,medium,hard|}"
+        ]
+    },
+    "firefight_goal": {
+        "prefix": "firefight_goal",
+        "body": [
+            "${1|object_destruction,object_delivery,location_arrival,time_passed,no_more_waves,kill_boss,defense,other|}"
+        ]
+    },
+    "firefight_wave_type": {
+        "prefix": "firefight_wave_type",
+        "body": [
+            "${1|normal,guards,other|}"
+        ]
+    },
+    "font": {
+        "prefix": "font",
+        "body": [
+            "${1|terminal,baksheesh_15_font,baksheesh_16_font,baksheesh_17_font,baksheesh_18_font,baksheesh_20_font,baksheesh_21_font,baksheesh_22_font,baksheesh_28_font,baksheesh_36_font,baksheesh_38_font,baksheesh_bold_16_font,baksheesh_bold_20_font,baksheesh_bold_21_font,baksheesh_bold_23_font,baksheesh_bold_24_font,baksheesh_thin_36,baksheesh_thin_42,arame_regular_16,arame_regular_18,arame_regular_23,arame_stencil_16,arame_stencil_18,arame_stencil_23,arame_thin_14,arame_thin_16,arame_thin_18,arame_thin_23,arame_extra_01,arame_extra_02,arame_extra_03|}"
+        ]
+    },
+    "text_justification": {
+        "prefix": "text_justification",
+        "body": [
+            "${1|left,right,center|}"
+        ]
+    },
+    "text_alignment": {
+        "prefix": "text_alignment",
+        "body": [
+            "${1|top,bottom,center|}"
+        ]
+    },
+    "text_drop_shadow_type": {
+        "prefix": "text_drop_shadow_type",
+        "body": [
+            "${1|none,drop,outline|}"
+        ]
+    },
+    "havok_group": {
+        "prefix": "havok_group",
+        "body": [
+            "${1|everything,first,only_collide_with_environment,small_crates,crates,super_collidable_crates,item,projectiles,machines,early_mover_machines,creatures,bipeds,dead_bipeds,super_collidable_ragdoll_bipeds,ragdoll_bipeds,vehicles,decal,dynamic_scenery,small_expensive_plant,tech_art_custom,proxy,huge_vehicles,ignore_environment,character_posture,item_blocker,user00,zero_extent,physical_projectile,environment_invisible_wall,environment_play_collision,environment_bullet_collision|}"
+        ]
+    },
+    "ai_current":{
+		"prefix": "ai_current",
+		"body":[
+			"${1|ai_current_squad,ai_current_actor,ai_current_performance)|}"
+		]
+	},
+	"ai_combat_status":{
+		"prefix": "ai_combat_status",
+		"body":[
+			"${1|ai_combat_status_asleep,ai_combat_status_idle,ai_combat_status_alert,ai_combat_status_active,ai_combat_status_uninspected,ai_combat_status_definite,ai_combat_status_certain,ai_combat_status_visible,ai_combat_status_clear_los,ai_combat_status_dangerous|}"
+		]
+	},
+	"ai_task_status":{
+		"prefix": "ai_task_status",
+		"body":[
+			"${1|ai_task_status_never,ai_task_status_occupied,ai_task_status_empty,ai_task_status_inactive,ai_task_status_exhausted|}"
+		]
+	},
+	"ai_action":{
+		"prefix": "ai_action",
+		"body":[
+			"${1|ai_action_berserk,ai_action_surprise_front,ai_action_surprise_back,ai_action_evade_left,ai_action_evade_right,ai_action_dive_forward,ai_action_dive_back,ai_action_dive_left,ai_action_dive_right,ai_action_advance,ai_action_cheer,ai_action_fallback,ai_action_hold,ai_action_point,ai_action_posing,ai_action_shakefist,ai_action_signal_attack,ai_action_signal_move,ai_action_taunt,ai_action_warn,ai_action_wave|}"
+		]
+	},
+	"ai_activity":{
+		"prefix": "ai_activity",
+		"body":[
+			"${1|ai_activity_none,ai_activity_patrol,ai_activity_stand,ai_activity_crouch,ai_activity_stand_drawn,ai_activity_crouch_drawn,ai_activity_corner,ai_activity_corner_open,ai_activity_bunker,ai_activity_bunker_open,ai_activity_combat,ai_activity_backup,ai_activity_guard,ai_activity_guard_crouch,ai_activity_guard_wall,ai_activity_typing,ai_activity_kneel,ai_activity_gaze,ai_activity_poke,ai_activity_sniff,ai_activity_track,ai_activity_watch,ai_activity_examine,ai_activity_sleep,ai_activity_at_ease,ai_activity_cower,ai_activity_tai_chi,ai_activity_pee,ai_activity_doze,ai_activity_eat,ai_activity_medic,ai_activity_work,ai_activity_cheering,ai_activity_injured,ai_activity_captured|}"
+		]
+	}
+}

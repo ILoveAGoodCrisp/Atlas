@@ -1,0 +1,112 @@
+{
+	"startup": {
+		"prefix": "startup",
+		"body": [
+			"(script startup ${1|script_name|}", "\t($0)", ")"
+		],
+		"description": "Generates an empty startup script"
+	},
+	"dormant": {
+		"prefix": "dormant",
+		"body": [
+			"(script dormant ${1|script_name|}", "\t($0)", ")"
+		],
+		"description": "Generates an empty dormant script"
+	},
+	"continuous": {
+		"prefix": "continuous",
+		"body": [
+			"(script continuous ${1|script_name|}", "\t($0)", ")"
+		],
+		"description": "Generates an empty continuous script"
+	},
+	"command_script": {
+		"prefix": "command_script",
+		"body": [
+			"script command_script ${1|script_name|}", "\t($0)", ")"
+		],
+		"description": "Generates an empty command_script"
+	},
+    "static": {
+		"prefix": "static",
+		"body": [
+			"script static ${1|void,boolean,real,short,long,string,string_id,ai,object,unit,vehicle,weapon,device,scenery,object_list,object_name,unit_name,vehicle_name,weapon_name,device_name,scenery_name,sound,effect,damage,looping_sound,animation_graph,damage_effect,object_definition,script,unit_seat_mapping,trigger_volume,cutscene_flag,cutscene_camera_point,cutscene_title,cutscene_recording,device_group,point_reference,ai_command_list,ai_command_script,ai_behavior,ai_orders,starting_profile,conversation,navpoint,team,hud_message,structure_bsp,style,bitmap,shader,render_model,structure_definition,lightmap_definition,game_difficulty,hud_corner,actor_type,model_state,network_event,function_name,passthrough|} ${2|script_name|}", "\t($0)", ")"
+		],
+		"description": "Generates an empty static script"
+	},
+	"stub": {
+		"prefix": "stub",
+		"body": [
+			"script stub ${1|void,boolean,real,short,long,string,string_id,ai,object,unit,vehicle,weapon,device,scenery,object_list,object_name,unit_name,vehicle_name,weapon_name,device_name,scenery_name,sound,effect,damage,looping_sound,animation_graph,damage_effect,object_definition,script,unit_seat_mapping,trigger_volume,cutscene_flag,cutscene_camera_point,cutscene_title,cutscene_recording,device_group,point_reference,ai_command_list,ai_command_script,ai_behavior,ai_orders,starting_profile,conversation,navpoint,team,hud_message,structure_bsp,style,bitmap,shader,render_model,structure_definition,lightmap_definition,game_difficulty,hud_corner,actor_type,model_state,network_event,function_name,passthrough|} ${2|script_name|}", "\t($0)", ")"
+		],
+		"description": "Generates an empty static script"
+	},
+	"global": {
+		"prefix": "global",
+		"body": [
+			"global ${1|boolean,real,short,long,string,string_id,ai,object,unit,vehicle,weapon,device,scenery,object_list,object_name,unit_name,vehicle_name,weapon_name,device_name,scenery_name,sound,effect,damage,looping_sound,animation_graph,damage_effect,object_definition,script,unit_seat_mapping,trigger_volume,cutscene_flag,cutscene_camera_point,cutscene_title,cutscene_recording,device_group,point_reference,ai_command_list,ai_command_script,ai_behavior,ai_orders,starting_profile,conversation,navpoint,team,hud_message,structure_bsp,style,bitmap,shader,render_model,structure_definition,lightmap_definition,game_difficulty,hud_corner,actor_type,model_state,network_event,function_name|} ${2:name} ${3:value}"
+		],
+		"description": "Generates an template Global"
+	},
+    "value_type":{
+        "prefix": "value_type",
+        "body": [
+            "${1|void,boolean,real,short,long,string,string_id,ai,object,unit,vehicle,weapon,device,scenery,object_list,object_name,unit_name,vehicle_name,weapon_name,device_name,scenery_name,sound,effect,damage,looping_sound,animation_graph,damage_effect,object_definition,script,unit_seat_mapping,trigger_volume,cutscene_flag,cutscene_camera_point,cutscene_title,cutscene_recording,device_group,point_reference,ai_command_list,ai_command_script,ai_behavior,ai_orders,starting_profile,conversation,navpoint,team,hud_message,structure_bsp,style,bitmap,shader,render_model,structure_definition,lightmap_definition,game_difficulty,hud_corner,actor_type,model_state,network_event,function_name,passthrough|}"
+        ]
+    },
+	"loop": {
+		"prefix": "loop",
+		"body": [
+			"(sleep_until", "\t (begin", "\t \t ${1:expression(s)}", "\t \t ${2:boolean_exit_condition}", "\t )", "${0:wait_time_between_loops_in_ticks}", ")"
+		],
+		"description": "Generates a template loop"
+	},
+    "team": {
+        "prefix": "team",
+        "body": [
+            "${1|default,player,human,covenant,flood,sentinel,heretic,prophet,guilty,unused9,unused10,unused11,unused12,unused13,unused14,unused15|}"
+        ]
+    },
+    "game_difficulty": {
+        "prefix": "game_difficulty",
+        "body": [
+            "${1|easy,normal,heroic,legendary|}"
+        ]
+    },
+    "hud_corner": {
+        "prefix": "hud_corner",
+        "body": [
+            "${1|top_left,top_right,bottom_left,bottom_right,center|}"
+        ]
+    },
+    "actor_type": {
+        "prefix": "actor_type",
+        "body": [
+            "${1|elite,jackal,grunt,hunter,engineer,assassin,player,marine,crew,combat_form,infection_form,carrier_form,monitor,sentinel,none,mounted_weapon,brute,prophet,bugger,juggernaut|}"
+        ]
+    },
+    "model_state": {
+        "prefix": "model_state",
+        "body": [
+            "${1|standard,minor_damage,medium_damage,major_damage,destroyed|}"
+        ]
+    },
+    "network_event": {
+        "prefix": "network_event",
+        "body": [
+            "${1|verbose,status,message,warning,error,critical|}"
+        ]
+    },
+	"ai_current":{
+		"prefix": "ai_current",
+		"body":[
+			"${1|ai_current_squad,ai_current_actor|}"
+		]
+	},
+	"ai_combat_status":{
+		"prefix": "ai_combat_status",
+		"body":[
+			"${1|ai_combat_status_asleep,ai_combat_status_idle,ai_combat_status_alert,ai_combat_status_active,ai_combat_status_uninspected,ai_combat_status_definite,ai_combat_status_certain,ai_combat_status_visible,ai_combat_status_clear_los,ai_combat_status_dangerous|}"
+		]
+	}
+}

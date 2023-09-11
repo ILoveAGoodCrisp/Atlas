@@ -1,16 +1,27 @@
 {
     "name": "atlas",
-    "displayName": "Atlas",
+    "displayName": "HaloScript",
     "publisher": "Crisp",
     "author": {
-		"name": "Crisp"
-	},
+        "name": "Crisp"
+    },
     "description": "A Visual Studio Code extension for Halo Script which provides syntax highlighting, intellisense integration, snippets, and other various support.",
-    "keywords": [ "hsc", "haloscript", "language", "blamscript", "halo3script", "h3script", "theme", "atlas", "halo script", "halo mod tools"],
+    "keywords": [
+        "hsc",
+        "haloscript",
+        "language",
+        "blamscript",
+        "halo3script",
+        "h3script",
+        "theme",
+        "atlas",
+        "halo script",
+        "halo mod tools"
+    ],
     "galleryBanner": {
-		"color": "#007acc",
-		"theme": "dark"
-	},
+        "color": "#007acc",
+        "theme": "dark"
+    },
     "version": "1.0.1",
     "license": "MIT",
     "icon": "atlas_icon_small.png",
@@ -27,17 +38,127 @@
         "Themes"
     ],
     "contributes": {
-        "languages": [{
-            "id": "hsc",
-            "aliases": ["halo-script", "hsc"],
-            "extensions": [".hsc"],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [{
-            "language": "hsc",
-            "scopeName": "source.hsc",
-            "path": "./syntaxes/hsc.tmLanguage.json"
-        }],
+        "commands": [
+            {
+                "command": "atlas.compileScenarioScripts",
+                "title": "Compile Scenario Scripts"
+            }
+        ],
+        "keybindings": [
+            {
+                "key": "ctrl+shift+c",
+                "command": "atlas.compileScenarioScripts",
+                "when": "editorTextFocus"
+            }
+        ],
+        "menus": {
+            "commandPalette": [
+                {
+                    "command": "atlas.compileScenarioScripts",
+                    "when": "editorLangId == hsc4"
+                }
+            ]
+        },
+        "languages": [
+            {
+                "id": "hsc4",
+                "aliases": [
+                    "Halo 4 Script",
+                    "HaloScript"
+                ],
+                "extensions": [
+                    ".hsc"
+                ],
+                "configuration": "./new-config.json"
+            },
+            {
+                "id": "hscr",
+                "aliases": [
+                    "Halo Reach Script",
+                    "HaloScript"
+                ],
+                "extensions": [
+                    ".hsc"
+                ],
+                "configuration": "./classic-config.json"
+            },
+            {
+                "id": "hsco",
+                "aliases": [
+                    "Halo ODST Script",
+                    "HaloScript"
+                ],
+                "extensions": [
+                    ".hsc"
+                ],
+                "configuration": "./classic-config.json"
+            },
+            {
+                "id": "hsc3",
+                "aliases": [
+                    "Halo 3 Script",
+                    "HaloScript"
+                ],
+                "extensions": [
+                    ".hsc"
+                ],
+                "configuration": "./classic-config.json"
+            },
+            {
+                "id": "hsc2",
+                "aliases": [
+                    "Halo 2 Script",
+                    "HaloScript"
+                ],
+                "extensions": [
+                    ".hsc"
+                ],
+                "configuration": "./classic-config.json"
+            },
+            {
+                "id": "hsc1",
+                "aliases": [
+                    "Halo 1 Script",
+                    "HaloScript"
+                ],
+                "extensions": [
+                    ".hsc"
+                ],
+                "configuration": "./classic-config.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "hsc4",
+                "scopeName": "source.hsc4",
+                "path": "./syntaxes/hsc4.tmLanguage.json"
+            },
+            {
+                "language": "hscr",
+                "scopeName": "source.hscr",
+                "path": "./syntaxes/hscr.tmLanguage.json"
+            },
+            {
+                "language": "hsco",
+                "scopeName": "source.hsco",
+                "path": "./syntaxes/hsco.tmLanguage.json"
+            },
+            {
+                "language": "hsc3",
+                "scopeName": "source.hsc3",
+                "path": "./syntaxes/hsc3.tmLanguage.json"
+            },
+            {
+                "language": "hsc2",
+                "scopeName": "source.hsc2",
+                "path": "./syntaxes/hsc2.tmLanguage.json"
+            },
+            {
+                "language": "hsc1",
+                "scopeName": "source.hsc1",
+                "path": "./syntaxes/hsc1.tmLanguage.json"
+            }
+        ],
         "themes": [
             {
                 "label": "Atlas",
@@ -46,11 +167,46 @@
             }
         ],
         "snippets": [
-			{
-				"language": "hsc",
-				"path": "./snippets.json"
-			}
-		]
-        
+            {
+                "scope": "hsc4",
+                "language": "hsc4",
+                "path": "./snippets/H4.json"
+            },
+            {
+                "scope": "hscr",
+                "language": "hscr",
+                "path": "./snippets/HR.json"
+            },
+            {
+                "scope": "hsco",
+                "language": "hsco",
+                "path": "./snippets/HO.json"
+            },
+            {
+                "scope": "hsc3",
+                "language": "hsc3",
+                "path": "./snippets/H3.json"
+            },
+            {
+                "scope": "hsc2",
+                "language": "hsc2",
+                "path": "./snippets/H2.json"
+            },
+            {
+                "scope": "hsc1",
+                "language": "hsc1",
+                "path": "./snippets/H1.json"
+            }
+        ]
+    },
+    "scripts": {
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./"
+    },
+    "dependencies": {
+        "vscode": "^1.1.37"
+    },
+    "devDependencies": {
+        "@types/node": "^20.6.0"
     }
 }
