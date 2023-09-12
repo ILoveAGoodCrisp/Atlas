@@ -10,45 +10,46 @@ const valueTypes_1 = require("../definitions/valueTypes");
 class hsProvider {
     // Generate completion items for the hardcoded functions
     constructor(extensionPath) {
-        this.items = new Array();
-        const activeTextEditor = vscode.window.activeTextEditor;
-        const languageId = activeTextEditor?.document.languageId;
+        this.itemsNew = new Array();
+        this.itemsClassic = new Array();
         for (var i in functions_1.hsFunctions) {
             var func = functions_1.hsFunctions[i];
-            var item = new vscode.CompletionItem(func.name);
-            if (languageId == 'hsc4') {
-                const joinedArgs = func.args.join(', ');
-                item.detail = func.r_type + " " + func.name + "(" + joinedArgs + ")";
-                item.insertText = new vscode.SnippetString(func.name + '(${1})');
-            }
-            else {
-                const joinedArgs = " " + func.args.join(' ');
-                item.detail = func.r_type + " " + "(" + func.name + joinedArgs + ")";
-                item.insertText = new vscode.SnippetString(func.name + ' ${1}');
-            }
-            item.documentation = func.desc;
-            item.kind = vscode.CompletionItemKind.Function;
-            item.command = {
+            var itemClassic = new vscode.CompletionItem(func.name);
+            var itemNew = new vscode.CompletionItem(func.name);
+            let joinedArgs = func.args.join(', ');
+            itemNew.detail = func.r_type + " " + func.name + "(" + joinedArgs + ")";
+            itemNew.insertText = new vscode.SnippetString(func.name + '(${1})');
+            itemNew.documentation = func.desc;
+            itemNew.kind = vscode.CompletionItemKind.Function;
+            itemNew.command = {
                 command: 'triggerSignatureHelp',
                 title: 'Trigger Signature Help',
             };
-            this.items.push(item);
+            this.itemsNew.push(itemNew);
+            joinedArgs = " " + func.args.join(' ');
+            itemClassic.detail = func.r_type + " " + "(" + func.name + joinedArgs + ")";
+            itemClassic.insertText = new vscode.SnippetString(func.name + ' ${1}');
+            itemClassic.documentation = func.desc;
+            itemClassic.kind = vscode.CompletionItemKind.Function;
+            itemClassic.command = {
+                command: 'triggerSignatureHelp',
+                title: 'Trigger Signature Help',
+            };
+            this.itemsClassic.push(itemClassic);
         }
-        if (languageId == 'hsc4') {
-            for (var i in keywords_1.hsKeywords) {
-                var keyword = keywords_1.hsKeywords[i];
-                var item = new vscode.CompletionItem(keyword.name);
-                if (keyword.name == 'begin_count' || keyword.name == 'begin_random_count') {
-                    item.detail = keyword.name + "(long) -> passthrough";
-                    item.insertText = new vscode.SnippetString(keyword.name + '(${1})');
-                }
-                else {
-                    item.detail = keyword.name + " -> passthrough";
-                }
-                item.documentation = keyword.desc;
-                item.kind = vscode.CompletionItemKind.Keyword;
-                this.items.push(item);
+        for (var i in keywords_1.hsKeywords) {
+            var keyword = keywords_1.hsKeywords[i];
+            var item = new vscode.CompletionItem(keyword.name);
+            if (keyword.name == 'begin_count' || keyword.name == 'begin_random_count') {
+                item.detail = keyword.name + "(long) -> passthrough";
+                item.insertText = new vscode.SnippetString(keyword.name + '(${1})');
             }
+            else {
+                item.detail = keyword.name + " -> passthrough";
+            }
+            item.documentation = keyword.desc;
+            item.kind = vscode.CompletionItemKind.Keyword;
+            this.itemsNew.push(item);
         }
         for (var i in scriptTypes_1.hsScriptTypes) {
             var scriptType = scriptTypes_1.hsScriptTypes[i];
@@ -56,7 +57,8 @@ class hsProvider {
             item.detail = "Script Type: " + scriptType.name;
             item.documentation = scriptType.desc;
             item.kind = vscode.CompletionItemKind.Class;
-            this.items.push(item);
+            this.itemsNew.push(item);
+            this.itemsClassic.push(item);
         }
         for (var i in valueTypes_1.hsValueTypes) {
             var returnType = valueTypes_1.hsValueTypes[i];
@@ -64,7 +66,8 @@ class hsProvider {
             item.detail = returnType.name;
             item.documentation = returnType.desc;
             item.kind = vscode.CompletionItemKind.Property;
-            this.items.push(item);
+            this.itemsNew.push(item);
+            this.itemsClassic.push(item);
         }
     }
     provideCompletionItems(document, position, token, context) {
@@ -80,7 +83,12 @@ class hsProvider {
             else {
                 // Otherwise, provide completion items as usual
                 let funcItems = [];
-                resolve(this.items.concat(funcItems));
+                if (document.languageId == "hsc4") {
+                    resolve(this.itemsNew.concat(funcItems));
+                }
+                else {
+                    resolve(this.itemsClassic.concat(funcItems));
+                }
             }
         });
     }

@@ -10,13 +10,10 @@ const scriptCompiler_1 = require("./commands/scriptCompiler");
 function activate(context) {
     console.log("Atlas: Start");
     const sighelp = new signature.hsProvider();
-    const selector = [{ language: "hscr" }, { language: "hsco" }, { language: "hsc3" }, { language: "hsc2" }, { language: "hsc1" }];
+    const selector = [{ language: "hsc4" }, { language: "hscr" }, { language: "hsco" }, { language: "hsc3" }, { language: "hsc2" }, { language: "hsc1" }];
     context.subscriptions.push(vscode_1.languages.registerCompletionItemProvider(selector, new completion.hsProvider(context.extensionPath)));
     context.subscriptions.push(vscode_1.languages.registerHoverProvider(selector, new hover.hsProvider()));
     context.subscriptions.push(vscode_1.languages.registerSignatureHelpProvider(selector, sighelp, '(', ',', ' '));
-    context.subscriptions.push(vscode_1.languages.registerCompletionItemProvider("hsc4", new completion.hsProvider(context.extensionPath)));
-    context.subscriptions.push(vscode_1.languages.registerHoverProvider("hsc4", new hover.hsProvider()));
-    context.subscriptions.push(vscode_1.languages.registerSignatureHelpProvider("hsc4", sighelp, '(', ',', ' '));
     const command = 'atlas.compileScenarioScripts';
     const commandHandler = () => {
         (0, scriptCompiler_1.runToolExecutable)();
