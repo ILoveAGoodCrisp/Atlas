@@ -10,13 +10,10 @@ import { DocumentSelector } from 'vscode-languageserver';
 export function activate(context: ExtensionContext) {
 	console.log("Atlas: Start");
 	const sighelp = new signature.hsProvider();
-	const selector: DocumentSelector = [{language: "hscr"}, {language: "hsco"}, {language: "hsc3"}, {language: "hsc2"}, {language: "hsc1"}];
+	const selector: DocumentSelector = [{language: "hsc4"}, {language: "hscr"}, {language: "hsco"}, {language: "hsc3"}, {language: "hsc2"}, {language: "hsc1"}];
 	context.subscriptions.push(languages.registerCompletionItemProvider(selector , new completion.hsProvider(context.extensionPath)));
 	context.subscriptions.push(languages.registerHoverProvider(selector, new hover.hsProvider()));
 	context.subscriptions.push(languages.registerSignatureHelpProvider(selector, sighelp, '(', ',', ' ',));
-	context.subscriptions.push(languages.registerCompletionItemProvider("hsc4" , new completion.hsProvider(context.extensionPath)));
-	context.subscriptions.push(languages.registerHoverProvider("hsc4", new hover.hsProvider()));
-	context.subscriptions.push(languages.registerSignatureHelpProvider("hsc4", sighelp, '(', ',', ' ',));
 
 	const command = 'atlas.compileScenarioScripts';
 	const commandHandler = () => {
