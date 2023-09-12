@@ -4,19 +4,16 @@
         "blockComment": [ "/*", "*/" ]
     },
     "brackets": [
-        ["{", "}"],
         ["[", "]"],
         ["(", ")"]
     ],
     "autoClosingPairs": [
-        ["{", "}"],
         ["[", "]"],
         ["(", ")"],
         ["\"", "\""],
         ["'", "'"]
     ],
     "surroundingPairs": [
-        ["{", "}"],
         ["[", "]"],
         ["(", ")"],
         ["\"", "\""],
@@ -24,7 +21,12 @@
     ],
     "onEnterRules": [
         {
-        "beforeText": "^[^;]*$",
+        "beforeText": ".+",
+        "afterText": "\\)$",
+        "action": { "indent": "i(ndentOutdent" }
+        },
+        {
+        "beforeText": "^\\s*.*?[^;]\\s*$(?<!\\bend\\b)",
         "action": { "indent": "indent" }
         }
     ]

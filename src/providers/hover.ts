@@ -2,12 +2,12 @@ import * as vscode from 'vscode';
 import {hsFunctions} from '../definitions/functions'
 import {hsKeywords} from '../definitions/keywords'
 import {hsScriptTypes} from '../definitions/scriptTypes'
-import {hsReturnTypes} from '../definitions/returnTypes'
+import {hsValueTypes} from '../definitions/valueTypes'
 
 function return_hover(detail: string, documentation: string)
 {
     const command = `${detail}\n\n${documentation}`;
-    return new vscode.Hover({language: "hsc", value: command});
+    return new vscode.Hover({language: "", value: command});
 }
 
 export class hsProvider implements vscode.HoverProvider {
@@ -15,6 +15,7 @@ export class hsProvider implements vscode.HoverProvider {
                         position: vscode.Position,
                         token: vscode.CancellationToken)
     {
+        const newStyle = document.languageId == "hsc4";
         const wordRange = document.getWordRangeAtPosition(position);
         if (wordRange == null)
         {
@@ -26,20 +27,24 @@ export class hsProvider implements vscode.HoverProvider {
         const hoverTextExtended = document.getText(wordRangeTranslate);
         let detail = ""
         let documentation = ""
-        const foundKeyword = hsKeywords.find((def) => def.name === hoverText);
-        if (foundKeyword != null)
+        if (newStyle)
         {
-            if (foundKeyword.name == 'begin_count' || foundKeyword.name == 'begin_random_count')
+            const foundKeyword = hsKeywords.find((def) => def.name === hoverText);
+            if (foundKeyword != null)
             {
-                detail = foundKeyword.name + "(long) -> passthrough";;
+                if (foundKeyword.name == 'begin_count' || foundKeyword.name == 'begin_random_count')
+                {
+                    detail = "passthrough " + foundKeyword.name + "(long)";;
+                }
+                else
+                {
+                    detail = "passthrough " + foundKeyword.name;
+                }
+                documentation = foundKeyword.desc;
+                return return_hover(detail, documentation);
             }
-            else
-            {
-                detail = foundKeyword.name + " -> passthrough";
-            }
-            documentation = foundKeyword.desc;
-            return return_hover(detail, documentation);
         }
+
         const foundScriptType = hsScriptTypes.find((def) => def.name === hoverText);
         if (foundScriptType != null)
         {
@@ -47,19 +52,28 @@ export class hsProvider implements vscode.HoverProvider {
             documentation = foundScriptType.desc;
             return return_hover(detail, documentation);
         }
-        const foundReturnType = hsReturnTypes.find((def) => def.name === hoverText);
+        const foundValueType = hsValueTypes.find((def) => def.name === hoverText);
         // Check that this isn't a function, as some functions have the same names as return types
-        if (foundReturnType != null && hoverTextExtended.indexOf("(") === -1)
+        if (foundValueType != null && hoverTextExtended.indexOf("(") === -1)
         {
-            detail = foundReturnType.name;
-            documentation = foundReturnType.desc;
+            detail = foundValueType.name;
+            documentation = foundValueType.desc;
             return return_hover(detail, documentation);
         }
         const foundFunc = hsFunctions.find((def) => def.name === hoverText);
         if (foundFunc != null)
         {
-            const joinedArgs = foundFunc.args.join(', ');
-            detail = foundFunc.name + "(" + joinedArgs + ")" + " -> " + foundFunc.r_type;
+            if (newStyle)
+            {
+                const joinedArgs = foundFunc.args.join(', ');
+                detail = foundFunc.name + "(" + joinedArgs + ")" + " -> " + foundFunc.r_type;
+            }
+            else
+            {
+                const joinedArgs = " " + foundFunc.args.join(' ');
+				detail = foundFunc.r_type + " " + "(" + foundFunc.name + joinedArgs + ")";
+            }
+
             documentation = foundFunc.desc;
             return return_hover(detail, documentation);
         }

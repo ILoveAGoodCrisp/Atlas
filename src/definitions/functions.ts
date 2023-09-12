@@ -30,7 +30,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"if",
-	['boolean', 'then', 'else (optional)'],
+	['boolean', 'then', 'else?'],
 	"passthrough",
 	['H1', 'H2', 'H3', 'HO', 'HR'],
 	"Returns one of two values based on the value of a condition",
@@ -182,11 +182,29 @@ var newFunc = new HSFunction(
 hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
+	"sleep",
+	['short', 'script?'],
+	"void",
+	['H1', 'H2', 'HR', 'H4'],
+	"Pauses execution of this script (or, optionally, another script) for the specified number of ticks",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
 	"sleep_forever",
-	['script (optional)'],
+	['script?'],
 	"void",
 	['H1', 'H2', 'H3', 'HO', 'HR', 'H4'],
 	"Pauses execution of this script (or, optionally, another script) forever",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"sleep_until",
+	['boolean', 'short?', 'long?'],
+	"void",
+	[' \'[<long>]\']"'],
+	"Pauses execution of this script until the specified condition is true, checking once per second unless a different number of ticks is specified. If the final optional argument is given, this function will stop sleeping regardless of condition after <long> ticks",
 );
 hsFunctions.push(newFunc);
 
@@ -1235,6 +1253,15 @@ var newFunc = new HSFunction(
 hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
+	"unit_exit_vehicle",
+	['unit'],
+	"void",
+	['H1', 'H2', 'H3', 'HO', 'HR', 'H4'],
+	"Makes a unit exit its vehicle",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
 	"unit_set_maximum_vitality",
 	['unit', 'real', 'real'],
 	"void",
@@ -1699,6 +1726,15 @@ var newFunc = new HSFunction(
 	"void",
 	['H1', 'H2'],
 	"Detaches the specified unit from all ai",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"ai_place",
+	['ai'],
+	"void",
+	['H1'],
+	"Places the specified encounter on the map",
 );
 hsFunctions.push(newFunc);
 
@@ -3076,6 +3112,15 @@ var newFunc = new HSFunction(
 	"void",
 	['H1', 'H2', 'H3', 'HO', 'HR'],
 	"Plays an impulse sound from the specified source object (or none), with the specified scale",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"sound_impulse_time",
+	['sound'],
+	"long",
+	['H1', 'H2', 'H3', 'HR', 'H4'],
+	"Returns the time remaining for the specified impulse sound",
 );
 hsFunctions.push(newFunc);
 
@@ -5358,7 +5403,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"unit_exit_vehicle",
-	['unit', 'short (optional)'],
+	['unit', 'short?'],
 	"void",
 	['H2', 'H3', 'HO', 'HR', 'H4'],
 	"Makes a unit exit its vehicle (0 = normal exit to airborne, 1 = ejection, 2 = ejection + death, 3 = exit to ground)",
@@ -5637,7 +5682,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"ai_place",
-	['ai', 'short (optional)'],
+	['ai', 'short?'],
 	"void",
 	['H2', 'H3', 'HO', 'HR', 'H4'],
 	"Places the given number of members of the specified squad",
@@ -6051,7 +6096,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cs_run_joint_command_script",
-	['ai_command_script', 'ai', 'ai', 'ai (optional)'],
+	['ai_command_script', 'ai', 'ai', 'ai?'],
 	"void",
 	['H2'],
 	"Causes the specified actor(s) to start executing a command script immediately (discarding any other command scripts in the queue)",
@@ -6132,7 +6177,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cs_fly_to",
-	['point_reference', 'real (optional)'],
+	['point_reference', 'real?'],
 	"void",
 	['H2', 'H3', 'HO', 'HR', 'H4'],
 	"Flies the actor to the given point (within the given tolerance)",
@@ -6141,7 +6186,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cs_fly_to_and_face",
-	['point_reference', 'point_reference', 'real (optional)'],
+	['point_reference', 'point_reference', 'real?'],
 	"void",
 	['H2', 'H3', 'HO', 'HR', 'H4'],
 	"Flies the actor to the given point and orients him in the appropriate direction (within the given tolerance)",
@@ -6150,7 +6195,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cs_fly_by",
-	['point_reference', 'real (optional)'],
+	['point_reference', 'real?'],
 	"void",
 	['H2', 'H3', 'HO', 'HR', 'H4'],
 	"Flies the actor through the given point (within the given tolerance)",
@@ -6159,7 +6204,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cs_go_to",
-	['point_reference', 'real (optional)'],
+	['point_reference', 'real?'],
 	"void",
 	['H2', 'H3', 'HO', 'HR', 'H4'],
 	"Moves the actor to a specified point, attenuating throttle by the given amount when near the goal",
@@ -6168,7 +6213,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cs_go_by",
-	['point_reference', 'point_reference', 'real (optional)'],
+	['point_reference', 'point_reference', 'real?'],
 	"void",
 	['H2', 'H3', 'HO', 'HR', 'H4'],
 	"Actor moves toward the point, and considers it hit when it breaks the indicated plane, attenuating throttle by the given amount when near the goal",
@@ -6312,7 +6357,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cs_shoot",
-	['boolean', 'object (optional)'],
+	['boolean', 'object?'],
 	"void",
 	['H2', 'H3', 'HO', 'HR', 'H4'],
 	"Actor shoots at given target",
@@ -6370,6 +6415,24 @@ var newFunc = new HSFunction(
 	"void",
 	['H2', 'H3', 'HO', 'HR', 'H4'],
 	"Actor emits vocalization of given type",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"cs_play_sound",
+	['sound', 'real?'],
+	"void",
+	['H2', 'H3', 'HO', 'HR', 'H4'],
+	"Actor plays an impulse sound and the atom blocks for the given percentage of the sound's total length",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"cs_play_sound",
+	['sound', '[real', 'real]'],
+	"void",
+	['H2', 'H3', 'HO', 'HR'],
+	"Actor plays an impulse sound and the atom blocks for the given percentage of the sound's total length, at the given volume (0..1)",
 );
 hsFunctions.push(newFunc);
 
@@ -6447,7 +6510,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cs_crouch",
-	['boolean', 'real (optional)'],
+	['boolean', 'real?'],
 	"void",
 	['H2', 'H3', 'HO', 'HR', 'H4'],
 	"Actor crouches / uncrouches, transitioning over the given number of seconds",
@@ -6460,6 +6523,15 @@ var newFunc = new HSFunction(
 	"void",
 	['H2', 'H3', 'HO', 'HR', 'H4'],
 	"Sets the actor's pathfinding radius (this distance at which a destination is considered to have been reached) for the remainder of the command script",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"cs_go_to_vehicle",
+	['vehicle'],
+	"void",
+	['H2', 'H3', 'HO', 'HR', 'H4'],
+	"Actor gets in the appropriate vehicle",
 );
 hsFunctions.push(newFunc);
 
@@ -7455,7 +7527,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"sound_impulse_time",
-	['sound', 'long (optional)'],
+	['sound', 'long?'],
 	"long",
 	['H2', 'H3', 'HO', 'HR', 'H4'],
 	"<sound> <total playing time> returns the time remaining for the specified impulse sound based on <total playing time>",
@@ -8445,7 +8517,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"test_memory_allocators",
-	['long', 'short', 'short', 'short', 'long', 'string (optional)'],
+	['long', 'short', 'short', 'short', 'long', 'string?'],
 	"void",
 	['H2', 'HR', 'H4'],
 	"Performs tests on different memory allocators and saves the results",
@@ -9173,11 +9245,29 @@ var newFunc = new HSFunction(
 hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
+	"sleep",
+	['short', 'script?'],
+	"void",
+	['H3', 'HO'],
+	"Pauses execution of this script (or, optionally, another script) for the specified number of ticks @ 30hz",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
 	"sleep_for_ticks",
-	['short', 'script (optional)'],
+	['short', 'script?'],
 	"void",
 	['H3', 'HO'],
 	"Pauses execution of this script (or, optionally, another script) for the specified number of ticks",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"sleep_until",
+	['boolean', 'short?', 'long?'],
+	"boolean",
+	[' \'[<long>]\']"'],
+	"Pauses execution of this script until the specified condition is true, checking once per second unless a different number of ticks is specified. If the final optional argument is given, this function will stop sleeping regardless of condition after <long> ticks",
 );
 hsFunctions.push(newFunc);
 
@@ -9268,6 +9358,15 @@ var newFunc = new HSFunction(
 	"void",
 	['H3', 'HO', 'HR', 'H4'],
 	"Enables/disables the trigger volume(s) with the given name that cause zone set switches",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"effect_new_random",
+	['effect', 'point_reference'],
+	"void",
+	['H3', 'HO', 'HR', 'H4'],
+	"Starts the specified effect at one of the points in the given a point set",
 );
 hsFunctions.push(newFunc);
 
@@ -10028,6 +10127,15 @@ var newFunc = new HSFunction(
 hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
+	"ai_set_targeting_group",
+	['ai', 'short', 'boolean?'],
+	"void",
+	['H3', 'HO'],
+	"Set the ai to only target other guys of targetin group x (true/false whether the player should also be targeted)",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
 	"ai_teleport",
 	['ai', 'point_reference'],
 	"void",
@@ -10371,7 +10479,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"ai_play_line_on_point_set",
-	['string_id', 'point_reference', 'short', 'string_id (optional)'],
+	['string_id', 'point_reference', 'short', 'string_id?'],
 	"short",
 	['H3', 'HO', 'HR', 'H4'],
 	"Play the given line (with the given 3-letter variant) on the n closest point to players in the given point set",
@@ -10650,7 +10758,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"vs_fly_to",
-	['ai', 'boolean', 'point_reference', 'real (optional)'],
+	['ai', 'boolean', 'point_reference', 'real?'],
 	"void",
 	['H3', 'HO'],
 	"Flies the actor to the given point (within the given tolerance)",
@@ -10659,7 +10767,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"vs_fly_to_and_face",
-	['ai', 'boolean', 'point_reference', 'point_reference', 'real (optional)'],
+	['ai', 'boolean', 'point_reference', 'point_reference', 'real?'],
 	"void",
 	['H3', 'HO'],
 	"Flies the actor to the given point and orients him in the appropriate direction (within the given tolerance)",
@@ -10668,7 +10776,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"vs_fly_by",
-	['ai', 'boolean', 'point_reference', 'real (optional)'],
+	['ai', 'boolean', 'point_reference', 'real?'],
 	"void",
 	['H3', 'HO'],
 	"Flies the actor through the given point (within the given tolerance)",
@@ -10677,7 +10785,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"vs_go_to",
-	['ai', 'boolean', 'point_reference', 'real (optional)'],
+	['ai', 'boolean', 'point_reference', 'real?'],
 	"void",
 	['H3', 'HO'],
 	"Moves the actor to a specified point, attenuating throttle by the given amount when near the goal",
@@ -10686,7 +10794,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"vs_go_by",
-	['ai', 'boolean', 'point_reference', 'point_reference', 'real (optional)'],
+	['ai', 'boolean', 'point_reference', 'point_reference', 'real?'],
 	"void",
 	['H3', 'HO'],
 	"Actor moves toward the point, and considers it hit when it breaks the indicated plane, attenuating throttle by the given amount when near the goal",
@@ -10740,7 +10848,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cs_move_towards",
-	['object', 'boolean (optional)'],
+	['object', 'boolean?'],
 	"void",
 	['H3', 'HO', 'HR', 'H4'],
 	"Move in the direction of the given object (and melee the target or not)",
@@ -10749,7 +10857,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"vs_move_towards",
-	['ai', 'boolean', 'object', 'boolean (optional)'],
+	['ai', 'boolean', 'object', 'boolean?'],
 	"void",
 	['H3', 'HO'],
 	"Move in the direction of the given object (and melee the target or not)",
@@ -10929,7 +11037,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"vs_custom_animation",
-	['ai', 'boolean', 'animation_graph', 'string_id', 'boolean', 'point_reference (optional)'],
+	['ai', 'boolean', 'animation_graph', 'string_id', 'boolean', 'point_reference?'],
 	"void",
 	['H3', 'HO'],
 	"Starts a custom animation playing on the actor at the given point (interpolates into animation if last parameter is true)",
@@ -10938,7 +11046,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cs_custom_animation_death",
-	['animation_graph', 'string_id', 'boolean', 'point_reference (optional)'],
+	['animation_graph', 'string_id', 'boolean', 'point_reference?'],
 	"void",
 	['H3', 'HO', 'HR', 'H4'],
 	"Starts a custom animation playing on the actor (interpolates into animation if last parameter is true)",
@@ -10947,7 +11055,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"vs_custom_animation_death",
-	['ai', 'boolean', 'animation_graph', 'string_id', 'boolean', 'point_reference (optional)'],
+	['ai', 'boolean', 'animation_graph', 'string_id', 'boolean', 'point_reference?'],
 	"void",
 	['H3', 'HO'],
 	"Starts a custom animation playing on the actor (interpolates into animation if last parameter is true)",
@@ -10956,7 +11064,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cs_custom_animation_loop",
-	['animation_graph', 'string_id', 'boolean', 'point_reference (optional)'],
+	['animation_graph', 'string_id', 'boolean', 'point_reference?'],
 	"void",
 	['H3', 'HO', 'HR', 'H4'],
 	"Starts a looping custom animation playing on the actor at the given point (interpolates into animation if last parameter is true) non-blocking",
@@ -10965,7 +11073,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"vs_custom_animation_loop",
-	['ai', 'animation_graph', 'string_id', 'boolean', 'point_reference (optional)'],
+	['ai', 'animation_graph', 'string_id', 'boolean', 'point_reference?'],
 	"void",
 	['H3', 'HO'],
 	"Starts a looping custom animation playing on the actor at the given point (interpolates into animation if last parameter is true) non-blocking",
@@ -11046,7 +11154,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cs_go_to_vehicle",
-	['vehicle', 'unit_seat_mapping (optional)'],
+	['vehicle', 'unit_seat_mapping?'],
 	"void",
 	['H3', 'HO', 'HR', 'H4'],
 	"Actor gets in the named seat of the appropriate vehicle",
@@ -11055,7 +11163,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"vs_go_to_vehicle",
-	['ai', 'boolean', 'vehicle', 'unit_seat_mapping (optional)'],
+	['ai', 'boolean', 'vehicle', 'unit_seat_mapping?'],
 	"void",
 	['H3', 'HO'],
 	"Actor gets in the named seat of the appropriate vehicle",
@@ -11235,7 +11343,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"vs_shoot",
-	['ai', 'boolean', 'object (optional)'],
+	['ai', 'boolean', 'object?'],
 	"void",
 	['H3', 'HO'],
 	"Actor shoots at given target",
@@ -11370,7 +11478,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"vs_crouch",
-	['ai', 'boolean', 'real (optional)'],
+	['ai', 'boolean', 'real?'],
 	"void",
 	['H3', 'HO'],
 	"Actor crouches / uncrouches, transitioning over the given number of seconds",
@@ -13898,6 +14006,15 @@ var newFunc = new HSFunction(
 hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
+	"play_bink_movie_from_tag",
+	['bink_definition'],
+	"void",
+	['H3', 'HO', 'HR'],
+	"Play a bink movie from a tag",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
 	"data_mine_upload",
 	[],
 	"void",
@@ -14124,7 +14241,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"mp_ai_place",
-	['ai', 'short (optional)'],
+	['ai', 'short?'],
 	"void",
 	['H3', 'HO'],
 	"Places the given number of members of the specified squad as non-authoritative objects",
@@ -15541,6 +15658,42 @@ var newFunc = new HSFunction(
 	"void",
 	['HO', 'HR', 'H4'],
 	"Turn on/off perception performance hacks",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"ai_place_wave",
+	['long', 'ai'],
+	"void",
+	['HO', 'HR', 'H4'],
+	"Places the specified wave name into squads defined as part of the given squad group",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"ai_place_wave",
+	['long', 'ai', 'short?'],
+	"void",
+	['HO', 'HR'],
+	"Places the given number of squads from the specified wave name into squads defined as part of the given squad group",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"ai_place_wave_in_limbo",
+	['long', 'ai'],
+	"void",
+	['HO', 'HR', 'H4'],
+	"Places the specified wave name into squads defined as part of the given squad group in limbo",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"ai_place_wave_in_limbo",
+	['long', 'ai', 'short?'],
+	"void",
+	['HO', 'HR'],
+	"Places the given number of squads from the specified wave name into squads defined as part of the given squad group in limbo",
 );
 hsFunctions.push(newFunc);
 
@@ -17706,10 +17859,19 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"sleep_until_game_ticks",
-	['boolean', 'short (optional)'],
+	['boolean', 'short?'],
 	"boolean",
 	['HR'],
 	"Pauses execution of this script until the specified condition is true, checking once per second unless a different number of ticks is specified",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"cinematic_sleep",
+	['short', 'script?'],
+	"void",
+	['HR'],
+	"Cinematic only sleep script call which ignores the 1 frame special case for non 30hz builds",
 );
 hsFunctions.push(newFunc);
 
@@ -17953,6 +18115,15 @@ var newFunc = new HSFunction(
 	"void",
 	['HR'],
 	"Clears one funciton variables for sin-o-matic use",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"object_clear_all_cinematic_function_variables",
+	['object'],
+	"void",
+	['HR'],
+	"Clears all funciton variables for sin-o-matic use",
 );
 hsFunctions.push(newFunc);
 
@@ -18389,6 +18560,15 @@ var newFunc = new HSFunction(
 hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
+	"ai_force_full_lod",
+	['ai'],
+	"void",
+	['HR'],
+	"Force the given ai to full detail lod",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
 	"ai_force_low_lod",
 	['ai'],
 	"void",
@@ -18417,7 +18597,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"ai_place_in_limbo",
-	['ai', 'short (optional)'],
+	['ai', 'short?'],
 	"void",
 	['HR', 'H4'],
 	"Places the given number of members of the specified squad in limbo",
@@ -18484,6 +18664,15 @@ var newFunc = new HSFunction(
 	"void",
 	['HR', 'H4'],
 	"The given ai will discard all orphan props, terminating search",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"ai_set_targeting_group",
+	['ai', 'short', 'boolean?'],
+	"void",
+	['HR', 'H4'],
+	"Set the ai to only target other guys of targeting group x (true/false whether the player should also be targeted)",
 );
 hsFunctions.push(newFunc);
 
@@ -19145,6 +19334,96 @@ var newFunc = new HSFunction(
 hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
+	"cs_fly_to",
+	['ai', 'boolean', 'point_reference'],
+	"void",
+	['HR', 'H4'],
+	"Flies the actor to the given point",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"cs_fly_to",
+	['ai', 'boolean', 'point_reference', 'real'],
+	"void",
+	['HR', 'H4'],
+	"Flies the actor to the given point (within the given tolerance)",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"cs_fly_to_and_face",
+	['ai', 'boolean', 'point_reference', 'point_reference'],
+	"void",
+	['HR', 'H4'],
+	"Flies the actor to the given point and orients him in the appropriate direction",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"cs_fly_to_and_face",
+	['ai', 'boolean', 'point_reference', 'point_reference', 'real'],
+	"void",
+	['HR', 'H4', 'H4'],
+	"Flies the actor to the given point and orients him in the appropriate direction (within the given tolerance)",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"cs_fly_by",
+	['ai', 'boolean', 'point_reference'],
+	"void",
+	['HR', 'H4'],
+	"Flies the actor through the given point",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"cs_fly_by",
+	['ai', 'boolean', 'point_reference', 'real'],
+	"void",
+	['HR', 'H4'],
+	"Flies the actor through the given point (within the given tolerance)",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"cs_go_to",
+	['ai', 'boolean', 'point_reference'],
+	"void",
+	['HR', 'H4'],
+	"Moves the actor to a specified point",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"cs_go_to",
+	['ai', 'boolean', 'point_reference', 'real'],
+	"void",
+	['HR', 'H4'],
+	"Moves the actor to a specified point, attenuating throttle by the given amount when near the goal",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"cs_go_by",
+	['ai', 'boolean', 'point_reference', 'point_reference'],
+	"void",
+	['HR', 'H4'],
+	"Actor moves toward the point, and considers it hit when it breaks the indicated plane",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"cs_go_by",
+	['ai', 'boolean', 'point_reference', 'point_reference', 'real'],
+	"void",
+	['HR', 'H4'],
+	"Actor moves toward the point, and considers it hit when it breaks the indicated plane, attenuating throttle by the given amount when near the goal",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
 	"cs_go_to_and_face",
 	['ai', 'boolean', 'point_reference', 'point_reference'],
 	"void",
@@ -19195,6 +19474,24 @@ var newFunc = new HSFunction(
 	"void",
 	['HR', 'H4'],
 	"Actor moves at given angle, for the given distance, optionally with the given facing (angle, distance, facing)",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"cs_move_towards",
+	['ai', 'boolean', 'object'],
+	"void",
+	['HR', 'H4'],
+	"Move in the direction of the given object",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"cs_move_towards",
+	['ai', 'boolean', 'object', 'boolean'],
+	"void",
+	['HR', 'H4'],
+	"Move in the direction of the given object (and melee the target or not)",
 );
 hsFunctions.push(newFunc);
 
@@ -19289,6 +19586,33 @@ var newFunc = new HSFunction(
 hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
+	"cs_play_sound",
+	['ai', 'boolean', 'sound'],
+	"void",
+	['HR'],
+	"Actor plays an impulse sound and the atom blocks until it is complete",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"cs_play_sound",
+	['ai', 'boolean', 'sound', 'real'],
+	"void",
+	['HR', 'H4'],
+	"Actor plays an impulse sound and the atom blocks for the given percentage of the sound's total length",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"cs_play_sound",
+	['ai', 'boolean', 'sound', 'real', 'real'],
+	"void",
+	['HR', 'H4'],
+	"Actor plays an impulse sound and the atom blocks for the given percentage of the sound's total length, at the given volume (0..1)",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
 	"cs_action",
 	['ai', 'boolean', 'point_reference', 'short'],
 	"void",
@@ -19334,6 +19658,42 @@ var newFunc = new HSFunction(
 hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
+	"cs_custom_animation_death",
+	['ai', 'boolean', 'animation_graph', 'string_id', 'boolean'],
+	"void",
+	['HR', 'H4'],
+	"Starts a custom animation playing on the actor (interpolates into animation if last parameter is true)",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"cs_custom_animation_death",
+	['ai', 'boolean', 'animation_graph', 'string_id', 'boolean', 'point_reference'],
+	"void",
+	['HR', 'H4'],
+	"Starts a custom animation playing on the actor (interpolates into animation if last parameter is true)",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"cs_custom_animation_loop",
+	['ai', 'animation_graph', 'string_id', 'boolean'],
+	"void",
+	['HR', 'H4'],
+	"Starts a looping custom animation playing on the actor (interpolates into animation if last parameter is true) non-blocking",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"cs_custom_animation_loop",
+	['ai', 'animation_graph', 'string_id', 'boolean', 'point_reference'],
+	"void",
+	['HR', 'H4'],
+	"Starts a looping custom animation playing on the actor at the given point (interpolates into animation if last parameter is true) non-blocking",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
 	"cs_play_line",
 	['ai', 'boolean', 'ai_line'],
 	"void",
@@ -19375,6 +19735,24 @@ var newFunc = new HSFunction(
 	"void",
 	['HR', 'H4'],
 	"(approach player <distance - how close i want to get> <max-distance  - start approaching when target is within this range> <follow-distance - give up when target is outside this range>)",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"cs_go_to_vehicle",
+	['ai', 'boolean', 'vehicle'],
+	"void",
+	['HR', 'H4'],
+	"Actor gets in the appropriate vehicle",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"cs_go_to_vehicle",
+	['ai', 'boolean', 'vehicle', 'unit_seat_mapping'],
+	"void",
+	['HR', 'H4'],
+	"Actor gets in the named seat of the appropriate vehicle",
 );
 hsFunctions.push(newFunc);
 
@@ -19532,6 +19910,24 @@ var newFunc = new HSFunction(
 hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
+	"cs_shoot",
+	['ai', 'boolean'],
+	"void",
+	['HR', 'H4'],
+	"Actor is allowed to shoot at its target or not",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"cs_shoot",
+	['ai', 'boolean', 'object'],
+	"void",
+	['HR', 'H4'],
+	"Actor shoots at given target",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
 	"cs_shoot_point",
 	['ai', 'boolean', 'point_reference'],
 	"void",
@@ -19645,6 +20041,24 @@ var newFunc = new HSFunction(
 	"void",
 	['HR', 'H4'],
 	"Actor pushes given stance during this command script",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"cs_crouch",
+	['ai', 'boolean'],
+	"void",
+	['HR', 'H4'],
+	"Actor crouches for the remainder of the command script, or until overridden",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"cs_crouch",
+	['ai', 'boolean', 'real'],
+	"void",
+	['HR', 'H4'],
+	"Actor crouches / uncrouches, transitioning over the given number of seconds",
 );
 hsFunctions.push(newFunc);
 
@@ -21243,7 +21657,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"chud_track_object_with_priority",
-	['object', 'long', 'string_id (optional)'],
+	['object', 'long', 'string_id?'],
 	"void",
 	['HR'],
 	"Turns on the navpoint and display text of the specified object",
@@ -21261,7 +21675,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"chud_track_flag_with_priority",
-	['cutscene_flag', 'long', 'string_id (optional)'],
+	['cutscene_flag', 'long', 'string_id?'],
 	"void",
 	['HR'],
 	"Turns on the navpoint and display text of the specified flag",
@@ -21279,7 +21693,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"chud_track_object_for_player_with_priority",
-	['player', 'object', 'long', 'string_id (optional)'],
+	['player', 'object', 'long', 'string_id?'],
 	"void",
 	['HR'],
 	"Turns on the navpoint and display text of the specified object",
@@ -21297,7 +21711,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"chud_track_flag_for_player_with_priority",
-	['player', 'cutscene_flag', 'long', 'string_id (optional)'],
+	['player', 'cutscene_flag', 'long', 'string_id?'],
 	"void",
 	['HR'],
 	"Turns on the navpoint and display text of the specified flag",
@@ -21369,7 +21783,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"chud_breadcrumbs_track_object_with_priority",
-	['object', 'long', 'string_id (optional)'],
+	['object', 'long', 'string_id?'],
 	"void",
 	['HR'],
 	"Turns on the improved navpoint and display text of the specified object",
@@ -23880,7 +24294,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"player_set_profile",
-	['starting_profile', 'player (optional)'],
+	['starting_profile', 'player?'],
 	"void",
 	['HR', 'H4'],
 	"Sets the profile for this player to spawn/respawn with",
@@ -24064,6 +24478,15 @@ var newFunc = new HSFunction(
 	"void",
 	['H4'],
 	"Set the value of a global variable without echoing the result",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"cinematic_sleep",
+	['short', 'script?'],
+	"void",
+	['H4'],
+	"Pauses execution of this script (or, optionally, another script) for the specified number of ticks",
 );
 hsFunctions.push(newFunc);
 
@@ -24915,7 +25338,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"object_clear_all_cinematic_function_variables",
-	['object', 'boolean (optional)'],
+	['object', 'boolean?'],
 	"void",
 	['H4'],
 	"Clears all funciton variables for sin-o-matic use",
@@ -25797,7 +26220,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"ai_force_full_lod",
-	['ai', 'boolean (optional)'],
+	['ai', 'boolean?'],
 	"void",
 	['H4'],
 	"Enables/disables forced full lod mode on specified actor",
@@ -25823,8 +26246,26 @@ var newFunc = new HSFunction(
 hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
+	"ai_place_wave",
+	['long', 'ai', 'long?'],
+	"void",
+	['H4'],
+	"Places the given number of squads from the specified wave name into squads defined as part of the given squad group",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"ai_place_wave_in_limbo",
+	['long', 'ai', 'long?'],
+	"void",
+	['H4'],
+	"Places the given number of squads from the specified wave name into squads defined as part of the given squad group in limbo",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
 	"ai_place_with_shards",
-	['ai', 'short (optional)'],
+	['ai', 'short?'],
 	"long",
 	['H4'],
 	"Places the given number of members of the specified squad using forerunner shards",
@@ -26363,6 +26804,15 @@ var newFunc = new HSFunction(
 hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
+	"cs_play_sound",
+	['sound', '[real', 'real]'],
+	"void",
+	['H4'],
+	"Actor plays an impulse sound and the atom blocks for the given percentage of the sound's total length",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
 	"cs_stationary_face",
 	['boolean', 'point_reference'],
 	"void",
@@ -26805,7 +27255,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"take_screenshots_of_zone_set",
-	['string', 'short', 'string (optional)'],
+	['string', 'short', 'string?'],
 	"void",
 	['H4'],
 	"Goes to every camera point in a zone set and takes a picture",
@@ -28326,7 +28776,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"play_bink_movie",
-	['string', 'long (optional)'],
+	['string', 'long?'],
 	"void",
 	['H4'],
 	"Play a bink movie file directly with playback flags.  the directory and '_60.bik' is implied.  eg: play_bink_movie('081_crash') will play file bink\\081_crash_60.bik",
@@ -28335,7 +28785,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"play_bink_movie_from_tag",
-	['bink_definition', 'long (optional)'],
+	['bink_definition', 'long?'],
 	"void",
 	['H4'],
 	"Play a bink movie from a tag with playback flags (from bink_playback.h)",
@@ -28605,7 +29055,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"predict_bink_movie",
-	['string', 'long (optional)'],
+	['string', 'long?'],
 	"void",
 	['H4'],
 	"Predict a bink movie file directly with playback flags. the directory and '_60.bik' is implied. eg: predict_bink_movie('081_crash', 0) will play file bink\\081_crash_60.bik",
@@ -28614,7 +29064,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"predict_bink_movie_from_tag",
-	['bink_definition', 'long (optional)'],
+	['bink_definition', 'long?'],
 	"void",
 	['H4'],
 	"Predict a bink movie from tag with playback flags",

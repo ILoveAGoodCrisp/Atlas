@@ -32,6 +32,7 @@
     "engines": {
         "vscode": "^1.61.0"
     },
+    "main": "./out/extension",
     "categories": [
         "Programming Languages",
         "Language Packs",
@@ -204,9 +205,16 @@
         "watch": "tsc -watch -p ./"
     },
     "dependencies": {
-        "vscode": "^1.1.37"
+        "vscode": "^1.1.37",
+        "vscode-languageserver": "^8.1.0",
+        "vscode-languageserver-textdocument": "^1.0.8"
     },
     "devDependencies": {
-        "@types/node": "^20.6.0"
+        "@types/node": "^20.6.0",
+        "@types/vscode": "^1.73.0",
+        "@typescript-eslint/eslint-plugin": "^5.42.0",
+        "@typescript-eslint/parser": "^5.42.0",
+        "eslint": "^8.26.0",
+        "typescript": "^5.2.2"
     }
 }

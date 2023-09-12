@@ -1,18 +1,27 @@
 import * as vscode from 'vscode';
 import {hsFunctions, HSFunction} from '../definitions/functions'
-import {hsReturnTypes} from '../definitions/returnTypes'
+import {hsValueTypes} from '../definitions/valueTypes'
 
-function getSignatureInformation(hsFunction: HSFunction, argIndex: number): vscode.SignatureInformation {
+function getSignatureInformation(hsFunction: HSFunction, argIndex: number, newStyle: boolean): vscode.SignatureInformation {
     const signature = new vscode.SignatureInformation("", "");
-    signature.parameters = hsFunction.args.map(arg => new vscode.ParameterInformation(arg, (argIndex + 1) + ": " + hsReturnTypes.find((def) => def.name === arg.split(':')[0])?.desc));
+    signature.parameters = hsFunction.args.map(arg => new vscode.ParameterInformation(arg, (argIndex + 1) + ": " + hsValueTypes.find((def) => def.name === arg.split(':')[0])?.desc));
     signature.documentation = "Function: " + hsFunction.desc;
-    const joinedArgs = hsFunction.args.join(', ');
-    signature.label = hsFunction.name + "(" + joinedArgs + ")" + " -> " + hsFunction.r_type;
+    if (newStyle)
+    {
+        const joinedArgs = hsFunction.args.join(', ');
+        signature.label = hsFunction.r_type + " " + hsFunction.name + "(" + joinedArgs + ")";
+    }
+    else
+    {
+        const joinedArgs = ' ' + hsFunction.args.join(' ');
+        signature.label = hsFunction.r_type + " " + "(" + hsFunction.name + joinedArgs + ")";
+    }
+
 
     return signature;
 }
 
-function countCommasBetweenParentheses(inputString: string): number {
+function countCommasBetweenParentheses(inputString: string, newStyle: boolean): number {
     // Regular expression to match text within parentheses and count commas inside it
     const regex = /\(([^)]*)\)/g;
 
@@ -24,7 +33,11 @@ function countCommasBetweenParentheses(inputString: string): number {
     if (matches) {
         // Iterate through the matches and count commas in each match
         for (const match of matches) {
-            const commaMatches = match.match(/,/g);
+            let commaMatches = match.match(/\\s/g);
+            if (newStyle)
+            {
+                commaMatches = match.match(/,/g);
+            }
             if (commaMatches) {
                 commaCount += commaMatches.length;
             }
@@ -39,7 +52,13 @@ export class hsProvider implements vscode.SignatureHelpProvider{
         position: vscode.Position,
         token: vscode.CancellationToken): vscode.ProviderResult<vscode.SignatureHelp>
         {
-
+            const newStyle = document.languageId == "hsc4"
+            console.log(document.languageId);
+            let delimiter = ' '
+            if (newStyle)
+            {
+                delimiter = ','
+            }
             const line = document.lineAt(position.line).text;
             let startIndex = -1;
             let endIndex = -1;
@@ -60,7 +79,7 @@ export class hsProvider implements vscode.SignatureHelpProvider{
             }
 
             for (let i = position.character - 1; i < line.length; i--) {
-                if (line[i] === ',')
+                if (line[i] === delimiter)
                     argIndex++
                 if (line[i] === '(') {
                     if (skipOpenParenCount > 0)
@@ -107,11 +126,11 @@ export class hsProvider implements vscode.SignatureHelpProvider{
 
             const signatureHelp = new vscode.SignatureHelp();
 
-            const ignoreCommas = countCommasBetweenParentheses(selectedText);
+            const ignoreCommas = countCommasBetweenParentheses(selectedText, newStyle);
             const realArgIndex = Math.max(argIndex - ignoreCommas, 0);
             signatureHelp.activeSignature = 0; // Index of the active signature
             signatureHelp.activeParameter = realArgIndex; // Index of the active parameter
-            const signature = getSignatureInformation(foundFunc, realArgIndex);
+            const signature = getSignatureInformation(foundFunc, realArgIndex, newStyle);
 
             // Add the signature to the SignatureHelp
             signatureHelp.signatures.push(signature);
