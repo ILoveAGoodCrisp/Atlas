@@ -6,7 +6,7 @@ const functions_1 = require("../definitions/functions");
 const valueTypes_1 = require("../definitions/valueTypes");
 function getSignatureInformation(hsFunction, argIndex, newStyle) {
     const signature = new vscode.SignatureInformation("", "");
-    signature.parameters = hsFunction.args.map(arg => new vscode.ParameterInformation(arg, (argIndex + 1) + ": " + valueTypes_1.hsValueTypes.find((def) => def.name === arg.split(':')[0])?.desc));
+    signature.parameters = hsFunction.args.map(arg => new vscode.ParameterInformation(arg, (argIndex + 1) + ": " + valueTypes_1.hsValueTypes.find((def) => def.name === arg.replace('?', ''))?.desc));
     signature.documentation = "Function: " + hsFunction.desc;
     if (newStyle) {
         const joinedArgs = hsFunction.args.join(', ');
@@ -21,7 +21,10 @@ function getSignatureInformation(hsFunction, argIndex, newStyle) {
 function countCommasBetweenParentheses(inputString, newStyle) {
     // Regular expression to match text within parentheses and count commas inside it
     const regex = /\(([^)]*)\)/g;
-    let commaCount = 0;
+    let commaCount = 1;
+    if (newStyle) {
+        commaCount--;
+    }
     // Find all matches of text within parentheses in the input string
     const matches = inputString.match(regex);
     if (matches) {
@@ -82,17 +85,24 @@ class hsProvider {
         if (startIndex === -1) {
             return;
         }
-        const startPosition = new vscode.Position(position.line, startIndex + 1);
+        let startPosition = new vscode.Position(position.line, startIndex);
+        if (newStyle) {
+            startPosition = new vscode.Position(position.line, startIndex + 1);
+        }
         const endPosition = new vscode.Position(position.line, endIndex);
         const range = new vscode.Range(startPosition, endPosition);
         const selectedText = document.getText(range);
         // Get the text before the selected text
         const textBeforeSelection = line.slice(0, startIndex);
         // Use a regular expression to extract the first word
-        const match = textBeforeSelection.match(/[\w$]+$/);
+        let match = selectedText.match(/(?<=\()\w+/);
+        if (newStyle) {
+            match = textBeforeSelection.match(/[\w$]+$/);
+        }
         if (match == null) {
             return null;
         }
+        console.log(match[0]);
         const functionName = match[0];
         const foundFunc = functions_1.hsFunctions.find((def) => def.name === functionName);
         if (foundFunc == null) {
