@@ -23,7 +23,11 @@ function getSignatureInformation(hsFunction: HSFunction, argIndex: number, newSt
 
 function countCommasBetweenParentheses(inputString: string, newStyle: boolean): number {
     // Regular expression to match text within parentheses and count commas inside it
-    const regex = /\(([^)]*)\)/g;
+    let regex = /\(((?![A-Za-z\s]+\().*?)\)/g;
+    if (newStyle)
+    {
+        regex = /\(([^)]*)\)/g;
+    }
 
     let commaCount = 1;
     if (newStyle)
@@ -33,11 +37,12 @@ function countCommasBetweenParentheses(inputString: string, newStyle: boolean): 
 
     // Find all matches of text within parentheses in the input string
     const matches = inputString.match(regex);
-
     if (matches) {
         // Iterate through the matches and count commas in each match
         for (const match of matches) {
-            let commaMatches = match.match(/\\s/g);
+            let commaMatches = match.match(/\s+/g);
+            console.log(commaMatches)
+            console.log(commaMatches?.length)
             if (newStyle)
             {
                 commaMatches = match.match(/,/g);
@@ -47,7 +52,6 @@ function countCommasBetweenParentheses(inputString: string, newStyle: boolean): 
             }
         }
     }
-
     return commaCount;
 }
 
@@ -83,7 +87,7 @@ export class hsProvider implements vscode.SignatureHelpProvider{
             }
 
             for (let i = position.character - 1; i < line.length; i--) {
-                if (line[i] === delimiter)
+                if (line[i] === delimiter && line[i - 1] !== delimiter)
                     argIndex++
                 if (line[i] === '(') {
                     if (skipOpenParenCount > 0)
