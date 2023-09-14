@@ -7,38 +7,69 @@ import {hsValueTypes} from '../definitions/valueTypes'
 
 // Provides function completion
 export class hsProvider {
-	itemsNew: vscode.CompletionItem[];
-	itemsClassic: vscode.CompletionItem[];
+	itemsHS1: vscode.CompletionItem[];
+	itemsHS2: vscode.CompletionItem[];
+	itemsHS3: vscode.CompletionItem[];
+	itemsHSO: vscode.CompletionItem[];
+	itemsHSR: vscode.CompletionItem[];
+	itemsHS4: vscode.CompletionItem[];
 
 	// Generate completion items for the hardcoded functions
 	constructor(extensionPath: string) {
-		this.itemsNew = new Array<vscode.CompletionItem>();
-		this.itemsClassic = new Array<vscode.CompletionItem>();
+		this.itemsHS1 = new Array<vscode.CompletionItem>();
+		this.itemsHS2 = new Array<vscode.CompletionItem>();
+		this.itemsHS3 = new Array<vscode.CompletionItem>();
+		this.itemsHSO = new Array<vscode.CompletionItem>();
+		this.itemsHSR = new Array<vscode.CompletionItem>();
+		this.itemsHS4 = new Array<vscode.CompletionItem>();
 		for (var i in hsFunctions) {
+
 			var func = hsFunctions[i];
-			var itemClassic = new vscode.CompletionItem(func.name);
 			var itemNew = new vscode.CompletionItem(func.name);
+			var itemClassic = new vscode.CompletionItem(func.name);
 			let joinedArgs = func.args.join(', ');
+			
+			itemNew.kind = vscode.CompletionItemKind.Function;
+			itemClassic.kind = vscode.CompletionItemKind.Function;
+
+			itemNew.documentation = func.desc;
+			itemClassic.documentation = func.desc;
+
+			itemNew.command = {command: 'triggerSignatureHelp', title: 'Trigger Signature Help',};
+			itemClassic.command = {command: 'triggerSignatureHelp', title: 'Trigger Signature Help',};
+
 			itemNew.detail = func.r_type + " " + func.name + "(" + joinedArgs + ")";
 			itemNew.insertText = new vscode.SnippetString(func.name + '(${1})');
-			itemNew.documentation = func.desc;
-			itemNew.kind = vscode.CompletionItemKind.Function;
-			itemNew.command = {
-				command: 'triggerSignatureHelp',
-				title: 'Trigger Signature Help',
-			};
-			this.itemsNew.push(itemNew);
 
 			joinedArgs = " " + func.args.join(' ');
+
 			itemClassic.detail = func.r_type + " " + "(" + func.name + joinedArgs + ")";
 			itemClassic.insertText = new vscode.SnippetString(func.name + ' ${1}');
-			itemClassic.documentation = func.desc;
-			itemClassic.kind = vscode.CompletionItemKind.Function;
-			itemClassic.command = {
-				command: 'triggerSignatureHelp',
-				title: 'Trigger Signature Help',
-			};
-			this.itemsClassic.push(itemClassic);
+			
+			if (func.games.includes('H1')) 
+			{
+				this.itemsHS1.push(itemClassic);
+			}
+			if (func.games.includes('H2')) 
+			{
+				this.itemsHS2.push(itemClassic);
+			}
+			if (func.games.includes('H3')) 
+			{
+				this.itemsHS3.push(itemClassic);
+			}
+			if (func.games.includes('HO')) 
+			{
+				this.itemsHSO.push(itemClassic);
+			}
+			if (func.games.includes('HR')) 
+			{
+				this.itemsHSR.push(itemClassic);
+			}
+			if (func.games.includes('H4')) 
+			{
+				this.itemsHS4.push(itemNew);
+			}
 		}
 		for (var i in hsKeywords) {
 			var keyword = hsKeywords[i];
@@ -57,7 +88,7 @@ export class hsProvider {
 			item.documentation = keyword.desc;
 			
 			item.kind = vscode.CompletionItemKind.Keyword;
-			this.itemsNew.push(item);
+			this.itemsHS4.push(item);
 		}
 		for (var i in hsScriptTypes) {
 			var scriptType = hsScriptTypes[i];
@@ -66,8 +97,12 @@ export class hsProvider {
 			item.detail = "Script Type: " + scriptType.name
 			item.documentation = scriptType.desc;
 			item.kind = vscode.CompletionItemKind.Class;
-			this.itemsNew.push(item);
-			this.itemsClassic.push(item);
+			this.itemsHS1.push(item);
+			this.itemsHS2.push(item);
+			this.itemsHS3.push(item);
+			this.itemsHSO.push(item);
+			this.itemsHSR.push(item);
+			this.itemsHS4.push(item);
 		}
 		for (var i in hsValueTypes) {
 			var returnType = hsValueTypes[i];
@@ -76,8 +111,31 @@ export class hsProvider {
 			item.detail = returnType.name
 			item.documentation = returnType.desc;
 			item.kind = vscode.CompletionItemKind.Property;
-			this.itemsNew.push(item);
-			this.itemsClassic.push(item);
+
+			if (returnType.games.includes('H1')) 
+			{
+				this.itemsHS1.push(item);
+			}
+			if (returnType.games.includes('H2')) 
+			{
+				this.itemsHS2.push(item);
+			}
+			if (returnType.games.includes('H3')) 
+			{
+				this.itemsHS3.push(item);
+			}
+			if (returnType.games.includes('HO')) 
+			{
+				this.itemsHSO.push(item);
+			}
+			if (returnType.games.includes('HR')) 
+			{
+				this.itemsHSR.push(item);
+			}
+			if (returnType.games.includes('H4')) 
+			{
+				this.itemsHS4.push(item);
+			}
 		}
 	}
 
@@ -93,20 +151,37 @@ export class hsProvider {
 				// Check if the line starts with "script," "global," or "local" (case insensitive)
 				if (
 					currentLine &&
-					/^(script|global|local)\b/i.test(currentLine)
+					/^\t/i.test(currentLine) &&
+					false
 				) {
-					// If the line starts with any of these keywords, return an empty array
+					// If the line starts with a tab, i.e in the body of a script, return an empty array
 					resolve([]);
 				} else {
 					// Otherwise, provide completion items as usual
 					let funcItems: vscode.CompletionItem[] = [];
-					if (document.languageId == "hsc4")
+					if (document.languageId == "hsc1")
 					{
-						resolve(this.itemsNew.concat(funcItems));
+						resolve(this.itemsHS1.concat(funcItems));
 					}
-					else
+					else if (document.languageId == "hsc2")
 					{
-						resolve(this.itemsClassic.concat(funcItems));
+						resolve(this.itemsHS2.concat(funcItems));
+					}
+					else if (document.languageId == "hsc3")
+					{
+						resolve(this.itemsHS3.concat(funcItems));
+					}
+					else if (document.languageId == "hsco")
+					{
+						resolve(this.itemsHSO.concat(funcItems));
+					}
+					else if (document.languageId == "hscr")
+					{
+						resolve(this.itemsHSR.concat(funcItems));
+					}
+					else if (document.languageId == "hsc4")
+					{
+						resolve(this.itemsHS4.concat(funcItems));
 					}
 					
 				}

@@ -2,7 +2,7 @@ import * as vscode from 'vscode';
 import {hsFunctions, HSFunction} from '../definitions/functions'
 import {hsValueTypes} from '../definitions/valueTypes'
 
-function getSignatureInformation(hsFunction: HSFunction, argIndex: number, newStyle: boolean): vscode.SignatureInformation {
+function getSignatureInformation(hsFunction: HSFunction, argIndex: number, newStyle: boolean, game: string): vscode.SignatureInformation {
     const signature = new vscode.SignatureInformation("", "");
     signature.parameters = hsFunction.args.map(arg => new vscode.ParameterInformation(arg, (argIndex + 1) + ": " + hsValueTypes.find((def) => def.name === arg.replace('?',''))?.desc));
     signature.documentation = "Function: " + hsFunction.desc;
@@ -21,7 +21,7 @@ function getSignatureInformation(hsFunction: HSFunction, argIndex: number, newSt
     return signature;
 }
 
-function countCommasBetweenParentheses(inputString: string, newStyle: boolean): number {
+function countDelimitersBetweenParentheses(inputString: string, newStyle: boolean): number {
     // Regular expression to match text within parentheses and count commas inside it
     let regex = /\(((?![A-Za-z\s]+\().*?)\)/g;
     if (newStyle)
@@ -29,10 +29,10 @@ function countCommasBetweenParentheses(inputString: string, newStyle: boolean): 
         regex = /\(([^)]*)\)/g;
     }
 
-    let commaCount = 1;
+    let delimiterCount = 1;
     if (newStyle)
     {
-        commaCount--;
+        delimiterCount--;
     }
 
     // Find all matches of text within parentheses in the input string
@@ -40,19 +40,17 @@ function countCommasBetweenParentheses(inputString: string, newStyle: boolean): 
     if (matches) {
         // Iterate through the matches and count commas in each match
         for (const match of matches) {
-            let commaMatches = match.match(/\s+/g);
-            console.log(commaMatches)
-            console.log(commaMatches?.length)
+            let delimterMatches = match.match(/\s+/g);
             if (newStyle)
             {
-                commaMatches = match.match(/,/g);
+                delimterMatches = match.match(/,/g);
             }
-            if (commaMatches) {
-                commaCount += commaMatches.length;
+            if (delimterMatches) {
+                delimiterCount += delimterMatches.length;
             }
         }
     }
-    return commaCount;
+    return delimiterCount;
 }
 
 export class hsProvider implements vscode.SignatureHelpProvider{
@@ -61,7 +59,12 @@ export class hsProvider implements vscode.SignatureHelpProvider{
         token: vscode.CancellationToken): vscode.ProviderResult<vscode.SignatureHelp>
         {
             const newStyle = document.languageId == "hsc4"
-            console.log(document.languageId);
+            let game = "H1"
+            if (document.languageId == "hsc2") game = "H2";
+            else if (document.languageId == "hsc3") game = "H3";
+            else if (document.languageId == "hsco") game = "HO";
+            else if (document.languageId == "hscr") game = "HR";
+            else if (newStyle) game = "H4";
             let delimiter = ' '
             if (newStyle)
             {
@@ -135,18 +138,18 @@ export class hsProvider implements vscode.SignatureHelpProvider{
 
             const functionName = match[0];
 
-            const foundFunc = hsFunctions.find((def) => def.name === functionName);
+            const foundFunc = hsFunctions.find((def) => def.name === functionName && def.games.includes(game));
             if(foundFunc == null) {
                 return null;
             }
 
             const signatureHelp = new vscode.SignatureHelp();
 
-            const ignoreCommas = countCommasBetweenParentheses(selectedText, newStyle);
-            const realArgIndex = Math.max(argIndex - ignoreCommas, 0);
+            const ignoreDelimiters = countDelimitersBetweenParentheses(selectedText, newStyle);
+            const realArgIndex = Math.max(argIndex - ignoreDelimiters, 0);
             signatureHelp.activeSignature = 0; // Index of the active signature
             signatureHelp.activeParameter = realArgIndex; // Index of the active parameter
-            const signature = getSignatureInformation(foundFunc, realArgIndex, newStyle);
+            const signature = getSignatureInformation(foundFunc, realArgIndex, newStyle, game);
 
             // Add the signature to the SignatureHelp
             signatureHelp.signatures.push(signature);
