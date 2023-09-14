@@ -115,7 +115,6 @@ class hsProvider {
         if (match == null) {
             return null;
         }
-        console.log(match[0]);
         const functionName = match[0];
         const foundFunc = functions_1.hsFunctions.find((def) => def.name === functionName && def.games.includes(game));
         if (foundFunc == null) {

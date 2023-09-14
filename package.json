@@ -13,7 +13,6 @@
         "blamscript",
         "halo3script",
         "h3script",
-        "theme",
         "atlas",
         "halo script",
         "halo mod tools"
@@ -35,8 +34,7 @@
     "main": "./out/extension",
     "categories": [
         "Programming Languages",
-        "Language Packs",
-        "Themes"
+        "Language Packs"
     ],
     "contributes": {
         "commands": [
@@ -160,13 +158,6 @@
                 "path": "./syntaxes/hsc1.tmLanguage.json"
             }
         ],
-        "themes": [
-            {
-                "label": "Atlas",
-                "uiTheme": "vs-dark",
-                "path": "./themes/Atlas-color-theme.json"
-            }
-        ],
         "snippets": [
             {
                 "scope": "hsc4",
@@ -201,20 +192,23 @@
         ]
     },
     "scripts": {
+        "vscode:prepublish": "npm run compile",
         "compile": "tsc -p ./",
+        "lint": "eslint \"src/**/*.ts\"",
         "watch": "tsc -watch -p ./"
     },
+    "devDependencies": {
+        "@types/node": "^10.1.4",
+        "@types/vscode": "^1.73.0",
+        "@typescript-eslint/eslint-plugin": "^6.7.0",
+        "@typescript-eslint/parser": "^6.7.0",
+        "eslint": "^8.26.0",
+        "typescript": "^5.2.2"
+    },
     "dependencies": {
+        "vsce": "^2.15.0",
         "vscode": "^1.1.37",
         "vscode-languageserver": "^8.1.0",
         "vscode-languageserver-textdocument": "^1.0.8"
-    },
-    "devDependencies": {
-        "@types/node": "^20.6.0",
-        "@types/vscode": "^1.73.0",
-        "@typescript-eslint/eslint-plugin": "^5.42.0",
-        "@typescript-eslint/parser": "^5.42.0",
-        "eslint": "^8.26.0",
-        "typescript": "^5.2.2"
     }
 }

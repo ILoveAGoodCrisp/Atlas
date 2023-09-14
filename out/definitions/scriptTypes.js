@@ -2,6 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.hsScriptTypes = void 0;
 class HSScriptType {
+    name;
+    desc;
     constructor(name, desc) {
         this.name = name;
         this.desc = desc;

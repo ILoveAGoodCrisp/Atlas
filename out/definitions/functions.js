@@ -2,6 +2,11 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.hsFunctions = exports.HSFunction = void 0;
 class HSFunction {
+    name;
+    args;
+    r_type;
+    games;
+    desc;
     constructor(name, args, r_type, games, desc) {
         this.name = name;
         this.args = args;

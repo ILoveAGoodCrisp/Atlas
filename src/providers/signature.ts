@@ -134,7 +134,6 @@ export class hsProvider implements vscode.SignatureHelpProvider{
             if (match == null) {
                 return null;
             }
-            console.log(match[0]);
 
             const functionName = match[0];
 

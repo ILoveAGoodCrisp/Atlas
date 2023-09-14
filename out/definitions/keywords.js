@@ -2,6 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.hsKeywords = void 0;
 class HSKeyword {
+    name;
+    desc;
     constructor(name, desc) {
         this.name = name;
         this.desc = desc;

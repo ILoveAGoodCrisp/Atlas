@@ -2,6 +2,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.hsGlobals = exports.HSGlobal = void 0;
 class HSGlobal {
+    name;
+    r_type;
+    games;
     constructor(name, r_type, games) {
         this.name = name;
         this.r_type = r_type;

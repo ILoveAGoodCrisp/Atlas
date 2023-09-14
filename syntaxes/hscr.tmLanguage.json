@@ -79,6 +79,9 @@
 				},
 				{
 					"include": "#functions"
+				},
+				{
+					"include": "#variables"
 				}
 			]
 		},
@@ -96,7 +99,7 @@
 			"patterns": [
 				{
 					"name": "entity.name.class.hscr",
-					"match":"^[ \\t]*(script|global)\\b"
+					"match":"(?<=^\\s*\\(\\s*)(script|global)"
 
 				}
 			]

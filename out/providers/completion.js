@@ -8,6 +8,12 @@ const scriptTypes_1 = require("../definitions/scriptTypes");
 const valueTypes_1 = require("../definitions/valueTypes");
 // Provides function completion
 class hsProvider {
+    itemsHS1;
+    itemsHS2;
+    itemsHS3;
+    itemsHSO;
+    itemsHSR;
+    itemsHS4;
     // Generate completion items for the hardcoded functions
     constructor(extensionPath) {
         this.itemsHS1 = new Array();

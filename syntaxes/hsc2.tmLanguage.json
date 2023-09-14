@@ -96,7 +96,7 @@
 			"patterns": [
 				{
 					"name": "entity.name.class.hsc2",
-					"match":"(?<=\\()\\s*(script|global)\\b"
+					"match":"(?<=^\\s*\\(\\s*)(script|global)"
 				}
 			]
 		},

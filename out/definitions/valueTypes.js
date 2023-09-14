@@ -2,6 +2,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.hsValueTypes = exports.HSValueType = void 0;
 class HSValueType {
+    name;
+    games;
+    desc;
     constructor(name, games, desc) {
         this.name = name;
         this.games = games;
