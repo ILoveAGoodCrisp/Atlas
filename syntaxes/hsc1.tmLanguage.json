@@ -113,7 +113,7 @@
 			"patterns": [
 				{
 					"name":"storage.type.hsc1",
-					"match": "(?<![./\\\\])\\b(void|boolean|real|short|long|string|ai|object|unit|vehicle|weapon|device|scenery|object_list|object_name|unit_name|vehicle_name|weapon_name|device_name|scenery_name|sound|effect|damage|looping_sound|animation_graph|damage_effect|object_definition|script|trigger_volume|cutscene_flag|cutscene_camera_point|cutscene_title|cutscene_recording|device_group|ai_command_list|starting_profile|conversation|navpoint|team|hud_message|actor_variant|game_difficulty|ai_default_state|hud_corner|actor_type|function_name|passthrough)\\b"
+					"match": "(?<=\\(|static\\s|stub\\s|global\\s)\\b(void|boolean|real|short|long|string|ai|object|unit|vehicle|weapon|device|scenery|object_list|object_name|unit_name|vehicle_name|weapon_name|device_name|scenery_name|sound|effect|damage|looping_sound|animation_graph|damage_effect|object_definition|script|trigger_volume|cutscene_flag|cutscene_camera_point|cutscene_title|cutscene_recording|device_group|ai_command_list|starting_profile|conversation|navpoint|team|hud_message|actor_variant|game_difficulty|ai_default_state|hud_corner|actor_type|function_name|passthrough)\\b"
 				}
 			]
 		},
@@ -129,7 +129,7 @@
 			"patterns": [
 				{
 					"name":"constant.numeric.hsc1",
-					"match": "(?i)\\b(?:true|none|false|\\d+(?:\\.\\d+)?)\\b"
+					"match": "(?i)\\b(?:true|none|false|\\d+(?:\\.\\d+)?)\\b|\\b(default|player|human|covenant|flood|sentinel|unused6|unused7|unused8|unused9|easy|normal|hard|impossible|none|sleep|alert|move_repeat|move_loop|move_loop_back_and_forth|move_loop_random|move_random|guard|guard_at_position|search|flee|top_left|top_right|bottom_left|bottom_right|center|elite|jackal|grunt|hunter|engineer|assassin|player|marine|crew|combat_form|infection_form|carrier_form|monitor|sentinel|none|mounted_weapon)\\b"
 				}
 			]
 		},
@@ -145,7 +145,15 @@
 			"patterns": [
 				{
 					"name":"entity.name.function.hsc1",
-					"match": "(?<=\\()(\\w+)"
+					"match": "(?<=\\()(\\w+)|(?<=\\(\\bscript\\b\\s\\b(startup|continuous|dormant|command_script)\\b\\s)(.+)|(?<=\\(\\bscript\\b\\s\\b(static|stub)\\b\\s\\b(mp_team|cinematic_scene_definition|object_list|delivery_method|unit_name|object_name|scenery|function_name|ai_behavior|bitmap|render_model|currency_type|event|object_definition|string_id|damage|weapon|unit_seat_mapping|ai_line|animation_budget_reference|controller|firefight_wave_type|ai_default_state|sound_budget_reference|ai|effect_scenery|model_state|passthrough|cutscene_flag|hud_corner|hud_message|wave_difficulty|lightmap_definition|script|text_justification|text_drop_shadow_type|network_event|point_reference|real|shader|object|secondary_skull|actor_variant|firefight_goal|ai_command_script|voice_mask|cinematic_lightprobe|structure_definition|effect|cutscene_recording|vehicle_name|subtitle_setting|string|device|actor_type|any_tag_not_resolving|device_group|effect_scenery_name|voice_output_setting|cinematic_definition|navpoint|bink_definition|player_character_type|cutscene_title|looping_sound_budget_reference|unit|character_physics|player|ai_command_list|animation_graph|style|vehicle|player_color|zone_set|boolean|any_tag|havok_group|trigger_volume|text_alignment|designer_zone|cutscene_camera_point|team|font|cinematic_transition_definition|conversation|starting_profile|long|skull|sound|button_preset|cinematic_scene_data_definition|damage_region|primary_skull|void|structure_bsp|looping_sound|device_name|short|damage_effect|firing_point_evaluator|weapon_name|scenery_name|folder|joystick_preset|ai_orders|game_difficulty|point_set_reference|player_model_choice|cui_screen_definition|sound_event)\\b\\s)(.+)"
+				}
+			]
+		},
+		"variables":{
+			"patterns": [
+				{
+					"name":"variable.hsc1",
+					"match": "\\b\\w+\\b"
 				}
 			]
 		}

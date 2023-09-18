@@ -35,7 +35,8 @@ export function activate(context: vscode.ExtensionContext) {
 	context.subscriptions.push(vscode.languages.registerCompletionItemProvider(selector , new completion.hsProvider(context.extensionPath)));
 	context.subscriptions.push(vscode.languages.registerHoverProvider(selector, new hover.hsProvider()));
 	context.subscriptions.push(vscode.languages.registerSignatureHelpProvider(selector, sighelp, '(', ',', ' ',));
-	context.subscriptions.push(vscode.languages.registerDocumentSemanticTokensProvider(selector, new semantics.hsProvider(legend), legend));
+	// Saving implementation of semantics until it can fully parse the code. It does not gel well with tmLanguage
+	// context.subscriptions.push(vscode.languages.registerDocumentSemanticTokensProvider(selector, new semantics.hsProvider(legend), legend));
 	const command = 'atlas.compileScenarioScripts';
 	const commandHandler = () => {
 		runToolExecutable();

@@ -5,7 +5,6 @@ const vscode = require("vscode");
 const completion = require("./providers/completion");
 const hover = require("./providers/hover");
 const signature = require("./providers/signature");
-const semantics = require("./providers/semantics");
 const scriptCompiler_1 = require("./commands/scriptCompiler");
 const tokenTypes = new Map();
 const tokenModifiers = new Map();
@@ -31,7 +30,8 @@ function activate(context) {
     context.subscriptions.push(vscode.languages.registerCompletionItemProvider(selector, new completion.hsProvider(context.extensionPath)));
     context.subscriptions.push(vscode.languages.registerHoverProvider(selector, new hover.hsProvider()));
     context.subscriptions.push(vscode.languages.registerSignatureHelpProvider(selector, sighelp, '(', ',', ' '));
-    context.subscriptions.push(vscode.languages.registerDocumentSemanticTokensProvider(selector, new semantics.hsProvider(legend), legend));
+    // Saving implementation of semantics until it can fully parse the code. It does not gel well with tmLanguage
+    // context.subscriptions.push(vscode.languages.registerDocumentSemanticTokensProvider(selector, new semantics.hsProvider(legend), legend));
     const command = 'atlas.compileScenarioScripts';
     const commandHandler = () => {
         (0, scriptCompiler_1.runToolExecutable)();
