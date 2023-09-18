@@ -1,5 +1,6 @@
 import * as vscode from 'vscode';
 import {hsFunctions} from '../definitions/functions'
+import {hsGlobals} from '../definitions/globals'
 import {hsKeywords} from '../definitions/keywords'
 import {hsScriptTypes} from '../definitions/scriptTypes'
 import {hsValueTypes} from '../definitions/valueTypes'
@@ -83,6 +84,14 @@ export class hsProvider implements vscode.HoverProvider {
             documentation = foundFunc.desc;
             return return_hover(detail, documentation);
         }
+
+    const foundGlob = hsGlobals.find((def) => def.name === hoverText.toLowerCase() && def.games.includes(game));
+    if (foundGlob != null)
+    {
+        detail = foundGlob.r_type + " " + foundGlob.name;
+        documentation = "Global Variable"
+        return return_hover(detail, documentation);
+    }
 
         return Promise.resolve(null);
     }

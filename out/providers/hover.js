@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.hsProvider = void 0;
 const vscode = require("vscode");
 const functions_1 = require("../definitions/functions");
+const globals_1 = require("../definitions/globals");
 const keywords_1 = require("../definitions/keywords");
 const scriptTypes_1 = require("../definitions/scriptTypes");
 const valueTypes_1 = require("../definitions/valueTypes");
@@ -72,6 +73,12 @@ class hsProvider {
                 detail = foundFunc.r_type + " " + "(" + foundFunc.name + joinedArgs + ")";
             }
             documentation = foundFunc.desc;
+            return return_hover(detail, documentation);
+        }
+        const foundGlob = globals_1.hsGlobals.find((def) => def.name === hoverText.toLowerCase() && def.games.includes(game));
+        if (foundGlob != null) {
+            detail = foundGlob.r_type + " " + foundGlob.name;
+            documentation = "Global Variable";
             return return_hover(detail, documentation);
         }
         return Promise.resolve(null);

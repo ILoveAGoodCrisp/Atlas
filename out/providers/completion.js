@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.hsProvider = void 0;
 const vscode = require("vscode");
 const functions_1 = require("../definitions/functions");
+const globals_1 = require("../definitions/globals");
 const keywords_1 = require("../definitions/keywords");
 const scriptTypes_1 = require("../definitions/scriptTypes");
 const valueTypes_1 = require("../definitions/valueTypes");
@@ -55,6 +56,30 @@ class hsProvider {
             }
             if (func.games.includes('H4')) {
                 this.itemsHS4.push(itemNew);
+            }
+        }
+        for (var i in globals_1.hsGlobals) {
+            var glob = globals_1.hsGlobals[i];
+            var item = new vscode.CompletionItem(glob.name);
+            item.kind = vscode.CompletionItemKind.Variable;
+            item.detail = glob.r_type + " " + glob.name;
+            if (glob.games.includes('H1')) {
+                this.itemsHS1.push(item);
+            }
+            if (glob.games.includes('H2')) {
+                this.itemsHS2.push(item);
+            }
+            if (glob.games.includes('H3')) {
+                this.itemsHS3.push(item);
+            }
+            if (glob.games.includes('HO')) {
+                this.itemsHSO.push(item);
+            }
+            if (glob.games.includes('HR')) {
+                this.itemsHSR.push(item);
+            }
+            if (glob.games.includes('H4')) {
+                this.itemsHS4.push(item);
             }
         }
         for (var i in keywords_1.hsKeywords) {
@@ -114,34 +139,25 @@ class hsProvider {
         return new Promise((resolve, reject) => {
             // Get the text of the current line
             const currentLine = vscode.window.activeTextEditor?.document.lineAt(position.line).text.trim();
-            // Check if the line starts with "script," "global," or "local" (case insensitive)
-            if (currentLine &&
-                /^\t/i.test(currentLine) &&
-                false) {
-                // If the line starts with a tab, i.e in the body of a script, return an empty array
-                resolve([]);
+            // Otherwise, provide completion items as usual
+            let funcItems = [];
+            if (document.languageId == "hsc1") {
+                resolve(this.itemsHS1.concat(funcItems));
             }
-            else {
-                // Otherwise, provide completion items as usual
-                let funcItems = [];
-                if (document.languageId == "hsc1") {
-                    resolve(this.itemsHS1.concat(funcItems));
-                }
-                else if (document.languageId == "hsc2") {
-                    resolve(this.itemsHS2.concat(funcItems));
-                }
-                else if (document.languageId == "hsc3") {
-                    resolve(this.itemsHS3.concat(funcItems));
-                }
-                else if (document.languageId == "hsco") {
-                    resolve(this.itemsHSO.concat(funcItems));
-                }
-                else if (document.languageId == "hscr") {
-                    resolve(this.itemsHSR.concat(funcItems));
-                }
-                else if (document.languageId == "hsc4") {
-                    resolve(this.itemsHS4.concat(funcItems));
-                }
+            else if (document.languageId == "hsc2") {
+                resolve(this.itemsHS2.concat(funcItems));
+            }
+            else if (document.languageId == "hsc3") {
+                resolve(this.itemsHS3.concat(funcItems));
+            }
+            else if (document.languageId == "hsco") {
+                resolve(this.itemsHSO.concat(funcItems));
+            }
+            else if (document.languageId == "hscr") {
+                resolve(this.itemsHSR.concat(funcItems));
+            }
+            else if (document.languageId == "hsc4") {
+                resolve(this.itemsHS4.concat(funcItems));
             }
         });
     }

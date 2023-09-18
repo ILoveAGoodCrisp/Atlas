@@ -1,6 +1,7 @@
 import * as vscode from 'vscode';
 
 import {hsFunctions} from '../definitions/functions'
+import {hsGlobals} from '../definitions/globals'
 import {hsKeywords} from '../definitions/keywords'
 import {hsScriptTypes} from '../definitions/scriptTypes'
 import {hsValueTypes} from '../definitions/valueTypes'
@@ -69,6 +70,40 @@ export class hsProvider {
 			if (func.games.includes('H4')) 
 			{
 				this.itemsHS4.push(itemNew);
+			}
+		}
+		for (var i in hsGlobals) {
+
+			var glob = hsGlobals[i];
+			var item = new vscode.CompletionItem(glob.name);
+			
+			item.kind = vscode.CompletionItemKind.Variable;
+
+			item.detail = glob.r_type + " " + glob.name
+			
+			if (glob.games.includes('H1')) 
+			{
+				this.itemsHS1.push(item);
+			}
+			if (glob.games.includes('H2')) 
+			{
+				this.itemsHS2.push(item);
+			}
+			if (glob.games.includes('H3')) 
+			{
+				this.itemsHS3.push(item);
+			}
+			if (glob.games.includes('HO')) 
+			{
+				this.itemsHSO.push(item);
+			}
+			if (glob.games.includes('HR')) 
+			{
+				this.itemsHSR.push(item);
+			}
+			if (glob.games.includes('H4')) 
+			{
+				this.itemsHS4.push(item);
 			}
 		}
 		for (var i in hsKeywords) {
@@ -148,43 +183,33 @@ export class hsProvider {
 				// Get the text of the current line
 				const currentLine = vscode.window.activeTextEditor?.document.lineAt(position.line).text.trim();
 		
-				// Check if the line starts with "script," "global," or "local" (case insensitive)
-				if (
-					currentLine &&
-					/^\t/i.test(currentLine) &&
-					false
-				) {
-					// If the line starts with a tab, i.e in the body of a script, return an empty array
-					resolve([]);
-				} else {
-					// Otherwise, provide completion items as usual
-					let funcItems: vscode.CompletionItem[] = [];
-					if (document.languageId == "hsc1")
-					{
-						resolve(this.itemsHS1.concat(funcItems));
-					}
-					else if (document.languageId == "hsc2")
-					{
-						resolve(this.itemsHS2.concat(funcItems));
-					}
-					else if (document.languageId == "hsc3")
-					{
-						resolve(this.itemsHS3.concat(funcItems));
-					}
-					else if (document.languageId == "hsco")
-					{
-						resolve(this.itemsHSO.concat(funcItems));
-					}
-					else if (document.languageId == "hscr")
-					{
-						resolve(this.itemsHSR.concat(funcItems));
-					}
-					else if (document.languageId == "hsc4")
-					{
-						resolve(this.itemsHS4.concat(funcItems));
-					}
-					
+				// Otherwise, provide completion items as usual
+				let funcItems: vscode.CompletionItem[] = [];
+				if (document.languageId == "hsc1")
+				{
+					resolve(this.itemsHS1.concat(funcItems));
 				}
+				else if (document.languageId == "hsc2")
+				{
+					resolve(this.itemsHS2.concat(funcItems));
+				}
+				else if (document.languageId == "hsc3")
+				{
+					resolve(this.itemsHS3.concat(funcItems));
+				}
+				else if (document.languageId == "hsco")
+				{
+					resolve(this.itemsHSO.concat(funcItems));
+				}
+				else if (document.languageId == "hscr")
+				{
+					resolve(this.itemsHSR.concat(funcItems));
+				}
+				else if (document.languageId == "hsc4")
+				{
+					resolve(this.itemsHS4.concat(funcItems));
+				}
+					
 			});
 		}
 	}		

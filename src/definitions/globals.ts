@@ -9,6 +9,13 @@ export class HSGlobal {
 export var hsGlobals = new Array<HSGlobal>();
 
 var newGlobal = new HSGlobal(
+	"sleep_until",
+	"void",
+	[' \'[<long>]\']"'],
+);
+hsGlobals.push(newGlobal);
+
+var newGlobal = new HSGlobal(
 	"numeric_countdown_timer_get",
 	"short",
 	['H1'],
@@ -2581,6 +2588,13 @@ var newGlobal = new HSGlobal(
 	"cinematic_set_far_clip_distance",
 	"void",
 	['H2'],
+);
+hsGlobals.push(newGlobal);
+
+var newGlobal = new HSGlobal(
+	"play_bink_movie",
+	"void",
+	['H2', 'H3', 'HO', 'HR'],
 );
 hsGlobals.push(newGlobal);
 
@@ -8864,6 +8878,13 @@ var newGlobal = new HSGlobal(
 hsGlobals.push(newGlobal);
 
 var newGlobal = new HSGlobal(
+	"sleep_until",
+	"boolean",
+	[' \'[<long>]\']"'],
+);
+hsGlobals.push(newGlobal);
+
+var newGlobal = new HSGlobal(
 	"ai_migrate_form",
 	"short",
 	['H3', 'HO'],
@@ -8899,6 +8920,20 @@ var newGlobal = new HSGlobal(
 hsGlobals.push(newGlobal);
 
 var newGlobal = new HSGlobal(
+	"predict_bink_movie",
+	"void",
+	['H3', 'HO', 'HR'],
+);
+hsGlobals.push(newGlobal);
+
+var newGlobal = new HSGlobal(
+	"predict_bink_movie_from_tag",
+	"void",
+	['H3', 'HO', 'HR'],
+);
+hsGlobals.push(newGlobal);
+
+var newGlobal = new HSGlobal(
 	"dump_active_resources",
 	"void",
 	['H3', 'HO', 'HR', 'H4'],
@@ -8914,6 +8949,13 @@ hsGlobals.push(newGlobal);
 
 var newGlobal = new HSGlobal(
 	"dump_active_zone_tags",
+	"void",
+	['H3', 'HO', 'HR', 'H4'],
+);
+hsGlobals.push(newGlobal);
+
+var newGlobal = new HSGlobal(
+	"game_safe_to_respawn",
 	"void",
 	['H3', 'HO', 'HR', 'H4'],
 );
