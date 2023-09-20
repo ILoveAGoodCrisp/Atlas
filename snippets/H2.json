@@ -41,6 +41,20 @@
 		],
 		"description": "Generates an empty static script"
 	},
+    "define_static": {
+		"prefix": "define_static",
+		"body": [
+			"(script static ${1|boolean,real,short,long,string,string_id,ai,object,unit,vehicle,weapon,device,scenery,object_list,object_name,unit_name,vehicle_name,weapon_name,device_name,scenery_name,sound,effect,damage,looping_sound,animation_graph,damage_effect,object_definition,script,unit_seat_mapping,trigger_volume,cutscene_flag,cutscene_camera_point,cutscene_title,cutscene_recording,device_group,point_reference,ai_command_list,ai_command_script,ai_behavior,ai_orders,starting_profile,conversation,navpoint,team,hud_message,structure_bsp,style,bitmap,shader,render_model,structure_definition,lightmap_definition,game_difficulty,hud_corner,actor_type,model_state,network_event,function_name|} DEF_${2|NAME|} ${3|def_value|})"
+		],
+		"description": "Generates a static script to be used as a definition"
+	},
+    "define_stub": {
+		"prefix": "define_stub",
+		"body": [
+			"(script stub ${1|boolean,real,short,long,string,string_id,ai,object,unit,vehicle,weapon,device,scenery,object_list,object_name,unit_name,vehicle_name,weapon_name,device_name,scenery_name,sound,effect,damage,looping_sound,animation_graph,damage_effect,object_definition,script,unit_seat_mapping,trigger_volume,cutscene_flag,cutscene_camera_point,cutscene_title,cutscene_recording,device_group,point_reference,ai_command_list,ai_command_script,ai_behavior,ai_orders,starting_profile,conversation,navpoint,team,hud_message,structure_bsp,style,bitmap,shader,render_model,structure_definition,lightmap_definition,game_difficulty,hud_corner,actor_type,model_state,network_event,function_name|} DEF_${2|NAME|} ${3|def_value|})"
+		],
+		"description": "Generates a stub script to be used as a definition"
+	},
 	"global": {
 		"prefix": "global",
 		"body": [

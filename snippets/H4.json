@@ -6,12 +6,26 @@
 		],
 		"description": "Generates an empty startup script"
 	},
+    "startup_instanced": {
+		"prefix": "startup_instanced",
+		"body": [
+			"script startup instanced ${1|script_name|}()", "\t$0", "end"
+		],
+		"description": "Generates an empty instanced startup script"
+	},
     "dormant": {
 		"prefix": "dormant",
 		"body": [
 			"script dormant ${1|script_name|}()", "\t$0", "end"
 		],
 		"description": "Generates an empty dormant script"
+	},
+    "dormant_instanced": {
+		"prefix": "dormant_instanced",
+		"body": [
+			"script dormant instanced ${1|script_name|}()", "\t$0", "end"
+		],
+		"description": "Generates an empty instanced dormant script"
 	},
     "continuous": {
 		"prefix": "continuous",
@@ -20,24 +34,52 @@
 		],
 		"description": "Generates an empty continuous script"
 	},
+    "continuous_instanced": {
+		"prefix": "continuous_instanced",
+		"body": [
+			"script continuous instanced ${1|script_name|}()", "\t$0", "end"
+		],
+		"description": "Generates an empty instanced continuous script"
+	},
     "command_script": {
 		"prefix": "command_script",
 		"body": [
-			"script continuous ${1|script_name|}()", "\t$0", "end"
+			"script command_script ${1|script_name|}()", "\t$0", "end"
 		],
 		"description": "Generates an empty command script"
+	},
+    "command_script_instanced": {
+		"prefix": "command_script_instanced",
+		"body": [
+			"script command_script instanced ${1|script_name|}()", "\t$0", "end"
+		],
+		"description": "Generates an empty instanced command script"
 	},
     "static": {
 		"prefix": "static",
 		"body": [
 			"script static ${1|void,boolean,real,short,long,string,string_id,ai,object,unit,vehicle,weapon,device,scenery,effect_scenery,object_list,object_name,unit_name,vehicle_name,weapon_name,device_name,scenery_name,sound,effect,damage,looping_sound,animation_graph,damage_effect,object_definition,script,unit_seat_mapping,trigger_volume,cutscene_flag,cutscene_camera_point,cutscene_title,cutscene_recording,device_group,point_reference,point_set_reference,ai_command_list,ai_command_script,ai_behavior,ai_orders,ai_line,starting_profile,conversation,team,mp_team,skull,sound_event,player,zone_set,designer_zone,style,folder,bitmap,shader,render_model,structure_definition,lightmap_definition,cinematic_definition,cinematic_scene_definition,cinematic_scene_data_definition,cinematic_transition_definition,bink_definition,cui_screen_definition,any_tag,any_tag_not_resolving,game_difficulty,controller,button_preset,joystick_preset,player_color,player_model_choice,voice_output_setting,voice_mask,subtitle_setting,actor_type,model_state,event,character_physics,firing_point_evaluator,damage_region,currency_type,delivery_method,wave_difficulty,firefight_goal,firefight_wave_type,font,text_justification,text_alignment,text_drop_shadow_type,havok_group,effect_scenery_name,cinematic_lightprobe,animation_budget_reference,looping_sound_budget_reference,sound_budget_reference,function_name,passthrough|} ${2|script_name|}()", "\t$0", "end"
 		],
-		"description": "enerates an empty static script"
+		"description": "Generates an empty static script"
+	},
+    "static_instanced": {
+		"prefix": "static_instanced",
+		"body": [
+			"script static instanced ${1|void,boolean,real,short,long,string,string_id,ai,object,unit,vehicle,weapon,device,scenery,effect_scenery,object_list,object_name,unit_name,vehicle_name,weapon_name,device_name,scenery_name,sound,effect,damage,looping_sound,animation_graph,damage_effect,object_definition,script,unit_seat_mapping,trigger_volume,cutscene_flag,cutscene_camera_point,cutscene_title,cutscene_recording,device_group,point_reference,point_set_reference,ai_command_list,ai_command_script,ai_behavior,ai_orders,ai_line,starting_profile,conversation,team,mp_team,skull,sound_event,player,zone_set,designer_zone,style,folder,bitmap,shader,render_model,structure_definition,lightmap_definition,cinematic_definition,cinematic_scene_definition,cinematic_scene_data_definition,cinematic_transition_definition,bink_definition,cui_screen_definition,any_tag,any_tag_not_resolving,game_difficulty,controller,button_preset,joystick_preset,player_color,player_model_choice,voice_output_setting,voice_mask,subtitle_setting,actor_type,model_state,event,character_physics,firing_point_evaluator,damage_region,currency_type,delivery_method,wave_difficulty,firefight_goal,firefight_wave_type,font,text_justification,text_alignment,text_drop_shadow_type,havok_group,effect_scenery_name,cinematic_lightprobe,animation_budget_reference,looping_sound_budget_reference,sound_budget_reference,function_name,passthrough|} ${2|script_name|}()", "\t$0", "end"
+		],
+		"description": "Generates an empty instanced static script"
 	},
     "stub": {
 		"prefix": "stub",
 		"body": [
-			"script static ${1|void,boolean,real,short,long,string,string_id,ai,object,unit,vehicle,weapon,device,scenery,effect_scenery,object_list,object_name,unit_name,vehicle_name,weapon_name,device_name,scenery_name,sound,effect,damage,looping_sound,animation_graph,damage_effect,object_definition,script,unit_seat_mapping,trigger_volume,cutscene_flag,cutscene_camera_point,cutscene_title,cutscene_recording,device_group,point_reference,point_set_reference,ai_command_list,ai_command_script,ai_behavior,ai_orders,ai_line,starting_profile,conversation,team,mp_team,skull,sound_event,player,zone_set,designer_zone,style,folder,bitmap,shader,render_model,structure_definition,lightmap_definition,cinematic_definition,cinematic_scene_definition,cinematic_scene_data_definition,cinematic_transition_definition,bink_definition,cui_screen_definition,any_tag,any_tag_not_resolving,game_difficulty,controller,button_preset,joystick_preset,player_color,player_model_choice,voice_output_setting,voice_mask,subtitle_setting,actor_type,model_state,event,character_physics,firing_point_evaluator,damage_region,currency_type,delivery_method,wave_difficulty,firefight_goal,firefight_wave_type,font,text_justification,text_alignment,text_drop_shadow_type,havok_group,effect_scenery_name,cinematic_lightprobe,animation_budget_reference,looping_sound_budget_reference,sound_budget_reference,function_name,passthrough|} ${2|script_name|}()", "\t$0", "end"
+			"script stub ${1|void,boolean,real,short,long,string,string_id,ai,object,unit,vehicle,weapon,device,scenery,effect_scenery,object_list,object_name,unit_name,vehicle_name,weapon_name,device_name,scenery_name,sound,effect,damage,looping_sound,animation_graph,damage_effect,object_definition,script,unit_seat_mapping,trigger_volume,cutscene_flag,cutscene_camera_point,cutscene_title,cutscene_recording,device_group,point_reference,point_set_reference,ai_command_list,ai_command_script,ai_behavior,ai_orders,ai_line,starting_profile,conversation,team,mp_team,skull,sound_event,player,zone_set,designer_zone,style,folder,bitmap,shader,render_model,structure_definition,lightmap_definition,cinematic_definition,cinematic_scene_definition,cinematic_scene_data_definition,cinematic_transition_definition,bink_definition,cui_screen_definition,any_tag,any_tag_not_resolving,game_difficulty,controller,button_preset,joystick_preset,player_color,player_model_choice,voice_output_setting,voice_mask,subtitle_setting,actor_type,model_state,event,character_physics,firing_point_evaluator,damage_region,currency_type,delivery_method,wave_difficulty,firefight_goal,firefight_wave_type,font,text_justification,text_alignment,text_drop_shadow_type,havok_group,effect_scenery_name,cinematic_lightprobe,animation_budget_reference,looping_sound_budget_reference,sound_budget_reference,function_name,passthrough|} ${2|script_name|}()", "\t$0", "end"
+		],
+		"description": "Generates an empty stub script"
+	},
+    "stub_instanced": {
+		"prefix": "stub_instanced",
+		"body": [
+			"script stub instanced ${1|void,boolean,real,short,long,string,string_id,ai,object,unit,vehicle,weapon,device,scenery,effect_scenery,object_list,object_name,unit_name,vehicle_name,weapon_name,device_name,scenery_name,sound,effect,damage,looping_sound,animation_graph,damage_effect,object_definition,script,unit_seat_mapping,trigger_volume,cutscene_flag,cutscene_camera_point,cutscene_title,cutscene_recording,device_group,point_reference,point_set_reference,ai_command_list,ai_command_script,ai_behavior,ai_orders,ai_line,starting_profile,conversation,team,mp_team,skull,sound_event,player,zone_set,designer_zone,style,folder,bitmap,shader,render_model,structure_definition,lightmap_definition,cinematic_definition,cinematic_scene_definition,cinematic_scene_data_definition,cinematic_transition_definition,bink_definition,cui_screen_definition,any_tag,any_tag_not_resolving,game_difficulty,controller,button_preset,joystick_preset,player_color,player_model_choice,voice_output_setting,voice_mask,subtitle_setting,actor_type,model_state,event,character_physics,firing_point_evaluator,damage_region,currency_type,delivery_method,wave_difficulty,firefight_goal,firefight_wave_type,font,text_justification,text_alignment,text_drop_shadow_type,havok_group,effect_scenery_name,cinematic_lightprobe,animation_budget_reference,looping_sound_budget_reference,sound_budget_reference,function_name,passthrough|} ${2|script_name|}()", "\t$0", "end"
 		],
 		"description": "Generates an empty stub script"
 	},
@@ -48,12 +90,40 @@
 		],
 		"description": "Generates an empty static script with a single parameter"
 	},
+    "static_parameter_instanced": {
+		"prefix": "static_parameter_instanced",
+		"body": [
+			"script static instanced ${1|void,boolean,real,short,long,string,string_id,ai,object,unit,vehicle,weapon,device,scenery,effect_scenery,object_list,object_name,unit_name,vehicle_name,weapon_name,device_name,scenery_name,sound,effect,damage,looping_sound,animation_graph,damage_effect,object_definition,script,unit_seat_mapping,trigger_volume,cutscene_flag,cutscene_camera_point,cutscene_title,cutscene_recording,device_group,point_reference,point_set_reference,ai_command_list,ai_command_script,ai_behavior,ai_orders,ai_line,starting_profile,conversation,team,mp_team,skull,sound_event,player,zone_set,designer_zone,style,folder,bitmap,shader,render_model,structure_definition,lightmap_definition,cinematic_definition,cinematic_scene_definition,cinematic_scene_data_definition,cinematic_transition_definition,bink_definition,cui_screen_definition,any_tag,any_tag_not_resolving,game_difficulty,controller,button_preset,joystick_preset,player_color,player_model_choice,voice_output_setting,voice_mask,subtitle_setting,actor_type,model_state,event,character_physics,firing_point_evaluator,damage_region,currency_type,delivery_method,wave_difficulty,firefight_goal,firefight_wave_type,font,text_justification,text_alignment,text_drop_shadow_type,havok_group,effect_scenery_name,cinematic_lightprobe,animation_budget_reference,looping_sound_budget_reference,sound_budget_reference,function_name,passthrough|} ${2|script_name|}(${3|boolean,real,short,long,string,string_id,ai,object,unit,vehicle,weapon,device,scenery,effect_scenery,object_list,object_name,unit_name,vehicle_name,weapon_name,device_name,scenery_name,sound,effect,damage,looping_sound,animation_graph,damage_effect,object_definition,script,unit_seat_mapping,trigger_volume,cutscene_flag,cutscene_camera_point,cutscene_title,cutscene_recording,device_group,point_reference,point_set_reference,ai_command_list,ai_command_script,ai_behavior,ai_orders,ai_line,starting_profile,conversation,team,mp_team,skull,sound_event,player,zone_set,designer_zone,style,folder,bitmap,shader,render_model,structure_definition,lightmap_definition,cinematic_definition,cinematic_scene_definition,cinematic_scene_data_definition,cinematic_transition_definition,bink_definition,cui_screen_definition,any_tag,any_tag_not_resolving,game_difficulty,controller,button_preset,joystick_preset,player_color,player_model_choice,voice_output_setting,voice_mask,subtitle_setting,actor_type,model_state,event,character_physics,firing_point_evaluator,damage_region,currency_type,delivery_method,wave_difficulty,firefight_goal,firefight_wave_type,font,text_justification,text_alignment,text_drop_shadow_type,havok_group,effect_scenery_name,cinematic_lightprobe,animation_budget_reference,looping_sound_budget_reference,sound_budget_reference,function_name|} ${4|parameter_name|})", "\t$0", "end"
+		],
+		"description": "Generates an empty instanced static script with a single parameter"
+	},
     "stub_parameter": {
 		"prefix": "stub_parameter",
 		"body": [
 			"script stub ${1|void,boolean,real,short,long,string,string_id,ai,object,unit,vehicle,weapon,device,scenery,effect_scenery,object_list,object_name,unit_name,vehicle_name,weapon_name,device_name,scenery_name,sound,effect,damage,looping_sound,animation_graph,damage_effect,object_definition,script,unit_seat_mapping,trigger_volume,cutscene_flag,cutscene_camera_point,cutscene_title,cutscene_recording,device_group,point_reference,point_set_reference,ai_command_list,ai_command_script,ai_behavior,ai_orders,ai_line,starting_profile,conversation,team,mp_team,skull,sound_event,player,zone_set,designer_zone,style,folder,bitmap,shader,render_model,structure_definition,lightmap_definition,cinematic_definition,cinematic_scene_definition,cinematic_scene_data_definition,cinematic_transition_definition,bink_definition,cui_screen_definition,any_tag,any_tag_not_resolving,game_difficulty,controller,button_preset,joystick_preset,player_color,player_model_choice,voice_output_setting,voice_mask,subtitle_setting,actor_type,model_state,event,character_physics,firing_point_evaluator,damage_region,currency_type,delivery_method,wave_difficulty,firefight_goal,firefight_wave_type,font,text_justification,text_alignment,text_drop_shadow_type,havok_group,effect_scenery_name,cinematic_lightprobe,animation_budget_reference,looping_sound_budget_reference,sound_budget_reference,function_name,passthrough|} ${2|script_name|}(${3|boolean,real,short,long,string,string_id,ai,object,unit,vehicle,weapon,device,scenery,effect_scenery,object_list,object_name,unit_name,vehicle_name,weapon_name,device_name,scenery_name,sound,effect,damage,looping_sound,animation_graph,damage_effect,object_definition,script,unit_seat_mapping,trigger_volume,cutscene_flag,cutscene_camera_point,cutscene_title,cutscene_recording,device_group,point_reference,point_set_reference,ai_command_list,ai_command_script,ai_behavior,ai_orders,ai_line,starting_profile,conversation,team,mp_team,skull,sound_event,player,zone_set,designer_zone,style,folder,bitmap,shader,render_model,structure_definition,lightmap_definition,cinematic_definition,cinematic_scene_definition,cinematic_scene_data_definition,cinematic_transition_definition,bink_definition,cui_screen_definition,any_tag,any_tag_not_resolving,game_difficulty,controller,button_preset,joystick_preset,player_color,player_model_choice,voice_output_setting,voice_mask,subtitle_setting,actor_type,model_state,event,character_physics,firing_point_evaluator,damage_region,currency_type,delivery_method,wave_difficulty,firefight_goal,firefight_wave_type,font,text_justification,text_alignment,text_drop_shadow_type,havok_group,effect_scenery_name,cinematic_lightprobe,animation_budget_reference,looping_sound_budget_reference,sound_budget_reference,function_name|} ${4|parameter_name|})", "\t$0", "end"
 		],
-		"description": "Generates an empty stub scrip with a single parametert"
+		"description": "Generates an empty stub scrip with a single parameter"
+	},
+    "stub_parameter_instanced": {
+		"prefix": "stub_parameter_instanced",
+		"body": [
+			"script stub instanced ${1|void,boolean,real,short,long,string,string_id,ai,object,unit,vehicle,weapon,device,scenery,effect_scenery,object_list,object_name,unit_name,vehicle_name,weapon_name,device_name,scenery_name,sound,effect,damage,looping_sound,animation_graph,damage_effect,object_definition,script,unit_seat_mapping,trigger_volume,cutscene_flag,cutscene_camera_point,cutscene_title,cutscene_recording,device_group,point_reference,point_set_reference,ai_command_list,ai_command_script,ai_behavior,ai_orders,ai_line,starting_profile,conversation,team,mp_team,skull,sound_event,player,zone_set,designer_zone,style,folder,bitmap,shader,render_model,structure_definition,lightmap_definition,cinematic_definition,cinematic_scene_definition,cinematic_scene_data_definition,cinematic_transition_definition,bink_definition,cui_screen_definition,any_tag,any_tag_not_resolving,game_difficulty,controller,button_preset,joystick_preset,player_color,player_model_choice,voice_output_setting,voice_mask,subtitle_setting,actor_type,model_state,event,character_physics,firing_point_evaluator,damage_region,currency_type,delivery_method,wave_difficulty,firefight_goal,firefight_wave_type,font,text_justification,text_alignment,text_drop_shadow_type,havok_group,effect_scenery_name,cinematic_lightprobe,animation_budget_reference,looping_sound_budget_reference,sound_budget_reference,function_name,passthrough|} ${2|script_name|}(${3|boolean,real,short,long,string,string_id,ai,object,unit,vehicle,weapon,device,scenery,effect_scenery,object_list,object_name,unit_name,vehicle_name,weapon_name,device_name,scenery_name,sound,effect,damage,looping_sound,animation_graph,damage_effect,object_definition,script,unit_seat_mapping,trigger_volume,cutscene_flag,cutscene_camera_point,cutscene_title,cutscene_recording,device_group,point_reference,point_set_reference,ai_command_list,ai_command_script,ai_behavior,ai_orders,ai_line,starting_profile,conversation,team,mp_team,skull,sound_event,player,zone_set,designer_zone,style,folder,bitmap,shader,render_model,structure_definition,lightmap_definition,cinematic_definition,cinematic_scene_definition,cinematic_scene_data_definition,cinematic_transition_definition,bink_definition,cui_screen_definition,any_tag,any_tag_not_resolving,game_difficulty,controller,button_preset,joystick_preset,player_color,player_model_choice,voice_output_setting,voice_mask,subtitle_setting,actor_type,model_state,event,character_physics,firing_point_evaluator,damage_region,currency_type,delivery_method,wave_difficulty,firefight_goal,firefight_wave_type,font,text_justification,text_alignment,text_drop_shadow_type,havok_group,effect_scenery_name,cinematic_lightprobe,animation_budget_reference,looping_sound_budget_reference,sound_budget_reference,function_name|} ${4|parameter_name|})", "\t$0", "end"
+		],
+		"description": "Generates an empty instanced stub scrip with a single parameter"
+	},
+    "define_static": {
+		"prefix": "define_static",
+		"body": [
+			"script static ${1|boolean,real,short,long,string,string_id,ai,object,unit,vehicle,weapon,device,scenery,effect_scenery,object_list,object_name,unit_name,vehicle_name,weapon_name,device_name,scenery_name,sound,effect,damage,looping_sound,animation_graph,damage_effect,object_definition,script,unit_seat_mapping,trigger_volume,cutscene_flag,cutscene_camera_point,cutscene_title,cutscene_recording,device_group,point_reference,point_set_reference,ai_command_list,ai_command_script,ai_behavior,ai_orders,ai_line,starting_profile,conversation,team,mp_team,skull,sound_event,player,zone_set,designer_zone,style,folder,bitmap,shader,render_model,structure_definition,lightmap_definition,cinematic_definition,cinematic_scene_definition,cinematic_scene_data_definition,cinematic_transition_definition,bink_definition,cui_screen_definition,any_tag,any_tag_not_resolving,game_difficulty,controller,button_preset,joystick_preset,player_color,player_model_choice,voice_output_setting,voice_mask,subtitle_setting,actor_type,model_state,event,character_physics,firing_point_evaluator,damage_region,currency_type,delivery_method,wave_difficulty,firefight_goal,firefight_wave_type,font,text_justification,text_alignment,text_drop_shadow_type,havok_group,effect_scenery_name,cinematic_lightprobe,animation_budget_reference,looping_sound_budget_reference,sound_budget_reference,function_name,passthrough|} DEF_${2|NAME|}() ${3|def_value|}; end"
+		],
+		"description": "Generates a static script to be used as a definition"
+	},
+    "define_stub": {
+		"prefix": "define_stub",
+		"body": [
+			"script stub ${1|boolean,real,short,long,string,string_id,ai,object,unit,vehicle,weapon,device,scenery,effect_scenery,object_list,object_name,unit_name,vehicle_name,weapon_name,device_name,scenery_name,sound,effect,damage,looping_sound,animation_graph,damage_effect,object_definition,script,unit_seat_mapping,trigger_volume,cutscene_flag,cutscene_camera_point,cutscene_title,cutscene_recording,device_group,point_reference,point_set_reference,ai_command_list,ai_command_script,ai_behavior,ai_orders,ai_line,starting_profile,conversation,team,mp_team,skull,sound_event,player,zone_set,designer_zone,style,folder,bitmap,shader,render_model,structure_definition,lightmap_definition,cinematic_definition,cinematic_scene_definition,cinematic_scene_data_definition,cinematic_transition_definition,bink_definition,cui_screen_definition,any_tag,any_tag_not_resolving,game_difficulty,controller,button_preset,joystick_preset,player_color,player_model_choice,voice_output_setting,voice_mask,subtitle_setting,actor_type,model_state,event,character_physics,firing_point_evaluator,damage_region,currency_type,delivery_method,wave_difficulty,firefight_goal,firefight_wave_type,font,text_justification,text_alignment,text_drop_shadow_type,havok_group,effect_scenery_name,cinematic_lightprobe,animation_budget_reference,looping_sound_budget_reference,sound_budget_reference,function_name,passthrough|} DEF_${2|NAME|}() ${3|def_value|}; end"
+		],
+		"description": "Generates a stub script to be used as a definition"
 	},
 	"global": {
 		"prefix": "global",
@@ -65,7 +135,7 @@
 	"local": {
 		"prefix": "local",
 		"body": [
-			"global ${1|boolean,real,short,long,string,string_id,ai,object,unit,vehicle,weapon,device,scenery,effect_scenery,object_list,object_name,unit_name,vehicle_name,weapon_name,device_name,scenery_name,sound,effect,damage,looping_sound,animation_graph,damage_effect,object_definition,script,unit_seat_mapping,trigger_volume,cutscene_flag,cutscene_camera_point,cutscene_title,cutscene_recording,device_group,point_reference,point_set_reference,ai_command_list,ai_command_script,ai_behavior,ai_orders,ai_line,starting_profile,conversation,team,mp_team,skull,sound_event,player,zone_set,designer_zone,style,folder,bitmap,shader,render_model,structure_definition,lightmap_definition,cinematic_definition,cinematic_scene_definition,cinematic_scene_data_definition,cinematic_transition_definition,bink_definition,cui_screen_definition,any_tag,any_tag_not_resolving,game_difficulty,controller,button_preset,joystick_preset,player_color,player_model_choice,voice_output_setting,voice_mask,subtitle_setting,actor_type,model_state,event,character_physics,firing_point_evaluator,damage_region,currency_type,delivery_method,wave_difficulty,firefight_goal,firefight_wave_type,font,text_justification,text_alignment,text_drop_shadow_type,havok_group,effect_scenery_name,cinematic_lightprobe,animation_budget_reference,looping_sound_budget_reference,sound_budget_reference,function_name|} ${2|name|} =${3|false,true,none,0|};"
+			"global ${1|boolean,real,short,long,string,string_id,ai,object,unit,vehicle,weapon,device,scenery,effect_scenery,object_list,object_name,unit_name,vehicle_name,weapon_name,device_name,scenery_name,sound,effect,damage,looping_sound,animation_graph,damage_effect,object_definition,script,unit_seat_mapping,trigger_volume,cutscene_flag,cutscene_camera_point,cutscene_title,cutscene_recording,device_group,point_reference,point_set_reference,ai_command_list,ai_command_script,ai_behavior,ai_orders,ai_line,starting_profile,conversation,team,mp_team,skull,sound_event,player,zone_set,designer_zone,style,folder,bitmap,shader,render_model,structure_definition,lightmap_definition,cinematic_definition,cinematic_scene_definition,cinematic_scene_data_definition,cinematic_transition_definition,bink_definition,cui_screen_definition,any_tag,any_tag_not_resolving,game_difficulty,controller,button_preset,joystick_preset,player_color,player_model_choice,voice_output_setting,voice_mask,subtitle_setting,actor_type,model_state,event,character_physics,firing_point_evaluator,damage_region,currency_type,delivery_method,wave_difficulty,firefight_goal,firefight_wave_type,font,text_justification,text_alignment,text_drop_shadow_type,havok_group,effect_scenery_name,cinematic_lightprobe,animation_budget_reference,looping_sound_budget_reference,sound_budget_reference,function_name|} ${2|name|} = ${3|false,true,none,0|};"
 		],
         "description": "Generates an template Local"
 	},
@@ -75,6 +145,13 @@
 			"static ${1|boolean,real,short,long,string,string_id,ai,object,unit,vehicle,weapon,device,scenery,effect_scenery,object_list,object_name,unit_name,vehicle_name,weapon_name,device_name,scenery_name,sound,effect,damage,looping_sound,animation_graph,damage_effect,object_definition,script,unit_seat_mapping,trigger_volume,cutscene_flag,cutscene_camera_point,cutscene_title,cutscene_recording,device_group,point_reference,point_set_reference,ai_command_list,ai_command_script,ai_behavior,ai_orders,ai_line,starting_profile,conversation,team,mp_team,skull,sound_event,player,zone_set,designer_zone,style,folder,bitmap,shader,render_model,structure_definition,lightmap_definition,cinematic_definition,cinematic_scene_definition,cinematic_scene_data_definition,cinematic_transition_definition,bink_definition,cui_screen_definition,any_tag,any_tag_not_resolving,game_difficulty,controller,button_preset,joystick_preset,player_color,player_model_choice,voice_output_setting,voice_mask,subtitle_setting,actor_type,model_state,event,character_physics,firing_point_evaluator,damage_region,currency_type,delivery_method,wave_difficulty,firefight_goal,firefight_wave_type,font,text_justification,text_alignment,text_drop_shadow_type,havok_group,effect_scenery_name,cinematic_lightprobe,animation_budget_reference,looping_sound_budget_reference,sound_budget_reference,function_name|} ${2|name|} = ${3|false,true,none,0|};"
 		],
         "description": "Generates an template static (global that can be defined inside of a script)"
+	},
+	"instanced_variable": {
+		"prefix": "instanced_variable",
+		"body": [
+			"instanced ${1|boolean,real,short,long,string,string_id,ai,object,unit,vehicle,weapon,device,scenery,effect_scenery,object_list,object_name,unit_name,vehicle_name,weapon_name,device_name,scenery_name,sound,effect,damage,looping_sound,animation_graph,damage_effect,object_definition,script,unit_seat_mapping,trigger_volume,cutscene_flag,cutscene_camera_point,cutscene_title,cutscene_recording,device_group,point_reference,point_set_reference,ai_command_list,ai_command_script,ai_behavior,ai_orders,ai_line,starting_profile,conversation,team,mp_team,skull,sound_event,player,zone_set,designer_zone,style,folder,bitmap,shader,render_model,structure_definition,lightmap_definition,cinematic_definition,cinematic_scene_definition,cinematic_scene_data_definition,cinematic_transition_definition,bink_definition,cui_screen_definition,any_tag,any_tag_not_resolving,game_difficulty,controller,button_preset,joystick_preset,player_color,player_model_choice,voice_output_setting,voice_mask,subtitle_setting,actor_type,model_state,event,character_physics,firing_point_evaluator,damage_region,currency_type,delivery_method,wave_difficulty,firefight_goal,firefight_wave_type,font,text_justification,text_alignment,text_drop_shadow_type,havok_group,effect_scenery_name,cinematic_lightprobe,animation_budget_reference,looping_sound_budget_reference,sound_budget_reference,function_name|} ${2|name|} = ${3|false,true,none,0|};"
+		],
+        "description": "Generates an template instanced variable (a global but for instanced scripts)"
 	},
     "code_block": {
         "prefix": "{",
