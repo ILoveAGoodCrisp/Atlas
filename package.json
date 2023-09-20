@@ -56,6 +56,12 @@
                     "command": "atlas.compileScenarioScripts",
                     "when": "editorLangId == hsc4"
                 }
+            ],
+            "editor/context": [
+                {
+                    "command": "atlas.compileScenarioScripts",
+                    "when": "editorLangId == hsc4"
+                }
             ]
         },
         "languages": [

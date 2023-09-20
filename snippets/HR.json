@@ -1,29 +1,36 @@
 {
+	"breakpoint": {
+		"prefix": "breakpoint",
+		"body": [
+			"(breakpoint \"${1:Breakpoint Hit}\")"
+		],
+		"description": "Inserts a breakpoint"
+	},
 	"startup": {
 		"prefix": "startup",
 		"body": [
-			"(script startup ${1|script_name|}", "\t($0)", ")"
+			"(script startup ${1:script_name}", "\t($0)", ")"
 		],
 		"description": "Generates an empty startup script"
 	},
 	"dormant": {
 		"prefix": "dormant",
 		"body": [
-			"(script dormant ${1|script_name|}", "\t($0)", ")"
+			"(script dormant ${1:script_name}", "\t($0)", ")"
 		],
 		"description": "Generates an empty dormant script"
 	},
 	"continuous": {
 		"prefix": "continuous",
 		"body": [
-			"(script continuous ${1|script_name|}", "\t($0)", ")"
+			"(script continuous ${1:script_name}", "\t($0)", ")"
 		],
 		"description": "Generates an empty continuous script"
 	},
 	"command_script": {
 		"prefix": "command_script",
 		"body": [
-			"(script command_script ${1|script_name|}", "\t($0)", ")"
+			"(script command_script ${1:script_name}", "\t($0)", ")"
 		],
 		"description": "Generates an empty command_script"
 	},

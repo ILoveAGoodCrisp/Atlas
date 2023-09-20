@@ -13,8 +13,6 @@ class HSGlobal {
 }
 exports.HSGlobal = HSGlobal;
 exports.hsGlobals = new Array();
-var newGlobal = new HSGlobal("sleep_until", "void", [' \'[<long>]\']"']);
-exports.hsGlobals.push(newGlobal);
 var newGlobal = new HSGlobal("numeric_countdown_timer_get", "short", ['H1']);
 exports.hsGlobals.push(newGlobal);
 var newGlobal = new HSGlobal("render_effects", "void", ['H1', 'H2']);
@@ -2546,8 +2544,6 @@ exports.hsGlobals.push(newGlobal);
 var newGlobal = new HSGlobal("scenario_load_fast", "boolean", ['H2', 'HR', 'H4']);
 exports.hsGlobals.push(newGlobal);
 var newGlobal = new HSGlobal("scenario_load_fast_and_playable", "boolean", ['H2', 'HR', 'H4']);
-exports.hsGlobals.push(newGlobal);
-var newGlobal = new HSGlobal("sleep_until", "boolean", [' \'[<long>]\']"']);
 exports.hsGlobals.push(newGlobal);
 var newGlobal = new HSGlobal("ai_migrate_form", "short", ['H3', 'HO']);
 exports.hsGlobals.push(newGlobal);

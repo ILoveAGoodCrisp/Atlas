@@ -1,36 +1,43 @@
 {
+	"breakpoint": {
+		"prefix": "breakpoint",
+		"body": [
+			"(breakpoint \"${1:Breakpoint Hit}\")"
+		],
+		"description": "Inserts a breakpoint"
+	},
 	"startup": {
 		"prefix": "startup",
 		"body": [
-			"(script startup ${1|script_name|}", "\t($0)", ")"
+			"(script startup ${1:script_name}", "\t($0)", ")"
 		],
 		"description": "Generates an empty startup script"
 	},
 	"dormant": {
 		"prefix": "dormant",
 		"body": [
-			"(script dormant ${1|script_name|}", "\t($0)", ")"
+			"(script dormant ${1:script_name}", "\t($0)", ")"
 		],
 		"description": "Generates an empty dormant script"
 	},
 	"continuous": {
 		"prefix": "continuous",
 		"body": [
-			"(script continuous ${1|script_name|}", "\t($0)", ")"
+			"(script continuous ${1:script_name}", "\t($0)", ")"
 		],
 		"description": "Generates an empty continuous script"
 	},
 	"command_script": {
 		"prefix": "command_script",
 		"body": [
-			"(script command_script ${1|script_name|}", "\t($0)", ")"
+			"(script command_script ${1:script_name}", "\t($0)", ")"
 		],
 		"description": "Generates an empty command_script"
 	},
     "static": {
 		"prefix": "static",
 		"body": [
-			"(script static ${1|void,boolean,real,short,long,string,ai,object,unit,vehicle,weapon,device,scenery,object_list,object_name,unit_name,vehicle_name,weapon_name,device_name,scenery_name,sound,effect,damage,looping_sound,animation_graph,damage_effect,object_definition,script,trigger_volume,cutscene_flag,cutscene_camera_point,cutscene_title,cutscene_recording,device_group,ai_command_list,starting_profile,conversation,navpoint,team,hud_message,actor_variant,game_difficulty,ai_default_state,hud_corner,actor_type,function_name,passthrough|} ${2|script_name|}", "\t($0)", ")"
+			"(script static ${1|void,boolean,real,short,long,string,ai,object,unit,vehicle,weapon,device,scenery,object_list,object_name,unit_name,vehicle_name,weapon_name,device_name,scenery_name,sound,effect,damage,looping_sound,animation_graph,damage_effect,object_definition,script,trigger_volume,cutscene_flag,cutscene_camera_point,cutscene_title,cutscene_recording,device_group,ai_command_list,starting_profile,conversation,navpoint,team,hud_message,actor_variant,game_difficulty,ai_default_state,hud_corner,actor_type,function_name,passthrough|} ${2:script_name}", "\t($0)", ")"
 		],
 		"description": "Generates an empty static script"
 	},
@@ -44,7 +51,7 @@
 	"stub": {
 		"prefix": "stub",
 		"body": [
-			"(script stub ${1|void,boolean,real,short,long,string,ai,object,unit,vehicle,weapon,device,scenery,object_list,object_name,unit_name,vehicle_name,weapon_name,device_name,scenery_name,sound,effect,damage,looping_sound,animation_graph,damage_effect,object_definition,script,trigger_volume,cutscene_flag,cutscene_camera_point,cutscene_title,cutscene_recording,device_group,ai_command_list,starting_profile,conversation,navpoint,team,hud_message,actor_variant,game_difficulty,ai_default_state,hud_corner,actor_type,function_name,passthrough|} ${2|script_name|}", "\t($0)", ")"
+			"(script stub ${1|void,boolean,real,short,long,string,ai,object,unit,vehicle,weapon,device,scenery,object_list,object_name,unit_name,vehicle_name,weapon_name,device_name,scenery_name,sound,effect,damage,looping_sound,animation_graph,damage_effect,object_definition,script,trigger_volume,cutscene_flag,cutscene_camera_point,cutscene_title,cutscene_recording,device_group,ai_command_list,starting_profile,conversation,navpoint,team,hud_message,actor_variant,game_difficulty,ai_default_state,hud_corner,actor_type,function_name,passthrough|} ${2:script_name}", "\t($0)", ")"
 		],
 		"description": "Generates an empty static script"
 	},

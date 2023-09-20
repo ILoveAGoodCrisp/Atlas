@@ -38,13 +38,10 @@ class hsProvider {
         if (newStyle) {
             const foundKeyword = keywords_1.hsKeywords.find((def) => def.name === hoverText);
             if (foundKeyword != null) {
-                if (foundKeyword.name.toLowerCase() == 'begin_count' || foundKeyword.name.toLowerCase() == 'begin_random_count') {
-                    detail = "passthrough " + foundKeyword.name + "(long)";
-                    ;
-                }
-                else {
-                    detail = "passthrough " + foundKeyword.name;
-                }
+                if (foundKeyword.name.toLowerCase() == 'begin_count' || foundKeyword.name.toLowerCase() == 'begin_random_count')
+                    detail = foundKeyword.name + "(long)";
+                else
+                    detail = foundKeyword.name;
                 documentation = foundKeyword.desc;
                 return return_hover(detail, documentation);
             }
@@ -65,11 +62,15 @@ class hsProvider {
         const foundFunc = functions_1.hsFunctions.find((def) => def.name === hoverText.toLowerCase() && def.games.includes(game));
         if (foundFunc != null) {
             if (newStyle) {
-                const joinedArgs = foundFunc.args.join(', ');
-                detail = foundFunc.name + "(" + joinedArgs + ")" + " -> " + foundFunc.r_type;
+                let joinedArgs = foundFunc.args.join(', ');
+                if (foundFunc.args.length <= 0)
+                    joinedArgs = "";
+                detail = foundFunc.r_type + " " + foundFunc.name + "(" + joinedArgs + ")";
             }
             else {
-                const joinedArgs = " " + foundFunc.args.join(' ');
+                let joinedArgs = " " + foundFunc.args.join(' ');
+                if (foundFunc.args.length <= 0)
+                    joinedArgs = "";
                 detail = foundFunc.r_type + " " + "(" + foundFunc.name + joinedArgs + ")";
             }
             documentation = foundFunc.desc;

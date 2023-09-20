@@ -2,22 +2,6 @@ import * as vscode from 'vscode';
 import {hsFunctions, HSFunction} from '../definitions/functions'
 import {hsValueTypes} from '../definitions/valueTypes'
 
-function countStringOccurrences(arr: string[], target: string): number {
-    const filteredArray = arr.filter((element) => element === target);
-    return filteredArray.length;
-  }
-
-function joinAndConcatWithIndex(strings: string[]): string[] {
-    const result: string[] = [];
-  
-    for (let i = 0; i < strings.length; i++) {
-      const joinedString = strings[i] + "_" + (i + 1);
-      result.push(joinedString);
-    }
-  
-    return result;
-  }
-
 function getSignatureInformation(hsFunction: HSFunction, argIndex: number, newStyle: boolean, game: string): vscode.SignatureInformation {
     const signature = new vscode.SignatureInformation("", "");
     // NOTE To Finish. Add count of arg if it is used multiple times
@@ -28,18 +12,20 @@ function getSignatureInformation(hsFunction: HSFunction, argIndex: number, newSt
     //     const joinedString = strings[i] + "_" + (i + 1);
     //     result.push(joinedString);
     //   }
-    signature.parameters = hsFunction.args.map(arg => new vscode.ParameterInformation(arg + "_" + (argIndex + 1), (argIndex + 1) + ": " + hsValueTypes.find((def) => def.name === arg.replace('?',''))?.desc));
+    signature.parameters = hsFunction.args.map(arg => new vscode.ParameterInformation(arg, (argIndex + 1) + ": " + hsValueTypes.find((def) => def.name === arg.replace('?','').split('-')[0])?.desc));
     signature.documentation = "Function: " + hsFunction.desc;
     if (newStyle)
     {
-        const concatenatedStrings = joinAndConcatWithIndex(hsFunction.args);
-        const joinedArgs = concatenatedStrings.join(', ');
+        let joinedArgs = hsFunction.args.join(', ');
+        if (hsFunction.args.length <= 0)
+            joinedArgs = "";
         signature.label = hsFunction.name + "(" + joinedArgs + ")";
     }
     else
     {
-        const concatenatedStrings = joinAndConcatWithIndex(hsFunction.args);
-        const joinedArgs = ' ' + concatenatedStrings.join(' ');
+        let joinedArgs = ' ' + hsFunction.args.join(' ');
+        if (hsFunction.args.length <= 0)
+            joinedArgs = "";
         signature.label = "(" + hsFunction.name + joinedArgs + ")";
     }
 

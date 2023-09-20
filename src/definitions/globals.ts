@@ -9,13 +9,6 @@ export class HSGlobal {
 export var hsGlobals = new Array<HSGlobal>();
 
 var newGlobal = new HSGlobal(
-	"sleep_until",
-	"void",
-	[' \'[<long>]\']"'],
-);
-hsGlobals.push(newGlobal);
-
-var newGlobal = new HSGlobal(
 	"numeric_countdown_timer_get",
 	"short",
 	['H1'],
@@ -8874,13 +8867,6 @@ var newGlobal = new HSGlobal(
 	"scenario_load_fast_and_playable",
 	"boolean",
 	['H2', 'HR', 'H4'],
-);
-hsGlobals.push(newGlobal);
-
-var newGlobal = new HSGlobal(
-	"sleep_until",
-	"boolean",
-	[' \'[<long>]\']"'],
 );
 hsGlobals.push(newGlobal);
 

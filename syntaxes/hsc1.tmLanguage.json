@@ -79,6 +79,9 @@
 				},
 				{
 					"include": "#functions"
+				},
+				{
+					"include": "#variables"
 				}
 			]
 		},
@@ -153,7 +156,7 @@
 			"patterns": [
 				{
 					"name":"variable.hsc1",
-					"match": "\\b\\w+\\b"
+					"match": "(?<!\\\\|\\.)\\b\\w+\\b(?!\\\\|\\.)"
 				}
 			]
 		}

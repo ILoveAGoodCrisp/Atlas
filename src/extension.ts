@@ -3,7 +3,7 @@ import * as vscode from 'vscode';
 import * as completion from './providers/completion'
 import * as hover from './providers/hover'
 import * as signature from './providers/signature'
-import * as semantics from './providers/semantics'
+// import * as semantics from './providers/semantics'
 import {runToolExecutable} from './commands/scriptCompiler'
 import { DocumentSelector } from 'vscode-languageserver';
 

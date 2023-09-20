@@ -46,168 +46,168 @@ hsValueTypes.push(newValueType);
 var newValueType = new HSValueType(
 	'string',
 	['H1', 'H2', 'H3', 'H0', 'HR', 'H4'],
-	'String',
+	'String of characters in double quotes (or single quotes if using H4)',
 );
 hsValueTypes.push(newValueType);
 
 var newValueType = new HSValueType(
 	'string_id',
 	['H2', 'H3', 'H0', 'HR', 'H4'],
-	'Reference a tag string field',
+	'Reference to a tag string field',
 );
 hsValueTypes.push(newValueType);
 
 var newValueType = new HSValueType(
 	'ai',
 	['H1', 'H2', 'H3', 'H0', 'HR', 'H4'],
-	'',
+	'Reference to one of: an ai actor, a squad_group, an encounter, a squad, an ai_starting_location (in the form squad/starting_location or squad.starting_location if H4)',
 );
 hsValueTypes.push(newValueType);
 
 var newValueType = new HSValueType(
 	'object',
 	['H1', 'H2', 'H3', 'H0', 'HR', 'H4'],
-	'',
+	'Runtime Object',
 );
 hsValueTypes.push(newValueType);
 
 var newValueType = new HSValueType(
 	'unit',
 	['H1', 'H2', 'H3', 'H0', 'HR', 'H4'],
-	'',
+	'Runtime Unit',
 );
 hsValueTypes.push(newValueType);
 
 var newValueType = new HSValueType(
 	'vehicle',
 	['H1', 'H2', 'H3', 'H0', 'HR', 'H4'],
-	'',
+	'Runtime Vehicle',
 );
 hsValueTypes.push(newValueType);
 
 var newValueType = new HSValueType(
 	'weapon',
 	['H1', 'H2', 'H3', 'H0', 'HR', 'H4'],
-	'',
+	'Runtime Weapon',
 );
 hsValueTypes.push(newValueType);
 
 var newValueType = new HSValueType(
 	'device',
 	['H1', 'H2', 'H3', 'H0', 'HR', 'H4'],
-	'',
+	'Runtime Device',
 );
 hsValueTypes.push(newValueType);
 
 var newValueType = new HSValueType(
 	'scenery',
 	['H1', 'H2', 'H3', 'H0', 'HR', 'H4'],
-	'',
+	'Runtime Scenery',
 );
 hsValueTypes.push(newValueType);
 
 var newValueType = new HSValueType(
 	'effect_scenery',
 	['H1', 'H2', 'H3', 'H0', 'HR', 'H4'],
-	'',
+	'Runtime Effect Scenery',
 );
 hsValueTypes.push(newValueType);
 
 var newValueType = new HSValueType(
 	'object_list',
 	['H1', 'H2', 'H3', 'H0', 'HR', 'H4'],
-	'',
+	'List of objects',
 );
 hsValueTypes.push(newValueType);
 
 var newValueType = new HSValueType(
 	'object_name',
 	['H1', 'H2', 'H3', 'H0', 'HR', 'H4'],
-	'',
+	'Object name defined in the scenario',
 );
 hsValueTypes.push(newValueType);
 
 var newValueType = new HSValueType(
 	'unit_name',
 	['H1', 'H2', 'H3', 'H0', 'HR', 'H4'],
-	'',
+	'Unit name defined in the scenario',
 );
 hsValueTypes.push(newValueType);
 
 var newValueType = new HSValueType(
 	'vehicle_name',
 	['H1', 'H2', 'H3', 'H0', 'HR', 'H4'],
-	'',
+	'Vehicle name defined in the scenario',
 );
 hsValueTypes.push(newValueType);
 
 var newValueType = new HSValueType(
 	'weapon_name',
 	['H1', 'H2', 'H3', 'H0', 'HR', 'H4'],
-	'',
+	'Weapon name defined in the scenario',
 );
 hsValueTypes.push(newValueType);
 
 var newValueType = new HSValueType(
 	'device_name',
 	['H1', 'H2', 'H3', 'H0', 'HR', 'H4'],
-	'',
+	'Device name defined in the scenario',
 );
 hsValueTypes.push(newValueType);
 
 var newValueType = new HSValueType(
 	'scenery_name',
 	['H1', 'H2', 'H3', 'H0', 'HR', 'H4'],
-	'',
+	'Scenery name defined in the scenario',
 );
 hsValueTypes.push(newValueType);
 
 var newValueType = new HSValueType(
 	'sound',
 	['H1', 'H2', 'H3', 'H0', 'HR', 'H4'],
-	'',
+	'Sound tag path',
 );
 hsValueTypes.push(newValueType);
 
 var newValueType = new HSValueType(
 	'effect',
 	['H1', 'H2', 'H3', 'H0', 'HR', 'H4'],
-	'',
+	'Effect tag path',
 );
 hsValueTypes.push(newValueType);
 
 var newValueType = new HSValueType(
 	'damage',
 	['H1', 'H2', 'H3', 'H0', 'HR', 'H4'],
-	'',
+	'Damage tag path',
 );
 hsValueTypes.push(newValueType);
 
 var newValueType = new HSValueType(
 	'looping_sound',
 	['H1', 'H2', 'H3', 'H0', 'HR', 'H4'],
-	'',
+	'Looping sound tag path',
 );
 hsValueTypes.push(newValueType);
 
 var newValueType = new HSValueType(
 	'animation_graph',
 	['H1', 'H2', 'H3', 'H0', 'HR', 'H4'],
-	'',
+	'Animation Graph tag path',
 );
 hsValueTypes.push(newValueType);
 
 var newValueType = new HSValueType(
 	'damage_effect',
 	['H1', 'H2', 'H3', 'H0', 'HR', 'H4'],
-	'',
+	'Damage effect tag path',
 );
 hsValueTypes.push(newValueType);
 
 var newValueType = new HSValueType(
 	'object_definition',
 	['H1', 'H2', 'H3', 'H0', 'HR', 'H4'],
-	'',
+	'Tag path to any object tag. Captures all objects in the scenario that have this tag path',
 );
 hsValueTypes.push(newValueType);
 
@@ -235,140 +235,140 @@ hsValueTypes.push(newValueType);
 var newValueType = new HSValueType(
 	'cutscene_flag',
 	['H1', 'H2', 'H3', 'H0', 'HR', 'H4'],
-	'Name of cutscene_flag defined in the scenario',
+	'Cutscene Flag defined in the scenario',
 );
 hsValueTypes.push(newValueType);
 
 var newValueType = new HSValueType(
 	'cutscene_camera_point',
 	['H1', 'H2', 'H3', 'H0', 'HR', 'H4'],
-	'Name of a cutscene_camera_point definined in the scenario',
+	'Cutscene Camera Point definined in the scenario',
 );
 hsValueTypes.push(newValueType);
 
 var newValueType = new HSValueType(
 	'cutscene_title',
 	['H1', 'H2', 'H3', 'H0', 'HR', 'H4'],
-	'Name of a cutscene_title definined in the scenario',
+	'Cutscene Title definined in the scenario',
 );
 hsValueTypes.push(newValueType);
 
 var newValueType = new HSValueType(
 	'cutscene_recording',
 	['H1'],
-	'',
+	'Cutscene recording defined in the scenario',
 );
 hsValueTypes.push(newValueType);
 
 var newValueType = new HSValueType(
 	'device_group',
 	['H1', 'H2', 'H3', 'H0', 'HR', 'H4'],
-	'',
+	'Device Group defined in the scenario',
 );
 hsValueTypes.push(newValueType);
 
 var newValueType = new HSValueType(
 	'point_reference',
 	['H2', 'H3', 'H0', 'HR', 'H4'],
-	'',
+	'Point Reference in the scenario. Accessed in the form point_set/point_reference (or point_set.point_reference if H4)',
 );
 hsValueTypes.push(newValueType);
 
 var newValueType = new HSValueType(
 	'point_set_reference',
 	['H4'],
-	'',
+	'Point Set Reference in the scenario',
 );
 hsValueTypes.push(newValueType);
 
 var newValueType = new HSValueType(
 	'ai_command_list',
 	['H1'],
-	'',
+	'AI Command List from the scenario',
 );
 hsValueTypes.push(newValueType);
 
 var newValueType = new HSValueType(
 	'ai_command_script',
 	['H1', 'H2', 'H3', 'H0', 'HR', 'H4'],
-	'',
+	'A compiled AI command script',
 );
 hsValueTypes.push(newValueType);
 
 var newValueType = new HSValueType(
 	'ai_behavior',
 	['H2', 'H3', 'H0', 'HR', 'H4'],
-	'',
+	'Game engine AI Behaviour',
 );
 hsValueTypes.push(newValueType);
 
 var newValueType = new HSValueType(
 	'ai_orders',
 	['H2'],
-	'',
+	'AI Order defined in the scenario',
 );
 hsValueTypes.push(newValueType);
 
 var newValueType = new HSValueType(
 	'ai_line',
 	['H3', 'H0', 'HR', 'H4'],
-	'',
+	'AI line from the scenarios mission dialogue tag',
 );
 hsValueTypes.push(newValueType);
 
 var newValueType = new HSValueType(
 	'starting_profile',
 	['H1', 'H2', 'H3', 'H0', 'HR', 'H4'],
-	'',
+	'Starting Profile defined in the scenario',
 );
 hsValueTypes.push(newValueType);
 
 var newValueType = new HSValueType(
 	'conversation',
 	['H1', 'H2'],
-	'',
+	'AI Conversation defined in the scenario',
 );
 hsValueTypes.push(newValueType);
 
 var newValueType = new HSValueType(
 	'navpoint',
 	['H1', 'H2'],
-	'',
+	'Navpoint defined in the scenario',
 );
 hsValueTypes.push(newValueType);
 
 var newValueType = new HSValueType(
 	'team',
 	['H1', 'H2', 'H3', 'H0', 'HR', 'H4'],
-	'',
+	'Team for setting ai allegiance',
 );
 hsValueTypes.push(newValueType);
 
 var newValueType = new HSValueType(
 	'mp_team',
 	['H1', 'H2', 'H3', 'H0', 'HR', 'H4'],
-	'',
+	'Multiplayer Team',
 );
 hsValueTypes.push(newValueType);
 
 var newValueType = new HSValueType(
 	'skull',
 	['HR', 'H4'],
-	'',
+	'The name of a skull',
 );
 hsValueTypes.push(newValueType);
 
 var newValueType = new HSValueType(
 	'primary_skull',
 	['H0'],
-	'',
+	'The name of a Primary Skull',
 );
 hsValueTypes.push(newValueType);
 
 var newValueType = new HSValueType(
 	'secondary_skull',
 	['H0'],
-	'',
+	'The name of a Secondary Skull',
 );
 hsValueTypes.push(newValueType);
 
@@ -382,14 +382,14 @@ hsValueTypes.push(newValueType);
 var newValueType = new HSValueType(
 	'hud_message',
 	['H1', 'H2'],
-	'',
+	'Hud Message defined in the scenario',
 );
 hsValueTypes.push(newValueType);
 
 var newValueType = new HSValueType(
 	'player',
 	['HR', 'H4'],
-	'',
+	'Reference to a player',
 );
 hsValueTypes.push(newValueType);
 
@@ -424,14 +424,14 @@ hsValueTypes.push(newValueType);
 var newValueType = new HSValueType(
 	'style',
 	['H2', 'H3', 'H0', 'HR', 'H4'],
-	'',
+	'AI Style',
 );
 hsValueTypes.push(newValueType);
 
 var newValueType = new HSValueType(
 	'folder',
 	['H3', 'H0', 'HR', 'H4'],
-	'',
+	'Scenario Folder',
 );
 hsValueTypes.push(newValueType);
 
@@ -529,7 +529,7 @@ hsValueTypes.push(newValueType);
 var newValueType = new HSValueType(
 	'game_difficulty',
 	['H1', 'H2', 'H3', 'H0', 'HR', 'H4'],
-	'',
+	'An Enum representing a game difficulty',
 );
 hsValueTypes.push(newValueType);
 

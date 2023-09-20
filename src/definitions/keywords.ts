@@ -72,3 +72,15 @@ var newFunc = new HSKeyword(
 	"Evaluates the specified number of expressions in a sequence in random order and returns the last value evaluated. The number of expressions to evaluate must be the sole argument of this function. Must conclude with an 'end' keyword",
 );
 hsKeywords.push(newFunc);
+
+var newFunc = new HSKeyword(
+	"instanced",
+	"Declares that this variable / script is instanced\n\nIn the case of a variable, it declares a variable to be local to that object only.\n\nWhen this modifier is added to a script declaration, it allows the use of the keyword 'this' which is a reference to the object this script operates on. The instanced modifier is only valid for object scripts.",
+);
+hsKeywords.push(newFunc);
+
+var newFunc = new HSKeyword(
+	"this",
+	"Returns the object the current instanced script is runnning on.\n\nOnly valid for an instanced object script.",
+);
+hsKeywords.push(newFunc);

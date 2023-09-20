@@ -5,6 +5,7 @@ const vscode = require("vscode");
 const completion = require("./providers/completion");
 const hover = require("./providers/hover");
 const signature = require("./providers/signature");
+// import * as semantics from './providers/semantics'
 const scriptCompiler_1 = require("./commands/scriptCompiler");
 const tokenTypes = new Map();
 const tokenModifiers = new Map();

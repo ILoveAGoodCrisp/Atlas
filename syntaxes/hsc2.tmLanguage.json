@@ -79,6 +79,9 @@
 				},
 				{
 					"include": "#functions"
+				},
+				{
+					"include": "#variables"
 				}
 			]
 		},
@@ -144,7 +147,7 @@
 			"patterns": [
 				{
 					"name":"entity.name.function.hsc2",
-					"match": "(?<=\\()(\\w+)|(?<=\\(\\bscript\\b\\s\\b(startup|continuous|dormant|command_script)\\b\\s)(.+)|(?<=\\(\\bscript\\b\\s\\b(static|stub)\\b\\s\\b(mp_team|cinematic_scene_definition|object_list|delivery_method|unit_name|object_name|scenery|function_name|ai_behavior|bitmap|render_model|currency_type|event|object_definition|string_id|damage|weapon|unit_seat_mapping|ai_line|animation_budget_reference|controller|firefight_wave_type|ai_default_state|sound_budget_reference|ai|effect_scenery|model_state|passthrough|cutscene_flag|hud_corner|hud_message|wave_difficulty|lightmap_definition|script|text_justification|text_drop_shadow_type|network_event|point_reference|real|shader|object|secondary_skull|actor_variant|firefight_goal|ai_command_script|voice_mask|cinematic_lightprobe|structure_definition|effect|cutscene_recording|vehicle_name|subtitle_setting|string|device|actor_type|any_tag_not_resolving|device_group|effect_scenery_name|voice_output_setting|cinematic_definition|navpoint|bink_definition|player_character_type|cutscene_title|looping_sound_budget_reference|unit|character_physics|player|ai_command_list|animation_graph|style|vehicle|player_color|zone_set|boolean|any_tag|havok_group|trigger_volume|text_alignment|designer_zone|cutscene_camera_point|team|font|cinematic_transition_definition|conversation|starting_profile|long|skull|sound|button_preset|cinematic_scene_data_definition|damage_region|primary_skull|void|structure_bsp|looping_sound|device_name|short|damage_effect|firing_point_evaluator|weapon_name|scenery_name|folder|joystick_preset|ai_orders|game_difficulty|point_set_reference|player_model_choice|cui_screen_definition|sound_event)\\b\\s)(.+)"
+					"match": "(?<=\\()(\\w+)|(?<=\\(\\bscript\\b\\s\\b(startup|continuous|dormant|command_script)\\b\\s)(.+)|(?<=\\(\\bscript\\b\\s\\b(static|stub)\\b\\s\\b(mp_team|cinematic_scene_definition|object_list|delivery_method|unit_name|object_name|scenery|function_name|ai_behavior|bitmap|render_model|currency_type|event|object_definition|string_id|damage|weapon|unit_seat_mapping|ai_line|animation_budget_reference|controller|firefight_wave_type|ai_default_state|sound_budget_reference|ai|effect_scenery|model_state|passthrough|cutscene_flag|hud_corner|hud_message|wave_difficulty|lightmap_definition|script|text_justification|text_drop_shadow_type|network_event|point_reference|real|shader|object|secondary_skull|actor_variant|firefight_goal|ai_command_script|voice_mask|cinematic_lightprobe|structure_definition|effect|cutscene_recording|vehicle_name|subtitle_setting|string|device|actor_type|any_tag_not_resolving|device_group|effect_scenery_name|voice_output_setting|cinematic_definition|navpoint|bink_definition|player_character_type|cutscene_title|looping_sound_budget_reference|unit|character_physics|player|ai_command_list|animation_graph|style|vehicle|player_color|zone_set|boolean|any_tag|havok_group|trigger_volume|text_alignment|designer_zone|cutscene_camera_point|team|font|cinematic_transition_definition|conversation|starting_profile|long|skull|sound|button_preset|cinematic_scene_data_definition|damage_region|primary_skull|void|structure_bsp|looping_sound|device_name|short|damage_effect|firing_point_evaluator|weapon_name|scenery_name|folder|joystick_preset|ai_orders|game_difficulty|point_set_reference|player_model_choice|cui_screen_definition|sound_event)\\b\\s)(\\w+)"
 				}
 			]
 		},
@@ -152,7 +155,7 @@
 			"patterns": [
 				{
 					"name":"variable.hsc2",
-					"match": "\\b\\w+\\b"
+					"match": "(?<!\\\\|\\.)\\b\\w+\\b(?!\\\\|\\.)"
 				}
 			]
 		}

@@ -29,6 +29,8 @@ export class hsProvider {
 			var itemNew = new vscode.CompletionItem(func.name);
 			var itemClassic = new vscode.CompletionItem(func.name);
 			let joinedArgs = func.args.join(', ');
+			if (func.args.length <= 0)
+				joinedArgs = "";
 			
 			itemNew.kind = vscode.CompletionItemKind.Function;
 			itemClassic.kind = vscode.CompletionItemKind.Function;
@@ -39,13 +41,19 @@ export class hsProvider {
 			itemNew.command = {command: 'triggerSignatureHelp', title: 'Trigger Signature Help',};
 			itemClassic.command = {command: 'triggerSignatureHelp', title: 'Trigger Signature Help',};
 
-			itemNew.detail = func.r_type + " " + func.name + "(" + joinedArgs + ")";
 			itemNew.insertText = new vscode.SnippetString(func.name + '(${1})');
 
 			joinedArgs = " " + func.args.join(' ');
+			let snip = ' ${1}'
+			if (func.args.length <= 0)
+			{
+				joinedArgs = "";
+				snip = '${1}'
+			}
 
 			itemClassic.detail = func.r_type + " " + "(" + func.name + joinedArgs + ")";
-			itemClassic.insertText = new vscode.SnippetString(func.name + ' ${1}');
+			itemClassic.insertText = new vscode.SnippetString(func.name + snip);
+			
 			
 			if (func.games.includes('H1')) 
 			{

@@ -84,7 +84,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"-",
-	['number', 'number'],
+	['number-1', 'number-2'],
 	"real",
 	['H1', 'H2', 'H3', 'HO', 'HR'],
 	"Returns the difference of two expressions",
@@ -102,7 +102,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"/",
-	['number', 'number'],
+	['number-1', 'number-2'],
 	"real",
 	['H1', 'H2', 'H3', 'HO', 'HR'],
 	"Returns the quotient of two expressions",
@@ -129,7 +129,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"=",
-	['expression', 'expression'],
+	['expression-1', 'expression-2'],
 	"boolean",
 	['H1', 'H2', 'H3', 'HO', 'HR'],
 	"Returns true if two expressions are equal",
@@ -138,7 +138,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"!=",
-	['expression', 'expression'],
+	['expression-1', 'expression-2'],
 	"boolean",
 	['H1', 'H2', 'H3', 'HO', 'HR'],
 	"Returns true if two expressions are not equal",
@@ -147,7 +147,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	">",
-	['number', 'number'],
+	['number-1', 'number-2'],
 	"boolean",
 	['H1', 'H2', 'H3', 'HO', 'HR'],
 	"Returns true if the first number is larger than the second",
@@ -156,7 +156,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"<",
-	['number', 'number'],
+	['number-1', 'number-2'],
 	"boolean",
 	['H1', 'H2', 'H3', 'HO', 'HR'],
 	"Returns true if the first number is smaller than the second",
@@ -165,7 +165,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	">=",
-	['number', 'number'],
+	['number-1', 'number-2'],
 	"boolean",
 	['H1', 'H2', 'H3', 'HO', 'HR'],
 	"Returns true if the first number is larger than or equal to the second",
@@ -174,7 +174,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"<=",
-	['number', 'number'],
+	['number-1', 'number-2'],
 	"boolean",
 	['H1', 'H2', 'H3', 'HO', 'HR'],
 	"Returns true if the first number is smaller than or equal to the second",
@@ -203,7 +203,7 @@ var newFunc = new HSFunction(
 	"sleep_until",
 	['boolean', 'short?', 'long?'],
 	"void",
-	[' \'[<long>]\']"'],
+	['H1', 'H2'],
 	"Pauses execution of this script until the specified condition is true, checking once per second unless a different number of ticks is specified. If the final optional argument is given, this function will stop sleeping regardless of condition after <long> ticks",
 );
 hsFunctions.push(newFunc);
@@ -273,7 +273,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"pin",
-	['real', 'real', 'real'],
+	['real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6'],
 	"real",
 	['H1', 'H2', 'H3', 'HO', 'HR', 'H4'],
 	"Returns the first value pinned between the second two",
@@ -372,7 +372,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"bitwise_and",
-	['long', 'long'],
+	['long-1', 'long-2'],
 	"long",
 	['H1'],
 	"<lhs> and <rhs>",
@@ -381,7 +381,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"bitwise_or",
-	['long', 'long'],
+	['long-1', 'long-2'],
 	"long",
 	['H1'],
 	"<lhs> or <rhs>",
@@ -390,7 +390,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"bitwise_xor",
-	['long', 'long'],
+	['long-1', 'long-2'],
 	"long",
 	['H1'],
 	"<lhs> xor <rhs>",
@@ -435,7 +435,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"bitwise_flags_toggle",
-	['long', 'long', 'boolean'],
+	['long-1', 'long-2', 'boolean'],
 	"long",
 	['H1'],
 	"<value> <flags> <on_or_off>",
@@ -561,7 +561,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"object_set_permutation",
-	['object', 'string', 'string'],
+	['object', 'string-1', 'string-2'],
 	"void",
 	['H1'],
 	"Sets the desired region (use  for all regions) to the permutation with the given name, e.g. (object_set_permutation flood right arm ~damaged)",
@@ -741,7 +741,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"objects_distance_to_position",
-	['object_list', 'real', 'real', 'real'],
+	['object_list', 'real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6'],
 	"real",
 	['H1', 'H2', 'H4'],
 	"Returns minimum distance from any of the specified objects to the specified position. (returns -1 if there are no objects to check)",
@@ -795,7 +795,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"random_range",
-	['short', 'short'],
+	['short-1', 'short-2'],
 	"short",
 	['H1', 'H2', 'H3', 'HO', 'HR'],
 	"Returns a random value in the range [lower bound, upper bound)",
@@ -804,7 +804,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"real_random_range",
-	['real', 'real'],
+	['real-1', 'real-2'],
 	"real",
 	['H1', 'H2', 'H3', 'HO', 'HR'],
 	"Returns a random value in the range [lower bound, upper bound)",
@@ -948,7 +948,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"objects_attach",
-	['object', 'string', 'object', 'string'],
+	['object-1', 'string-1', 'object-2', 'string-2'],
 	"void",
 	['H1'],
 	"Attaches the second object to the first; both strings can be empty",
@@ -957,7 +957,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"objects_detach",
-	['object', 'object'],
+	['object-1', 'object-2'],
 	"void",
 	['H1', 'H2', 'H3', 'HO', 'HR', 'H4'],
 	"Detaches from the given parent object the given child object",
@@ -1263,7 +1263,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"unit_set_maximum_vitality",
-	['unit', 'real', 'real'],
+	['unit', 'real-1', 'real-2'],
 	"void",
 	['H1', 'H2', 'H3', 'HO', 'HR', 'H4'],
 	"Sets a unit's maximum body and shield vitality",
@@ -1272,7 +1272,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"units_set_maximum_vitality",
-	['object_list', 'real', 'real'],
+	['object_list', 'real-1', 'real-2'],
 	"void",
 	['H1', 'H2', 'H3', 'HO', 'HR', 'H4'],
 	"Sets a group of units' maximum body and shield vitality",
@@ -1281,7 +1281,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"unit_set_current_vitality",
-	['unit', 'real', 'real'],
+	['unit', 'real-1', 'real-2'],
 	"void",
 	['H1', 'H2', 'H3', 'HO', 'HR', 'H4'],
 	"Sets a unit's current body and shield vitality",
@@ -1290,7 +1290,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"units_set_current_vitality",
-	['object_list', 'real', 'real'],
+	['object_list', 'real-1', 'real-2'],
 	"void",
 	['H1', 'H2', 'H3', 'HO', 'HR', 'H4'],
 	"Sets a group of units' current body and shield vitality",
@@ -1821,7 +1821,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"ai_magically_see_encounter",
-	['ai', 'ai'],
+	['ai-1', 'ai-2'],
 	"void",
 	['H1'],
 	"Makes one encounter magically aware of another",
@@ -1911,7 +1911,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"ai_migrate",
-	['ai', 'ai'],
+	['ai-1', 'ai-2'],
 	"void",
 	['H1', 'H2', 'H3', 'HO', 'HR', 'H4'],
 	"Makes all or part of an encounter move to another encounter",
@@ -1920,7 +1920,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"ai_migrate_and_speak",
-	['ai', 'ai', 'string'],
+	['ai-1', 'ai-2', 'string'],
 	"void",
 	['H1'],
 	"Makes all or part of an encounter move to another encounter, and say their 'advance' or 'retreat' speech lines",
@@ -1938,7 +1938,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"ai_allegiance",
-	['team', 'team'],
+	['team-1', 'team-2'],
 	"void",
 	['H1', 'H2', 'H3', 'HO', 'HR', 'H4'],
 	"Creates an allegiance between two teams",
@@ -1947,7 +1947,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"ai_allegiance_remove",
-	['team', 'team'],
+	['team-1', 'team-2'],
 	"void",
 	['H1', 'H2', 'H3', 'HO', 'HR', 'H4'],
 	"Destroys an allegiance between two teams",
@@ -2118,7 +2118,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"ai_try_to_fight",
-	['ai', 'ai'],
+	['ai-1', 'ai-2'],
 	"void",
 	['H1'],
 	"Causes a group of actors to preferentially target another group of actors",
@@ -2361,7 +2361,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"ai_follow_target_ai",
-	['ai', 'ai'],
+	['ai-1', 'ai-2'],
 	"void",
 	['H1'],
 	"Sets the follow target for an encounter to be a group of ai (encounter, squad or platoon)",
@@ -2424,7 +2424,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"ai_link_activation",
-	['ai', 'ai'],
+	['ai-1', 'ai-2'],
 	"void",
 	['H1'],
 	"Links the first encounter so that it will be made active whenever it detects that the second encounter is active",
@@ -2469,7 +2469,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"ai_allegiance_broken",
-	['team', 'team'],
+	['team-1', 'team-2'],
 	"boolean",
 	['H1', 'H2', 'H3', 'HO', 'HR', 'H4'],
 	"Returns whether two teams have an allegiance that is currently broken by traitorous behavior",
@@ -2838,7 +2838,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"fade_in",
-	['real', 'real', 'real', 'short'],
+	['real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6', 'short'],
 	"void",
 	['H1', 'H2', 'H3', 'HO', 'HR'],
 	"Does a screen fade in from a particular color",
@@ -2847,7 +2847,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"fade_out",
-	['real', 'real', 'real', 'short'],
+	['real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6', 'short'],
 	"void",
 	['H1', 'H2', 'H3', 'HO', 'HR'],
 	"Does a screen fade out to a particular color",
@@ -3504,7 +3504,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"breadcrumbs_activate_team_nav_point_position",
-	['navpoint', 'team', 'real', 'real', 'real', 'string', 'real'],
+	['navpoint', 'team', 'real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6', 'real-7', 'real-8', 'real-9', 'string', 'real-10', 'real-11', 'real-12'],
 	"void",
 	['H1', 'H2'],
 	"Activates a nav point type <string> attached to a team anchored to position xyz <real, real, real> named <_hs_type_string> and with a vertical offset <real>. if the player is not local to the machine or the improved navpoints setting is disabled, this will fail",
@@ -3621,7 +3621,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"player_effect_set_max_translation",
-	['real', 'real', 'real'],
+	['real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6'],
 	"void",
 	['H1', 'H2', 'H3', 'HO', 'HR', 'H4'],
 	"<x> <y> <z>",
@@ -3630,7 +3630,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"player_effect_set_max_rotation",
-	['real', 'real', 'real'],
+	['real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6'],
 	"void",
 	['H1', 'H2', 'H3', 'HO', 'HR', 'H4'],
 	"<yaw> <pitch> <roll>",
@@ -3639,7 +3639,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"player_effect_set_max_vibrate",
-	['real', 'real'],
+	['real-1', 'real-2'],
 	"void",
 	['H1'],
 	"<left> <right>",
@@ -3648,7 +3648,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"player_effect_set_max_rumble",
-	['real', 'real'],
+	['real-1', 'real-2'],
 	"void",
 	['H1'],
 	"Deprecated: use player_effect_set_max_vibrate, this is only to keep compatibility with custom edition",
@@ -3657,7 +3657,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"player_effect_start",
-	['real', 'real'],
+	['real-1', 'real-2'],
 	"void",
 	['H1', 'H2', 'H3', 'HO', 'HR', 'H4'],
 	"<max_intensity> <attack time>",
@@ -3756,7 +3756,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"hud_set_timer_time",
-	['short', 'short'],
+	['short-1', 'short-2'],
 	"void",
 	['H1'],
 	"Sets the time for the timer to <short> minutes and <short> seconds, and starts and displays timer",
@@ -3765,7 +3765,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"hud_set_timer_warning_time",
-	['short', 'short'],
+	['short-1', 'short-2'],
 	"void",
 	['H1'],
 	"Sets the warning time for the timer to <short> minutes and <short> seconds",
@@ -3774,7 +3774,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"hud_set_timer_position",
-	['short', 'short', 'hud_corner'],
+	['short-1', 'short-2', 'hud_corner'],
 	"void",
 	['H1'],
 	"Sets the timer upper left position to (x, y)=>(<short>, <short>)",
@@ -3882,7 +3882,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_screen_effect_set_convolution",
-	['short', 'short', 'real', 'real', 'real'],
+	['short-1', 'short-2', 'real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6'],
 	"void",
 	['H1'],
 	"Sets the convolution effect",
@@ -3891,7 +3891,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_screen_effect_set_filter",
-	['real', 'real', 'real', 'real', 'boolean', 'real'],
+	['real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6', 'real-7', 'real-8', 'real-9', 'real-10', 'real-11', 'real-12', 'real-13', 'real-14', 'real-15', 'real-16', 'boolean', 'real-17', 'real-18', 'real-19', 'real-20'],
 	"void",
 	['H1'],
 	"Sets the filter effect",
@@ -3900,7 +3900,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_screen_effect_set_filter_desaturation_tint",
-	['real', 'real', 'real'],
+	['real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6'],
 	"void",
 	['H1'],
 	"Sets the desaturation filter tint color",
@@ -3999,7 +3999,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"sound_enable_hardware",
-	['boolean', 'boolean'],
+	['boolean-1', 'boolean-2'],
 	"void",
 	['H1'],
 	"Enable or disable hardware sound buffers",
@@ -4080,7 +4080,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"bind",
-	['string', 'string', 'string'],
+	['string-1', 'string-2', 'string-3', 'string-4', 'string-5', 'string-6'],
 	"void",
 	['H1'],
 	"Binds an input device/button combination to a game control",
@@ -4089,7 +4089,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"unbind",
-	['string', 'string'],
+	['string-1', 'string-2'],
 	"void",
 	['H1'],
 	"Unbinds an input device/button combination",
@@ -4197,7 +4197,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"event_display_category",
-	['string', 'string'],
+	['string-1', 'string-2'],
 	"void",
 	['H1'],
 	"Sets the display level for a named category of network events",
@@ -4206,7 +4206,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"event_force_display_category",
-	['string', 'string'],
+	['string-1', 'string-2'],
 	"void",
 	['H1'],
 	"Sets the forced display level for a named category of network events",
@@ -4215,7 +4215,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"event_log_category",
-	['string', 'string'],
+	['string-1', 'string-2'],
 	"void",
 	['H1'],
 	"Sets the log level for a named category of network events",
@@ -4224,7 +4224,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"event_remote_log_category",
-	['string', 'string'],
+	['string-1', 'string-2'],
 	"void",
 	['H1'],
 	"Sets the remote log level for a named category of network events",
@@ -4233,7 +4233,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"event_debugger_break_category",
-	['string', 'string'],
+	['string-1', 'string-2'],
 	"void",
 	['H1'],
 	"Sets the debugger break level for a named category of network events",
@@ -4242,7 +4242,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"event_halt_category",
-	['string', 'string'],
+	['string-1', 'string-2'],
 	"void",
 	['H1'],
 	"Sets the halt (assert/crash) level for a named category of network events",
@@ -4395,7 +4395,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"determinism_log_compare_log_files",
-	['string', 'string'],
+	['string-1', 'string-2'],
 	"void",
 	['H1'],
 	"Compares determinism log files",
@@ -4539,7 +4539,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"object_set_function_variable",
-	['object', 'string_id', 'real', 'real'],
+	['object', 'string_id', 'real-1', 'real-2'],
 	"void",
 	['H2', 'H3', 'HO', 'HR', 'H4'],
 	"Sets funciton variable for sin-o-matic use",
@@ -4611,7 +4611,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"object_set_shield_effect",
-	['object', 'real', 'real'],
+	['object', 'real-1', 'real-2'],
 	"void",
 	['H2', 'H3', 'HO', 'HR', 'H4'],
 	"Sets the shield response effect (not current shield amount) to a given value over the given number of seconds (cinematic use only, remember to call (object_set_shield_effect 0 0) after use!)",
@@ -4638,7 +4638,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"objects_attach",
-	['object', 'string_id', 'object', 'string_id'],
+	['object-1', 'string_id-1', 'object-2', 'string_id-2'],
 	"void",
 	['H2', 'H3', 'HO', 'HR', 'H4'],
 	"Attaches the second object to the first both strings can be empty",
@@ -4782,7 +4782,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_lighting_set_primary_light",
-	['real', 'real', 'real', 'real', 'real'],
+	['real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6', 'real-7', 'real-8', 'real-9', 'real-10', 'real-11', 'real-12', 'real-13', 'real-14', 'real-15', 'real-16', 'real-17', 'real-18', 'real-19', 'real-20'],
 	"void",
 	['H2'],
 	"Sets the pitch, yaw, and color (red, green, blue) of the cinematic shadowing diffuse and specular directional light",
@@ -4791,7 +4791,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_lighting_set_secondary_light",
-	['real', 'real', 'real', 'real', 'real'],
+	['real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6', 'real-7', 'real-8', 'real-9', 'real-10', 'real-11', 'real-12', 'real-13', 'real-14', 'real-15', 'real-16', 'real-17', 'real-18', 'real-19', 'real-20'],
 	"void",
 	['H2'],
 	"Sets the pitch, yaw, and color (red, green, blue) of the cinematic non-shadowing diffuse directional light",
@@ -4800,7 +4800,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_lighting_set_ambient_light",
-	['real', 'real', 'real'],
+	['real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6'],
 	"void",
 	['H2'],
 	"Sets the color (red, green, blue) of the cinematic ambient light",
@@ -4872,7 +4872,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"object_set_permutation",
-	['object', 'string_id', 'string_id'],
+	['object', 'string_id-1', 'string_id-2'],
 	"void",
 	['H2', 'H3', 'HO', 'HR', 'H4'],
 	"Sets the desired region (use  for all regions) to the permutation with the given name, e.g. (object_set_permutation flood right arm ~damaged)",
@@ -4899,7 +4899,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"position_predict",
-	['real', 'real', 'real'],
+	['real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6'],
 	"void",
 	['H2', 'HR', 'H4'],
 	"In: x, y, z position. loads textures/geometry/sounds necessary to present locations that are about to come on-screen",
@@ -4935,7 +4935,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"physics_set_velocity_frame",
-	['real', 'real', 'real'],
+	['real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6'],
 	"void",
 	['H2', 'H3', 'HO', 'HR', 'H4'],
 	"Sets a local frame of motion for updating physics of things that wish to respect it",
@@ -5106,7 +5106,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"render_debug_structure_line_opacity",
-	['real', 'real', 'real', 'real'],
+	['real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6', 'real-7', 'real-8', 'real-9', 'real-10', 'real-11', 'real-12'],
 	"void",
 	['H2', 'H3', 'HO', 'HR', 'H4'],
 	"Sets the opacity (0 is default)",
@@ -5115,7 +5115,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"render_debug_structure_text_opacity",
-	['real', 'real', 'real', 'real'],
+	['real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6', 'real-7', 'real-8', 'real-9', 'real-10', 'real-11', 'real-12'],
 	"void",
 	['H2', 'H3', 'HO', 'HR', 'H4'],
 	"Sets the opacity (0 is default)",
@@ -5124,7 +5124,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"render_debug_structure_opacity",
-	['real', 'real', 'real', 'real'],
+	['real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6', 'real-7', 'real-8', 'real-9', 'real-10', 'real-11', 'real-12'],
 	"void",
 	['H2', 'H3', 'HO', 'HR', 'H4'],
 	"Sets the opacity (0 is default)",
@@ -5484,7 +5484,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"unit_add_equipment",
-	['unit', 'starting_profile', 'boolean', 'boolean'],
+	['unit', 'starting_profile', 'boolean-1', 'boolean-2'],
 	"void",
 	['H2', 'H3', 'HO', 'HR', 'H4'],
 	"Adds/resets the unit's health, shield, and inventory (weapons and grenades) to the named profile. resets if third parameter is true, adds if false. weapons will be marked as garbage if fourth parameter is true (for respawning equipment)",
@@ -5556,7 +5556,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"device_animate_position",
-	['device', 'real', 'real', 'real', 'real', 'boolean'],
+	['device', 'real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6', 'real-7', 'real-8', 'real-9', 'real-10', 'real-11', 'real-12', 'boolean'],
 	"void",
 	['H2', 'H3', 'HO', 'HR', 'H4'],
 	"Animate the position over time",
@@ -5565,7 +5565,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"device_animate_overlay",
-	['device', 'real', 'real', 'real', 'real'],
+	['device', 'real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6', 'real-7', 'real-8', 'real-9', 'real-10', 'real-11', 'real-12'],
 	"void",
 	['H2', 'H3', 'HO', 'HR', 'H4'],
 	"Animate the overlay over time",
@@ -5691,7 +5691,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"ai_place_in_vehicle",
-	['ai', 'ai'],
+	['ai-1', 'ai-2'],
 	"void",
 	['H2', 'H3', 'HO', 'HR', 'H4'],
 	"Places the specified squad (1st arg) on the map in the vehicles belonging to the specified vehicle squad (2nd arg)",
@@ -5754,7 +5754,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"ai_magically_see",
-	['ai', 'ai'],
+	['ai-1', 'ai-2'],
 	"void",
 	['H2', 'H3', 'HO', 'HR', 'H4'],
 	"Make one squad magically aware of another",
@@ -6096,7 +6096,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cs_run_joint_command_script",
-	['ai_command_script', 'ai', 'ai', 'ai?'],
+	['ai_command_script', 'ai-1', 'ai-2', 'ai?'],
 	"void",
 	['H2'],
 	"Causes the specified actor(s) to start executing a command script immediately (discarding any other command scripts in the queue)",
@@ -6186,7 +6186,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cs_fly_to_and_face",
-	['point_reference', 'point_reference', 'real?'],
+	['point_reference-1', 'point_reference-2', 'real?'],
 	"void",
 	['H2', 'H3', 'HO', 'HR', 'H4'],
 	"Flies the actor to the given point and orients him in the appropriate direction (within the given tolerance)",
@@ -6213,7 +6213,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cs_go_by",
-	['point_reference', 'point_reference', 'real?'],
+	['point_reference-1', 'point_reference-2', 'real?'],
 	"void",
 	['H2', 'H3', 'HO', 'HR', 'H4'],
 	"Actor moves toward the point, and considers it hit when it breaks the indicated plane, attenuating throttle by the given amount when near the goal",
@@ -6222,7 +6222,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cs_go_to_and_face",
-	['point_reference', 'point_reference'],
+	['point_reference-1', 'point_reference-2'],
 	"void",
 	['H2', 'H3', 'HO', 'HR', 'H4'],
 	"Moves the actor to a specified point and has him face the second point",
@@ -6339,7 +6339,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cs_move_in_direction",
-	['real', 'real', 'real'],
+	['real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6'],
 	"void",
 	['H2', 'H3', 'HO', 'HR', 'H4'],
 	"Actor moves at given angle, for the given distance, optionally with the given facing (angle, distance, facing)",
@@ -6393,7 +6393,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cs_jump",
-	['real', 'real'],
+	['real-1', 'real-2'],
 	"void",
 	['H2', 'H3', 'HO', 'HR', 'H4'],
 	"Actor jumps in direction of angle at the given velocity (angle, velocity)",
@@ -6402,7 +6402,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cs_jump_to_point",
-	['real', 'real'],
+	['real-1', 'real-2'],
 	"void",
 	['H2', 'H3', 'HO', 'HR', 'H4'],
 	"Actor jumps with given horizontal and vertical velocity",
@@ -6483,7 +6483,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cs_teleport",
-	['point_reference', 'point_reference'],
+	['point_reference-1', 'point_reference-2'],
 	"void",
 	['H2', 'H3', 'HO', 'HR', 'H4'],
 	"Actor teleports to point1 facing point2",
@@ -6546,7 +6546,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cs_formation",
-	['short', 'ai', 'point_reference', 'point_reference'],
+	['short', 'ai', 'point_reference-1', 'point_reference-2'],
 	"void",
 	['H2'],
 	"Actor initiates a formation of the given type at the given point, facing (initially) at the given other point. formation types are (0) 1x column (1) 2x column ... (4) wall (5) wedge",
@@ -6564,7 +6564,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cs_approach",
-	['object', 'real', 'real', 'real'],
+	['object', 'real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6'],
 	"void",
 	['H2'],
 	"(approach <object> <distance> <max-distance> <follow-distance>)",
@@ -6573,7 +6573,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cs_start_approach",
-	['object', 'real', 'real', 'real'],
+	['object', 'real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6'],
 	"void",
 	['H2'],
 	"(approach <object> <distance> <max-distance> <follow-distance>) non-blocking",
@@ -6582,7 +6582,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cs_approach_player",
-	['real', 'real', 'real'],
+	['real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6'],
 	"void",
 	['H2'],
 	"(approach player <distance> <max-distance> <follow-distance>)",
@@ -6591,7 +6591,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cs_start_approach_player",
-	['real', 'real', 'real'],
+	['real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6'],
 	"void",
 	['H2'],
 	"(approach <distance> <max-distance> <follow-distance>) non-blocking",
@@ -6816,7 +6816,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"camera_pan",
-	['cutscene_camera_point', 'cutscene_camera_point', 'short', 'short', 'real', 'short', 'real'],
+	['cutscene_camera_point-1', 'cutscene_camera_point-2', 'short-1', 'short-2', 'short-3', 'short-4', 'real-1', 'short-5', 'short-6', 'real-2'],
 	"void",
 	['H2', 'H3', 'HO', 'HR', 'H4'],
 	"Camera_pan <start point> <end point> <ticks> <ease-in ticks> <start velocity scale> <ease-out ticks> <end velocity scale>",
@@ -7050,7 +7050,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"debug_teleport_player",
-	['long', 'long'],
+	['long-1', 'long-2'],
 	"void",
 	['H2', 'H3', 'HO'],
 	"For testing: teleports one player to another's location",
@@ -7068,7 +7068,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"record_movie",
-	['short', 'long', 'short'],
+	['short-1', 'long', 'short-2'],
 	"void",
 	['H2'],
 	"<frame rate> <seconds> <screen size>",
@@ -7077,7 +7077,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"record_movie_distributed",
-	['short', 'long', 'short', 'long', 'long'],
+	['short-1', 'long-1', 'long-2', 'short-2', 'long-3', 'long-4', 'long-5', 'long-6'],
 	"void",
 	['H2', 'H3', 'HO', 'HR', 'H4'],
 	"<frame rate> <seconds> <screen size> <mod count> <mod index>",
@@ -7203,7 +7203,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"game_rate",
-	['real', 'real', 'real'],
+	['real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6'],
 	"void",
 	['H2', 'H3', 'HO', 'HR', 'H4'],
 	"Changes game update rate (danger: only use if you know what you're doing!)",
@@ -7482,7 +7482,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"sound_set_tag_parameter_unsafe",
-	['string', 'string', 'long', 'long', 'long', 'real', 'real', 'real'],
+	['string-1', 'string-2', 'long-1', 'long-2', 'long-3', 'long-4', 'long-5', 'long-6', 'real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6'],
 	"void",
 	['H2', 'H3', 'HO'],
 	"This is the second sign of the coming of the antichrist",
@@ -7509,7 +7509,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"sound_impulse_start_cinematic",
-	['sound', 'object', 'real', 'real', 'real'],
+	['sound', 'object', 'real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6'],
 	"void",
 	['H2', 'H3', 'HO', 'HR', 'H4'],
 	"<sound> <object> <scale> <3d gain> <first person gain> plays an impulse sound from the specified source object",
@@ -7545,7 +7545,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"sound_impulse_start_3d",
-	['sound', 'real', 'real'],
+	['sound', 'real-1', 'real-2'],
 	"void",
 	['H2', 'H3', 'HO', 'HR', 'H4'],
 	"<sound> <azimuth> <scale> at the sound's minimum distance",
@@ -7671,7 +7671,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"hud_cinematic_fade",
-	['real', 'real'],
+	['real-1', 'real-2'],
 	"void",
 	['H2'],
 	"Parameter 1 is how, parameter 2 is when",
@@ -7761,7 +7761,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"player_effect_set_max_vibration",
-	['real', 'real'],
+	['real-1', 'real-2'],
 	"void",
 	['H2'],
 	"<left> <right>",
@@ -7824,7 +7824,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_screen_effect_set_depth_of_field",
-	['real', 'real', 'real', 'real', 'real', 'real', 'real'],
+	['real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6', 'real-7', 'real-8', 'real-9', 'real-10', 'real-11', 'real-12', 'real-13', 'real-14', 'real-15', 'real-16', 'real-17', 'real-18', 'real-19', 'real-20', 'real-21', 'real-22', 'real-23', 'real-24', 'real-25', 'real-26', 'real-27', 'real-28', 'real-29', 'real-30', 'real-31', 'real-32', 'real-33', 'real-34', 'real-35', 'real-36', 'real-37', 'real-38', 'real-39', 'real-40', 'real-41', 'real-42'],
 	"void",
 	['H2'],
 	"Sets dof: <seperation dist>, <near blur lower bound> <upper bound> <time> <far blur lower bound> <upper bound> <time>",
@@ -7833,7 +7833,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_screen_effect_set_crossfade2",
-	['real', 'real'],
+	['real-1', 'real-2'],
 	"void",
 	['H2'],
 	"Transition-time, exponent",
@@ -7842,7 +7842,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_set_environment_map_attenuation",
-	['real', 'real', 'real'],
+	['real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6'],
 	"void",
 	['H2'],
 	"Interpolates environment-map attenuation (on flagged shaders) from <low> to <high> over <time>",
@@ -7869,7 +7869,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_set_environment_map_tint",
-	['real', 'real', 'real', 'real', 'real', 'real', 'real', 'real'],
+	['real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6', 'real-7', 'real-8', 'real-9', 'real-10', 'real-11', 'real-12', 'real-13', 'real-14', 'real-15', 'real-16', 'real-17', 'real-18', 'real-19', 'real-20', 'real-21', 'real-22', 'real-23', 'real-24', 'real-25', 'real-26', 'real-27', 'real-28', 'real-29', 'real-30', 'real-31', 'real-32', 'real-33', 'real-34', 'real-35', 'real-36', 'real-37', 'real-38', 'real-39', 'real-40', 'real-41', 'real-42', 'real-43', 'real-44', 'real-45', 'real-46', 'real-47', 'real-48', 'real-49', 'real-50', 'real-51', 'real-52', 'real-53', 'real-54', 'real-55', 'real-56'],
 	"void",
 	['H2'],
 	"Perpendicular color: (red green blue brightness), parallel color: (red green blue brightness)... sets environment-map tint (on flagged shaders) instantly",
@@ -7887,7 +7887,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_layer",
-	['long', 'real', 'real'],
+	['long', 'real-1', 'real-2'],
 	"void",
 	['H2'],
 	"Interpolates the value of <cinematic layer x> from current position to <value> over <time>",
@@ -7896,7 +7896,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_dynamic_reflections",
-	['boolean', 'boolean'],
+	['boolean-1', 'boolean-2'],
 	"void",
 	['H2'],
 	"Sets up dynamic reflections: <enabled: [true, false]> <filtering enabled: [true, false]>",
@@ -7905,7 +7905,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"player_profile_create",
-	['string', 'short', 'short', 'boolean', 'boolean', 'boolean'],
+	['string', 'short-1', 'short-2', 'boolean-1', 'boolean-2', 'boolean-3', 'boolean-4', 'boolean-5', 'boolean-6'],
 	"void",
 	['H2'],
 	"Create a player profile",
@@ -8121,7 +8121,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"ui_set_automation_desired_controller_team",
-	['short', 'short'],
+	['short-1', 'short-2'],
 	"void",
 	['H2'],
 	"Set desired mp team for a controller",
@@ -8130,7 +8130,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"ui_set_automation_desired_controller_player_profile",
-	['short', 'string', 'string'],
+	['short', 'string-1', 'string-2'],
 	"void",
 	['H2'],
 	"Set desired player profile and gamertag for a controller",
@@ -8517,7 +8517,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"test_memory_allocators",
-	['long', 'short', 'short', 'short', 'long', 'string?'],
+	['long-1', 'short-1', 'short-2', 'short-3', 'short-4', 'short-5', 'short-6', 'long-2', 'string?'],
 	"void",
 	['H2', 'HR', 'H4'],
 	"Performs tests on different memory allocators and saves the results",
@@ -8598,7 +8598,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"flag_new",
-	['string', 'string'],
+	['string-1', 'string-2'],
 	"void",
 	['H2', 'H3', 'HO', 'HR', 'H4'],
 	"<name> <description>",
@@ -8607,7 +8607,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"flag_new_at_look",
-	['string', 'string'],
+	['string-1', 'string-2'],
 	"void",
 	['H2', 'H3', 'HO', 'HR', 'H4'],
 	"<name> <description>",
@@ -8652,7 +8652,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"flags_save_named_filtered",
-	['string', 'string'],
+	['string-1', 'string-2'],
 	"void",
 	['H2'],
 	"<filter string> <file name>",
@@ -8715,7 +8715,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"flags_export_named_filtered",
-	['string', 'string'],
+	['string-1', 'string-2'],
 	"void",
 	['H2'],
 	"<filter string> <file name>",
@@ -8760,7 +8760,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"voice_set_outgoing_channel_count",
-	['long', 'long'],
+	['long-1', 'long-2'],
 	"void",
 	['H2'],
 	"Sets the outgoing channel count <in-game> <out-of-game>",
@@ -8787,7 +8787,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"interpolator_start",
-	['string_id', 'real', 'real'],
+	['string_id', 'real-1', 'real-2'],
 	"long",
 	['H2', 'H3', 'HO'],
 	"<name> <final value> <time>",
@@ -8796,7 +8796,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"interpolator_start_smooth",
-	['string_id', 'real', 'real'],
+	['string_id', 'real-1', 'real-2'],
 	"long",
 	['H2', 'H3', 'HO'],
 	"<name> <final value> <time>",
@@ -8886,7 +8886,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"weather_change_intensity",
-	['real', 'real'],
+	['real-1', 'real-2'],
 	"void",
 	['H2'],
 	"<time> <intensity>",
@@ -8895,7 +8895,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_clone_players_weapon",
-	['object', 'string_id', 'string_id'],
+	['object', 'string_id-1', 'string_id-2'],
 	"void",
 	['H2', 'H3', 'HO', 'HR', 'H4'],
 	"Clone the first player's most reasonable weapon and attach it to the specified object's marker",
@@ -8904,7 +8904,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_move_attached_objects",
-	['object', 'string_id', 'string_id', 'string_id'],
+	['object', 'string_id-1', 'string_id-2', 'string_id-3', 'string_id-4', 'string_id-5', 'string_id-6'],
 	"void",
 	['H2', 'H3', 'HO', 'HR', 'H4'],
 	"Move the object's children attached to the first marker to the second marker",
@@ -8913,7 +8913,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"set_global_sound_environment",
-	['real', 'real', 'real', 'real', 'long', 'real'],
+	['real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6', 'real-7', 'real-8', 'real-9', 'real-10', 'real-11', 'real-12', 'real-13', 'real-14', 'real-15', 'real-16', 'long', 'real-17', 'real-18', 'real-19', 'real-20'],
 	"void",
 	['H2', 'H3', 'HO', 'HR'],
 	"This is your brain on drugs",
@@ -9165,7 +9165,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"drop_variant",
-	['string', 'string'],
+	['string-1', 'string-2'],
 	"void",
 	['H2'],
 	"Drops the named tag e.g. objects\\vehicles\\banshee\\banshee.vehicle",
@@ -9174,7 +9174,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"determinism_log_compare_log_files",
-	['string', 'string'],
+	['string-1', 'string-2'],
 	"void",
 	['H2', 'H3', 'HO', 'HR', 'H4'],
 	"Comares determinism log files",
@@ -9266,7 +9266,7 @@ var newFunc = new HSFunction(
 	"sleep_until",
 	['boolean', 'short?', 'long?'],
 	"boolean",
-	[' \'[<long>]\']"'],
+	['H3', 'HO', 'HR', 'H4'],
 	"Pauses execution of this script until the specified condition is true, checking once per second unless a different number of ticks is specified. If the final optional argument is given, this function will stop sleeping regardless of condition after <long> ticks",
 );
 hsFunctions.push(newFunc);
@@ -9534,7 +9534,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"objects_distance_to_position",
-	['object_list', 'real', 'real', 'real'],
+	['object_list', 'real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6'],
 	"real",
 	['H3', 'HO'],
 	"Returns minimum distance from any of the specified objects to the specified positio. (returns -1 if there are no objects to check)",
@@ -9543,7 +9543,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"position_return_nearby_objects_by_type",
-	['real', 'real', 'real', 'real', 'long'],
+	['real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6', 'real-7', 'real-8', 'real-9', 'real-10', 'real-11', 'real-12', 'long'],
 	"object_list",
 	['H3', 'HO'],
 	"Returns list of objects inside radius of position",
@@ -9570,7 +9570,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"havok_profile_range",
-	['long', 'long'],
+	['long-1', 'long-2'],
 	"void",
 	['H3', 'HO', 'HR', 'H4'],
 	"Captures timers and a movie of a specific tick range",
@@ -9588,7 +9588,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"texture_camera_set_position",
-	['real', 'real', 'real'],
+	['real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6'],
 	"void",
 	['H3', 'HO', 'HR', 'H4'],
 	"Sets the render texture camera position",
@@ -9597,7 +9597,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"texture_camera_set_target",
-	['real', 'real', 'real'],
+	['real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6'],
 	"void",
 	['H3', 'HO', 'HR', 'H4'],
 	"Sets the render texture camera target",
@@ -9624,7 +9624,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"texture_camera_position_world_offset",
-	['real', 'real', 'real'],
+	['real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6'],
 	"void",
 	['H3', 'HO', 'HR', 'H4'],
 	"Adds a worldspace offset to the current texture camera position",
@@ -9660,7 +9660,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"texture_camera_set_resolution",
-	['long', 'long'],
+	['long-1', 'long-2'],
 	"void",
 	['H3', 'HO', 'HR', 'H4'],
 	"Sets the texture camera render resolution",
@@ -9714,7 +9714,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"debug_structure_cluster",
-	['long', 'long'],
+	['long-1', 'long-2'],
 	"void",
 	['H3', 'HO', 'HR', 'H4'],
 	"Specify a structure and cluster to debug",
@@ -9813,7 +9813,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"unit_custom_animation_relative_at_frame",
-	['unit', 'animation_graph', 'string_id', 'string_id', 'boolean', 'short'],
+	['unit', 'animation_graph', 'string_id-1', 'string_id-2', 'boolean', 'short'],
 	"boolean",
 	['H3', 'HO', 'HR', 'H4'],
 	"Starts a custom animation playing on a unit relative to a specific cutscene flag at a specific frame index(interpolates into animation if next to last parameter is true)",
@@ -9876,7 +9876,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"unit_set_emotion",
-	['unit', 'long', 'real', 'real'],
+	['unit', 'long', 'real-1', 'real-2'],
 	"void",
 	['H3', 'HO', 'HR', 'H4'],
 	"Sets a unit's facial expression (-1 is none, other values depend on unit)",
@@ -9885,7 +9885,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"unit_set_emotion_by_name",
-	['unit', 'string_id', 'real', 'real'],
+	['unit', 'string_id', 'real-1', 'real-2'],
 	"void",
 	['H3', 'HO', 'HR', 'H4'],
 	"Sets a unit's facial expression by name with weight and transition time",
@@ -9984,7 +9984,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"drop_variant",
-	['string', 'string'],
+	['string-1', 'string-2'],
 	"void",
 	['H3', 'HO', 'HR', 'H4'],
 	"Drops the named tag e.g. objects\\vehicles\\banshee\\banshee.vehicle using the specified variant name",
@@ -9993,7 +9993,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"drop_permutation",
-	['string', 'string'],
+	['string-1', 'string-2'],
 	"void",
 	['H3', 'HO', 'HR', 'H4'],
 	"Drops the named tag e.g. objects\\characters\\brute\\brute.biped using the specified permutation. permutations are specified as a comma-delimited string of region=permutation pairs (e.g. region1=permutation1,region2=permutation2)",
@@ -10029,7 +10029,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"ai_random_smart_point",
-	['point_reference', 'real', 'real', 'real'],
+	['point_reference', 'real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6'],
 	"point_reference",
 	['H3', 'HO', 'HR', 'H4'],
 	"Returns a point in the given point set that a player is probably going to be able to see. args are [point set], [min distance], [max distance], [angle-from-forward], all relative to the player",
@@ -10083,7 +10083,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"ai_flood_disperse",
-	['ai', 'ai'],
+	['ai-1', 'ai-2'],
 	"void",
 	['H3', 'HO', 'HR', 'H4'],
 	"Disperese a flood encounter, stimulating the various forms to break down into infections and transition to the new objective",
@@ -10092,7 +10092,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"ai_migrate_persistent",
-	['ai', 'ai'],
+	['ai-1', 'ai-2'],
 	"void",
 	['H3', 'HO', 'HR', 'H4'],
 	"Makes all or part of an encounter move to another encounter, and all script commands will function on the migrated squad",
@@ -10101,7 +10101,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"ai_allegiance_break",
-	['team', 'team'],
+	['team-1', 'team-2'],
 	"void",
 	['H3', 'HO', 'HR', 'H4'],
 	"Fake a betrayal incident between two teams",
@@ -10119,7 +10119,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"ai_prefer_target_ai",
-	['ai', 'ai', 'boolean'],
+	['ai-1', 'ai-2', 'boolean'],
 	"void",
 	['H3', 'HO', 'HR', 'H4'],
 	"The given ai (actor, squad, task, etc.) will prefer the given other ai (actor, squad, task, etc.)",
@@ -10191,7 +10191,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"ai_rotate_scenario",
-	['real', 'real', 'real', 'real'],
+	['real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6', 'real-7', 'real-8', 'real-9', 'real-10', 'real-11', 'real-12'],
 	"boolean",
 	['H3'],
 	"Rotates ai points and normals (e.g. firing points, starting locations) around the given axis (x,y,z) by the given rotation angle (degrees)",
@@ -10200,7 +10200,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"ai_translate_scenario",
-	['real', 'real', 'real'],
+	['real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6'],
 	"boolean",
 	['H3', 'HO'],
 	"Translates ai points and objects by the given x y z",
@@ -10209,7 +10209,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"scenario_duplicate_bsp_objects",
-	['string', 'string'],
+	['string-1', 'string-2'],
 	"void",
 	['H3', 'HO'],
 	"<input bsp> <output bsp>: duplicate all the objects in the first bsp into the second bsp",
@@ -10218,7 +10218,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"scenario_duplicate_bsp_objects",
-	['string', 'string'],
+	['string-1', 'string-2'],
 	"void",
 	['H3', 'HO'],
 	"<input bsp> <output bsp> <filter>: duplicate filtered objects in the first bsp into the second bsp; available filters: all, crates, scenery, bipeds, machines, terminals, controls, arg_devices",
@@ -10227,7 +10227,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"scenario_rotate",
-	['real', 'real', 'real', 'real', '[string', 'string]'],
+	['real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6', 'real-7', 'real-8', 'real-9', 'real-10', 'real-11', 'real-12', '[string', 'string]'],
 	"void",
 	['H3', 'HO'],
 	"Rotates scenario objects (specified by the filter) in the specified bsp around the given axis (x,y,z) by the given amount (degrees)",
@@ -10236,7 +10236,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"scenario_reflect",
-	['real', 'real', 'real', 'real', '[string', 'string]'],
+	['real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6', 'real-7', 'real-8', 'real-9', 'real-10', 'real-11', 'real-12', '[string', 'string]'],
 	"void",
 	['H3', 'HO'],
 	"Reflects scenario objects (specified by the filter) in the specified bsp across the given plane (specified by normal x,y,z and offset k)",
@@ -10245,7 +10245,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"scenario_translate",
-	['real', 'real', 'real', '[string', 'string]'],
+	['real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6', '[string', 'string]'],
 	"void",
 	['H3', 'HO'],
 	"Translates scenario objects (specified by the filter) in the specified bsp the given amount (x,y,z)",
@@ -10254,7 +10254,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"ai_set_task",
-	['ai', 'string_id', 'string_id'],
+	['ai', 'string_id-1', 'string_id-2'],
 	"boolean",
 	['H3', 'HO', 'HR', 'H4'],
 	"Sets the current task of the current task",
@@ -10434,7 +10434,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"drop_ai",
-	['string', 'string'],
+	['string-1', 'string-2'],
 	"void",
 	['H3', 'HO', 'HR', 'H4'],
 	"Drop an ai with the given weapon at the current camera position",
@@ -10767,7 +10767,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"vs_fly_to_and_face",
-	['ai', 'boolean', 'point_reference', 'point_reference', 'real?'],
+	['ai', 'boolean', 'point_reference-1', 'point_reference-2', 'real?'],
 	"void",
 	['H3', 'HO'],
 	"Flies the actor to the given point and orients him in the appropriate direction (within the given tolerance)",
@@ -10794,7 +10794,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"vs_go_by",
-	['ai', 'boolean', 'point_reference', 'point_reference', 'real?'],
+	['ai', 'boolean', 'point_reference-1', 'point_reference-2', 'real?'],
 	"void",
 	['H3', 'HO'],
 	"Actor moves toward the point, and considers it hit when it breaks the indicated plane, attenuating throttle by the given amount when near the goal",
@@ -10803,7 +10803,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"vs_go_to_and_face",
-	['ai', 'boolean', 'point_reference', 'point_reference'],
+	['ai', 'boolean', 'point_reference-1', 'point_reference-2'],
 	"void",
 	['H3', 'HO'],
 	"Moves the actor to a specified point and has him face the second point",
@@ -10839,7 +10839,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"vs_move_in_direction",
-	['ai', 'boolean', 'real', 'real', 'real'],
+	['ai', 'boolean', 'real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6'],
 	"void",
 	['H3', 'HO'],
 	"Actor moves at given angle, for the given distance, optionally with the given facing (angle, distance, facing)",
@@ -10938,7 +10938,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"vs_jump",
-	['ai', 'boolean', 'real', 'real'],
+	['ai', 'boolean', 'real-1', 'real-2'],
 	"void",
 	['H3', 'HO'],
 	"Actor jumps in direction of angle at the given velocity (angle, velocity)",
@@ -10947,7 +10947,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"vs_jump_to_point",
-	['ai', 'boolean', 'real', 'real'],
+	['ai', 'boolean', 'real-1', 'real-2'],
 	"void",
 	['H3', 'HO'],
 	"Actor jumps with given horizontal and vertical velocity",
@@ -11037,7 +11037,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"vs_custom_animation",
-	['ai', 'boolean', 'animation_graph', 'string_id', 'boolean', 'point_reference?'],
+	['ai', 'boolean-1', 'animation_graph', 'string_id', 'boolean-2', 'point_reference?'],
 	"void",
 	['H3', 'HO'],
 	"Starts a custom animation playing on the actor at the given point (interpolates into animation if last parameter is true)",
@@ -11055,7 +11055,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"vs_custom_animation_death",
-	['ai', 'boolean', 'animation_graph', 'string_id', 'boolean', 'point_reference?'],
+	['ai', 'boolean-1', 'animation_graph', 'string_id', 'boolean-2', 'point_reference?'],
 	"void",
 	['H3', 'HO'],
 	"Starts a custom animation playing on the actor (interpolates into animation if last parameter is true)",
@@ -11118,7 +11118,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cs_approach",
-	['object', 'real', 'real', 'real'],
+	['object', 'real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6'],
 	"void",
 	['H3', 'HO', 'HR', 'H4'],
 	"(approach <object> <distance - how close i want to get> <max-distance  - start approaching when target is within this range> <follow-distance - give up when target is outside this range>)",
@@ -11127,7 +11127,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"vs_approach",
-	['ai', 'boolean', 'object', 'real', 'real', 'real'],
+	['ai', 'boolean', 'object', 'real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6'],
 	"void",
 	['H3', 'HO'],
 	"(approach <object> <distance - how close i want to get> <max-distance  - start approaching when target is within this range> <follow-distance - give up when target is outside this range>)",
@@ -11136,7 +11136,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cs_approach_player",
-	['real', 'real', 'real'],
+	['real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6'],
 	"void",
 	['H3', 'HO', 'HR', 'H4'],
 	"(approach player <distance - how close i want to get> <max-distance  - start approaching when target is within this range> <follow-distance - give up when target is outside this range>)",
@@ -11145,7 +11145,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"vs_approach_player",
-	['ai', 'boolean', 'real', 'real', 'real'],
+	['ai', 'boolean', 'real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6'],
 	"void",
 	['H3', 'HO'],
 	"(approach player <distance - how close i want to get> <max-distance  - start approaching when target is within this range> <follow-distance - give up when target is outside this range>)",
@@ -11577,7 +11577,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"vs_teleport",
-	['ai', 'point_reference', 'point_reference'],
+	['ai', 'point_reference-1', 'point_reference-2'],
 	"void",
 	['H3', 'HO'],
 	"Actor teleports to point1 facing point2",
@@ -11685,7 +11685,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"camera_set_animation_relative_with_speed_loop_offset",
-	['animation_graph', 'string_id', 'unit', 'cutscene_flag', 'real', 'boolean', 'real'],
+	['animation_graph', 'string_id', 'unit', 'cutscene_flag', 'real-1', 'boolean', 'real-2'],
 	"void",
 	['H3', 'HO', 'HR', 'H4'],
 	"Begins a prerecorded camera animation synchronized to unit relative to cutscene flag",
@@ -11712,7 +11712,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_camera_set_easing_in",
-	['real', 'real', 'real', 'real', 'real', 'real'],
+	['real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6', 'real-7', 'real-8', 'real-9', 'real-10', 'real-11', 'real-12', 'real-13', 'real-14', 'real-15', 'real-16', 'real-17', 'real-18', 'real-19', 'real-20', 'real-21', 'real-22', 'real-23', 'real-24', 'real-25', 'real-26', 'real-27', 'real-28', 'real-29', 'real-30'],
 	"void",
 	['H3', 'HO', 'HR', 'H4'],
 	"Controls the camera easing from player position",
@@ -11820,7 +11820,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"player_action_test_look_up_begin",
-	['real', 'real'],
+	['real-1', 'real-2'],
 	"void",
 	['H3'],
 	"Sets up player look up test",
@@ -11829,7 +11829,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"player_action_test_look_down_begin",
-	['real', 'real'],
+	['real-1', 'real-2'],
 	"void",
 	['H3'],
 	"Sets down player look down test",
@@ -11892,7 +11892,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"record_movie",
-	['short', 'real', 'short', 'short'],
+	['short-1', 'short-2', 'real', 'short-3', 'short-4', 'short-5', 'short-6'],
 	"void",
 	['H3', 'HO', 'HR', 'H4'],
 	"<frame rate> <seconds> <width> <height>",
@@ -11919,7 +11919,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"screenshot_size",
-	['short', 'short', 'string'],
+	['short-1', 'short-2', 'string'],
 	"void",
 	['H3', 'HO', 'HR', 'H4'],
 	"Takes a <width> x <height> screenshot and saves as an hdr <name>.tif",
@@ -12324,7 +12324,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"scene",
-	['definition', 'cinematic_tag_reference_get_scene', 'long', 'long'],
+	['definition', 'cinematic_tag_reference_get_scene', 'long-1', 'long-2'],
 	"cinematic",
 	['H3', 'HO'],
 	"Retrieve a cinematic tag from the cinematic system",
@@ -12333,7 +12333,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_tag_reference_get_effect",
-	['long', 'long', 'long', 'long'],
+	['long-1', 'long-2', 'long-3', 'long-4', 'long-5', 'long-6', 'long-7', 'long-8', 'long-9', 'long-10', 'long-11', 'long-12'],
 	"effect",
 	['H3', 'HO', 'HR', 'H4'],
 	"Retrieve an effect tag from the cinematic system",
@@ -12342,7 +12342,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_tag_reference_get_dialogue",
-	['long', 'long', 'long', 'long'],
+	['long-1', 'long-2', 'long-3', 'long-4', 'long-5', 'long-6', 'long-7', 'long-8', 'long-9', 'long-10', 'long-11', 'long-12'],
 	"sound",
 	['H3', 'HO', 'HR', 'H4'],
 	"Retrieve a sound tag from the cinematic system",
@@ -12351,7 +12351,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_tag_reference_get_music",
-	['long', 'long', 'long', 'long'],
+	['long-1', 'long-2', 'long-3', 'long-4', 'long-5', 'long-6', 'long-7', 'long-8', 'long-9', 'long-10', 'long-11', 'long-12'],
 	"sound",
 	['H3', 'HO', 'HR', 'H4'],
 	"Retrieve a sound tag from the cinematic system",
@@ -12360,7 +12360,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_tag_reference_get_music_looping",
-	['long', 'long', 'long', 'long'],
+	['long-1', 'long-2', 'long-3', 'long-4', 'long-5', 'long-6', 'long-7', 'long-8', 'long-9', 'long-10', 'long-11', 'long-12'],
 	"looping_sound",
 	['H3', 'HO', 'HR', 'H4'],
 	"Retrieve a looping sound tag from the cinematic system",
@@ -12369,7 +12369,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_tag_reference_get_animation",
-	['long', 'long', 'long'],
+	['long-1', 'long-2', 'long-3', 'long-4', 'long-5', 'long-6'],
 	"animation_graph",
 	['H3', 'HO', 'HR', 'H4'],
 	"Retrieve a looping sound tag from the cinematic system",
@@ -12378,7 +12378,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_scripting_object_coop_flags_valid",
-	['long', 'long', 'long'],
+	['long-1', 'long-2', 'long-3', 'long-4', 'long-5', 'long-6'],
 	"boolean",
 	['H3', 'HO'],
 	"Evaluate if a cinematic object should be displayed for the current coop flags",
@@ -12387,7 +12387,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_scripting_fade_out",
-	['real', 'real', 'real', 'short'],
+	['real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6', 'short'],
 	"void",
 	['H3', 'HO', 'HR', 'H4'],
 	"Fade out at the end of the cinematic",
@@ -12396,7 +12396,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_scripting_create_object",
-	['long', 'long', 'long', 'object_name'],
+	['long-1', 'long-2', 'long-3', 'long-4', 'long-5', 'long-6', 'object_name'],
 	"void",
 	['H3'],
 	"Create a manually placed cinematic object",
@@ -12405,7 +12405,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_scripting_create_cinematic_object",
-	['long', 'long', 'long'],
+	['long-1', 'long-2', 'long-3', 'long-4', 'long-5', 'long-6'],
 	"void",
 	['H3', 'HO'],
 	"Create a manually placed cinematic object",
@@ -12414,7 +12414,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_scripting_start_animation",
-	['long', 'long', 'long', 'object', 'string_id'],
+	['long-1', 'long-2', 'long-3', 'long-4', 'long-5', 'long-6', 'object', 'string_id'],
 	"void",
 	['H3'],
 	"Animate a manually placed cinematic object",
@@ -12423,7 +12423,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_scripting_destroy_object",
-	['long', 'long', 'long', 'object'],
+	['long-1', 'long-2', 'long-3', 'long-4', 'long-5', 'long-6', 'object'],
 	"void",
 	['H3'],
 	"Destroy a cinematic object",
@@ -12432,7 +12432,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_scripting_start_effect",
-	['long', 'long', 'long', 'long', 'object'],
+	['long-1', 'long-2', 'long-3', 'long-4', 'long-5', 'long-6', 'long-7', 'long-8', 'long-9', 'long-10', 'long-11', 'long-12', 'object'],
 	"void",
 	['H3', 'HO'],
 	"Play a cinematic effect",
@@ -12441,7 +12441,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_scripting_start_music",
-	['long', 'long', 'long', 'long'],
+	['long-1', 'long-2', 'long-3', 'long-4', 'long-5', 'long-6', 'long-7', 'long-8', 'long-9', 'long-10', 'long-11', 'long-12'],
 	"void",
 	['H3', 'HO'],
 	"Play a cinematic music",
@@ -12450,7 +12450,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_scripting_start_dialogue",
-	['long', 'long', 'long', 'long', 'object'],
+	['long-1', 'long-2', 'long-3', 'long-4', 'long-5', 'long-6', 'long-7', 'long-8', 'long-9', 'long-10', 'long-11', 'long-12', 'object'],
 	"void",
 	['H3', 'HO'],
 	"Play a cinematic dialogue",
@@ -12459,7 +12459,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_scripting_stop_music",
-	['long', 'long', 'long', 'long'],
+	['long-1', 'long-2', 'long-3', 'long-4', 'long-5', 'long-6', 'long-7', 'long-8', 'long-9', 'long-10', 'long-11', 'long-12'],
 	"void",
 	['H3', 'HO'],
 	"Stops a cinematic music",
@@ -12468,7 +12468,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_scripting_create_and_animate_object",
-	['long', 'long', 'long', 'object_name', 'object', 'string_id', 'boolean'],
+	['long-1', 'long-2', 'long-3', 'long-4', 'long-5', 'long-6', 'object_name', 'object', 'string_id', 'boolean'],
 	"void",
 	['H3'],
 	"Create and animate a cinematic object",
@@ -12477,7 +12477,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_scripting_create_and_animate_cinematic_object",
-	['long', 'long', 'long', 'object', 'string_id', 'boolean'],
+	['long-1', 'long-2', 'long-3', 'long-4', 'long-5', 'long-6', 'object', 'string_id', 'boolean'],
 	"void",
 	['H3'],
 	"Create and animate a cinematic object",
@@ -12486,7 +12486,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_scripting_create_and_animate_object_no_animation",
-	['long', 'long', 'long', 'object_name', 'object', 'boolean'],
+	['long-1', 'long-2', 'long-3', 'long-4', 'long-5', 'long-6', 'object_name', 'object', 'boolean'],
 	"void",
 	['H3'],
 	"Create and animate a cinematic object",
@@ -12495,7 +12495,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_scripting_create_and_animate_cinematic_object_no_animation",
-	['long', 'long', 'long', 'object', 'boolean'],
+	['long-1', 'long-2', 'long-3', 'long-4', 'long-5', 'long-6', 'object', 'boolean'],
 	"void",
 	['H3'],
 	"Create and animate a cinematic object",
@@ -12504,7 +12504,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_scripting_play_cortana_effect",
-	['long', 'long', 'long', 'long'],
+	['long-1', 'long-2', 'long-3', 'long-4', 'long-5', 'long-6', 'long-7', 'long-8', 'long-9', 'long-10', 'long-11', 'long-12'],
 	"void",
 	['H3', 'HO'],
 	"Play the associated cortana effect",
@@ -12873,7 +12873,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"sound_impulse_start_with_subtitle",
-	['sound', 'object', 'real', 'string_id', 'string_id'],
+	['sound', 'object', 'real', 'string_id-1', 'string_id-2'],
 	"void",
 	['H3', 'HO', 'HR'],
 	"Plays an impulse sound from the specified source object (or none), with the specified scale and displays a subtitle",
@@ -12891,7 +12891,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"sound_impulse_start_naked",
-	['sound', 'string_id', 'string_id'],
+	['sound', 'string_id-1', 'string_id-2'],
 	"void",
 	['H3', 'HO', 'HR'],
 	"<sound> <pitch range name> <permutation index name> through the speakers it was encoded for",
@@ -12900,7 +12900,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"vehicle_auto_turret",
-	['vehicle', 'trigger_volume', 'real', 'real', 'real'],
+	['vehicle', 'trigger_volume', 'real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6'],
 	"void",
 	['H3', 'HO', 'HR', 'H4'],
 	"Sets the specified trigger volume and parameters for an auto turret",
@@ -12954,7 +12954,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"hud_breadcrumbs_activate_team_nav_point_position",
-	['team', 'real', 'real', 'real', 'string', 'real'],
+	['team', 'real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6', 'real-7', 'real-8', 'real-9', 'string', 'real-10', 'real-11', 'real-12'],
 	"void",
 	['H3', 'HO'],
 	"Activates a improved nav point type <string> attached to a team anchored to a position with a vertical offset <real>. if the player is not local to the machine, this will fail",
@@ -13098,7 +13098,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"chud_cinematic_fade",
-	['real', 'real'],
+	['real-1', 'real-2'],
 	"void",
 	['H3', 'HO', 'HR', 'H4'],
 	"Parameter 1 is how, parameter 2 is when",
@@ -13116,7 +13116,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"player_effect_set_max_rumble",
-	['real', 'real'],
+	['real-1', 'real-2'],
 	"void",
 	['H3', 'HO', 'HR', 'H4'],
 	"<left> <right>",
@@ -13233,7 +13233,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"controller_set_single_player_level_completed",
-	['controller', 'long', 'boolean', 'game_difficulty', 'boolean'],
+	['controller', 'long', 'boolean-1', 'game_difficulty', 'boolean-2'],
 	"void",
 	['H3', 'HO', 'HR', 'H4'],
 	"<controller> <level index> <co-op> <difficulty> <completed> set the single player levels completed state for specified controller",
@@ -13305,7 +13305,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"controller_set_emblem_info",
-	['controller', 'short', 'short'],
+	['controller', 'short-1', 'short-2'],
 	"void",
 	['H3', 'HO', 'HR', 'H4'],
 	"Set emblem for specified controller",
@@ -13476,7 +13476,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"gui_debug_screen_name",
-	['string_id', 'boolean', 'boolean'],
+	['string_id', 'boolean-1', 'boolean-2'],
 	"void",
 	['H3', 'HO'],
 	"Toggle display of given screen's name, optionally recursive",
@@ -13485,7 +13485,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"gui_debug_screen_animation",
-	['string_id', 'boolean', 'boolean'],
+	['string_id', 'boolean-1', 'boolean-2'],
 	"void",
 	['H3', 'HO'],
 	"Toggle display of given screen animations, optionally recursive",
@@ -13494,7 +13494,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"gui_debug_screen_bounds",
-	['string_id', 'boolean', 'boolean'],
+	['string_id', 'boolean-1', 'boolean-2'],
 	"void",
 	['H3', 'HO'],
 	"Toggle display of given screen's bounds, optionally recursive",
@@ -13503,7 +13503,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"gui_debug_screen_rotation",
-	['string_id', 'boolean', 'boolean'],
+	['string_id', 'boolean-1', 'boolean-2'],
 	"void",
 	['H3', 'HO'],
 	"Toggle display of given screen's rotation, optionally recursive",
@@ -13512,7 +13512,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"gui_debug_group_name",
-	['string_id', 'boolean', 'boolean'],
+	['string_id', 'boolean-1', 'boolean-2'],
 	"void",
 	['H3', 'HO'],
 	"Toggle display of given group's name, optionally recursive",
@@ -13521,7 +13521,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"gui_debug_group_animation",
-	['string_id', 'boolean', 'boolean'],
+	['string_id', 'boolean-1', 'boolean-2'],
 	"void",
 	['H3', 'HO'],
 	"Toggle display of given group's animations, optionally recursive",
@@ -13530,7 +13530,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"gui_debug_group_bounds",
-	['string_id', 'boolean', 'boolean'],
+	['string_id', 'boolean-1', 'boolean-2'],
 	"void",
 	['H3', 'HO'],
 	"Toggle display of given group's bounds, optionally recursive",
@@ -13539,7 +13539,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"gui_debug_group_rotation",
-	['string_id', 'boolean', 'boolean'],
+	['string_id', 'boolean-1', 'boolean-2'],
 	"void",
 	['H3', 'HO'],
 	"Toggle display of given group's rotation, optionally recursive",
@@ -13548,7 +13548,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"gui_debug_list_name",
-	['string_id', 'boolean', 'boolean'],
+	['string_id', 'boolean-1', 'boolean-2'],
 	"void",
 	['H3', 'HO'],
 	"Toggle display of given list's name, optionally recursive",
@@ -13557,7 +13557,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"gui_debug_list_animation",
-	['string_id', 'boolean', 'boolean'],
+	['string_id', 'boolean-1', 'boolean-2'],
 	"void",
 	['H3', 'HO'],
 	"Toggle display of given list's animations, optionally recursive",
@@ -13566,7 +13566,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"gui_debug_list_bounds",
-	['string_id', 'boolean', 'boolean'],
+	['string_id', 'boolean-1', 'boolean-2'],
 	"void",
 	['H3', 'HO'],
 	"Toggle display of given list's bounds, optionally recursive",
@@ -13575,7 +13575,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"gui_debug_list_rotation",
-	['string_id', 'boolean', 'boolean'],
+	['string_id', 'boolean-1', 'boolean-2'],
 	"void",
 	['H3', 'HO'],
 	"Toggle display of given list's rotation, optionally recursive",
@@ -13584,7 +13584,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"gui_debug_list_item_name",
-	['string_id', 'boolean', 'boolean'],
+	['string_id', 'boolean-1', 'boolean-2'],
 	"void",
 	['H3', 'HO'],
 	"Toggle display of given list item's name, optionally recursive",
@@ -13593,7 +13593,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"gui_debug_list_item_animation",
-	['string_id', 'boolean', 'boolean'],
+	['string_id', 'boolean-1', 'boolean-2'],
 	"void",
 	['H3', 'HO'],
 	"Toggle display of given list item's animation, optionally recursive",
@@ -13602,7 +13602,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"gui_debug_list_item_bounds",
-	['string_id', 'boolean', 'boolean'],
+	['string_id', 'boolean-1', 'boolean-2'],
 	"void",
 	['H3', 'HO'],
 	"Toggle display of given list item's bounds, optionally recursive",
@@ -13611,7 +13611,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"gui_debug_list_item_rotation",
-	['string_id', 'boolean', 'boolean'],
+	['string_id', 'boolean-1', 'boolean-2'],
 	"void",
 	['H3', 'HO'],
 	"Toggle display of given list item's rotation, optionally recursive",
@@ -14061,7 +14061,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"render_exposure_full",
-	['real', 'real', 'real', 'real', 'real'],
+	['real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6', 'real-7', 'real-8', 'real-9', 'real-10', 'real-11', 'real-12', 'real-13', 'real-14', 'real-15', 'real-16', 'real-17', 'real-18', 'real-19', 'real-20'],
 	"void",
 	['H3', 'HO', 'HR', 'H4'],
 	"Animate exposure from <initial> to <final> stops using <initial> to <final> opacity in <seconds>",
@@ -14070,7 +14070,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"render_exposure_fade_in",
-	['real', 'real'],
+	['real-1', 'real-2'],
 	"void",
 	['H3', 'HO', 'HR', 'H4'],
 	"Fade to animated exposure <stops> in <seconds>",
@@ -14088,7 +14088,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"render_exposure",
-	['real', 'real'],
+	['real-1', 'real-2'],
 	"void",
 	['H3', 'HO', 'HR', 'H4'],
 	"Fade to animated exposure <stops> in <seconds>",
@@ -14124,7 +14124,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"render_depth_of_field",
-	['real', 'real', 'real', 'real'],
+	['real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6', 'real-7', 'real-8', 'real-9', 'real-10', 'real-11', 'real-12'],
 	"void",
 	['H3', 'HO', 'HR', 'H4'],
 	"Animate depth of field, in focus from <near> to <far>, with depth of field <depth>, in <ticks>",
@@ -14142,7 +14142,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"render_dof_blur_animate",
-	['real', 'real'],
+	['real-1', 'real-2'],
 	"void",
 	['H3', 'HO', 'HR', 'H4'],
 	"Interpolate depth of field maximum blur to <blur> in <ticks>",
@@ -14205,7 +14205,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"mp_allegiance",
-	['mp_team', 'mp_team'],
+	['mp_team-1', 'mp_team-2'],
 	"void",
 	['H3', 'HO', 'HR', 'H4'],
 	"Create an allegiance between two multiplayer teams",
@@ -14448,7 +14448,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"camera_set_mode",
-	['long', 'long'],
+	['long-1', 'long-2'],
 	"void",
 	['H3', 'HO'],
 	"<user_index> <mode_index> sets user's camera perspective",
@@ -14502,7 +14502,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"add_recycling_volume",
-	['trigger_volume', 'long', 'long'],
+	['trigger_volume', 'long-1', 'long-2'],
 	"void",
 	['H3', 'HO', 'HR'],
 	"Removes garbage in specified trigger volume to a max count over n seconds",
@@ -15051,7 +15051,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"player_control_scale_all_input",
-	['real', 'real'],
+	['real-1', 'real-2'],
 	"void",
 	['H3', 'HO', 'HR', 'H4'],
 	"Scale input to x strength over y seconds",
@@ -15114,7 +15114,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"net_banhammer_force_download",
-	['boolean', 'boolean'],
+	['boolean-1', 'boolean-2'],
 	"void",
 	['H3', 'HO'],
 	"Force banhammer file download",
@@ -15249,7 +15249,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"ai_migrate_infanty",
-	['ai', 'ai'],
+	['ai-1', 'ai-2'],
 	"void",
 	['H3', 'HO', 'HR', 'H4'],
 	"Migrates the infantry in an encounter into a different squad",
@@ -15492,7 +15492,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"controller_set_skin",
-	['controller', 'short', 'short'],
+	['controller', 'short-1', 'short-2'],
 	"void",
 	['H3'],
 	"Set skins for specified controller",
@@ -15519,7 +15519,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"hud_camera_set_position",
-	['long', 'real', 'real', 'real'],
+	['long', 'real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6'],
 	"void",
 	['HO', 'HR', 'H4'],
 	"Sets the render texture camera position",
@@ -15528,7 +15528,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"hud_camera_set_target",
-	['long', 'real', 'real', 'real'],
+	['long', 'real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6'],
 	"void",
 	['HO', 'HR', 'H4'],
 	"Sets the render texture camera target",
@@ -15564,7 +15564,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"hud_camera_highlight_object",
-	['long', 'object', 'real', 'real', 'real', 'real'],
+	['long', 'object', 'real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6', 'real-7', 'real-8', 'real-9', 'real-10', 'real-11', 'real-12'],
 	"void",
 	['HO', 'HR', 'H4'],
 	"Highlights an object in the given color",
@@ -15600,7 +15600,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"hud_camera_window",
-	['long', 'real', 'real', 'real', 'real'],
+	['long', 'real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6', 'real-7', 'real-8', 'real-9', 'real-10', 'real-11', 'real-12'],
 	"void",
 	['HO', 'HR', 'H4'],
 	"Sets the render window of the hud camera (0...1)",
@@ -15771,7 +15771,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"ai_rotate_scenario",
-	['real', 'real', 'real', 'real'],
+	['real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6', 'real-7', 'real-8', 'real-9', 'real-10', 'real-11', 'real-12'],
 	"boolean",
 	['HO'],
 	"Rotates ai points and normals (e.g. firing points, spawn points) around the given axis (x,y,z) by the given rotation angle (degrees)",
@@ -16248,7 +16248,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_lighting_update_dynamic_light_direction",
-	['string', 'long', 'real', 'real', 'real'],
+	['string', 'long', 'real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6'],
 	"void",
 	['HO', 'HR'],
 	"Updates the direction of a loaded cinematic dynamic light",
@@ -16257,7 +16257,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_lighting_update_sh_light",
-	['string', 'long', 'real', 'real', 'real', 'real', 'real', 'real'],
+	['string', 'long', 'real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6', 'real-7', 'real-8', 'real-9', 'real-10', 'real-11', 'real-12', 'real-13', 'real-14', 'real-15', 'real-16', 'real-17', 'real-18', 'real-19', 'real-20', 'real-21', 'real-22', 'real-23', 'real-24', 'real-25', 'real-26', 'real-27', 'real-28', 'real-29', 'real-30'],
 	"void",
 	['HO'],
 	"Updates the direction, intensity, and color of a loaded cinematic sh light",
@@ -16266,7 +16266,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_scripting_create_object",
-	['long', 'long', 'long'],
+	['long-1', 'long-2', 'long-3', 'long-4', 'long-5', 'long-6'],
 	"void",
 	['HO'],
 	"Create a manually placed cinematic object",
@@ -16275,7 +16275,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_scripting_start_animation",
-	['long', 'long', 'long', 'string_id'],
+	['long-1', 'long-2', 'long-3', 'long-4', 'long-5', 'long-6', 'string_id'],
 	"void",
 	['HO'],
 	"Animate a manually placed cinematic object",
@@ -16284,7 +16284,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_scripting_destroy_object",
-	['long', 'long', 'long'],
+	['long-1', 'long-2', 'long-3', 'long-4', 'long-5', 'long-6'],
 	"void",
 	['HO'],
 	"Destroy a cinematic object",
@@ -16293,7 +16293,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_scripting_create_and_animate_object",
-	['long', 'long', 'long', 'string_id', 'boolean'],
+	['long-1', 'long-2', 'long-3', 'long-4', 'long-5', 'long-6', 'string_id', 'boolean'],
 	"void",
 	['HO', 'HR', 'H4'],
 	"Create and animate a cinematic object",
@@ -16302,7 +16302,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_scripting_create_and_animate_cinematic_object",
-	['long', 'long', 'long', 'string_id', 'boolean'],
+	['long-1', 'long-2', 'long-3', 'long-4', 'long-5', 'long-6', 'string_id', 'boolean'],
 	"void",
 	['HO', 'HR', 'H4'],
 	"Create and animate a cinematic object",
@@ -16311,7 +16311,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_scripting_create_and_animate_object_no_animation",
-	['long', 'long', 'long', 'boolean'],
+	['long-1', 'long-2', 'long-3', 'long-4', 'long-5', 'long-6', 'boolean'],
 	"void",
 	['HO', 'HR', 'H4'],
 	"Create and animate a cinematic object",
@@ -16320,7 +16320,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_scripting_create_and_animate_cinematic_object_no_animation",
-	['long', 'long', 'long', 'boolean'],
+	['long-1', 'long-2', 'long-3', 'long-4', 'long-5', 'long-6', 'boolean'],
 	"void",
 	['HO', 'HR', 'H4'],
 	"Create and animate a cinematic object",
@@ -16446,7 +16446,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"player_effect_set_max_translation_for_player",
-	['unit', 'real', 'real', 'real'],
+	['unit', 'real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6'],
 	"void",
 	['HO'],
 	"<x> <y> <z>",
@@ -16455,7 +16455,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"player_effect_set_max_rotation_for_player",
-	['unit', 'real', 'real', 'real'],
+	['unit', 'real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6'],
 	"void",
 	['HO'],
 	"<yaw> <pitch> <roll>",
@@ -16464,7 +16464,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"player_effect_set_max_rumble_for_player",
-	['unit', 'real', 'real'],
+	['unit', 'real-1', 'real-2'],
 	"void",
 	['HO'],
 	"<left> <right>",
@@ -16473,7 +16473,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"player_effect_start_for_player",
-	['unit', 'real', 'real'],
+	['unit', 'real-1', 'real-2'],
 	"void",
 	['HO'],
 	"<max_intensity> <attack time>",
@@ -16482,7 +16482,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"atmosphere_fog_override_fade",
-	['long', 'real', 'real'],
+	['long', 'real-1', 'real-2'],
 	"void",
 	['HO'],
 	"Override the atmosphere fog setting to <index> by <percentage> in <seconds>",
@@ -16608,7 +16608,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"ai_survival_cleanup",
-	['ai', 'boolean', 'boolean'],
+	['ai', 'boolean-1', 'boolean-2'],
 	"void",
 	['HO', 'HR', 'H4'],
 	"Activate cure isolation death for the given ai, and optionally delete inactive actors in that group too (ai, on/off, kill inactive)",
@@ -16635,7 +16635,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_scripting_get_object",
-	['long', 'long', 'long'],
+	['long-1', 'long-2', 'long-3', 'long-4', 'long-5', 'long-6'],
 	"object",
 	['HO'],
 	"Get an object used in a cinematic",
@@ -16752,7 +16752,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_scripting_start_screen_effect",
-	['long', 'long', 'long', 'long'],
+	['long-1', 'long-2', 'long-3', 'long-4', 'long-5', 'long-6', 'long-7', 'long-8', 'long-9', 'long-10', 'long-11', 'long-12'],
 	"void",
 	['HO'],
 	"Play the associated area screen effect",
@@ -16761,7 +16761,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_scripting_stop_screen_effect",
-	['long', 'long', 'long', 'long'],
+	['long-1', 'long-2', 'long-3', 'long-4', 'long-5', 'long-6', 'long-7', 'long-8', 'long-9', 'long-10', 'long-11', 'long-12'],
 	"void",
 	['HO'],
 	"Stop the associated area screen effect",
@@ -16815,7 +16815,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"pda_activate_marker_named",
-	['team', 'object_name', 'string_id', 'boolean', 'string_id'],
+	['team', 'object_name', 'string_id-1', 'boolean', 'string_id-2'],
 	"void",
 	['HO'],
 	"Activate a named pda beacon",
@@ -16842,7 +16842,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"game_start_with_network_session",
-	['long', 'long', 'string'],
+	['long-1', 'long-2', 'string'],
 	"void",
 	['HO'],
 	"<campaign id> <map id> <scenario> debug map launching: starts a game on the specified map with campaign_id and map_id",
@@ -16887,7 +16887,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"sound_impulse_start_3d_editor",
-	['sound', 'real', 'real'],
+	['sound', 'real-1', 'real-2'],
 	"void",
 	['HO', 'HR', 'H4'],
 	"<sound> <azimuth> <scale> at the sound's minimum distance",
@@ -16932,7 +16932,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_scripting_set_user_input_constraints",
-	['long', 'long', 'long', 'long'],
+	['long-1', 'long-2', 'long-3', 'long-4', 'long-5', 'long-6', 'long-7', 'long-8', 'long-9', 'long-10', 'long-11', 'long-12'],
 	"void",
 	['HO'],
 	"Set the user input constraints for a cinematic",
@@ -17625,7 +17625,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"player_get_kills_by_type",
-	['unit', 'long', 'long'],
+	['unit', 'long-1', 'long-2'],
 	"long",
 	['HO'],
 	"Retrieves the number of kills a specific player has gotten by metagame type and class, ask an engineer for the mapping",
@@ -17850,7 +17850,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"%",
-	['number', 'number'],
+	['number-1', 'number-2'],
 	"real",
 	['HR'],
 	"Returns the remainder of the division of two numbers",
@@ -18102,7 +18102,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"object_set_cinematic_function_variable",
-	['object', 'string_id', 'real', 'real'],
+	['object', 'string_id', 'real-1', 'real-2'],
 	"void",
 	['HR'],
 	"Sets funciton variable for sin-o-matic use",
@@ -18291,7 +18291,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"weather_animate",
-	['string_id', 'real', 'real'],
+	['string_id', 'real-1', 'real-2'],
 	"void",
 	['HR', 'H4'],
 	"Turns on the named weather to a specified amount in the given seconds",
@@ -18300,7 +18300,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"weather_animate_force",
-	['string_id', 'real', 'real'],
+	['string_id', 'real-1', 'real-2'],
 	"void",
 	['HR', 'H4'],
 	"Turns on the named weather to a specified amount in the given seconds",
@@ -18309,7 +18309,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"render_debug_wrinkle_weights_a",
-	['real', 'real', 'real', 'real'],
+	['real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6', 'real-7', 'real-8', 'real-9', 'real-10', 'real-11', 'real-12'],
 	"void",
 	['HR', 'H4'],
 	"Manually set wrinkle weights for mask a",
@@ -18318,7 +18318,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"render_debug_wrinkle_weights_b",
-	['real', 'real', 'real', 'real'],
+	['real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6', 'real-7', 'real-8', 'real-9', 'real-10', 'real-11', 'real-12'],
 	"void",
 	['HR', 'H4'],
 	"Manually set wrinkle weights for mask b",
@@ -18435,7 +18435,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"vehicle_set_player_interaction",
-	['vehicle', 'unit_seat_mapping', 'boolean', 'boolean'],
+	['vehicle', 'unit_seat_mapping', 'boolean-1', 'boolean-2'],
 	"void",
 	['HR', 'H4'],
 	"Allows players/units to enter/exit given vehicle seat. arguments <vehicle> <seat> <player_can_enter> <unit_can_exit>",
@@ -18444,7 +18444,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"vehicle_set_unit_interaction",
-	['vehicle', 'unit_seat_mapping', 'boolean', 'boolean'],
+	['vehicle', 'unit_seat_mapping', 'boolean-1', 'boolean-2'],
 	"void",
 	['HR', 'H4'],
 	"Allows players/units to enter/exit given vehicle seat. arguments <vehicle> <seat> <player_can_enter> <unit_can_exit>",
@@ -18507,7 +18507,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"update_dropped_tag_permutation",
-	['string', 'string'],
+	['string-1', 'string-2'],
 	"void",
 	['HR', 'H4'],
 	"Updates the permutation for a previously dropped tag. permutations are specified as a comma-delimited string of region=permutation pairs (e.g. region1=permutation1,region2=permutation2)",
@@ -18741,7 +18741,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"ai_object_set_targeting_ranges",
-	['object', 'real', 'real'],
+	['object', 'real-1', 'real-2'],
 	"void",
 	['HR', 'H4'],
 	"Sets override weapon ranges for enemies attacking this object <min> <max>",
@@ -18822,7 +18822,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"flock_destination_set_enabled",
-	['string_id', 'string_id', 'boolean'],
+	['string_id-1', 'string_id-2', 'boolean'],
 	"void",
 	['HR', 'H4'],
 	"Sets the enabled flag on the flock destination",
@@ -18831,7 +18831,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"flock_destination_set_position",
-	['string_id', 'string_id', 'point_reference'],
+	['string_id-1', 'string_id-2', 'point_reference'],
 	"void",
 	['HR', 'H4'],
 	"Sets the position of a flock destination to the location of an ai point",
@@ -18840,7 +18840,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"flock_destination_copy_position",
-	['string_id', 'string_id', 'string_id'],
+	['string_id-1', 'string_id-2', 'string_id-3', 'string_id-4', 'string_id-5', 'string_id-6'],
 	"void",
 	['HR', 'H4'],
 	"Sets the position of one flock destination to the position of another flock destination",
@@ -18867,7 +18867,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"mantini_add_runtime_point_to_set",
-	['string', 'string', 'real', 'real', 'real', 'real'],
+	['string-1', 'string-2', 'real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6', 'real-7', 'real-8', 'real-9', 'real-10', 'real-11', 'real-12'],
 	"boolean",
 	['HR', 'H4'],
 	"Enables mantini to add a point to an in memory point set.  arg: <point_set_name> <point_name> <x> <y> <yaw> <pitch>",
@@ -18876,7 +18876,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"mantini_add_runtime_point_to_set_from_camera",
-	['string', 'string', 'real', 'real'],
+	['string-1', 'string-2', 'real-1', 'real-2'],
 	"boolean",
 	['HR', 'H4'],
 	"Enables mantini to add a point to an in memory point set along the current camera fwd collision point.  arg: <point_set_name> <point_name> <yaw> <pitch>",
@@ -18885,7 +18885,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"mantini_add_starting_location_to_squad",
-	['string', 'string', 'long', 'point_reference'],
+	['string-1', 'string-2', 'long', 'point_reference'],
 	"boolean",
 	['HR', 'H4'],
 	"Enables mantini to add a spawn point to a squad identified by an ai point.  arg: <squad_name> <starting loc name> <cell_index> <pointref>",
@@ -18894,7 +18894,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"mantini_add_starting_location_to_squad_from_camera",
-	['string', 'string', 'long', 'real'],
+	['string-1', 'string-2', 'long', 'real'],
 	"boolean",
 	['HR', 'H4'],
 	"Enables mantini to add a spawn point to a squad identified from the camera position.  arg: <squad_name> <starting loc name> <cell_index> <offset in wus>",
@@ -18903,7 +18903,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"mantini_add_cell_to_runtime_squad",
-	['string', 'string'],
+	['string-1', 'string-2'],
 	"long",
 	['HR', 'H4'],
 	"Add a character to a runtime squad. arg: <squad_name> <character tag>",
@@ -18930,7 +18930,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"mantini_set_spawn_point_weapons",
-	['ai', 'string', 'string'],
+	['ai', 'string-1', 'string-2'],
 	"boolean",
 	['HR', 'H4'],
 	"Set primary and secondary weapon for a spawn point. arg: <spawn_point> <primary weapon tag> <secondary weapon tag>",
@@ -18948,7 +18948,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"mantini_set_spawn_point_variants",
-	['ai', 'string_id', 'string_id'],
+	['ai', 'string_id-1', 'string_id-2'],
 	"boolean",
 	['HR', 'H4'],
 	"Set actor and vehicle variants for spawn point. arg: <spawn_point> <actor variant> <vehicle variant>",
@@ -18957,7 +18957,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"mantini_set_squad_cell_spawn_count",
-	['string', 'long', 'long'],
+	['string', 'long-1', 'long-2'],
 	"boolean",
 	['HR', 'H4'],
 	"Set cell spawn count. arg: <squad name> <cell index> <spawn count>",
@@ -19065,7 +19065,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"thespian_performance_setup_and_begin",
-	['string_id', 'string_id', 'real'],
+	['string_id-1', 'string_id-2', 'real'],
 	"boolean",
 	['HR', 'H4'],
 	"Finds all of the actors needed for the performance, and then starts the performance",
@@ -19119,7 +19119,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"thespian_fake_task_transition",
-	['string_id', 'string_id'],
+	['string_id-1', 'string_id-2'],
 	"void",
 	['HR', 'H4'],
 	"Unblocks an actor waiting looping animation that's waiting on a task transition",
@@ -19353,7 +19353,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cs_fly_to_and_face",
-	['ai', 'boolean', 'point_reference', 'point_reference'],
+	['ai', 'boolean', 'point_reference-1', 'point_reference-2'],
 	"void",
 	['HR', 'H4'],
 	"Flies the actor to the given point and orients him in the appropriate direction",
@@ -19362,7 +19362,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cs_fly_to_and_face",
-	['ai', 'boolean', 'point_reference', 'point_reference', 'real'],
+	['ai', 'boolean', 'point_reference-1', 'point_reference-2', 'real'],
 	"void",
 	['HR', 'H4', 'H4'],
 	"Flies the actor to the given point and orients him in the appropriate direction (within the given tolerance)",
@@ -19407,7 +19407,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cs_go_by",
-	['ai', 'boolean', 'point_reference', 'point_reference'],
+	['ai', 'boolean', 'point_reference-1', 'point_reference-2'],
 	"void",
 	['HR', 'H4'],
 	"Actor moves toward the point, and considers it hit when it breaks the indicated plane",
@@ -19416,7 +19416,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cs_go_by",
-	['ai', 'boolean', 'point_reference', 'point_reference', 'real'],
+	['ai', 'boolean', 'point_reference-1', 'point_reference-2', 'real'],
 	"void",
 	['HR', 'H4'],
 	"Actor moves toward the point, and considers it hit when it breaks the indicated plane, attenuating throttle by the given amount when near the goal",
@@ -19425,7 +19425,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cs_go_to_and_face",
-	['ai', 'boolean', 'point_reference', 'point_reference'],
+	['ai', 'boolean', 'point_reference-1', 'point_reference-2'],
 	"void",
 	['HR', 'H4'],
 	"Moves the actor to a specified point and has him face the second point",
@@ -19470,7 +19470,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cs_move_in_direction",
-	['ai', 'boolean', 'real', 'real', 'real'],
+	['ai', 'boolean', 'real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6'],
 	"void",
 	['HR', 'H4'],
 	"Actor moves at given angle, for the given distance, optionally with the given facing (angle, distance, facing)",
@@ -19488,7 +19488,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cs_move_towards",
-	['ai', 'boolean', 'object', 'boolean'],
+	['ai', 'boolean-1', 'object', 'boolean-2'],
 	"void",
 	['HR', 'H4'],
 	"Move in the direction of the given object (and melee the target or not)",
@@ -19560,7 +19560,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cs_jump",
-	['ai', 'boolean', 'real', 'real'],
+	['ai', 'boolean', 'real-1', 'real-2'],
 	"void",
 	['HR', 'H4'],
 	"Actor jumps in direction of angle at the given velocity (angle, velocity)",
@@ -19569,7 +19569,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cs_jump_to_point",
-	['ai', 'boolean', 'real', 'real'],
+	['ai', 'boolean', 'real-1', 'real-2'],
 	"void",
 	['HR', 'H4'],
 	"Actor jumps with given horizontal and vertical velocity",
@@ -19605,7 +19605,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cs_play_sound",
-	['ai', 'boolean', 'sound', 'real', 'real'],
+	['ai', 'boolean', 'sound', 'real-1', 'real-2'],
 	"void",
 	['HR', 'H4'],
 	"Actor plays an impulse sound and the atom blocks for the given percentage of the sound's total length, at the given volume (0..1)",
@@ -19641,7 +19641,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cs_custom_animation",
-	['ai', 'boolean', 'animation_graph', 'string_id', 'boolean'],
+	['ai', 'boolean-1', 'animation_graph', 'string_id', 'boolean-2'],
 	"void",
 	['HR', 'H4'],
 	"Starts a custom animation playing on the actor (interpolates into animation if last parameter is true)",
@@ -19650,7 +19650,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cs_custom_animation",
-	['ai', 'boolean', 'animation_graph', 'string_id', 'boolean', 'point_reference'],
+	['ai', 'boolean-1', 'animation_graph', 'string_id', 'boolean-2', 'point_reference'],
 	"void",
 	['HR', 'H4'],
 	"Starts a custom animation playing on the actor at the given point (interpolates into animation if last parameter is true)",
@@ -19659,7 +19659,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cs_custom_animation_death",
-	['ai', 'boolean', 'animation_graph', 'string_id', 'boolean'],
+	['ai', 'boolean-1', 'animation_graph', 'string_id', 'boolean-2'],
 	"void",
 	['HR', 'H4'],
 	"Starts a custom animation playing on the actor (interpolates into animation if last parameter is true)",
@@ -19668,7 +19668,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cs_custom_animation_death",
-	['ai', 'boolean', 'animation_graph', 'string_id', 'boolean', 'point_reference'],
+	['ai', 'boolean-1', 'animation_graph', 'string_id', 'boolean-2', 'point_reference'],
 	"void",
 	['HR', 'H4'],
 	"Starts a custom animation playing on the actor (interpolates into animation if last parameter is true)",
@@ -19722,7 +19722,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cs_approach",
-	['ai', 'boolean', 'object', 'real', 'real', 'real'],
+	['ai', 'boolean', 'object', 'real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6'],
 	"void",
 	['HR', 'H4'],
 	"(approach <object> <distance - how close i want to get> <max-distance  - start approaching when target is within this range> <follow-distance - give up when target is outside this range>)",
@@ -19731,7 +19731,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cs_approach_player",
-	['ai', 'boolean', 'real', 'real', 'real'],
+	['ai', 'boolean', 'real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6'],
 	"void",
 	['HR', 'H4'],
 	"(approach player <distance - how close i want to get> <max-distance  - start approaching when target is within this range> <follow-distance - give up when target is outside this range>)",
@@ -20109,7 +20109,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cs_teleport",
-	['ai', 'point_reference', 'point_reference'],
+	['ai', 'point_reference-1', 'point_reference-2'],
 	"void",
 	['HR', 'H4'],
 	"Actor teleports to point1 facing point2",
@@ -20595,7 +20595,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"debug_teleport_player",
-	['unit', 'unit'],
+	['unit-1', 'unit-2'],
 	"void",
 	['HR', 'H4'],
 	"For testing: teleports one player to another's location",
@@ -20658,7 +20658,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"switch_map_and_zone_set",
-	['string', 'string'],
+	['string-1', 'string-2'],
 	"void",
 	['HR', 'H4'],
 	"Switches to a different scenario and zone set",
@@ -20685,7 +20685,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"object_thumbnail",
-	['string', 'string', 'string'],
+	['string-1', 'string-2', 'string-3', 'string-4', 'string-5', 'string-6'],
 	"void",
 	['HR', 'H4'],
 	"Takes snapshots of objects to be used as thumnail previews",
@@ -20946,7 +20946,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_lighting_update_vmf_light",
-	['string', 'real', 'real', 'real', 'real', 'real', 'real', 'real'],
+	['string', 'real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6', 'real-7', 'real-8', 'real-9', 'real-10', 'real-11', 'real-12', 'real-13', 'real-14', 'real-15', 'real-16', 'real-17', 'real-18', 'real-19', 'real-20', 'real-21', 'real-22', 'real-23', 'real-24', 'real-25', 'real-26', 'real-27', 'real-28', 'real-29', 'real-30', 'real-31', 'real-32', 'real-33', 'real-34', 'real-35', 'real-36', 'real-37', 'real-38', 'real-39', 'real-40', 'real-41', 'real-42'],
 	"void",
 	['HR'],
 	"Updates the vmf light",
@@ -20955,7 +20955,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_lighting_update_analytical_light",
-	['string', 'real', 'real', 'real', 'real', 'real', 'real'],
+	['string', 'real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6', 'real-7', 'real-8', 'real-9', 'real-10', 'real-11', 'real-12', 'real-13', 'real-14', 'real-15', 'real-16', 'real-17', 'real-18', 'real-19', 'real-20', 'real-21', 'real-22', 'real-23', 'real-24', 'real-25', 'real-26', 'real-27', 'real-28', 'real-29', 'real-30'],
 	"void",
 	['HR'],
 	"Updates the analytical light",
@@ -20964,7 +20964,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_lighting_update_ambient_light",
-	['string', 'real', 'real', 'real', 'real'],
+	['string', 'real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6', 'real-7', 'real-8', 'real-9', 'real-10', 'real-11', 'real-12'],
 	"void",
 	['HR'],
 	"Updates the ambient light",
@@ -20973,7 +20973,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_lighting_update_scales",
-	['string', 'real', 'real', 'real', 'real'],
+	['string', 'real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6', 'real-7', 'real-8', 'real-9', 'real-10', 'real-11', 'real-12'],
 	"void",
 	['HR'],
 	"Updates the weights",
@@ -21018,7 +21018,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_scripting_object_coop_flags_valid",
-	['long', 'long'],
+	['long-1', 'long-2'],
 	"boolean",
 	['HR', 'H4'],
 	"Evaluate if a cinematic object should be displayed for the current coop flags",
@@ -21027,7 +21027,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_scripting_create_object",
-	['long', 'long'],
+	['long-1', 'long-2'],
 	"void",
 	['HR', 'H4'],
 	"Create a manually placed cinematic object",
@@ -21036,7 +21036,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_scripting_create_cinematic_object",
-	['long', 'long'],
+	['long-1', 'long-2'],
 	"void",
 	['HR', 'H4'],
 	"Create a manually placed cinematic object",
@@ -21045,7 +21045,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_scripting_start_animation",
-	['long', 'long', 'string_id'],
+	['long-1', 'long-2', 'string_id'],
 	"void",
 	['HR', 'H4'],
 	"Animate a manually placed cinematic object",
@@ -21054,7 +21054,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_scripting_destroy_object",
-	['long', 'long'],
+	['long-1', 'long-2'],
 	"void",
 	['HR', 'H4'],
 	"Destroy a cinematic object",
@@ -21090,7 +21090,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_scripting_start_effect",
-	['long', 'long', 'long', 'object'],
+	['long-1', 'long-2', 'long-3', 'long-4', 'long-5', 'long-6', 'object'],
 	"void",
 	['HR'],
 	"Play a cinematic effect",
@@ -21099,7 +21099,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_scripting_start_music",
-	['long', 'long', 'long'],
+	['long-1', 'long-2', 'long-3', 'long-4', 'long-5', 'long-6'],
 	"void",
 	['HR'],
 	"Play a cinematic music",
@@ -21108,7 +21108,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_scripting_start_dialogue",
-	['long', 'long', 'long', 'object'],
+	['long-1', 'long-2', 'long-3', 'long-4', 'long-5', 'long-6', 'object'],
 	"void",
 	['HR'],
 	"Play a cinematic dialogue",
@@ -21117,7 +21117,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_scripting_stop_music",
-	['long', 'long', 'long'],
+	['long-1', 'long-2', 'long-3', 'long-4', 'long-5', 'long-6'],
 	"void",
 	['HR'],
 	"Stops a cinematic music",
@@ -21126,7 +21126,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_scripting_start_screen_effect",
-	['long', 'long', 'long'],
+	['long-1', 'long-2', 'long-3', 'long-4', 'long-5', 'long-6'],
 	"void",
 	['HR'],
 	"Play a cinematic screen effect",
@@ -21135,7 +21135,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_scripting_stop_screen_effect",
-	['long', 'long', 'long'],
+	['long-1', 'long-2', 'long-3', 'long-4', 'long-5', 'long-6'],
 	"void",
 	['HR'],
 	"Stop the associated area screen effect",
@@ -21144,7 +21144,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_scripting_set_user_input_constraints",
-	['long', 'long', 'long'],
+	['long-1', 'long-2', 'long-3', 'long-4', 'long-5', 'long-6'],
 	"void",
 	['HR', 'H4'],
 	"Set user input constraints from a cinematic tag",
@@ -21441,7 +21441,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"survival_mode_set_spartan_license_plate",
-	['long', 'long', 'string_id', 'string_id', 'string_id'],
+	['long-1', 'long-2', 'string_id-1', 'string_id-2', 'string_id-3', 'string_id-4', 'string_id-5', 'string_id-6'],
 	"void",
 	['HR', 'H4'],
 	"Shows the license plate for spartans: variant icon, designator icon, variant text, description text, designator text",
@@ -21450,7 +21450,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"survival_mode_set_elite_license_plate",
-	['long', 'long', 'string_id', 'string_id', 'string_id'],
+	['long-1', 'long-2', 'string_id-1', 'string_id-2', 'string_id-3', 'string_id-4', 'string_id-5', 'string_id-6'],
 	"void",
 	['HR', 'H4'],
 	"Shows the license plate for elites: variant icon, designator icon, variant text, description text, designator text",
@@ -21522,7 +21522,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"sound_start_timed_global_effect",
-	['string_id', 'real', 'real'],
+	['string_id', 'real-1', 'real-2'],
 	"void",
 	['HR', 'H4'],
 	"Start a global sound effect for a given amount of time",
@@ -21765,7 +21765,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"chud_breadcrumbs_track_position",
-	['real', 'real', 'real', 'string', 'boolean'],
+	['real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6', 'string', 'boolean'],
 	"void",
 	['HR'],
 	"Turns on/off the improved navpoint in the specified position",
@@ -21774,7 +21774,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"chud_breadcrumbs_track_position_with_priority",
-	['real', 'real', 'real', 'string', 'long', 'boolean'],
+	['real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6', 'string', 'long', 'boolean'],
 	"void",
 	['HR'],
 	"Turns on/off the improved navpoint in the specified position",
@@ -21909,7 +21909,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"player_effect_set_max_translation_for_player",
-	['player', 'real', 'real', 'real'],
+	['player', 'real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6'],
 	"void",
 	['HR', 'H4'],
 	"<x> <y> <z>",
@@ -21918,7 +21918,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"player_effect_set_max_rotation_for_player",
-	['player', 'real', 'real', 'real'],
+	['player', 'real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6'],
 	"void",
 	['HR', 'H4'],
 	"<yaw> <pitch> <roll>",
@@ -21927,7 +21927,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"player_effect_set_max_rumble_for_player",
-	['player', 'real', 'real'],
+	['player', 'real-1', 'real-2'],
 	"void",
 	['HR', 'H4'],
 	"<left> <right>",
@@ -21936,7 +21936,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"player_effect_start_for_player",
-	['player', 'real', 'real'],
+	['player', 'real-1', 'real-2'],
 	"void",
 	['HR', 'H4'],
 	"<max_intensity> <attack time>",
@@ -22035,7 +22035,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"controller_set_custom_button",
-	['controller', 'long', 'long'],
+	['controller', 'long-1', 'long-2'],
 	"void",
 	['HR', 'H4'],
 	"Set custom button for specified controller",
@@ -22188,7 +22188,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"controller_set_nag_message_data",
-	['controller', 'long', 'long', 'long', 'long'],
+	['controller', 'long-1', 'long-2', 'long-3', 'long-4', 'long-5', 'long-6', 'long-7', 'long-8', 'long-9', 'long-10', 'long-11', 'long-12'],
 	"void",
 	['HR', 'H4'],
 	"<controller> <last global nag msg id> <last per user nag msg id> <last global nag msg view count> <last per-user nag msg view count>",
@@ -22269,7 +22269,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"shader_compile_filter_category_option",
-	['string', 'string'],
+	['string-1', 'string-2'],
 	"void",
 	['HR', 'H4'],
 	"Skip compiling for one specifical combination of category and option for templated shader",
@@ -22701,7 +22701,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cui_get_screen_components",
-	['long', 'long'],
+	['long-1', 'long-2'],
 	"void",
 	['HR', 'H4'],
 	"<arbitrary int> <window index> lists widgets in a screen",
@@ -22710,7 +22710,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cui_get_component_properties",
-	['long', 'long', 'string_id'],
+	['long-1', 'long-2', 'string_id'],
 	"void",
 	['HR', 'H4'],
 	"<arbitrary int> <window index> <component_name> lists a component's property names, types and values",
@@ -22719,7 +22719,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cui_send_button_press",
-	['long', 'long', 'long', 'string'],
+	['long-1', 'long-2', 'long-3', 'long-4', 'long-5', 'long-6', 'string'],
 	"void",
 	['HR', 'H4'],
 	"<arbitrary int> <window index> <controller index> <button name> sends the button press to the screen.  use controller index -1 for automatically guessing the right controller",
@@ -22728,7 +22728,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cui_invoke_list_item_by_string_id",
-	['long', 'long', 'string_id', 'string_id', 'string_id', 'string_id'],
+	['long-1', 'long-2', 'string_id-1', 'string_id-2', 'string_id-3', 'string_id-4', 'string_id-5', 'string_id-6', 'string_id-7', 'string_id-8', 'string_id-9', 'string_id-10', 'string_id-11', 'string_id-12'],
 	"void",
 	['HR', 'H4'],
 	"<command_index> <window_index> <list_name> <list_data_name> <property_name> <property_value> triggers the list item who's column's value matches the specified one",
@@ -22737,7 +22737,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cui_invoke_list_item_by_long",
-	['long', 'long', 'string_id', 'string_id', 'string_id', 'long'],
+	['long-1', 'long-2', 'long-3', 'long-4', 'string_id-1', 'string_id-2', 'string_id-3', 'string_id-4', 'string_id-5', 'string_id-6', 'long-5', 'long-6'],
 	"void",
 	['HR', 'H4'],
 	"<command_index> <window_index> <list_name> <list_data_name> <property_name> <property_value> triggers the list item who's column's value matches the specified one",
@@ -22746,7 +22746,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cui_invoke_list_item_by_boolean",
-	['long', 'long', 'string_id', 'string_id', 'string_id', 'boolean'],
+	['long-1', 'long-2', 'string_id-1', 'string_id-2', 'string_id-3', 'string_id-4', 'string_id-5', 'string_id-6', 'boolean'],
 	"void",
 	['HR', 'H4'],
 	"<command_index> <window_index> <list_name> <list_data_name> <property_name> <property_value> triggers the list item who's column's value matches the specified one",
@@ -22755,7 +22755,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cui_invoke_list_item_by_text",
-	['long', 'long', 'string_id', 'string_id', 'string_id', 'string'],
+	['long-1', 'long-2', 'string_id-1', 'string_id-2', 'string_id-3', 'string_id-4', 'string_id-5', 'string_id-6', 'string'],
 	"void",
 	['HR', 'H4'],
 	"<command_index> <window_index> <list_name> <list_data_name> <property_name> <property_value> triggers the list item who's column's value matches the specified one",
@@ -22764,7 +22764,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"test_download_storage_file",
-	['string', 'string'],
+	['string-1', 'string-2'],
 	"void",
 	['HR'],
 	"<url> <filename> downloads a file from lsp to the client",
@@ -22800,7 +22800,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"test_fragment_utility_drive",
-	['long', 'long', 'long'],
+	['long-1', 'long-2', 'long-3', 'long-4', 'long-5', 'long-6'],
 	"void",
 	['HR'],
 	"<file_count> <growth_repetitions> <growth_size> writes files of varying sizes to the utiltiy drive in an effort to fragment it really badly",
@@ -22818,7 +22818,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"ai_selected_actor_jump",
-	['real', 'real'],
+	['real-1', 'real-2'],
 	"void",
 	['HR', 'H4'],
 	"Makes the currently selected actor jump x wus forward and y wus up",
@@ -22962,7 +22962,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"camera_set_orbiting_cam_at_target_relative_point",
-	['unit', 'string_id', 'real', 'real', 'real'],
+	['unit', 'string_id', 'real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6'],
 	"void",
 	['HR', 'H4'],
 	"<unit_index> <target_marker_name> <relative_x_position> <relative_y_position> <relative_z_position> sets an orbiting camera pointing at a given marker from an object relative point",
@@ -22989,7 +22989,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"add_recycling_volume_by_type",
-	['trigger_volume', 'long', 'long', 'long'],
+	['trigger_volume', 'long-1', 'long-2', 'long-3', 'long-4', 'long-5', 'long-6'],
 	"void",
 	['HR'],
 	"Removes garbage objects matching the type mask in the specified trigger volume to a max count over n seconds. 1=biped, 2=vehicle, 4=weapon, 8=equipment, and 1024=crate. add values together for combos, zero means all types syntax: <trigger_volume> <max_count> <time_to_collect> <type_mask>",
@@ -23205,7 +23205,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"async_set_thread_work_delay_milliseconds",
-	['long', 'long'],
+	['long-1', 'long-2'],
 	"void",
 	['HR', 'H4'],
 	"Set an artificial delay time for a specific async thread to test the performance of any asynchronous task work",
@@ -23304,7 +23304,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_scripting_get_object",
-	['long', 'long'],
+	['long-1', 'long-2'],
 	"object",
 	['HR', 'H4'],
 	"Get an object used in a cinematic",
@@ -23565,7 +23565,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"submit_incident_with_cause_player_and_effect_player",
-	['string_id', 'player', 'player'],
+	['string_id', 'player-1', 'player-2'],
 	"void",
 	['HR', 'H4'],
 	"Fire an incident",
@@ -23592,7 +23592,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"submit_incident_with_cause_team_and_effect_team",
-	['string_id', 'mp_team', 'mp_team'],
+	['string_id', 'mp_team-1', 'mp_team-2'],
 	"void",
 	['HR', 'H4'],
 	"Fire an incident",
@@ -23763,7 +23763,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"debug_button_action_mapping_set",
-	['long', 'long'],
+	['long-1', 'long-2'],
 	"void",
 	['HR', 'H4'],
 	"Allows remapping of individual actions in custom button preset, contact a programmer for a list of what each parameter corresponds to",
@@ -23835,7 +23835,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"async_test_hang",
-	['real', 'long', 'long'],
+	['real', 'long-1', 'long-2'],
 	"void",
 	['HR', 'H4'],
 	"Create and async task that hangs for the specified number of seconds with the specified async category and priority",
@@ -24591,7 +24591,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"object_move_by_offset",
-	['object', 'name', 'time', 'X', 'offset', 'Y', 'offset', 'Z', 'offset'],
+	['object', 'name', 'time', 'X', 'offset-1', 'offset-2', 'Y', 'offset-3', 'offset-4', 'Z', 'offset-5', 'offset-6'],
 	"void",
 	['H4'],
 	"Moves the specified object by the specified vector over the specified timespan",
@@ -24600,7 +24600,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"object_rotate_to_flag",
-	['object', 'name', 'yaw', 'time', 'pitch', 'time', 'roll', 'time', 'target', 'flag'],
+	['object', 'name', 'yaw', 'time-1', 'time-2', 'pitch', 'time-3', 'time-4', 'roll', 'time-5', 'time-6', 'target', 'flag'],
 	"void",
 	['H4'],
 	"Rotates the specified object to the specified flags orientation over the specified timespan",
@@ -24609,7 +24609,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"object_rotate_to_point",
-	['object', 'name', 'yaw', 'time', 'pitch', 'time', 'roll', 'time', 'target', 'point'],
+	['object', 'name', 'yaw', 'time-1', 'time-2', 'pitch', 'time-3', 'time-4', 'roll', 'time-5', 'time-6', 'target', 'point'],
 	"void",
 	['H4'],
 	"Rotates the specified object to aim at the specified point over the specified timespan",
@@ -24618,7 +24618,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"object_rotate_by_offset",
-	['object', 'name', 'yaw', 'time', 'pitch', 'time', 'roll', 'time', 'yaw', 'degrees', 'pitch', 'degrees', 'roll', 'degrees'],
+	['object', 'name', 'yaw-1', 'time-1', 'time-2', 'pitch-1', 'time-3', 'time-4', 'roll-1', 'time-5', 'time-6', 'yaw-2', 'degrees-1', 'degrees-2', 'pitch-2', 'degrees-3', 'degrees-4', 'roll-2', 'degrees-5', 'degrees-6'],
 	"void",
 	['H4'],
 	"Rotates the specified object by the specified angles over the specified timespan",
@@ -24636,7 +24636,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"->",
-	['object', 'name', 'member', 'function', 'call', '/', 'object', 'member', 'script', 'name', '/', 'member', 'variable'],
+	['object-1', 'name-1', 'member-1', 'member-2', 'function', 'call', '/-1', 'object-2', 'member-3', 'member-4', 'script', 'name-2', '/-2', 'member-5', 'member-6', 'variable'],
 	"passthrough",
 	['H4'],
 	"Call a member script function on an object, or access object member data",
@@ -24717,7 +24717,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"set_text_color",
-	['real', 'real', 'real', 'real'],
+	['real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6', 'real-7', 'real-8', 'real-9', 'real-10', 'real-11', 'real-12'],
 	"void",
 	['H4'],
 	"Set rich text color in argb format",
@@ -24726,7 +24726,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"set_text_margins",
-	['real', 'real', 'real', 'real'],
+	['real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6', 'real-7', 'real-8', 'real-9', 'real-10', 'real-11', 'real-12'],
 	"void",
 	['H4'],
 	"Set text margins as percentage offsets from the edges of the screen",
@@ -24744,7 +24744,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"set_text_indents",
-	['long', 'long'],
+	['long-1', 'long-2'],
 	"void",
 	['H4'],
 	"Set text indents",
@@ -24753,7 +24753,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"set_text_wrap",
-	['boolean', 'boolean'],
+	['boolean-1', 'boolean-2'],
 	"void",
 	['H4'],
 	"Set text wrap modes",
@@ -24798,7 +24798,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"set_text_shadow_color",
-	['real', 'real', 'real', 'real'],
+	['real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6', 'real-7', 'real-8', 'real-9', 'real-10', 'real-11', 'real-12'],
 	"void",
 	['H4'],
 	"Set rich text shadow color in argb format",
@@ -24942,7 +24942,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"volume_test_players_lookat",
-	['trigger_volume', 'real', 'real'],
+	['trigger_volume', 'real-1', 'real-2'],
 	"boolean",
 	['H4'],
 	"Returns true if the trigger volume is viewable by any player (with the specified parameters). trigger volume must have been postprocessed",
@@ -24951,7 +24951,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"volume_test_players_all_lookat",
-	['trigger_volume', 'real', 'real'],
+	['trigger_volume', 'real-1', 'real-2'],
 	"boolean",
 	['H4'],
 	"Returns true if the trigger volume is viewable by all players (with the specified parameters). trigger volume must have been postprocessed",
@@ -25041,7 +25041,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"effect_new_between_points",
-	['effect', 'cutscene_flag', 'cutscene_flag'],
+	['effect', 'cutscene_flag-1', 'cutscene_flag-2'],
 	"void",
 	['H4'],
 	"Starts the specified effect between the specified flags",
@@ -25050,7 +25050,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"effect_new_between_object_markers",
-	['effect', 'object', 'string_id', 'object', 'string_id'],
+	['effect', 'object-1', 'string_id-1', 'object-2', 'string_id-2'],
 	"void",
 	['H4'],
 	"Starts the specified effect between the specified objects at the specified markers",
@@ -25068,7 +25068,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"move_cutscene_flag",
-	['cutscene_flag', 'real', 'real', 'real', 'real', 'real', 'real', 'real'],
+	['cutscene_flag', 'real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6', 'real-7', 'real-8', 'real-9', 'real-10', 'real-11', 'real-12', 'real-13', 'real-14', 'real-15', 'real-16', 'real-17', 'real-18', 'real-19', 'real-20', 'real-21', 'real-22', 'real-23', 'real-24', 'real-25', 'real-26', 'real-27', 'real-28', 'real-29', 'real-30', 'real-31', 'real-32', 'real-33', 'real-34', 'real-35', 'real-36', 'real-37', 'real-38', 'real-39', 'real-40', 'real-41', 'real-42'],
 	"void",
 	['H4'],
 	"Moves a cutscene flag (from maya)",
@@ -25077,7 +25077,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"set_light_cone_parameters",
-	['cutscene_flag', 'real', 'real', 'real', 'real', 'real', 'real', 'real'],
+	['cutscene_flag', 'real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6', 'real-7', 'real-8', 'real-9', 'real-10', 'real-11', 'real-12', 'real-13', 'real-14', 'real-15', 'real-16', 'real-17', 'real-18', 'real-19', 'real-20', 'real-21', 'real-22', 'real-23', 'real-24', 'real-25', 'real-26', 'real-27', 'real-28', 'real-29', 'real-30', 'real-31', 'real-32', 'real-33', 'real-34', 'real-35', 'real-36', 'real-37', 'real-38', 'real-39', 'real-40', 'real-41', 'real-42'],
 	"void",
 	['H4'],
 	"Changes the parameters on a light cone (from maya)",
@@ -25104,7 +25104,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"object_dissolve_from_marker",
-	['object', 'string_id', 'string_id'],
+	['object', 'string_id-1', 'string_id-2'],
 	"void",
 	['H4'],
 	"Activates an object's dissolve of a specified type from the specified marker",
@@ -25140,7 +25140,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"damage_object_with_fire_from_object",
-	['object', 'object', 'string_id', 'real'],
+	['object-1', 'object-2', 'string_id', 'real'],
 	"void",
 	['H4'],
 	"Causes the specified damage at the specified object using fire damage response effect with the fire objects position for damage origin",
@@ -25320,7 +25320,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"object_set_cinematic_function_variable",
-	['object', 'boolean', 'string_id', 'real', 'real'],
+	['object', 'boolean', 'string_id', 'real-1', 'real-2'],
 	"void",
 	['H4'],
 	"Sets funciton variable for sin-o-matic use",
@@ -25428,7 +25428,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"objects_physically_attach",
-	['object', 'string_id', 'object', 'string_id'],
+	['object-1', 'string_id-1', 'object-2', 'string_id-2'],
 	"void",
 	['H4'],
 	"Attaches the second object to the first and keeps the child physical both strings can be empty",
@@ -25446,7 +25446,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"object_set_angular_velocity",
-	['object', 'real', 'real', 'real'],
+	['object', 'real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6'],
 	"void",
 	['H4'],
 	"Sets the (object-relative) angular velocity of the given object",
@@ -25464,7 +25464,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"object_set_orientation_direct",
-	['object', 'real', 'real', 'real', 'real', 'real', 'real'],
+	['object', 'real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6', 'real-7', 'real-8', 'real-9', 'real-10', 'real-11', 'real-12', 'real-13', 'real-14', 'real-15', 'real-16', 'real-17', 'real-18', 'real-19', 'real-20', 'real-21', 'real-22', 'real-23', 'real-24', 'real-25', 'real-26', 'real-27', 'real-28', 'real-29', 'real-30'],
 	"void",
 	['H4'],
 	"Moves the specified object to the given world-space position and orientation",
@@ -25473,7 +25473,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"object_set_orientation_direct_by_id",
-	['long', 'real', 'real', 'real', 'real', 'real', 'real'],
+	['long', 'real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6', 'real-7', 'real-8', 'real-9', 'real-10', 'real-11', 'real-12', 'real-13', 'real-14', 'real-15', 'real-16', 'real-17', 'real-18', 'real-19', 'real-20', 'real-21', 'real-22', 'real-23', 'real-24', 'real-25', 'real-26', 'real-27', 'real-28', 'real-29', 'real-30'],
 	"void",
 	['H4'],
 	"Moves the specified (by uid) object to the given world-space position and orientation",
@@ -25509,7 +25509,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"object_teleport_to_object",
-	['object', 'object'],
+	['object-1', 'object-2'],
 	"void",
 	['H4'],
 	"Moves the specified object to in front of the specified object",
@@ -25518,7 +25518,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"player_teleport_to_location",
-	['real', 'real', 'real', 'real', 'real', 'real'],
+	['real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6', 'real-7', 'real-8', 'real-9', 'real-10', 'real-11', 'real-12', 'real-13', 'real-14', 'real-15', 'real-16', 'real-17', 'real-18', 'real-19', 'real-20', 'real-21', 'real-22', 'real-23', 'real-24', 'real-25', 'real-26', 'real-27', 'real-28', 'real-29', 'real-30'],
 	"void",
 	['H4'],
 	"Teleports player to a given location",
@@ -25527,7 +25527,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"prefab_set_scale",
-	['long', 'long', 'real'],
+	['long-1', 'long-2', 'real'],
 	"void",
 	['H4'],
 	"Sets the scale of a prefab, and all of its children",
@@ -25536,7 +25536,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"prefab_set_rotation",
-	['long', 'long', 'real', 'real', 'real', 'real'],
+	['long-1', 'long-2', 'real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6', 'real-7', 'real-8', 'real-9', 'real-10', 'real-11', 'real-12'],
 	"void",
 	['H4'],
 	"Sets the rotation of a prefab, and all of its children",
@@ -25545,7 +25545,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"prefab_set_translation",
-	['long', 'long', 'real', 'real', 'real'],
+	['long-1', 'long-2', 'real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6'],
 	"void",
 	['H4'],
 	"Sets the translation of a prefab, and all of its children",
@@ -25581,7 +25581,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"random_range",
-	['short', 'short'],
+	['short-1', 'short-2'],
 	"short",
 	['H4'],
 	"Returns a random value in the range [lower bound, upper bound]",
@@ -25590,7 +25590,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"real_random_range",
-	['real', 'real'],
+	['real-1', 'real-2'],
 	"real",
 	['H4'],
 	"Returns a random value in the range [lower bound, upper bound]",
@@ -25653,7 +25653,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"get_time_is_time",
-	['long', 'long', 'long', 'long', 'long', 'long'],
+	['long-1', 'long-2', 'long-3', 'long-4', 'long-5', 'long-6', 'long-7', 'long-8', 'long-9', 'long-10', 'long-11', 'long-12', 'long-13', 'long-14', 'long-15', 'long-16', 'long-17', 'long-18', 'long-19', 'long-20', 'long-21', 'long-22', 'long-23', 'long-24', 'long-25', 'long-26', 'long-27', 'long-28', 'long-29', 'long-30'],
 	"boolean",
 	['H4'],
 	"In: year,month,day,hour,minute,seconds. returns true if the time specified is the current time. mask out inputs with -1",
@@ -25671,7 +25671,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"localized_physics_debug_simulator_setup_from_object",
-	['object', 'object'],
+	['object-1', 'object-2'],
 	"void",
 	['H4'],
 	"Simulates a debug object at the center of mass of the passed in object. [object early mover, object target]",
@@ -25680,7 +25680,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"localized_physics_debug_simulator_setup_relative_position",
-	['object', 'real', 'real', 'real'],
+	['object', 'real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6'],
 	"void",
 	['H4'],
 	"Simulates a debug object at a position relative to the early mover [object early mover, real x, real y, real z]",
@@ -25815,7 +25815,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"unit_enter_vehicle",
-	['unit', 'unit', 'string_id'],
+	['unit-1', 'unit-2', 'string_id'],
 	"void",
 	['H4'],
 	"Puts the specified unit in the specified vehicle (in the named seat)",
@@ -25824,7 +25824,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"unit_enter_vehicle_immediate",
-	['unit', 'unit', 'string_id'],
+	['unit-1', 'unit-2', 'string_id'],
 	"void",
 	['H4'],
 	"Puts the specified unit in the specified vehicle (in the named seat)",
@@ -25851,7 +25851,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"vehicle_test_seat_unit",
-	['unit', 'unit_seat_mapping', 'unit'],
+	['unit-1', 'unit_seat_mapping', 'unit-2'],
 	"boolean",
 	['H4'],
 	"Tests whether the named seat has a specified unit in it (use  to test all seats for this unit)",
@@ -25887,7 +25887,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"object_set_maximum_vitality",
-	['object', 'real', 'real'],
+	['object', 'real-1', 'real-2'],
 	"void",
 	['H4'],
 	"Sets a objects's maximum body and shield vitality",
@@ -25941,7 +25941,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"unit_recorder_set_playback_rate_smooth",
-	['unit', 'real', 'real'],
+	['unit', 'real-1', 'real-2'],
 	"void",
 	['H4'],
 	"Sets the playback rate on the specified unit <unit> <real>",
@@ -26031,7 +26031,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"player_set_equipment",
-	['player', 'object_definition', 'boolean', 'boolean', 'boolean'],
+	['player', 'object_definition', 'boolean-1', 'boolean-2', 'boolean-3', 'boolean-4', 'boolean-5', 'boolean-6'],
 	"void",
 	['H4'],
 	"<player> <object> <dropcurrent_bool> <primary_bool> <silent_bool> last 3 args: drop or delete current, primary or hero assist, silent or play effects",
@@ -26040,7 +26040,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"unit_set_equipment",
-	['unit', 'object_definition', 'boolean', 'boolean', 'boolean'],
+	['unit', 'object_definition', 'boolean-1', 'boolean-2', 'boolean-3', 'boolean-4', 'boolean-5', 'boolean-6'],
 	"void",
 	['H4'],
 	"<unit> <equip_def> <dropcurrent_bool> <primary_bool> <silent_bool> last 3 args: drop or delete current, primary or hero assist, silent or play effects",
@@ -26112,7 +26112,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"weapon_get_lockon_target",
-	['weapon', 'boolean', 'boolean'],
+	['weapon', 'boolean-1', 'boolean-2'],
 	"object",
 	['H4'],
 	"<weapon> <driver_if_vehicle_bool> <gunner_if_vehicle_bool> // returns target object being tracked. if vehicle, optionally returns targeted vehicle's driver or gunner",
@@ -26184,7 +26184,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"debug_weapons_override_projectile_error_angles",
-	['real', 'real', 'real'],
+	['real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6'],
 	"void",
 	['H4'],
 	"Override barrel's projectiles error angles (inner, low, high). each of three overrides will be disabled by specifying -1",
@@ -26445,7 +26445,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"object_particleize_to_marker",
-	['object', 'object', 'string_id', 'any_tag'],
+	['object-1', 'object-2', 'string_id', 'any_tag'],
 	"void",
 	['H4'],
 	"Particleize object, to-object, to-marker, particlemane-tag",
@@ -26607,7 +26607,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"ai_station_set_bounds",
-	['string_id', 'real', 'real', 'real', 'real', 'real', 'real'],
+	['string_id', 'real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6', 'real-7', 'real-8', 'real-9', 'real-10', 'real-11', 'real-12', 'real-13', 'real-14', 'real-15', 'real-16', 'real-17', 'real-18', 'real-19', 'real-20', 'real-21', 'real-22', 'real-23', 'real-24', 'real-25', 'real-26', 'real-27', 'real-28', 'real-29', 'real-30'],
 	"void",
 	['H4'],
 	"Station boundary min max pairs for range, yaw, pitch. range in wu, angles in degrees",
@@ -26616,7 +26616,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"ai_station_predict_time",
-	['string_id', 'real', 'real', 'real'],
+	['string_id', 'real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6'],
 	"void",
 	['H4'],
 	"Project intercepts to station this far when moving slow to fast (fast speed), (time at speed 0), (time at fast speed)",
@@ -26625,7 +26625,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"ai_capture_allegiance",
-	['object', 'object'],
+	['object-1', 'object-2'],
 	"void",
 	['H4'],
 	"Squad containing first unit takes the team of the unit in the second",
@@ -26670,7 +26670,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cs_fly_to_and_dock",
-	['point_reference', 'point_reference', 'real'],
+	['point_reference-1', 'point_reference-2', 'real'],
 	"void",
 	['H4'],
 	"Flies the actor to the given point and orients him in the appropriate direction (within the given tolerance) and stops there. best used at very short range",
@@ -26679,7 +26679,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cs_fly_over_object",
-	['object', 'real', 'real'],
+	['object', 'real-1', 'real-2'],
 	"void",
 	['H4'],
 	"Flies by the point that is the given height above the object (within the given tolerance measured on the ground)",
@@ -26688,7 +26688,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cs_fly_over_object",
-	['ai', 'boolean', 'object', 'real', 'real'],
+	['ai', 'boolean', 'object', 'real-1', 'real-2'],
 	"void",
 	['H4'],
 	"Flies by the point that is the given height above the object (within the given tolerance measured on the ground)",
@@ -26967,7 +26967,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"pup_exit_vehicle_immediate",
-	['object', 'boolean', 'boolean'],
+	['object', 'boolean-1', 'boolean-2'],
 	"void",
 	['H4'],
 	"<biped> <standing> <instant ready weapon>. tells a character to exit the vehicle immediately. can only be used from inside a puppeteer script fragment",
@@ -27012,7 +27012,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"debug_camera_set_position_facing",
-	['real', 'real', 'real', 'real', 'real', 'real'],
+	['real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6', 'real-7', 'real-8', 'real-9', 'real-10', 'real-11', 'real-12', 'real-13', 'real-14', 'real-15', 'real-16', 'real-17', 'real-18', 'real-19', 'real-20', 'real-21', 'real-22', 'real-23', 'real-24', 'real-25', 'real-26', 'real-27', 'real-28', 'real-29', 'real-30'],
 	"void",
 	['H4'],
 	"Sets the debug flycam to the specified world-space coordinates and orientation vector",
@@ -27390,7 +27390,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"fade_in",
-	['real', 'real', 'real', 'long'],
+	['real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6', 'long'],
 	"void",
 	['H4'],
 	"Does a screen fade in from a particular color",
@@ -27399,7 +27399,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"fade_out",
-	['real', 'real', 'real', 'long'],
+	['real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6', 'long'],
 	"void",
 	['H4'],
 	"Does a screen fade out to a particular color",
@@ -27462,7 +27462,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"script_light_rig_direction",
-	['string', 'long', 'real', 'real', 'real'],
+	['string', 'long', 'real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6'],
 	"void",
 	['H4'],
 	"Script light rig direction",
@@ -27471,7 +27471,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"script_light_rig_vmf",
-	['string', 'real', 'real', 'real', 'real', 'real', 'real', 'real'],
+	['string', 'real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6', 'real-7', 'real-8', 'real-9', 'real-10', 'real-11', 'real-12', 'real-13', 'real-14', 'real-15', 'real-16', 'real-17', 'real-18', 'real-19', 'real-20', 'real-21', 'real-22', 'real-23', 'real-24', 'real-25', 'real-26', 'real-27', 'real-28', 'real-29', 'real-30', 'real-31', 'real-32', 'real-33', 'real-34', 'real-35', 'real-36', 'real-37', 'real-38', 'real-39', 'real-40', 'real-41', 'real-42'],
 	"void",
 	['H4'],
 	"Script light rig vmf",
@@ -27480,7 +27480,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"scrip_light_rig_fill",
-	['string', 'real', 'real', 'real', 'real'],
+	['string', 'real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6', 'real-7', 'real-8', 'real-9', 'real-10', 'real-11', 'real-12'],
 	"void",
 	['H4'],
 	"Script light rig fill",
@@ -27489,7 +27489,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"script_light_rig_balance",
-	['string', 'real', 'real', 'real'],
+	['string', 'real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6'],
 	"void",
 	['H4'],
 	"Script light rig balance",
@@ -27705,7 +27705,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_set_lightmap_scalars",
-	['real', 'real'],
+	['real-1', 'real-2'],
 	"void",
 	['H4'],
 	"Sets lightmap direct and indirect scalars for cinematic",
@@ -27750,7 +27750,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"CinematicLightingUpdateShadow",
-	['string', 'real', 'real', 'real'],
+	['string', 'real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6'],
 	"void",
 	['H4'],
 	"Cinematic update for shadows",
@@ -27759,7 +27759,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"CinematicLightingUpdateSample",
-	['string', 'real', 'real', 'real', 'real', 'real', 'real'],
+	['string', 'real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6', 'real-7', 'real-8', 'real-9', 'real-10', 'real-11', 'real-12', 'real-13', 'real-14', 'real-15', 'real-16', 'real-17', 'real-18', 'real-19', 'real-20', 'real-21', 'real-22', 'real-23', 'real-24', 'real-25', 'real-26', 'real-27', 'real-28', 'real-29', 'real-30'],
 	"void",
 	['H4'],
 	"Cinematic update the sampled params",
@@ -27768,7 +27768,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"CinematicLightingUpdateProbe",
-	['string', 'long', 'real', 'real', 'real', 'real'],
+	['string', 'long', 'real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6', 'real-7', 'real-8', 'real-9', 'real-10', 'real-11', 'real-12'],
 	"void",
 	['H4'],
 	"Cinematic update the probe data",
@@ -27804,7 +27804,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_debug_play",
-	['string', 'string', 'boolean', 'long'],
+	['string-1', 'string-2', 'boolean', 'long'],
 	"boolean",
 	['H4'],
 	"Debug play cinematic",
@@ -27885,7 +27885,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_scripting_create_shot",
-	['long', 'long', 'cutscene_flag'],
+	['long-1', 'long-2', 'cutscene_flag'],
 	"void",
 	['H4'],
 	"Sets the scene, shot, and cutscene flag for the cinematic",
@@ -28011,7 +28011,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_scripting_start_texture_movie",
-	['long', 'long', 'long'],
+	['long-1', 'long-2', 'long-3', 'long-4', 'long-5', 'long-6'],
 	"void",
 	['H4'],
 	"Plays texture bink movie",
@@ -28020,7 +28020,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_scripting_stop_texture_movie",
-	['long', 'long', 'long'],
+	['long-1', 'long-2', 'long-3', 'long-4', 'long-5', 'long-6'],
 	"void",
 	['H4'],
 	"Stops texture bink movie",
@@ -28092,7 +28092,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"debug_spawning_kill_user_and_adjust_index",
-	['long', 'long'],
+	['long-1', 'long-2'],
 	"void",
 	['H4'],
 	"<user index> <index adjustment> - kills the unit associated with the given local user index [0..3] and adds the adjustment to the next debug spawning index",
@@ -28155,7 +28155,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"sound_impulse_start_with_subtitle",
-	['sound', 'object', 'real', 'string_id', 'string_id'],
+	['sound', 'object', 'real', 'string_id-1', 'string_id-2'],
 	"void",
 	['H4'],
 	"Plays an impulse sound from the specified source object (or none));, with the specified scale and displays a subtitle",
@@ -28317,7 +28317,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"navpoint_track_object_named_with_string",
-	['object', 'string_id', 'string_id'],
+	['object', 'string_id-1', 'string_id-2'],
 	"void",
 	['H4'],
 	"Turns on a navpoint tracking an object with the specified art and string",
@@ -28344,7 +28344,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"navpoint_track_object_for_player_named_with_string",
-	['player', 'object', 'string_id', 'string_id'],
+	['player', 'object', 'string_id-1', 'string_id-2'],
 	"void",
 	['H4'],
 	"Turns on a navpoint tracking an object with the specified art and string",
@@ -28362,7 +28362,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"navpoint_object_set_on_radar",
-	['object', 'boolean', 'boolean'],
+	['object', 'boolean-1', 'boolean-2'],
 	"void",
 	['H4'],
 	"Set the object on the radar for a tracked object: first bool is for enable/disable, second is to show extended range in radar",
@@ -28416,7 +28416,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"navpoint_track_flag_named_with_string",
-	['cutscene_flag', 'string_id', 'string_id'],
+	['cutscene_flag', 'string_id-1', 'string_id-2'],
 	"void",
 	['H4'],
 	"Turns on a navpoint tracking a cutscene flag with the specified art and string",
@@ -28443,7 +28443,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"navpoint_track_flag_for_player_named_with_string",
-	['player', 'cutscene_flag', 'string_id', 'string_id'],
+	['player', 'cutscene_flag', 'string_id-1', 'string_id-2'],
 	"void",
 	['H4'],
 	"Turns on a navpoint tracking a cutscene flag with the specified art and string",
@@ -28461,7 +28461,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"navpoint_cutscene_flag_set_on_radar",
-	['cutscene_flag', 'boolean', 'boolean'],
+	['cutscene_flag', 'boolean-1', 'boolean-2'],
 	"void",
 	['H4'],
 	"Set the object on the radar for a tracked flag: first bool is for enable/disable, second is to show extended range in radar",
@@ -28893,7 +28893,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cui_fake_outgoing_join_type",
-	['long', 'long', 'long', 'long'],
+	['long-1', 'long-2', 'long-3', 'long-4', 'long-5', 'long-6', 'long-7', 'long-8', 'long-9', 'long-10', 'long-11', 'long-12'],
 	"void",
 	['H4'],
 	"<gui_game_mode [0 .. 14]> <session_game_mode [0 .. 4]> <network_game_type [0 .. 3]> <game_engine_type [0 .. 5]>",
@@ -28902,7 +28902,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cui_invoke_instanced_list_item_by_text",
-	['long', 'long', 'long', 'string_id', 'string_id', 'string_id', 'string'],
+	['long-1', 'long-2', 'long-3', 'long-4', 'long-5', 'long-6', 'string_id-1', 'string_id-2', 'string_id-3', 'string_id-4', 'string_id-5', 'string_id-6', 'string'],
 	"void",
 	['H4'],
 	"<command_index> <window_index> <list_index> <list_name> <list_data_name> <property_name> <property_value> triggers the named item in the matching list (if list_index equals 1, then select the item from the second matching list)",
@@ -28911,7 +28911,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cui_expand_list_item_by_list_item_index",
-	['long', 'long', 'string_id', 'long', 'boolean'],
+	['long-1', 'long-2', 'long-3', 'long-4', 'string_id', 'long-5', 'long-6', 'boolean'],
 	"void",
 	['H4'],
 	"<command_index> <window_index> <list_name> <list item index> <expand> expands or collapses the indexed list item",
@@ -28920,7 +28920,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cui_invoke_list_item_by_list_item_index",
-	['long', 'long', 'string_id', 'long'],
+	['long-1', 'long-2', 'long-3', 'long-4', 'string_id', 'long-5', 'long-6'],
 	"void",
 	['H4'],
 	"<command_index> <window_index> <list_name> <list item index> directly triggers the indexed list item",
@@ -28929,7 +28929,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cui_invoke_list_item_by_list_item_name",
-	['long', 'long', 'string_id', 'string_id'],
+	['long-1', 'long-2', 'string_id-1', 'string_id-2'],
 	"void",
 	['H4'],
 	"<command_index> <window_index> <list_name> <list item index> directly triggers the named list item",
@@ -29073,7 +29073,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"add_recycling_volume",
-	['trigger_volume', 'long', 'long'],
+	['trigger_volume', 'long-1', 'long-2'],
 	"void",
 	['H4'],
 	"Removes garbage in specified trigger volume to a max count over n seconds syntax: <trigger_volume> <max_count> <time_to_collect (integer secs)>",
@@ -29082,7 +29082,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"add_recycling_volume_by_type",
-	['trigger_volume', 'long', 'long', 'long'],
+	['trigger_volume', 'long-1', 'long-2', 'long-3', 'long-4', 'long-5', 'long-6'],
 	"void",
 	['H4'],
 	"Removes garbage objects matching the type mask in the specified trigger volume that are over the max count allowed in the volume over n seconds. 1=biped, 2=vehicle, 4=weapon, 8=equipment, and 1024=crate. add values together for combos, zero means all types syntax: <trigger_volume> <max_count> <time_to_collect (integer secs)> <type_mask>",
@@ -29091,7 +29091,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"add_offscreen_recycling_volume",
-	['trigger_volume', 'long', 'long'],
+	['trigger_volume', 'long-1', 'long-2'],
 	"void",
 	['H4'],
 	"Removes garbage in specified trigger volume to a max count over n seconds syntax: <trigger_volume> <max_count> <time_to_collect (integer secs)>",
@@ -29100,7 +29100,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"add_offscreen_recycling_volume_by_type",
-	['trigger_volume', 'long', 'long', 'long'],
+	['trigger_volume', 'long-1', 'long-2', 'long-3', 'long-4', 'long-5', 'long-6'],
 	"void",
 	['H4'],
 	"Removes garbage objects matching the type mask in the specified trigger volume that are over the max count allowed in the volume over n seconds. 1=biped, 2=vehicle, 4=weapon, 8=equipment, and 1024=crate. add values together for combos, zero means all types syntax: <trigger_volume> <max_count> <time_to_collect (integer secs)> <type_mask>",
@@ -29163,7 +29163,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"net_leaderboard_set_user_stats",
-	['long', 'real', 'real', 'long', 'long', 'long'],
+	['long-1', 'long-2', 'long-3', 'real-1', 'real-2', 'long-4', 'long-5', 'long-6', 'long-7', 'long-8', 'long-9', 'long-10', 'long-11', 'long-12'],
 	"void",
 	['H4'],
 	"Slams user leaderboard values locally",
@@ -29172,7 +29172,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"net_leaderboard_set_user_game_stats",
-	['long', 'long', 'long', 'long', 'long'],
+	['long-1', 'long-2', 'long-3', 'long-4', 'long-5', 'long-6', 'long-7', 'long-8', 'long-9', 'long-10', 'long-11', 'long-12', 'long-13', 'long-14', 'long-15', 'long-16', 'long-17', 'long-18', 'long-19', 'long-20'],
 	"void",
 	['H4'],
 	"Slams more user stats",
@@ -29217,7 +29217,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"streamer_pin_tag_index",
-	['long', 'long'],
+	['long-1', 'long-2'],
 	"void",
 	['H4'],
 	"Pins a tag and variant to the highest priority for streaming",
@@ -29226,7 +29226,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"streamer_unpin_tag_index",
-	['long', 'long'],
+	['long-1', 'long-2'],
 	"void",
 	['H4'],
 	"Removes the pin on a tag and variant",
@@ -29352,7 +29352,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"voice_set_force_match_configurations",
-	['long', 'long', 'long', 'boolean'],
+	['long-1', 'long-2', 'long-3', 'long-4', 'long-5', 'long-6', 'boolean'],
 	"void",
 	['H4'],
 	"Sets matchmaking voice options",
@@ -29361,7 +29361,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"voice_set_force_hud",
-	['long', 'long'],
+	['long-1', 'long-2'],
 	"void",
 	['H4'],
 	"Sets matchmaking voice hud",
@@ -29388,7 +29388,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_link_light_object",
-	['string_id', 'string_id'],
+	['string_id-1', 'string_id-2'],
 	"void",
 	['H4'],
 	"Links dynamic light to cinematic object. light must have cinema objects only on",
@@ -29397,7 +29397,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"cinematic_unlink_light_object",
-	['string_id', 'string_id'],
+	['string_id-1', 'string_id-2'],
 	"void",
 	['H4'],
 	"Unlinks dynamic light from cinematic object",
@@ -29469,7 +29469,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"game_currency_issue_award_to_team",
-	['long', 'long'],
+	['long-1', 'long-2'],
 	"void",
 	['H4'],
 	"Awards the latter amount of money to the former team index.  use 0 or 1 for team index.  host only!",
@@ -29640,7 +29640,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"exit_experience_set_params",
-	['string_id', 'string', 'long', 'long', 'long', 'long', 'long'],
+	['string_id', 'string', 'long-1', 'long-2', 'long-3', 'long-4', 'long-5', 'long-6', 'long-7', 'long-8', 'long-9', 'long-10', 'long-11', 'long-12', 'long-13', 'long-14', 'long-15', 'long-16', 'long-17', 'long-18', 'long-19', 'long-20'],
 	"void",
 	['H4'],
 	"Sets test parameters to show on the exit experience screen. parameters are: game mode (matchmaking, campaign, survival, custom_game, survival_matchmaking), score bitfield (eg. 10111111111), commendation count, count, challenge count, achievements count, cookies before, cookies after, xp before, xp after",
@@ -29784,7 +29784,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"add_scene_viewer_move_along_point_set_at_time",
-	['object', 'point_set_reference', 'real', 'real'],
+	['object', 'point_set_reference', 'real-1', 'real-2'],
 	"void",
 	['H4'],
 	"Moves the specified object along the given point set for the scene",
@@ -29910,7 +29910,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"trace_thread_tick_to_file",
-	['long', 'long', 'string'],
+	['long-1', 'long-2', 'string'],
 	"void",
 	['H4'],
 	"Creates a tracedump of the desired thread and tick in a specific file",
@@ -30018,7 +30018,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"player_set_ordnance_points_and_tier",
-	['player', 'long', 'long'],
+	['player', 'long-1', 'long-2'],
 	"void",
 	['H4'],
 	"Sets the ordnance points and tier for a given player (player index, ordnance points, ordnance tier)",
@@ -30387,7 +30387,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"firefight_mode_get_squad_to_place",
-	['long', 'long', 'short'],
+	['long-1', 'long-2', 'short'],
 	"short",
 	['H4'],
 	"Returns the table index for the specified squad to be placed at the specified index in the specified wave",
@@ -30432,7 +30432,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"firefight_mode_get_weapon_drop",
-	['long', 'long'],
+	['long-1', 'long-2'],
 	"string_id",
 	['H4'],
 	"Returns the specified wave's weapon to be dropped in the weapon drop",
@@ -30441,7 +30441,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"firefight_mode_get_vehicle_drop",
-	['long', 'long'],
+	['long-1', 'long-2'],
 	"string_id",
 	['H4'],
 	"Returns the specified wave's weapon to be dropped in the vehicle drop",
@@ -30639,7 +30639,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"CreateDynamicTask",
-	['long', 'long', 'object', 'script', 'real'],
+	['long-1', 'long-2', 'object', 'script', 'real'],
 	"long",
 	['H4'],
 	"Create a dynamic task",
@@ -30648,7 +30648,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"CreateDynamicTeamTask",
-	['long', 'long', 'object', 'script', 'real', 'team'],
+	['long-1', 'long-2', 'object', 'script', 'real', 'team'],
 	"long",
 	['H4'],
 	"Create a dynamic task with a team parameter",
@@ -30675,7 +30675,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"SetDynamicTaskTeamFilter",
-	['long', 'long'],
+	['long-1', 'long-2'],
 	"void",
 	['H4'],
 	"Set task's allowed teams",
@@ -30693,7 +30693,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"SetObjectLongVariable",
-	['object', 'long', 'long'],
+	['object', 'long-1', 'long-2'],
 	"void",
 	['H4'],
 	"Store a named variable in an object instance",
@@ -30729,7 +30729,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"SendCommandEvent",
-	['object', 'long', 'long', 'real'],
+	['object', 'long-1', 'long-2', 'real'],
 	"void",
 	['H4'],
 	"Send generic command event to specified object",
@@ -30765,7 +30765,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"record_next_cinematic",
-	['short', 'short', 'short'],
+	['short-1', 'short-2', 'short-3', 'short-4', 'short-5', 'short-6'],
 	"void",
 	['H4'],
 	"Record the next cinematic (<frame rate> <width> <height>)",
@@ -30774,7 +30774,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"record_next_cinematic_fml",
-	['short', 'short', 'short'],
+	['short-1', 'short-2', 'short-3', 'short-4', 'short-5', 'short-6'],
 	"void",
 	['H4'],
 	"Record the next cinematic first, middle, last shot frames (<frame rate> <width> <height>)",
@@ -30783,7 +30783,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"record_next_cinematic_distributed",
-	['short', 'short', 'short', 'short'],
+	['short-1', 'short-2', 'short-3', 'short-4', 'short-5', 'short-6', 'short-7', 'short-8', 'short-9', 'short-10', 'short-11', 'short-12'],
 	"void",
 	['H4'],
 	"Record the next cinematic distributed (<frame rate> <width> <height> <frame mod count>)",
@@ -30801,7 +30801,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"PlayerSetICSCamera",
-	['player', 'string_id', 'real', 'real', 'long'],
+	['player', 'string_id', 'real-1', 'real-2', 'long'],
 	"boolean",
 	['H4'],
 	"Start or change ics camera (player, marker_name, user-control cone angle, auto-centering strength, interpolation ticks)",
@@ -30810,7 +30810,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"PlayerSetICSCamera",
-	['player', 'string_id', 'real', 'real', 'real', 'real', 'real', 'long'],
+	['player', 'string_id', 'real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6', 'real-7', 'real-8', 'real-9', 'real-10', 'real-11', 'real-12', 'real-13', 'real-14', 'real-15', 'real-16', 'real-17', 'real-18', 'real-19', 'real-20', 'long'],
 	"boolean",
 	['H4'],
 	"Start or change ics camera (player, marker_name, user-control cone angles (minh, maxh, minv, maxv), auto-centering strength, interpolation ticks)",
@@ -30819,7 +30819,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"PlayerSetICSCamera",
-	['player', 'string_id', 'real', 'real', 'real', 'real', 'real', 'real', 'real', 'long'],
+	['player', 'string_id', 'real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6', 'real-7', 'real-8', 'real-9', 'real-10', 'real-11', 'real-12', 'real-13', 'real-14', 'real-15', 'real-16', 'real-17', 'real-18', 'real-19', 'real-20', 'real-21', 'real-22', 'real-23', 'real-24', 'real-25', 'real-26', 'real-27', 'real-28', 'real-29', 'real-30', 'real-31', 'real-32', 'real-33', 'real-34', 'real-35', 'real-36', 'real-37', 'real-38', 'real-39', 'real-40', 'real-41', 'real-42', 'long'],
 	"boolean",
 	['H4'],
 	"Start or change ics camera (player, marker_name, user-control cone angles (minh, maxh, minv, maxv, softh, softv), auto-centering strength, interpolation ticks)",
@@ -30828,7 +30828,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"FirstPersonSetBodyRegionVisibility",
-	['player', 'string_id', 'string_id'],
+	['player', 'string_id-1', 'string_id-2'],
 	"boolean",
 	['H4'],
 	"Sets the visibility of a named region on the first-person body model. valid options are 'on', 'off' and 'default'",
@@ -30846,7 +30846,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"player_control_move_to_point",
-	['player', 'point_reference', 'real', 'real', 'long'],
+	['player', 'point_reference', 'real-1', 'real-2', 'long'],
 	"void",
 	['H4'],
 	"Force player to move towards a point until it is within a radius, or a timer expires. params are point, max_throttle, max_radius, max_ticks",
@@ -30855,7 +30855,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"player_control_move_to_object",
-	['player', 'object', 'real', 'real', 'long'],
+	['player', 'object', 'real-1', 'real-2', 'long'],
 	"void",
 	['H4'],
 	"Force player to move towards an object until it is within a radius, or a timer expires. params are point, max_throttle, max_radius, max_ticks",
@@ -30864,7 +30864,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"player_control_move_to_marker",
-	['player', 'object', 'string_id', 'real', 'real', 'long'],
+	['player', 'object', 'string_id', 'real-1', 'real-2', 'long'],
 	"void",
 	['H4'],
 	"Force player to move towards an object until it is within a radius, or a timer expires. params are point, max_throttle, max_radius, max_ticks",
@@ -30891,7 +30891,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"io_set_imposter_distance",
-	['long', 'long', 'real'],
+	['long-1', 'long-2', 'real'],
 	"void",
 	['H4'],
 	"Set imposter distance",
@@ -30900,7 +30900,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"test_saved_game",
-	['string', 'string'],
+	['string-1', 'string-2'],
 	"boolean",
 	['H4'],
 	"Test parsing and validation functions for fuzzed single player saved game files for the active user. the header file is copied from <headerpath>, and the saved game file from <filepath>",
@@ -31170,7 +31170,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"io_set_imposter_brightness",
-	['long', 'long', 'real'],
+	['long-1', 'long-2', 'real'],
 	"void",
 	['H4'],
 	"Set imposter brightness",
@@ -31242,7 +31242,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"navpoint_track_position",
-	['real', 'real', 'real', 'string_id', 'string_id', 'boolean'],
+	['real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6', 'string_id-1', 'string_id-2', 'boolean'],
 	"void",
 	['H4'],
 	"Turns on/off a navpoint tracking a position with the specified art",
@@ -31251,7 +31251,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"navpoint_track_position_with_string",
-	['real', 'real', 'real', 'string_id', 'string_id', 'string_id'],
+	['real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6', 'string_id-1', 'string_id-2', 'string_id-3', 'string_id-4', 'string_id-5', 'string_id-6'],
 	"void",
 	['H4'],
 	"Turns on a navpoint tracking a position with the specified art and string",
@@ -31260,7 +31260,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"navpoint_track_position_for_player",
-	['player', 'real', 'real', 'real', 'string_id', 'string_id', 'boolean'],
+	['player', 'real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6', 'string_id-1', 'string_id-2', 'boolean'],
 	"void",
 	['H4'],
 	"Turns on/off a navpoint tracking a position for one player",
@@ -31269,7 +31269,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"navpoint_track_position_for_player_with_string",
-	['player', 'real', 'real', 'real', 'string_id', 'string_id', 'string_id'],
+	['player', 'real-1', 'real-2', 'real-3', 'real-4', 'real-5', 'real-6', 'string_id-1', 'string_id-2', 'string_id-3', 'string_id-4', 'string_id-5', 'string_id-6'],
 	"void",
 	['H4'],
 	"Turns on a navpoint tracking a position with the specified art and string",
@@ -31287,7 +31287,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"navpoint_position_set_on_radar",
-	['string_id', 'boolean', 'boolean'],
+	['string_id', 'boolean-1', 'boolean-2'],
 	"void",
 	['H4'],
 	"Set the position on the radar for a tracked position: first bool is for enable/disable, second is to show extended range in radar",
