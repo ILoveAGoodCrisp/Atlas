@@ -30,6 +30,7 @@ class hsProvider {
             let joinedArgs = func.args.join(', ');
             if (func.args.length <= 0)
                 joinedArgs = "";
+            itemNew.detail = func.r_type + " " + func.name + "(" + joinedArgs + ")";
             itemNew.kind = vscode.CompletionItemKind.Function;
             itemClassic.kind = vscode.CompletionItemKind.Function;
             itemNew.documentation = func.desc;

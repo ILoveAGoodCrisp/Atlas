@@ -46,7 +46,7 @@ hsValueTypes.push(newValueType);
 var newValueType = new HSValueType(
 	'string',
 	['H1', 'H2', 'H3', 'H0', 'HR', 'H4'],
-	'String of characters in double quotes (or single quotes if using H4)',
+	'String of characters in double quotes (optionally single quotes if using H4)',
 );
 hsValueTypes.push(newValueType);
 
@@ -766,6 +766,13 @@ hsValueTypes.push(newValueType);
 
 var newValueType = new HSValueType(
 	'function_name',
+	['H1', 'H2', 'H3', 'H0', 'HR', 'H4'],
+	'Name of a function',
+);
+hsValueTypes.push(newValueType);
+
+var newValueType = new HSValueType(
+	'function',
 	['H1', 'H2', 'H3', 'H0', 'HR', 'H4'],
 	'Name of a function',
 );

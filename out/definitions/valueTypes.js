@@ -23,7 +23,7 @@ var newValueType = new HSValueType('short', ['H1', 'H2', 'H3', 'H0', 'HR', 'H4']
 exports.hsValueTypes.push(newValueType);
 var newValueType = new HSValueType('long', ['H1', 'H2', 'H3', 'H0', 'HR', 'H4'], 'Integer value in the range -2,147,483,648 to 2,147,483,647');
 exports.hsValueTypes.push(newValueType);
-var newValueType = new HSValueType('string', ['H1', 'H2', 'H3', 'H0', 'HR', 'H4'], 'String of characters in double quotes (or single quotes if using H4)');
+var newValueType = new HSValueType('string', ['H1', 'H2', 'H3', 'H0', 'HR', 'H4'], 'String of characters in double quotes (optionally single quotes if using H4)');
 exports.hsValueTypes.push(newValueType);
 var newValueType = new HSValueType('string_id', ['H2', 'H3', 'H0', 'HR', 'H4'], 'Reference to a tag string field');
 exports.hsValueTypes.push(newValueType);
@@ -230,6 +230,8 @@ exports.hsValueTypes.push(newValueType);
 var newValueType = new HSValueType('sound_budget_reference', ['H3', 'H0', 'HR', 'H4'], '');
 exports.hsValueTypes.push(newValueType);
 var newValueType = new HSValueType('function_name', ['H1', 'H2', 'H3', 'H0', 'HR', 'H4'], 'Name of a function');
+exports.hsValueTypes.push(newValueType);
+var newValueType = new HSValueType('function', ['H1', 'H2', 'H3', 'H0', 'HR', 'H4'], 'Name of a function');
 exports.hsValueTypes.push(newValueType);
 var newValueType = new HSValueType('passthrough', ['H1', 'H2', 'H3', 'H0', 'HR', 'H4'], 'A function that returns this will instead return the last value it evaluated');
 exports.hsValueTypes.push(newValueType);

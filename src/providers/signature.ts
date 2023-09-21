@@ -4,14 +4,6 @@ import {hsValueTypes} from '../definitions/valueTypes'
 
 function getSignatureInformation(hsFunction: HSFunction, argIndex: number, newStyle: boolean, game: string): vscode.SignatureInformation {
     const signature = new vscode.SignatureInformation("", "");
-    // NOTE To Finish. Add count of arg if it is used multiple times
-    // let args_dec: string[]
-    // for (var a in hsFunction.args) {
-    //     var arg = hsFunction.args[a];
-    //     hsFunction.args.filter()
-    //     const joinedString = strings[i] + "_" + (i + 1);
-    //     result.push(joinedString);
-    //   }
     signature.parameters = hsFunction.args.map(arg => new vscode.ParameterInformation(arg, (argIndex + 1) + ": " + hsValueTypes.find((def) => def.name === arg.replace('?','').split('-')[0])?.desc));
     signature.documentation = "Function: " + hsFunction.desc;
     if (newStyle)
@@ -58,10 +50,26 @@ function countDelimitersBetweenParentheses(inputString: string, newStyle: boolea
                 delimterMatches = match.match(/,/g);
             }
             if (delimterMatches) {
-                delimiterCount += delimterMatches.length;
+                delimiterCount = delimterMatches.length;
             }
         }
     }
+    if (!newStyle && matches && inputString)
+    {
+        delimiterCount += matches.length;
+        const extra_matches = inputString.match(/\).+\(/g)
+        if (extra_matches)
+            delimiterCount += extra_matches.length
+    }
+    else if(newStyle && matches && inputString)
+    {
+        const extra_matches = inputString.match(/\),.+\(/g)
+        if (extra_matches == null)
+            return delimiterCount;
+        if (extra_matches)
+            delimiterCount += extra_matches.length
+    }
+    console.log(delimiterCount)
     return delimiterCount;
 }
 
@@ -132,7 +140,7 @@ export class hsProvider implements vscode.SignatureHelpProvider{
             const endPosition = new vscode.Position(position.line, endIndex);
     
             const range = new vscode.Range(startPosition, endPosition);
-            const selectedText = document.getText(range);
+            let selectedText = document.getText(range);
             // Get the text before the selected text
             const textBeforeSelection = line.slice(0, startIndex);
             // Use a regular expression to extract the first word
@@ -140,6 +148,10 @@ export class hsProvider implements vscode.SignatureHelpProvider{
             if (newStyle)
             {
                 match = textBeforeSelection.match(/[\w$]+$/);
+            }
+            else 
+            {
+                selectedText = selectedText.slice(1);
             }
             
             
@@ -155,7 +167,6 @@ export class hsProvider implements vscode.SignatureHelpProvider{
             }
 
             const signatureHelp = new vscode.SignatureHelp();
-
             const ignoreDelimiters = countDelimitersBetweenParentheses(selectedText, newStyle);
             const realArgIndex = Math.max(argIndex - ignoreDelimiters, 0);
             signatureHelp.activeSignature = 0; // Index of the active signature

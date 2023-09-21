@@ -1,21 +1,33 @@
-**Atlas** provides the the following forms of support for Halo Script iterations (Atlas currently supports Halo 1, Halo 2, and Halo 3).
-- Autocomplete features using intellisense
-- Full function descriptions, return types, and parameters for Halo Script functions. 
-- Value type listings through intellisense. Type # for a list of value types (e.g. a list of teams)
-- A theme specifically designed for the language
+**HaloScript** is a comprehensive language support addon for all iterations of the Halo Script language in the Halo: The Masterchief Collection mod tools.
+- Function autocomplete for every game
+- Hover descriptions for HaloScript elements
+- Function argument hints
 - Syntax highlighting
+- Snippets
 
-Future support for other Halo titles is planned as official mod tools are released for those games.
+**======Supports=======**
+
+Halo 1 MCC
+Halo 2 MCC
+Halo 3 MCC
+Halo ODST MCC
+Halo Reach MCC
+Halo 4 MCC (Using the new HaloScript syntax)
 
 **======Guide=======**
 
-**Enabling the theme**
+**Getting Started**
 
-The theme can be enabled through the VSCode toolbar by selecting File>Preferences>Color Theme, and then selecting "Atlas". Alternatively, you can bring up the theme select menu using Ctrl+K followed by Ctrl+T
 
-**Auto-formatting**
+**Setting the default language**
 
-You can press enter before a closing parenthesis ")" to automatically drop that parenthesis two lines and indent a new line for you to type on. Additionally, you can hit ctrl+enter while inside of a line to quickly create a new line directly below the current.
+**Using Snippets**
+
+**Autocompletion**
+
+**Argument Hinting**
+
+**Hover Descriptions**
 
 **Using intellisense with Atlas**
 
@@ -85,10 +97,4 @@ The image below is an example made using the packaged theme.
 
 ![image](https://user-images.githubusercontent.com/80323148/139603848-8e18e41e-30e6-431c-9509-c0cdc50c781b.png)
 
-### 1.0.1
-
-Update
-
-#Known issues
-
-- Script name highlighting will be incorrectly applied where the name is expected two parameters after the function name, and the first parameter is attained using an expression group.
+### 2.0.0

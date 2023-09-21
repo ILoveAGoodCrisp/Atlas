@@ -6,14 +6,6 @@ const functions_1 = require("../definitions/functions");
 const valueTypes_1 = require("../definitions/valueTypes");
 function getSignatureInformation(hsFunction, argIndex, newStyle, game) {
     const signature = new vscode.SignatureInformation("", "");
-    // NOTE To Finish. Add count of arg if it is used multiple times
-    // let args_dec: string[]
-    // for (var a in hsFunction.args) {
-    //     var arg = hsFunction.args[a];
-    //     hsFunction.args.filter()
-    //     const joinedString = strings[i] + "_" + (i + 1);
-    //     result.push(joinedString);
-    //   }
     signature.parameters = hsFunction.args.map(arg => new vscode.ParameterInformation(arg, (argIndex + 1) + ": " + valueTypes_1.hsValueTypes.find((def) => def.name === arg.replace('?', '').split('-')[0])?.desc));
     signature.documentation = "Function: " + hsFunction.desc;
     if (newStyle) {
@@ -50,10 +42,24 @@ function countDelimitersBetweenParentheses(inputString, newStyle) {
                 delimterMatches = match.match(/,/g);
             }
             if (delimterMatches) {
-                delimiterCount += delimterMatches.length;
+                delimiterCount = delimterMatches.length;
             }
         }
     }
+    if (!newStyle && matches && inputString) {
+        delimiterCount += matches.length;
+        const extra_matches = inputString.match(/\).+\(/g);
+        if (extra_matches)
+            delimiterCount += extra_matches.length;
+    }
+    else if (newStyle && matches && inputString) {
+        const extra_matches = inputString.match(/\),.+\(/g);
+        if (extra_matches == null)
+            return delimiterCount;
+        if (extra_matches)
+            delimiterCount += extra_matches.length;
+    }
+    console.log(delimiterCount);
     return delimiterCount;
 }
 class hsProvider {
@@ -116,13 +122,16 @@ class hsProvider {
         }
         const endPosition = new vscode.Position(position.line, endIndex);
         const range = new vscode.Range(startPosition, endPosition);
-        const selectedText = document.getText(range);
+        let selectedText = document.getText(range);
         // Get the text before the selected text
         const textBeforeSelection = line.slice(0, startIndex);
         // Use a regular expression to extract the first word
         let match = selectedText.match(/(?<=\()\w+/);
         if (newStyle) {
             match = textBeforeSelection.match(/[\w$]+$/);
+        }
+        else {
+            selectedText = selectedText.slice(1);
         }
         if (match == null) {
             return null;
