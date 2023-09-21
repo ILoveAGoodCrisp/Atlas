@@ -241,6 +241,6 @@
 		"body":[
 			"${1|morph_disallowed,morph_time_ranged_tank,morph_time_ranged_stealth,morph_time_tank_ranged,morph_time_tank_stealth,morph_time_stealth_ranged,morph_time_stealth_tank,morph_form_ranged,morph_form_tank,morph_form_stealth|}"
 		],
-        "description": "Inserts a list of morph globals to choose from"
+        "description": "Inserts a list of flood morph globals to choose from"
 	}
 }
