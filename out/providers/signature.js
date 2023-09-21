@@ -59,7 +59,6 @@ function countDelimitersBetweenParentheses(inputString, newStyle) {
         if (extra_matches)
             delimiterCount += extra_matches.length;
     }
-    console.log(delimiterCount);
     return delimiterCount;
 }
 class hsProvider {

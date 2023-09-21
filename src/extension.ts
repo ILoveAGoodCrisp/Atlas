@@ -5,6 +5,7 @@ import * as hover from './providers/hover'
 import * as signature from './providers/signature'
 // import * as semantics from './providers/semantics'
 import {runToolExecutable} from './commands/scriptCompiler'
+import {AutoParen} from './commands/autoParen'
 import { DocumentSelector } from 'vscode-languageserver';
 
 
@@ -37,17 +38,31 @@ export function activate(context: vscode.ExtensionContext) {
 	context.subscriptions.push(vscode.languages.registerSignatureHelpProvider(selector, sighelp, '(', ',', ' ',));
 	// Saving implementation of semantics until it can fully parse the code. It does not gel well with tmLanguage
 	// context.subscriptions.push(vscode.languages.registerDocumentSemanticTokensProvider(selector, new semantics.hsProvider(legend), legend));
+	
+	// Script Compile
 	const command = 'atlas.compileScenarioScripts';
 	const commandHandler = () => {
 		runToolExecutable();
 	};
 	context.subscriptions.push(vscode.commands.registerCommand(command, commandHandler));
 
-	const commandTrigger = 'triggerSignatureHelp';
+	// SignatureHelp Trigger
+	const commandTrigger = 'atlas.triggerSignatureHelp';
 	const commandcommandTriggerHandler = () => {
+		vscode.commands.executeCommand('atlas.autoParen');
 		vscode.commands.executeCommand('editor.action.triggerParameterHints');
 	};
 	context.subscriptions.push(vscode.commands.registerCommand(commandTrigger, commandcommandTriggerHandler));
+
+	// Autocomplete Parentheses
+	const commandAutoParen = 'atlas.autoParen'
+	const commandParenHandler = () =>
+	{
+		AutoParen();
+		
+	}
+	context.subscriptions.push(vscode.commands.registerCommand(commandAutoParen, commandParenHandler));
+
 }
 
 export function deactivate() {

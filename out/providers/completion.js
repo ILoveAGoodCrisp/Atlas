@@ -35,17 +35,24 @@ class hsProvider {
             itemClassic.kind = vscode.CompletionItemKind.Function;
             itemNew.documentation = func.desc;
             itemClassic.documentation = func.desc;
-            itemNew.command = { command: 'triggerSignatureHelp', title: 'Trigger Signature Help', };
-            itemClassic.command = { command: 'triggerSignatureHelp', title: 'Trigger Signature Help', };
-            itemNew.insertText = new vscode.SnippetString(func.name + '(${1})');
-            joinedArgs = " " + func.args.join(' ');
-            let snip = ' ${1}';
-            if (func.args.length <= 0) {
-                joinedArgs = "";
-                snip = '${1}';
+            itemNew.command = { command: 'atlas.triggerSignatureHelp', title: 'Trigger Signature Help', };
+            itemClassic.command = { command: 'atlas.triggerSignatureHelp', title: 'Trigger Signature Help', };
+            if (func.args.length > 0) {
+                itemClassic.insertText = func.name + ' ';
             }
+            else {
+                itemClassic.insertText = func.name;
+            }
+            // itemNew.insertText = new vscode.SnippetString(func.name + '(${1})');
+            joinedArgs = " " + func.args.join(' ');
+            // let snip = ' ${1}'
+            // if (func.args.length <= 0)
+            // {
+            // 	joinedArgs = "";
+            // 	snip = '${1}'
+            // }
             itemClassic.detail = func.r_type + " " + "(" + func.name + joinedArgs + ")";
-            itemClassic.insertText = new vscode.SnippetString(func.name + snip);
+            // itemClassic.insertText = new vscode.SnippetString(func.name + snip);
             if (func.games.includes('H1')) {
                 this.itemsHS1.push(itemClassic);
             }

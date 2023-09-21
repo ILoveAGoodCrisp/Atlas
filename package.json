@@ -21,7 +21,7 @@
         "color": "#007acc",
         "theme": "dark"
     },
-    "version": "1.0.1",
+    "version": "2.0.0",
     "license": "MIT",
     "icon": "atlas_icon_small.png",
     "repository": {
@@ -29,9 +29,11 @@
         "url": "https://github.com/ILoveAGoodCrisp/Atlas"
     },
     "engines": {
-        "vscode": "^1.61.0"
+        "vscode": "^1.61.0",
+        "node": "^20.5.1"
     },
     "main": "./out/extension",
+    "activationEvents": [],
     "categories": [
         "Programming Languages",
         "Language Packs"
@@ -204,16 +206,13 @@
         "watch": "tsc -watch -p ./"
     },
     "devDependencies": {
-        "@types/node": "^10.1.4",
-        "@types/vscode": "^1.73.0",
-        "@typescript-eslint/eslint-plugin": "^6.7.0",
-        "@typescript-eslint/parser": "^6.7.0",
-        "eslint": "^8.26.0",
+        "@types/node": "^10.17.60",
+        "@types/vscode": "^1.61.0",
+        "esbuild": "^0.19.3",
         "typescript": "^5.2.2"
     },
     "dependencies": {
         "vsce": "^2.15.0",
-        "vscode": "^1.1.37",
         "vscode-languageserver": "^8.1.0",
         "vscode-languageserver-textdocument": "^1.0.8"
     }
