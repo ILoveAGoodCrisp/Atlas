@@ -65,14 +65,14 @@
     "define_static": {
 		"prefix": "define_static",
 		"body": [
-			"(script static ${1|boolean,real,short,long,string,ai,object,unit,vehicle,weapon,device,scenery,object_list,object_name,unit_name,vehicle_name,weapon_name,device_name,scenery_name,sound,effect,damage,looping_sound,animation_graph,damage_effect,object_definition,script,trigger_volume,cutscene_flag,cutscene_camera_point,cutscene_title,cutscene_recording,device_group,ai_command_list,starting_profile,conversation,navpoint,team,hud_message,actor_variant,game_difficulty,ai_default_state,hud_corner,actor_type,function_name,passthrough|} DEF_${2|NAME|} ${3|def_value|})"
+			"(script static ${1|boolean,real,short,long,string,ai,object,unit,vehicle,weapon,device,scenery,object_list,object_name,unit_name,vehicle_name,weapon_name,device_name,scenery_name,sound,effect,damage,looping_sound,animation_graph,damage_effect,object_definition,script,trigger_volume,cutscene_flag,cutscene_camera_point,cutscene_title,cutscene_recording,device_group,ai_command_list,starting_profile,conversation,navpoint,team,hud_message,actor_variant,game_difficulty,ai_default_state,hud_corner,actor_type,function_name,passthrough|} DEF_${2:NAME} ${3:def_value})"
 		],
 		"description": "Generates a static script to be used as a definition"
 	},
     "define_stub": {
 		"prefix": "define_stub",
 		"body": [
-			"(script stub ${1|boolean,real,short,long,string,ai,object,unit,vehicle,weapon,device,scenery,object_list,object_name,unit_name,vehicle_name,weapon_name,device_name,scenery_name,sound,effect,damage,looping_sound,animation_graph,damage_effect,object_definition,script,trigger_volume,cutscene_flag,cutscene_camera_point,cutscene_title,cutscene_recording,device_group,ai_command_list,starting_profile,conversation,navpoint,team,hud_message,actor_variant,game_difficulty,ai_default_state,hud_corner,actor_type,function_name,passthrough|} DEF_${2|NAME|} ${3|def_value|})"
+			"(script stub ${1|boolean,real,short,long,string,ai,object,unit,vehicle,weapon,device,scenery,object_list,object_name,unit_name,vehicle_name,weapon_name,device_name,scenery_name,sound,effect,damage,looping_sound,animation_graph,damage_effect,object_definition,script,trigger_volume,cutscene_flag,cutscene_camera_point,cutscene_title,cutscene_recording,device_group,ai_command_list,starting_profile,conversation,navpoint,team,hud_message,actor_variant,game_difficulty,ai_default_state,hud_corner,actor_type,function_name,passthrough|} DEF_${2:NAME} ${3:def_value})"
 		],
 		"description": "Generates a stub script to be used as a definition"
 	},
@@ -97,33 +97,38 @@
 		"description": "Generates a template loop"
 	},
     "team": {
-        "prefix": "team",
-        "body": [
-            "${1|default,player,human,covenant,flood,sentinel,unused6,unused7,unused8,unused9|}"
-        ]
-    },
-    "game_difficulty": {
-        "prefix": "game_difficulty",
-        "body": [
-            "${1|easy,normal,hard,impossible|}"
-        ]
-    },
-    "ai_default_state": {
-        "prefix": "ai_default_state",
-        "body": [
-            "${1|none,sleep,alert,move_repeat,move_loop,move_loop_back_and_forth,move_loop_random,move_random,guard,guard_at_position,search,flee|}"
-        ]
-    },
-    "hud_corner": {
-        "prefix": "hud_corner",
-        "body": [
-            "${1|top_left,top_right,bottom_left,bottom_right,center|}"
-        ]
-    },
-    "actor_type": {
-        "prefix": "actor_type",
-        "body": [
-            "${1|elite,jackal,grunt,hunter,engineer,assassin,player,marine,crew,combat_form,infection_form,carrier_form,monitor,sentinel,none,mounted_weapon|}"
-        ]
-    }
+		"prefix": "team",
+		"body": [
+			"${1|default,player,human,covenant,flood,sentinel,unused6,unused7,unused8,unused9|}"
+		],
+		"description": "Inserts a list of teams to choose from"
+	},
+	"game_difficulty": {
+		"prefix": "game_difficulty",
+		"body": [
+			"${1|easy,normal,hard,impossible|}"
+		],
+		"description": "Inserts a list of game_difficulties to choose from"
+	},
+	"ai_default_state": {
+		"prefix": "ai_default_state",
+		"body": [
+			"${1|none,sleep,alert,move_repeat,move_loop,move_loop_back_and_forth,move_loop_random,move_random,guard,guard_at_position,search,flee|}"
+		],
+		"description": "Inserts a list of ai_default_states to choose from"
+	},
+	"hud_corner": {
+		"prefix": "hud_corner",
+		"body": [
+			"${1|top_left,top_right,bottom_left,bottom_right,center|}"
+		],
+		"description": "Inserts a list of hud_corners to choose from"
+	},
+	"actor_type": {
+		"prefix": "actor_type",
+		"body": [
+			"${1|elite,jackal,grunt,hunter,engineer,assassin,player,marine,crew,combat_form,infection_form,carrier_form,monitor,sentinel,none,mounted_weapon|}"
+		],
+		"description": "Inserts a list of actor_types to choose from"
+	}
 }

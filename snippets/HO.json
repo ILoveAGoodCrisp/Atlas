@@ -65,14 +65,14 @@
     "define_static": {
 		"prefix": "define_static",
 		"body": [
-			"(script static ${1|boolean,real,short,long,string,string_id,ai,object,unit,vehicle,weapon,device,scenery,effect_scenery,object_list,object_name,unit_name,vehicle_name,weapon_name,device_name,scenery_name,sound,effect,damage,looping_sound,animation_graph,damage_effect,object_definition,script,unit_seat_mapping,trigger_volume,cutscene_flag,cutscene_camera_point,cutscene_title,cutscene_recording,device_group,point_reference,ai_command_list,ai_command_script,ai_behavior,ai_orders,ai_line,starting_profile,conversation,team,mp_team,primary_skull,secondary_skull,zone_set,designer_zone,style,folder,bitmap,shader,render_model,structure_definition,lightmap_definition,cinematic_definition,cinematic_scene_definition,bink_definition,any_tag,any_tag_not_resolving,game_difficulty,controller,button_preset,joystick_preset,player_color,player_character_type,voice_output_setting,voice_mask,subtitle_setting,actor_type,model_state,event,character_physics,effect_scenery_name,cinematic_lightprobe,animation_budget_reference,looping_sound_budget_reference,sound_budget_reference,function_name,passthrough|} DEF_${2|NAME|} ${3|def_value|})"
+			"(script static ${1|boolean,real,short,long,string,string_id,ai,object,unit,vehicle,weapon,device,scenery,effect_scenery,object_list,object_name,unit_name,vehicle_name,weapon_name,device_name,scenery_name,sound,effect,damage,looping_sound,animation_graph,damage_effect,object_definition,script,unit_seat_mapping,trigger_volume,cutscene_flag,cutscene_camera_point,cutscene_title,cutscene_recording,device_group,point_reference,ai_command_list,ai_command_script,ai_behavior,ai_orders,ai_line,starting_profile,conversation,team,mp_team,primary_skull,secondary_skull,zone_set,designer_zone,style,folder,bitmap,shader,render_model,structure_definition,lightmap_definition,cinematic_definition,cinematic_scene_definition,bink_definition,any_tag,any_tag_not_resolving,game_difficulty,controller,button_preset,joystick_preset,player_color,player_character_type,voice_output_setting,voice_mask,subtitle_setting,actor_type,model_state,event,character_physics,effect_scenery_name,cinematic_lightprobe,animation_budget_reference,looping_sound_budget_reference,sound_budget_reference,function_name,passthrough|} DEF_${2:NAME} ${3:def_value})"
 		],
 		"description": "Generates a static script to be used as a definition"
 	},
     "define_stub": {
 		"prefix": "define_stub",
 		"body": [
-			"(script stub ${1|boolean,real,short,long,string,string_id,ai,object,unit,vehicle,weapon,device,scenery,effect_scenery,object_list,object_name,unit_name,vehicle_name,weapon_name,device_name,scenery_name,sound,effect,damage,looping_sound,animation_graph,damage_effect,object_definition,script,unit_seat_mapping,trigger_volume,cutscene_flag,cutscene_camera_point,cutscene_title,cutscene_recording,device_group,point_reference,ai_command_list,ai_command_script,ai_behavior,ai_orders,ai_line,starting_profile,conversation,team,mp_team,primary_skull,secondary_skull,zone_set,designer_zone,style,folder,bitmap,shader,render_model,structure_definition,lightmap_definition,cinematic_definition,cinematic_scene_definition,bink_definition,any_tag,any_tag_not_resolving,game_difficulty,controller,button_preset,joystick_preset,player_color,player_character_type,voice_output_setting,voice_mask,subtitle_setting,actor_type,model_state,event,character_physics,effect_scenery_name,cinematic_lightprobe,animation_budget_reference,looping_sound_budget_reference,sound_budget_reference,function_name,passthrough|} DEF_${2|NAME|} ${3|def_value|})"
+			"(script stub ${1|boolean,real,short,long,string,string_id,ai,object,unit,vehicle,weapon,device,scenery,effect_scenery,object_list,object_name,unit_name,vehicle_name,weapon_name,device_name,scenery_name,sound,effect,damage,looping_sound,animation_graph,damage_effect,object_definition,script,unit_seat_mapping,trigger_volume,cutscene_flag,cutscene_camera_point,cutscene_title,cutscene_recording,device_group,point_reference,ai_command_list,ai_command_script,ai_behavior,ai_orders,ai_line,starting_profile,conversation,team,mp_team,primary_skull,secondary_skull,zone_set,designer_zone,style,folder,bitmap,shader,render_model,structure_definition,lightmap_definition,cinematic_definition,cinematic_scene_definition,bink_definition,any_tag,any_tag_not_resolving,game_difficulty,controller,button_preset,joystick_preset,player_color,player_character_type,voice_output_setting,voice_mask,subtitle_setting,actor_type,model_state,event,character_physics,effect_scenery_name,cinematic_lightprobe,animation_budget_reference,looping_sound_budget_reference,sound_budget_reference,function_name,passthrough|} DEF_${2:NAME} ${3:def_value})"
 		],
 		"description": "Generates a stub script to be used as a definition"
 	},
@@ -97,141 +97,164 @@
 		"description": "Generates a template loop"
 	},
     "team": {
-        "prefix": "team",
-        "body": [
-            "${1|default,player,human,covenant,flood,sentinel,heretic,prophet,guilty,unused9,unused10,unused11,unused12,unused13,unused14,unused15|}"
-        ]
-    },
-    "mp_team": {
-        "prefix": "mp_team",
-        "body": [
-            "${1|mp_team_red,mp_team_blue,mp_team_green,mp_team_yellow,mp_team_purple,mp_team_orange,mp_team_brown,mp_team_grey|}"
-        ]
-    },
-    "primary_skull": {
-        "prefix": "primary_skull",
-        "body": [
-            "${1|skull_iron,skull_black_eye,skull_tough_luck,skull_catch,skull_fog,skull_famine,skull_thunderstorm,skull_tilt,skull_mythic|}"
-        ]
-    },
-    "secondary_skull": {
-        "prefix": "secondary_skull",
-        "body": [
-            "${1|skull_assassin,skull_blind,skull_superman,skull_birthday_party,skull_daddy,skull_third_person,skull_directors_cut|}"
-        ]
-    },
-    "game_difficulty": {
-        "prefix": "game_difficulty",
-        "body": [
-            "${1|easy,normal,heroic,legendary|}"
-        ]
-    },
-    "controller": {
-        "prefix": "controller",
-        "body": [
-            "${1|controller1,controller2,controller3,controller4|}"
-        ]
-    },
-    "button_preset": {
-        "prefix": "button_preset",
-        "body": [
-            "${1|standard,south_paw,boxer,green_thumb,professional,walkie-talkie,universal_recon,universal_reclaimer,universal_zoom_and_shoot,universal_bumper_jumper,universal_green_fingers|}"
-        ]
-    },
-    "joystick_preset": {
-        "prefix": "joystick_preset",
-        "body": [
-            "${1|standard,south_paw,legacy,legacy_south_paw|}"
-        ]
-    },
-    "player_color": {
-        "prefix": "player_color",
-        "body": [
-            "${1|player_color_00,player_color_01,player_color_02,player_color_03,player_color_04,player_color_05,player_color_06,player_color_07,player_color_08,player_color_09,player_color_10,player_color_11,player_color_12,player_color_13,player_color_14,player_color_15,player_color_16,player_color_17,player_color_18,player_color_19,player_color_20,player_color_21,player_color_22,player_color_23,player_color_24,player_color_25,player_color_26,player_color_27,player_color_28,player_color_29,player_color_30,player_color_31|}"
-        ]
-    },
-    "player_character_type": {
-        "prefix": "player_character_type",
-        "body": [
-            "${1|spartan,elite|}"
-        ]
-    },
-    "voice_output_setting": {
-        "prefix": "voice_output_setting",
-        "body": [
-            "${1|default,headset|}"
-        ]
-    },
-    "voice_mask": {
-        "prefix": "voice_mask",
-        "body": [
-            "${1|none,anonymous|}"
-        ]
-    },
-    "subtitle_setting": {
-        "prefix": "subtitle_setting",
-        "body": [
-            "${1|automatic,enabled,disabled|}"
-        ]
-    },
-    "actor_type": {
-        "prefix": "actor_type",
-        "body": [
-            "${1|elite,jackal,grunt,hunter,engineer,assassin,player,marine,crew,combat_form,infection_form,carrier_form,monitor,sentinel,none,mounted_weapon,brute,prophet,bugger,juggernaut,pure_form_stealth,pure_form_tank,pure_form_ranged,scarab,guardian|}"
-        ]
-    },
-    "model_state": {
-        "prefix": "model_state",
-        "body": [
-            "${1|standard,minor_damage,medium_damage,major_damage,destroyed|}"
-        ]
-    },
-    "event": {
-        "prefix": "event",
-        "body": [
-            "${1|verbose,status,message,warning,error,critical,none|}"
-        ]
-    },
-    "character_physics": {
-        "prefix": "character_physics",
-        "body": [
-            "${1|none,player,biped|}"
-        ]
-    },
+		"prefix": "team",
+		"body": [
+			"${1|default,player,human,covenant,flood,sentinel,heretic,prophet,guilty,unused9,unused10,unused11,unused12,unused13,unused14,unused15|}"
+		],
+		"description": "Inserts a list of teams to choose from"
+	},
+	"mp_team": {
+		"prefix": "mp_team",
+		"body": [
+			"${1|mp_team_red,mp_team_blue,mp_team_green,mp_team_yellow,mp_team_purple,mp_team_orange,mp_team_brown,mp_team_grey|}"
+		],
+		"description": "Inserts a list of mp_teams to choose from"
+	},
+	"primary_skull": {
+		"prefix": "primary_skull",
+		"body": [
+			"${1|skull_iron,skull_black_eye,skull_tough_luck,skull_catch,skull_fog,skull_famine,skull_thunderstorm,skull_tilt,skull_mythic|}"
+		],
+		"description": "Inserts a list of primary_skulls to choose from"
+	},
+	"secondary_skull": {
+		"prefix": "secondary_skull",
+		"body": [
+			"${1|skull_assassin,skull_blind,skull_superman,skull_birthday_party,skull_daddy,skull_third_person,skull_directors_cut|}"
+		],
+		"description": "Inserts a list of secondary_skulls to choose from"
+	},
+	"game_difficulty": {
+		"prefix": "game_difficulty",
+		"body": [
+			"${1|easy,normal,heroic,legendary|}"
+		],
+		"description": "Inserts a list of game_difficulties to choose from"
+	},
+	"controller": {
+		"prefix": "controller",
+		"body": [
+			"${1|controller1,controller2,controller3,controller4|}"
+		],
+		"description": "Inserts a list of controllers to choose from"
+	},
+	"button_preset": {
+		"prefix": "button_preset",
+		"body": [
+			"${1|standard,south_paw,boxer,green_thumb,professional,walkie-talkie,universal_recon,universal_reclaimer,universal_zoom_and_shoot,universal_bumper_jumper,universal_green_fingers|}"
+		],
+		"description": "Inserts a list of button_presets to choose from"
+	},
+	"joystick_preset": {
+		"prefix": "joystick_preset",
+		"body": [
+			"${1|standard,south_paw,legacy,legacy_south_paw|}"
+		],
+		"description": "Inserts a list of joystick_presets to choose from"
+	},
+	"player_color": {
+		"prefix": "player_color",
+		"body": [
+			"${1|player_color_00,player_color_01,player_color_02,player_color_03,player_color_04,player_color_05,player_color_06,player_color_07,player_color_08,player_color_09,player_color_10,player_color_11,player_color_12,player_color_13,player_color_14,player_color_15,player_color_16,player_color_17,player_color_18,player_color_19,player_color_20,player_color_21,player_color_22,player_color_23,player_color_24,player_color_25,player_color_26,player_color_27,player_color_28,player_color_29,player_color_30,player_color_31|}"
+		],
+		"description": "Inserts a list of player_colors to choose from"
+	},
+	"player_character_type": {
+		"prefix": "player_character_type",
+		"body": [
+			"${1|spartan,elite|}"
+		],
+		"description": "Inserts a list of player_character_types to choose from"
+	},
+	"voice_output_setting": {
+		"prefix": "voice_output_setting",
+		"body": [
+			"${1|default,headset|}"
+		],
+		"description": "Inserts a list of voice_output_settings to choose from"
+	},
+	"voice_mask": {
+		"prefix": "voice_mask",
+		"body": [
+			"${1|none,anonymous|}"
+		],
+		"description": "Inserts a list of voice_masks to choose from"
+	},
+	"subtitle_setting": {
+		"prefix": "subtitle_setting",
+		"body": [
+			"${1|automatic,enabled,disabled|}"
+		],
+		"description": "Inserts a list of subtitle_settings to choose from"
+	},
+	"actor_type": {
+		"prefix": "actor_type",
+		"body": [
+			"${1|elite,jackal,grunt,hunter,engineer,assassin,player,marine,crew,combat_form,infection_form,carrier_form,monitor,sentinel,none,mounted_weapon,brute,prophet,bugger,juggernaut,pure_form_stealth,pure_form_tank,pure_form_ranged,scarab,guardian|}"
+		],
+		"description": "Inserts a list of actor_types to choose from"
+	},
+	"model_state": {
+		"prefix": "model_state",
+		"body": [
+			"${1|standard,minor_damage,medium_damage,major_damage,destroyed|}"
+		],
+		"description": "Inserts a list of model_states to choose from"
+	},
+	"event": {
+		"prefix": "event",
+		"body": [
+			"${1|verbose,status,message,warning,error,critical,none|}"
+		],
+		"description": "Inserts a list of events to choose from"
+	},
+	"character_physics": {
+		"prefix": "character_physics",
+		"body": [
+			"${1|none,player,biped|}"
+		],
+		"description": "Inserts a list of character_physics to choose from"
+	},
 	"ai_current":{
 		"prefix": "ai_current",
 		"body":[
 			"${1|ai_current_squad,ai_current_actor|}"
-		]
+		],
+		"description": "Inserts a list of globals to choose from which return information about the ai executing a thread"
 	},
 	"ai_combat_status":{
 		"prefix": "ai_combat_status",
 		"body":[
 			"${1|ai_combat_status_asleep,ai_combat_status_idle,ai_combat_status_alert,ai_combat_status_active,ai_combat_status_uninspected,ai_combat_status_definite,ai_combat_status_certain,ai_combat_status_visible,ai_combat_status_clear_los,ai_combat_status_dangerous|}"
-		]
+		],
+        "description": "Inserts a list of ai_combat_statuses to choose from"
 	},
 	"ai_task_status":{
 		"prefix": "ai_task_status",
 		"body":[
 			"${1|ai_task_status_never,ai_task_status_occupied,ai_task_status_empty,ai_task_status_inactive,ai_task_status_exhausted|}"
-		]
+		],
+        "description": "Inserts a list of ai_task_statuses to choose from"
 	},
 	"ai_action":{
 		"prefix": "ai_action",
 		"body":[
 			"${1|ai_action_berserk,ai_action_surprise_front,ai_action_surprise_back,ai_action_evade_left,ai_action_evade_right,ai_action_dive_forward,ai_action_dive_back,ai_action_dive_left,ai_action_dive_right,ai_action_advance,ai_action_cheer,ai_action_fallback,ai_action_hold,ai_action_point,ai_action_posing,ai_action_shakefist,ai_action_signal_attack,ai_action_signal_move,ai_action_taunt,ai_action_warn,ai_action_wave|}"
-		]
+		],
+        "description": "Inserts a list of ai_actions to choose from"
 	},
 	"ai_activity":{
 		"prefix": "ai_activity",
 		"body":[
 			"${1|ai_activity_none,ai_activity_patrol,ai_activity_stand,ai_activity_crouch,ai_activity_stand_drawn,ai_activity_crouch_drawn,ai_activity_corner,ai_activity_corner_open,ai_activity_bunker,ai_activity_bunker_open,ai_activity_combat,ai_activity_backup,ai_activity_guard,ai_activity_guard_crouch,ai_activity_guard_wall,ai_activity_typing,ai_activity_kneel,ai_activity_gaze,ai_activity_poke,ai_activity_sniff,ai_activity_track,ai_activity_watch,ai_activity_examine,ai_activity_sleep,ai_activity_at_ease,ai_activity_cower,ai_activity_tai_chi,ai_activity_pee,ai_activity_doze,ai_activity_eat,ai_activity_medic,ai_activity_work,ai_activity_cheering,ai_activity_injured,ai_activity_captured|}"
-		]
+		],
+        "description": "Inserts a list of ai_activities to choose from"
 	}, 
 	"morph":{
 		"prefix": "morph",
 		"body":[
 			"${1|morph_disallowed,morph_time_ranged_tank,morph_time_ranged_stealth,morph_time_tank_ranged,morph_time_tank_stealth,morph_time_stealth_ranged,morph_time_stealth_tank,morph_form_ranged,morph_form_tank,morph_form_stealth|}"
-		]
+		],
+        "description": "Inserts a list of flood morph globals to choose from"
 	}
 }

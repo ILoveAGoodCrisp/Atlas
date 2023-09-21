@@ -44,14 +44,14 @@
     "define_static": {
 		"prefix": "define_static",
 		"body": [
-			"(script static ${1|boolean,real,short,long,string,string_id,ai,object,unit,vehicle,weapon,device,scenery,object_list,object_name,unit_name,vehicle_name,weapon_name,device_name,scenery_name,sound,effect,damage,looping_sound,animation_graph,damage_effect,object_definition,script,unit_seat_mapping,trigger_volume,cutscene_flag,cutscene_camera_point,cutscene_title,cutscene_recording,device_group,point_reference,ai_command_list,ai_command_script,ai_behavior,ai_orders,starting_profile,conversation,navpoint,team,hud_message,structure_bsp,style,bitmap,shader,render_model,structure_definition,lightmap_definition,game_difficulty,hud_corner,actor_type,model_state,network_event,function_name|} DEF_${2|NAME|} ${3|def_value|})"
+			"(script static ${1|boolean,real,short,long,string,string_id,ai,object,unit,vehicle,weapon,device,scenery,object_list,object_name,unit_name,vehicle_name,weapon_name,device_name,scenery_name,sound,effect,damage,looping_sound,animation_graph,damage_effect,object_definition,script,unit_seat_mapping,trigger_volume,cutscene_flag,cutscene_camera_point,cutscene_title,cutscene_recording,device_group,point_reference,ai_command_list,ai_command_script,ai_behavior,ai_orders,starting_profile,conversation,navpoint,team,hud_message,structure_bsp,style,bitmap,shader,render_model,structure_definition,lightmap_definition,game_difficulty,hud_corner,actor_type,model_state,network_event,function_name|} DEF_${2:NAME} ${3:def_value})"
 		],
 		"description": "Generates a static script to be used as a definition"
 	},
     "define_stub": {
 		"prefix": "define_stub",
 		"body": [
-			"(script stub ${1|boolean,real,short,long,string,string_id,ai,object,unit,vehicle,weapon,device,scenery,object_list,object_name,unit_name,vehicle_name,weapon_name,device_name,scenery_name,sound,effect,damage,looping_sound,animation_graph,damage_effect,object_definition,script,unit_seat_mapping,trigger_volume,cutscene_flag,cutscene_camera_point,cutscene_title,cutscene_recording,device_group,point_reference,ai_command_list,ai_command_script,ai_behavior,ai_orders,starting_profile,conversation,navpoint,team,hud_message,structure_bsp,style,bitmap,shader,render_model,structure_definition,lightmap_definition,game_difficulty,hud_corner,actor_type,model_state,network_event,function_name|} DEF_${2|NAME|} ${3|def_value|})"
+			"(script stub ${1|boolean,real,short,long,string,string_id,ai,object,unit,vehicle,weapon,device,scenery,object_list,object_name,unit_name,vehicle_name,weapon_name,device_name,scenery_name,sound,effect,damage,looping_sound,animation_graph,damage_effect,object_definition,script,unit_seat_mapping,trigger_volume,cutscene_flag,cutscene_camera_point,cutscene_title,cutscene_recording,device_group,point_reference,ai_command_list,ai_command_script,ai_behavior,ai_orders,starting_profile,conversation,navpoint,team,hud_message,structure_bsp,style,bitmap,shader,render_model,structure_definition,lightmap_definition,game_difficulty,hud_corner,actor_type,model_state,network_event,function_name|} DEF_${2:NAME} ${3:def_value})"
 		],
 		"description": "Generates a stub script to be used as a definition"
 	},
@@ -76,51 +76,59 @@
 		"description": "Generates a template loop"
 	},
     "team": {
-        "prefix": "team",
-        "body": [
-            "${1|default,player,human,covenant,flood,sentinel,heretic,prophet,guilty,unused9,unused10,unused11,unused12,unused13,unused14,unused15|}"
-        ]
-    },
-    "game_difficulty": {
-        "prefix": "game_difficulty",
-        "body": [
-            "${1|easy,normal,heroic,legendary|}"
-        ]
-    },
-    "hud_corner": {
-        "prefix": "hud_corner",
-        "body": [
-            "${1|top_left,top_right,bottom_left,bottom_right,center|}"
-        ]
-    },
-    "actor_type": {
-        "prefix": "actor_type",
-        "body": [
-            "${1|elite,jackal,grunt,hunter,engineer,assassin,player,marine,crew,combat_form,infection_form,carrier_form,monitor,sentinel,none,mounted_weapon,brute,prophet,bugger,juggernaut|}"
-        ]
-    },
-    "model_state": {
-        "prefix": "model_state",
-        "body": [
-            "${1|standard,minor_damage,medium_damage,major_damage,destroyed|}"
-        ]
-    },
-    "network_event": {
-        "prefix": "network_event",
-        "body": [
-            "${1|verbose,status,message,warning,error,critical|}"
-        ]
-    },
+		"prefix": "team",
+		"body": [
+			"${1|default,player,human,covenant,flood,sentinel,heretic,prophet,guilty,unused9,unused10,unused11,unused12,unused13,unused14,unused15|}"
+		],
+		"description": "Inserts a list of teams to choose from"
+	},
+	"game_difficulty": {
+		"prefix": "game_difficulty",
+		"body": [
+			"${1|easy,normal,heroic,legendary|}"
+		],
+		"description": "Inserts a list of game_difficulties to choose from"
+	},
+	"hud_corner": {
+		"prefix": "hud_corner",
+		"body": [
+			"${1|top_left,top_right,bottom_left,bottom_right,center|}"
+		],
+		"description": "Inserts a list of hud_corners to choose from"
+	},
+	"actor_type": {
+		"prefix": "actor_type",
+		"body": [
+			"${1|elite,jackal,grunt,hunter,engineer,assassin,player,marine,crew,combat_form,infection_form,carrier_form,monitor,sentinel,none,mounted_weapon,brute,prophet,bugger,juggernaut|}"
+		],
+		"description": "Inserts a list of actor_types to choose from"
+	},
+	"model_state": {
+		"prefix": "model_state",
+		"body": [
+			"${1|standard,minor_damage,medium_damage,major_damage,destroyed|}"
+		],
+		"description": "Inserts a list of model_states to choose from"
+	},
+	"network_event": {
+		"prefix": "network_event",
+		"body": [
+			"${1|verbose,status,message,warning,error,critical|}"
+		],
+		"description": "Inserts a list of network_events to choose from"
+	},
 	"ai_current":{
 		"prefix": "ai_current",
 		"body":[
 			"${1|ai_current_squad,ai_current_actor|}"
-		]
+		],
+		"description": "Inserts a list of globals to choose from which return information about the ai executing a thread"
 	},
 	"ai_combat_status":{
 		"prefix": "ai_combat_status",
 		"body":[
 			"${1|ai_combat_status_asleep,ai_combat_status_idle,ai_combat_status_alert,ai_combat_status_active,ai_combat_status_uninspected,ai_combat_status_definite,ai_combat_status_certain,ai_combat_status_visible,ai_combat_status_clear_los,ai_combat_status_dangerous|}"
-		]
+		],
+        "description": "Inserts a list of ai_combat_statuses to choose from"
 	}
 }
