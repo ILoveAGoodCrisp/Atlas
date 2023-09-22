@@ -90,7 +90,7 @@ export function runToolExecutable() {
   const toolExecutablePath = findToolExecutable(path.dirname(filePath), 10);
 
   if (!toolExecutablePath) {
-    vscode.window.showErrorMessage('Could not find the "tool.exe" executable in the specified directories.');
+    vscode.window.showErrorMessage('Failed to find tool. Is your script folder outside of your editing kit tags directory?');
     return;
   }
 
@@ -98,7 +98,7 @@ export function runToolExecutable() {
   const scenarioPath = getScenarioPath(filePath);
 
   if (!scenarioPath) {
-    vscode.window.showErrorMessage('Could not find a matching scenario file.');
+    vscode.window.showErrorMessage('No Scenario file found. Is this a global or object script?');
     return;
   }
 
