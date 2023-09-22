@@ -21,9 +21,9 @@
     ],
     "onEnterRules": [
         {
-        "beforeText": ".+",
-        "afterText": "\\)",
-        "action": { "indent": "indentOutdent" }
+            "beforeText": "^.+",
+            "afterText": "\\s*\\)$",
+            "action": { "indent": "indentOutdent" }
         }
       ]
 }

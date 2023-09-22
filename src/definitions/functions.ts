@@ -24627,7 +24627,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"thread",
-	['function', 'name'],
+	['function_name'],
 	"long",
 	['H4'],
 	"Runs the specified static haloscript function in its own thread and continues",

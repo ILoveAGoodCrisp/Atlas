@@ -21,13 +21,13 @@
     ],
     "onEnterRules": [
         {
-        "beforeText": ".+",
-        "afterText": "\\)$",
-        "action": { "indent": "indentOutdent" }
+            "beforeText": "^.+",
+            "afterText": "\\s*\\)$",
+            "action": { "indent": "indentOutdent" }
         },
         {
-        "beforeText": "^\\s*.*?[^;]\\s*$(?<!(\\bend\\b|\\s+))",
-        "action": { "indent": "indent" }
+            "beforeText": "^.*(\\)|if|then|else|elseif|begin|begin_random|repeat)$",
+            "action": { "indent": "indent" }
         }
     ]
 }
