@@ -23,10 +23,10 @@
         {
         "beforeText": ".+",
         "afterText": "\\)$",
-        "action": { "indent": "i(ndentOutdent" }
+        "action": { "indent": "indentOutdent" }
         },
         {
-        "beforeText": "^\\s*.*?[^;]\\s*$(?<!\\bend\\b)",
+        "beforeText": "^\\s*.*?[^;]\\s*$(?<!(\\bend\\b|\\s+))",
         "action": { "indent": "indent" }
         }
     ]
