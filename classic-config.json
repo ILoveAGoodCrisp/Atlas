@@ -22,6 +22,12 @@
         ["\"", "\""],
         ["'", "'"]
     ],
+    "folding": {
+        "markers": {
+          "start": "^\\s*\\(script\\b",
+          "end": "^\\s*\\)\\b"
+        }
+    },
     "onEnterRules": [
         {
             "beforeText": "^.+",

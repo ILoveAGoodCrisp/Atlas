@@ -9,6 +9,7 @@
     ],
     "autoClosingPairs": [
         ["[", "]"],
+        ["{", "}"],
         ["(", ")"],
         ["\"", "\""],
         ["'", "'"]
@@ -20,6 +21,12 @@
         ["\"", "\""],
         ["'", "'"]
     ],
+    "folding": {
+        "markers": {
+          "start": "^\\s*script\\b",
+          "end": "^\\s*end\\b"
+        }
+    },
     "onEnterRules": [
         {
             "beforeText": "^.+",

@@ -1,5 +1,5 @@
 {
-    "name": "atlas",
+    "name": "haloscript",
     "displayName": "HaloScript",
     "publisher": "Crisp",
     "author": {
@@ -11,19 +11,28 @@
         "haloscript",
         "language",
         "blamscript",
-        "halo3script",
-        "h3script",
+        "haloce",
+        "halo1",
+        "mcc",
+        "halo2",
+        "halo3",
+        "haloodst",
+        "haloreach",
+        "odst",
+        "reach",
+        "halo4",
+        "halo2a",
         "atlas",
         "halo script",
         "halo mod tools"
     ],
     "galleryBanner": {
-        "color": "#007acc",
-        "theme": "dark"
+        "color": "#eff1f3",
+        "theme": "light"
     },
     "version": "2.0.0",
     "license": "MIT",
-    "icon": "atlas_icon_small.png",
+    "icon": "icons/icon.png",
     "repository": {
         "type": "git",
         "url": "https://github.com/ILoveAGoodCrisp/Atlas"
@@ -76,7 +85,11 @@
                 "extensions": [
                     ".hsc"
                 ],
-                "configuration": "./new-config.json"
+                "configuration": "./new-config.json",
+                "icon": {
+                    "dark": "./icons/h4.svg",
+                    "light": "./icons/h4.svg"
+                }
             },
             {
                 "id": "hscr",
@@ -87,7 +100,11 @@
                 "extensions": [
                     ".hsc"
                 ],
-                "configuration": "./classic-config.json"
+                "configuration": "./classic-config.json",
+                "icon": {
+                    "dark": "./icons/hr.svg",
+                    "light": "./icons/hr.svg"
+                }
             },
             {
                 "id": "hsco",
@@ -98,7 +115,11 @@
                 "extensions": [
                     ".hsc"
                 ],
-                "configuration": "./classic-config.json"
+                "configuration": "./classic-config.json",
+                "icon": {
+                    "dark": "./icons/h3o.svg",
+                    "light": "./icons/h3o.svg"
+                }
             },
             {
                 "id": "hsc3",
@@ -109,7 +130,11 @@
                 "extensions": [
                     ".hsc"
                 ],
-                "configuration": "./classic-config.json"
+                "configuration": "./classic-config.json",
+                "icon": {
+                    "dark": "./icons/h3.svg",
+                    "light": "./icons/h3.svg"
+                }
             },
             {
                 "id": "hsc2",
@@ -120,7 +145,11 @@
                 "extensions": [
                     ".hsc"
                 ],
-                "configuration": "./classic-config.json"
+                "configuration": "./classic-config.json",
+                "icon": {
+                    "dark": "./icons/h2.svg",
+                    "light": "./icons/h2.svg"
+                }
             },
             {
                 "id": "hsc1",
@@ -131,7 +160,11 @@
                 "extensions": [
                     ".hsc"
                 ],
-                "configuration": "./classic-config.json"
+                "configuration": "./classic-config.json",
+                "icon": {
+                    "dark": "./icons/h1.svg",
+                    "light": "./icons/h1.svg"
+                }
             }
         ],
         "grammars": [
