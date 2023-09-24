@@ -1,4 +1,4 @@
-**HaloScript** is a comprehensive language support extension for all iterations of the Halo Script language used in the Halo: The Masterchief Collection mod tools. HaloScript provides:
+**HaloScript** is a comprehensive language support extension for all iterations of the Halo Script language used in the Halo: The Masterchief Collection Mod Tools. HaloScript provides:
 - Autocompletion
 - Documentation on all HaloScript functions
 - Hover descriptions for HaloScript elements
@@ -21,7 +21,7 @@
 
 ### Setting the language
 
-This extension contributes each game's Halo Script iteration as a separate language. Once you've opened a hsc file, you can select correct HaloScript language from the ***Status Bar***.
+This extension contributes each game's Halo Script iteration as a separate language. Once you've opened a hsc file, you can select the correct HaloScript language for your current file from the ***Status Bar***.
 
 ![Status Bar](images\status_bar.jpg)
 

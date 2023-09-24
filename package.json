@@ -5,7 +5,7 @@
     "author": {
         "name": "Crisp"
     },
-    "description": "A Visual Studio Code extension for Halo Script which provides syntax highlighting, intellisense integration, snippets, and other various support.",
+    "description": "HaloScript provides comprehensive language support for the Halo Scripting language used in the Halo: MCC Mod Tools",
     "keywords": [
         "hsc",
         "haloscript",
