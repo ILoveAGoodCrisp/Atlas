@@ -23,9 +23,9 @@
 
 This extension contributes each game's Halo Script iteration as a separate language. Once you've opened a hsc file, you can select the correct HaloScript language for your current file from the ***Status Bar***.
 
-![Status Bar](images\status_bar.jpg)
+![Status Bar](images/status_bar.jpg)
 
-![HaloScript Languages](images\languages.jpg)
+![HaloScript Languages](images/languages.jpg)
 
 The HaloScript syntax comes in two flavours, the classic lisp styled syntax used in Halo 1 - Halo Reach, and the newer C-like syntax featured in Halo 4.
 
@@ -47,7 +47,7 @@ Snippets are templates you can add to help you quickly add code to your scripts.
 
 The full snippets list can be accessed through the ***Command Palette*** (shortcut `CTRL+SHIFT+P`), and selecting ***Insert Snippet***.
 
-![Snippets in Halo Reach Script](images\snippets_example.gif)
+![Snippets in Halo Reach Script](images/snippets_example.gif)
 
 ### Autocompletion
 
@@ -55,7 +55,7 @@ HaloScript offers automcompletion for functions, built-in globals, value types, 
 
 Autocomplete suggestions will also display relevant information, such as descriptions and accepted arguments for a function. When accepting an autocomplete suggestion for a function, parentheses will be automatically inserted if they are not already present.
 
-![Autocompletion in Halo 4 Script](images\autocompletion_example.gif)
+![Autocompletion in Halo 4 Script](images/autocompletion_example.gif)
 
 ### Argument Hinting
 
@@ -63,13 +63,13 @@ When writing the arguments to give to HaloScript functions, argument hinting is 
 
 Arguments that end with `?` are optional.
 
-![Argument Hints in Halo 2 Script](images\signature_example.gif)
+![Argument Hints in Halo 2 Script](images/signature_example.gif)
 
 ### Hover Descriptions
 
 Simply hover over any HaloScript function, built-in global, value type, or keyword to prompt a description of that item.
 
-![Hover Descriptions in Halo ODST Script](images\hover_example.gif)
+![Hover Descriptions in Halo ODST Script](images/hover_example.gif)
 
 ### Extension Recommendations
 
@@ -81,7 +81,7 @@ Script compilation directly from VSCode is supported for Halo 4 only. While edit
 
 > Note that script compilation will only work correctly while editing a scenario script file. Compilation directly from a global or object script file is not supported.
 
-![Hover Descriptions in Halo ODST Script](images\script_compile.jpg)
+![Hover Descriptions in Halo ODST Script](images/script_compile.jpg)
 
 ## Credits
 
