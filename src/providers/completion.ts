@@ -128,12 +128,12 @@ export class hsProvider {
 			var item = new vscode.CompletionItem(keyword.name);
 			if (keyword.name == 'begin_count' || keyword.name == 'begin_random_count')
 			{
-				item.detail = keyword.name + "(long) -> passthrough";
+				item.detail = keyword.name + "(long)";
 				item.insertText = new vscode.SnippetString(keyword.name + '(${1})');
 			}
 			else
 			{
-				item.detail = keyword.name + " -> passthrough";
+				item.detail = keyword.name;
 			}
 
 			item.documentation = keyword.desc;

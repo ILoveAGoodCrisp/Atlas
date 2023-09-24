@@ -1,100 +1,92 @@
-**HaloScript** is a comprehensive language support addon for all iterations of the Halo Script language in the Halo: The Masterchief Collection mod tools.
-- Function autocomplete for every game
+**HaloScript** is a comprehensive language support extension for all iterations of the Halo Script language used in the Halo: The Masterchief Collection mod tools. HaloScript provides:
+- Autocompletion
+- Documentation on all HaloScript functions
 - Hover descriptions for HaloScript elements
 - Function argument hints
 - Syntax highlighting
 - Snippets
 
-**======Supports=======**
+## Supported Games
 
-Halo 1 MCC
-Halo 2 MCC
-Halo 3 MCC
-Halo ODST MCC
-Halo Reach MCC
-Halo 4 MCC (Using the new HaloScript syntax)
+| Game | Language |
+| ----------- | ----------- |
+| Halo 1 MCC | hsc1 |
+| Halo 2 MCC | hsc2 | 
+| Halo 3 MCC | hsc3 | 
+| Halo ODST MCC | hsco | 
+| Halo Reach MCC | hscr | 
+| Halo 4 MCC | hsc4 | 
 
-**======Guide=======**
+## Getting Started
 
-**Getting Started**
+### Setting the language
 
+This extension contributes each game's Halo Script iteration as a separate language. Once you've opened a hsc file, you can select correct HaloScript language from the ***Status Bar***.
 
-**Setting the default language**
+![Status Bar](images\status_bar.jpg)
 
-**Using Snippets**
+![HaloScript Languages](images\languages.jpg)
 
-**Autocompletion**
+The HaloScript syntax comes in two flavours, the classic lisp styled syntax used in Halo 1 - Halo Reach, and the newer C-like syntax featured in Halo 4.
 
-**Argument Hinting**
+ You can set the default .hsc file language by editing your user settings.json file. For example to set Halo 4 Script as the default you would add:
 
-**Hover Descriptions**
+```
+    "files.associations": {
+        "*.hsc": "hsc4"
+    },
+```
 
-**Using intellisense with Atlas**
+HaloScript is compatiable with any VSCode theme. ***Dark (Visual Studio - C/C++)*** is the theme used in the examples below.
 
-Ctrl+Spacebar is the default shortcut to use intellisense. Once enabled you will be able to see a list autocomplete options each time you begin typing. Press Ctrl+Spacebar again to turn this function off.
+### Using Snippets
 
-You can use your arrow keys to navigate the autocomplete options, if not already showing, you can press Ctrl+Spacebar again to see details of the function. After confirming the selection with tab or enter, you will see the function name along with its parameters. You can use tab to jump between parameters and type to overwrite them.
+Snippets are templates you can add to help you quickly add code to your scripts. HaloScript includes a large number of snippets for quickly creating template scripts, variables and loops. Snippets are also the method for quickly accessing the various enum values present in HaloScript.
 
-Below is a breakdown of the snippet details.
+> If snippets are not showing when you start typing, you can press `CTRL+SPACE` to trigger Intellisense. Snippets can be distinguished from other autocomplete suggestions by the square icon. Once the snippet is highlighted, you can press `TAB` to insert it. Certain snippets included multiple parts, you can use `TAB` to jump between these.
 
-![intellisense guide](https://user-images.githubusercontent.com/80323148/139600531-a1ffd041-1a76-4869-835f-515a06ed436a.png)
+The full snippets list can be accessed through the ***Command Palette*** (shortcut `CTRL+SHIFT+P`), and selecting ***Insert Snippet***.
 
-**Inserting snippets with the command palette**
+![Snippets in Halo Reach Script](images\snippets_example.gif)
 
-Any autocomplete function can also be input via snippets using the command palette. By default the command palette can be accessed by the shortcut Ctrl+Shift+P or through the menu by selecting View>Command Palette. The Insert Snippet command is an alternative way to insert functions and quick templates for Halo Script, and allows you to also search function descriptions. You can assign this a hotkey by clicking the cog icon next to the insert snippets option.
+### Autocompletion
 
-![image](https://user-images.githubusercontent.com/80323148/139602116-91bf4cb6-02cc-47cc-b2f3-54d332bc0315.png)
+HaloScript offers automcompletion for functions, built-in globals, value types, script types, and keywords. Autocomplete suggestions will show as you type. Use `TAB` to accept the autocomplete suggestion. 
 
-Provided alongside function details are value type lists and templates. Value type lists always begin with #, they provide a list of enumerated values, value types, or engine globals by group. For example #teams brings up a list of available ai teams.
+Autocomplete suggestions will also display relevant information, such as descriptions and accepted arguments for a function. When accepting an autocomplete suggestion for a function, parentheses will be automatically inserted if they are not already present.
 
-![image](https://user-images.githubusercontent.com/80323148/139602166-72c50624-9d9f-44d0-b127-5f4ef60dc4c6.png)
+![Autocompletion in Halo 4 Script](images\autocompletion_example.gif)
 
-The following templates are available, these can either be selected through snippets or using intellisense:
+### Argument Hinting
 
-startup - creates an empty startup script
+When writing the arguments to give to HaloScript functions, argument hinting is provided. This will show the structure of the arguments required for a function, the function description, the current argument to input, and a description of the type of argument to supply.
 
-dormant - creates an empty dormant script
+Arguments that end with `?` are optional.
 
-continuous - creates an empty continuous script
+![Argument Hints in Halo 2 Script](images\signature_example.gif)
 
-static - creates an empty static script
+### Hover Descriptions
 
-static-w/parameter - creates an empty static script with a single parameter
+Simply hover over any HaloScript function, built-in global, value type, or keyword to prompt a description of that item.
 
-command_script - creates an empty command_script
+![Hover Descriptions in Halo ODST Script](images\hover_example.gif)
 
-stub - creates an empty stub script
+### Extension Recommendations
 
-stub-w/parameter - creates an empty stub script with a single parameter
+[TabOut](https://marketplace.visualstudio.com/items?itemName=albert.TabOut) lets you use the tab key to jump out parentheses using `TAB`. This will make it a much smoother experience to work with HaloScript given its heavy use of parentheses.
 
-global - creates a template for inserting a global variable
+## Script Compilation
 
-loop - generates a template for a loop
+Script compilation directly from VSCode is supported for Halo 4 only. While editing a Halo 4 Script file you can use the ***Command Palette*** (shortcut `CTRL+SHIFT+P`) to access the command **Compile Scenario Scripts** or simply `right-click` in the editor and select the command from the context menu.
 
-![](snippets.gif)
+> Note that script compilation will only work correctly while editing a scenario script file. Compilation directly from a global or object script file is not supported.
 
-**Syntax highlighting** 
+![Hover Descriptions in Halo ODST Script](images\script_compile.jpg)
 
-Syntax highlighting is provided for the following types:
+## Credits
 
-- Comments
-- Numbers
-- Strings
-- Operators
-- Booleans
-- Class (i.e. Script / Global types)
-- Script type (e.g. startup, static...)
-- Enumerated values, such as 'heroic' which represents a number
-- Value types (e.g. void, real, ai...)
-- Engine globals, which are global variables that can be used without the user needing to declare them (e.g. game_speed, ai_current_actor)
-- HaloScript functions (e.g. ai_place, object_create...)
-- Script names, the extension will apply highlighting to words which refer to a user defined script name.
-- Any item using the foreground colour is assumed to be a global variable, tag, or a reference to an entity defined in a scenario tag (e.g. an object name or ai objective). 
+[Alexis Jonsson](https://github.com/AlexisJonsson) - Icon design
 
-There is small level of error checking in use by the highlighter, for example the "+" in (1 + 4) would not be highlighted, as this is an incorrect placement for a function.
-
-The image below is an example made using the packaged theme.
-
-![image](https://user-images.githubusercontent.com/80323148/139603848-8e18e41e-30e6-431c-9509-c0cdc50c781b.png)
+[Crisp](https://github.com/ILoveAGoodCrisp) - Extension Developer
 
 ### 2.0.0
