@@ -9,13 +9,6 @@ export class HSGlobal {
 export var hsGlobals = new Array<HSGlobal>();
 
 var newGlobal = new HSGlobal(
-	"numeric_countdown_timer_get",
-	"short",
-	['H1'],
-);
-hsGlobals.push(newGlobal);
-
-var newGlobal = new HSGlobal(
 	"render_effects",
 	"void",
 	['H1', 'H2'],
@@ -54,13 +47,6 @@ var newGlobal = new HSGlobal(
 	"debug_teleport_player",
 	"void",
 	['H1'],
-);
-hsGlobals.push(newGlobal);
-
-var newGlobal = new HSGlobal(
-	"player_effect_stop",
-	"void",
-	['H1', 'H2', 'H3', 'HO', 'HR', 'H4'],
 );
 hsGlobals.push(newGlobal);
 
@@ -2375,34 +2361,6 @@ var newGlobal = new HSGlobal(
 hsGlobals.push(newGlobal);
 
 var newGlobal = new HSGlobal(
-	"sound_set_global_effect",
-	"void",
-	['H2', 'H3', 'HO'],
-);
-hsGlobals.push(newGlobal);
-
-var newGlobal = new HSGlobal(
-	"player_training_activate_flashlight",
-	"void",
-	['H2', 'H3', 'HO'],
-);
-hsGlobals.push(newGlobal);
-
-var newGlobal = new HSGlobal(
-	"player_training_activate_crouch",
-	"void",
-	['H2', 'H3', 'HO', 'HR', 'H4'],
-);
-hsGlobals.push(newGlobal);
-
-var newGlobal = new HSGlobal(
-	"player_training_activate_stealth",
-	"void",
-	['H2', 'H3', 'HO', 'HR', 'H4'],
-);
-hsGlobals.push(newGlobal);
-
-var newGlobal = new HSGlobal(
 	"rasterizer_profile_include",
 	"void",
 	['H2'],
@@ -2571,100 +2529,9 @@ var newGlobal = new HSGlobal(
 hsGlobals.push(newGlobal);
 
 var newGlobal = new HSGlobal(
-	"cinematic_screen_effect_set_crossfade",
-	"void",
-	['H2'],
-);
-hsGlobals.push(newGlobal);
-
-var newGlobal = new HSGlobal(
 	"cinematic_set_far_clip_distance",
 	"void",
 	['H2'],
-);
-hsGlobals.push(newGlobal);
-
-var newGlobal = new HSGlobal(
-	"play_bink_movie",
-	"void",
-	['H2', 'H3', 'HO', 'HR'],
-);
-hsGlobals.push(newGlobal);
-
-var newGlobal = new HSGlobal(
-	"play_credits",
-	"void",
-	['H2'],
-);
-hsGlobals.push(newGlobal);
-
-var newGlobal = new HSGlobal(
-	"set_global_mixbin_headroom",
-	"void",
-	['H2', 'H3', 'HO', 'HR'],
-);
-hsGlobals.push(newGlobal);
-
-var newGlobal = new HSGlobal(
-	"debug_sound_environment_source_parameter",
-	"void",
-	['H2', 'H3', 'HO', 'HR'],
-);
-hsGlobals.push(newGlobal);
-
-var newGlobal = new HSGlobal(
-	"interpolator_stop",
-	"long",
-	['H2', 'H3', 'HO'],
-);
-hsGlobals.push(newGlobal);
-
-var newGlobal = new HSGlobal(
-	"interpolator_restart",
-	"long",
-	['H2', 'H3', 'HO'],
-);
-hsGlobals.push(newGlobal);
-
-var newGlobal = new HSGlobal(
-	"interpolator_is_active",
-	"boolean",
-	['H2', 'H3', 'HO'],
-);
-hsGlobals.push(newGlobal);
-
-var newGlobal = new HSGlobal(
-	"interpolator_is_finished",
-	"boolean",
-	['H2', 'H3', 'HO'],
-);
-hsGlobals.push(newGlobal);
-
-var newGlobal = new HSGlobal(
-	"interpolator_get_current_phase",
-	"real",
-	['H2', 'H3', 'HO'],
-);
-hsGlobals.push(newGlobal);
-
-var newGlobal = new HSGlobal(
-	"interpolator_get_current_time_fraction",
-	"real",
-	['H2', 'H3', 'HO'],
-);
-hsGlobals.push(newGlobal);
-
-var newGlobal = new HSGlobal(
-	"interpolator_get_start_time",
-	"real",
-	['H2', 'H3', 'HO'],
-);
-hsGlobals.push(newGlobal);
-
-var newGlobal = new HSGlobal(
-	"interpolator_get_final_time",
-	"real",
-	['H2', 'H3', 'HO'],
 );
 hsGlobals.push(newGlobal);
 
@@ -2690,20 +2557,6 @@ var newGlobal = new HSGlobal(
 hsGlobals.push(newGlobal);
 
 var newGlobal = new HSGlobal(
-	"weather_start",
-	"void",
-	['H2'],
-);
-hsGlobals.push(newGlobal);
-
-var newGlobal = new HSGlobal(
-	"weather_stop",
-	"void",
-	['H2'],
-);
-hsGlobals.push(newGlobal);
-
-var newGlobal = new HSGlobal(
 	"vehicle_enable_ghost_effects",
 	"void",
 	['H2', 'H3', 'HO', 'HR', 'H4'],
@@ -2720,48 +2573,6 @@ hsGlobals.push(newGlobal);
 var newGlobal = new HSGlobal(
 	"ice_cream_flavor_available",
 	"boolean",
-	['H2'],
-);
-hsGlobals.push(newGlobal);
-
-var newGlobal = new HSGlobal(
-	"set_rasterizer_gamma",
-	"void",
-	['H2'],
-);
-hsGlobals.push(newGlobal);
-
-var newGlobal = new HSGlobal(
-	"rasterizer_bloom_override",
-	"void",
-	['H2'],
-);
-hsGlobals.push(newGlobal);
-
-var newGlobal = new HSGlobal(
-	"rasterizer_bloom_override_reset",
-	"void",
-	['H2'],
-);
-hsGlobals.push(newGlobal);
-
-var newGlobal = new HSGlobal(
-	"rasterizer_bloom_override_threshold",
-	"void",
-	['H2'],
-);
-hsGlobals.push(newGlobal);
-
-var newGlobal = new HSGlobal(
-	"rasterizer_bloom_override_brightness",
-	"void",
-	['H2'],
-);
-hsGlobals.push(newGlobal);
-
-var newGlobal = new HSGlobal(
-	"rasterizer_bloom_override_only",
-	"void",
 	['H2'],
 );
 hsGlobals.push(newGlobal);
@@ -8878,27 +8689,6 @@ var newGlobal = new HSGlobal(
 hsGlobals.push(newGlobal);
 
 var newGlobal = new HSGlobal(
-	"player_training_activate_equipment",
-	"void",
-	['H3', 'HO', 'HR', 'H4'],
-);
-hsGlobals.push(newGlobal);
-
-var newGlobal = new HSGlobal(
-	"player_training_activate_jump",
-	"void",
-	['H3', 'HO', 'HR', 'H4'],
-);
-hsGlobals.push(newGlobal);
-
-var newGlobal = new HSGlobal(
-	"bink_time",
-	"long",
-	['H3', 'HO', 'HR'],
-);
-hsGlobals.push(newGlobal);
-
-var newGlobal = new HSGlobal(
 	"animation_cache_stats_reset",
 	"void",
 	['H3', 'HO', 'HR', 'H4'],
@@ -8906,35 +8696,7 @@ var newGlobal = new HSGlobal(
 hsGlobals.push(newGlobal);
 
 var newGlobal = new HSGlobal(
-	"predict_bink_movie",
-	"void",
-	['H3', 'HO', 'HR'],
-);
-hsGlobals.push(newGlobal);
-
-var newGlobal = new HSGlobal(
-	"predict_bink_movie_from_tag",
-	"void",
-	['H3', 'HO', 'HR'],
-);
-hsGlobals.push(newGlobal);
-
-var newGlobal = new HSGlobal(
-	"dump_active_resources",
-	"void",
-	['H3', 'HO', 'HR', 'H4'],
-);
-hsGlobals.push(newGlobal);
-
-var newGlobal = new HSGlobal(
 	"test_sapien_crash",
-	"void",
-	['H3', 'HO', 'HR', 'H4'],
-);
-hsGlobals.push(newGlobal);
-
-var newGlobal = new HSGlobal(
-	"dump_active_zone_tags",
 	"void",
 	['H3', 'HO', 'HR', 'H4'],
 );
@@ -13715,13 +13477,6 @@ var newGlobal = new HSGlobal(
 hsGlobals.push(newGlobal);
 
 var newGlobal = new HSGlobal(
-	"player_effect_stop_for_player",
-	"void",
-	['HO'],
-);
-hsGlobals.push(newGlobal);
-
-var newGlobal = new HSGlobal(
 	"camera_fov",
 	"real",
 	['HO', 'HR', 'H4'],
@@ -14236,20 +13991,6 @@ var newGlobal = new HSGlobal(
 	"texture_cache_test_malloc",
 	"void",
 	['HR'],
-);
-hsGlobals.push(newGlobal);
-
-var newGlobal = new HSGlobal(
-	"player_training_activate_night_vision",
-	"void",
-	['HR', 'H4'],
-);
-hsGlobals.push(newGlobal);
-
-var newGlobal = new HSGlobal(
-	"player_effect_stop_for_player",
-	"void",
-	['HR', 'H4'],
 );
 hsGlobals.push(newGlobal);
 

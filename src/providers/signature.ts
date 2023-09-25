@@ -4,7 +4,7 @@ import {hsValueTypes} from '../definitions/valueTypes'
 
 function getSignatureInformation(hsFunction: HSFunction, argIndex: number, newStyle: boolean, game: string): vscode.SignatureInformation {
     const signature = new vscode.SignatureInformation("", "");
-    signature.parameters = hsFunction.args.map(arg => new vscode.ParameterInformation(arg, "<" + (arg.replace('?','').split('-')[0]) + "> " + hsValueTypes.find((def) => def.name === arg.replace('?','').split('-')[0])?.desc));
+    signature.parameters = hsFunction.args.map(arg => new vscode.ParameterInformation(arg, "<" + (arg.replace('?','').split('-')[0]) + "> " + (hsValueTypes.find((def) => def.name === arg.replace('?','').split('-')[0])?.desc ?? "")))
     signature.documentation = "--------------------------------------------------\n" + hsFunction.desc;
     if (newStyle)
     {

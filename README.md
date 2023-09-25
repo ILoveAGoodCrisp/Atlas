@@ -57,9 +57,9 @@ Autocomplete suggestions will also display relevant information, such as descrip
 
 ![Autocompletion in Halo 4 Script](images/autocompletion_example.gif)
 
-### Argument Hinting
+### Argument Hints
 
-When writing the arguments to give to HaloScript functions, argument hinting is provided. This will show the structure of the arguments required for a function, the function description, the current argument to input, and a description of the type of argument to supply.
+Argument hints are displayed when writing out a HaloScript function. These hints will highlight the structure of the arguments required for a function, the function description, the current argument to input, and a description of the type of argument to supply.
 
 Arguments that end with `?` are optional.
 

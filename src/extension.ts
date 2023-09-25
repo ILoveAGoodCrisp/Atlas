@@ -59,7 +59,6 @@ export function activate(context: vscode.ExtensionContext) {
 	const commandParenHandler = () =>
 	{
 		AutoParen();
-		
 	}
 	context.subscriptions.push(vscode.commands.registerCommand(commandAutoParen, commandParenHandler));
 

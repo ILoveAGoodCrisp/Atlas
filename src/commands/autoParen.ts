@@ -32,7 +32,6 @@ export function AutoParen()
             {
               const beforeStart = start.translate(0, -1);
               const char = editor.document.getText(new vscode.Range(beforeStart, start));
-              console.log(char);
               if (char == "(")
                 return;
             }

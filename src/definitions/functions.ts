@@ -48,7 +48,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"set",
-	['variable', 'name', 'expression'],
+	['variable_name', 'expression'],
 	"passthrough",
 	['H1', 'H2', 'H3', 'HO', 'HR', 'H4'],
 	"Set the value of a global variable",
@@ -844,6 +844,15 @@ var newFunc = new HSFunction(
 	"void",
 	['H1'],
 	"<milliseconds>, <auto_start>",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"numeric_countdown_timer_get",
+	['short'],
+	"short",
+	['H1'],
+	"<digit_index>",
 );
 hsFunctions.push(newFunc);
 
@@ -3661,6 +3670,15 @@ var newFunc = new HSFunction(
 	"void",
 	['H1', 'H2', 'H3', 'HO', 'HR', 'H4'],
 	"<max_intensity> <attack time>",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"player_effect_stop",
+	['real'],
+	"void",
+	['H1', 'H2', 'H3', 'HO', 'HR', 'H4'],
+	"<decay>",
 );
 hsFunctions.push(newFunc);
 
@@ -7625,6 +7643,15 @@ var newFunc = new HSFunction(
 hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
+	"sound_set_global_effect",
+	['string_id', 'real'],
+	"void",
+	['H2', 'H3', 'HO'],
+	"Bleh",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
 	"sound_set_global_effect_scale",
 	['string_id', 'real'],
 	"void",
@@ -7711,6 +7738,33 @@ var newFunc = new HSFunction(
 	"void",
 	['H2', 'H3', 'HO', 'HR', 'H4'],
 	"True turns training on, false turns it off",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"player_training_activate_flashlight",
+	[],
+	"void",
+	['H2', 'H3', 'HO'],
+	"Guess",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"player_training_activate_crouch",
+	[],
+	"void",
+	['H2', 'H3', 'HO', 'HR', 'H4'],
+	"Guess",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"player_training_activate_stealth",
+	[],
+	"void",
+	['H2', 'H3', 'HO', 'HR', 'H4'],
+	"Guess",
 );
 hsFunctions.push(newFunc);
 
@@ -7828,6 +7882,15 @@ var newFunc = new HSFunction(
 	"void",
 	['H2'],
 	"Sets dof: <seperation dist>, <near blur lower bound> <upper bound> <time> <far blur lower bound> <upper bound> <time>",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"cinematic_screen_effect_set_crossfade",
+	['real'],
+	"void",
+	['H2'],
+	"Transition-time",
 );
 hsFunctions.push(newFunc);
 
@@ -8354,6 +8417,24 @@ var newFunc = new HSFunction(
 hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
+	"play_bink_movie",
+	['string'],
+	"void",
+	['H2', 'H3', 'HO', 'HR'],
+	"Um",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"play_credits",
+	[],
+	"void",
+	['H2'],
+	"Ur",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
 	"bink_done",
 	[],
 	"boolean",
@@ -8368,6 +8449,24 @@ var newFunc = new HSFunction(
 	"void",
 	['H2', 'H3', 'HO', 'HR'],
 	"New doppler factor: <real>",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"set_global_mixbin_headroom",
+	['long-1', 'long-2'],
+	"void",
+	['H2', 'H3', 'HO', 'HR'],
+	"Blah",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"debug_sound_environment_source_parameter",
+	['long', 'real'],
+	"void",
+	['H2', 'H3', 'HO', 'HR'],
+	"Blah",
 );
 hsFunctions.push(newFunc);
 
@@ -8804,6 +8903,42 @@ var newFunc = new HSFunction(
 hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
+	"interpolator_stop",
+	['string_id'],
+	"long",
+	['H2', 'H3', 'HO'],
+	"<name>",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"interpolator_restart",
+	['string_id'],
+	"long",
+	['H2', 'H3', 'HO'],
+	"<name>",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"interpolator_is_active",
+	['string_id'],
+	"boolean",
+	['H2', 'H3', 'HO'],
+	"<name>",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"interpolator_is_finished",
+	['string_id'],
+	"boolean",
+	['H2', 'H3', 'HO'],
+	"<name>",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
 	"interpolator_set_current_value",
 	['string_id', 'real'],
 	"long",
@@ -8836,6 +8971,42 @@ var newFunc = new HSFunction(
 	"real",
 	['H2', 'H3', 'HO'],
 	"<name> <use function on/off>",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"interpolator_get_current_phase",
+	['string_id'],
+	"real",
+	['H2', 'H3', 'HO'],
+	"<name>",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"interpolator_get_current_time_fraction",
+	['string_id'],
+	"real",
+	['H2', 'H3', 'HO'],
+	"<name>",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"interpolator_get_start_time",
+	['string_id'],
+	"real",
+	['H2', 'H3', 'HO'],
+	"<name>",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"interpolator_get_final_time",
+	['string_id'],
+	"real",
+	['H2', 'H3', 'HO'],
+	"<name>",
 );
 hsFunctions.push(newFunc);
 
@@ -8881,6 +9052,24 @@ var newFunc = new HSFunction(
 	"void",
 	['H2', 'H3', 'HO', 'HR', 'H4'],
 	"Sets the pc language from a string",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"weather_start",
+	['real'],
+	"void",
+	['H2'],
+	"<time>",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"weather_stop",
+	['real'],
+	"void",
+	['H2'],
+	"<time>",
 );
 hsFunctions.push(newFunc);
 
@@ -8948,6 +9137,15 @@ var newFunc = new HSFunction(
 hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
+	"set_rasterizer_gamma",
+	['real'],
+	"void",
+	['H2'],
+	"Power",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
 	"predict_model_section",
 	['render', 'model', 'long'],
 	"void",
@@ -8984,11 +9182,47 @@ var newFunc = new HSFunction(
 hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
+	"rasterizer_bloom_override",
+	['boolean'],
+	"void",
+	['H2'],
+	"Enable",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"rasterizer_bloom_override_reset",
+	['boolean'],
+	"void",
+	['H2'],
+	"Reset",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
 	"rasterizer_bloom_override_blur_amount",
 	['real'],
 	"void",
 	['H2'],
 	"Blur mount",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"rasterizer_bloom_override_threshold",
+	['real'],
+	"void",
+	['H2'],
+	"Threshold",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"rasterizer_bloom_override_brightness",
+	['real'],
+	"void",
+	['H2'],
+	"Brightness",
 );
 hsFunctions.push(newFunc);
 
@@ -9016,6 +9250,15 @@ var newFunc = new HSFunction(
 	"void",
 	['H2'],
 	"Silver bullet",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"rasterizer_bloom_override_only",
+	['boolean'],
+	"void",
+	['H2'],
+	"Only",
 );
 hsFunctions.push(newFunc);
 
@@ -12917,6 +13160,24 @@ var newFunc = new HSFunction(
 hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
+	"player_training_activate_equipment",
+	[],
+	"void",
+	['H3', 'HO', 'HR', 'H4'],
+	"Guess",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"player_training_activate_jump",
+	[],
+	"void",
+	['H3', 'HO', 'HR', 'H4'],
+	"Guess",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
 	"hud_activate_team_nav_point_flag",
 	['team', 'cutscene_flag', 'real'],
 	"void",
@@ -14015,6 +14276,15 @@ var newFunc = new HSFunction(
 hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
+	"bink_time",
+	[],
+	"long",
+	['H3', 'HO', 'HR'],
+	"Uh",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
 	"data_mine_upload",
 	[],
 	"void",
@@ -14447,6 +14717,24 @@ var newFunc = new HSFunction(
 hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
+	"predict_bink_movie",
+	['string'],
+	"void",
+	['H3', 'HO', 'HR'],
+	"Um2",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"predict_bink_movie_from_tag",
+	['bink_definition'],
+	"void",
+	['H3', 'HO', 'HR'],
+	"Um2",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
 	"camera_set_mode",
 	['long-1', 'long-2'],
 	"void",
@@ -14686,6 +14974,15 @@ var newFunc = new HSFunction(
 	"void",
 	['H3', 'HO', 'HR', 'H4'],
 	"Turns on/off optional resource prediction",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"dump_active_resources",
+	[],
+	"void",
+	['H3', 'HO', 'HR', 'H4'],
+	"Blah",
 );
 hsFunctions.push(newFunc);
 
@@ -14947,6 +15244,15 @@ var newFunc = new HSFunction(
 	"void",
 	['H3', 'HO', 'HR', 'H4'],
 	"Cinematic lipsync means you can't use all the facial bones, just the mouth",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"dump_active_zone_tags",
+	[],
+	"void",
+	['H3', 'HO', 'HR', 'H4'],
+	"Blah",
 );
 hsFunctions.push(newFunc);
 
@@ -16477,6 +16783,15 @@ var newFunc = new HSFunction(
 	"void",
 	['HO'],
 	"<max_intensity> <attack time>",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"player_effect_stop_for_player",
+	['unit', 'real'],
+	"void",
+	['HO'],
+	"<decay>",
 );
 hsFunctions.push(newFunc);
 
@@ -21566,6 +21881,15 @@ var newFunc = new HSFunction(
 hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
+	"player_training_activate_night_vision",
+	[],
+	"void",
+	['HR', 'H4'],
+	"Guess",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
 	"chud_show_cinematics",
 	['boolean'],
 	"void",
@@ -21940,6 +22264,15 @@ var newFunc = new HSFunction(
 	"void",
 	['HR', 'H4'],
 	"<max_intensity> <attack time>",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"player_effect_stop_for_player",
+	['player', 'real'],
+	"void",
+	['HR', 'H4'],
+	"<decay>",
 );
 hsFunctions.push(newFunc);
 
@@ -24474,7 +24807,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"set_silently",
-	['variable', 'name', 'expression'],
+	['variable_name', 'expression'],
 	"void",
 	['H4'],
 	"Set the value of a global variable without echoing the result",
@@ -31345,5 +31678,32 @@ var newFunc = new HSFunction(
 	"void",
 	['H4'],
 	"Disable s3d interpolation for one cinematic shot",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"vs_play_sound",
+	['ai', 'boolean', 'sound', 'real-1?', 'real-2?'],
+	"boolean",
+	['H3', 'HO'],
+	"Actor plays an impulse sound and the atom blocks for the given percentage of the sound's total length, at the given volume (0..1)",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"vs_cast",
+	['ai', 'boolean', 'short', 'string_id-1', 'string_id-2?', 'string_id-3?', 'string_id-4?', 'string_id-5?', 'string_id-6?', 'string_id-7?'],
+	"boolean",
+	['H3', 'HO', 'HR', 'H4'],
+	"Cast up to 7 actors for a vignette (at the given priority, higher = more important)",
+);
+hsFunctions.push(newFunc);
+
+var newFunc = new HSFunction(
+	"ai_scene",
+	['string_id', 'ai_command_script', 'ai-1', 'ai-2?', 'ai-3?'],
+	"boolean",
+	['H2'],
+	"Start the named scene, with the named command script on the named set of squads (max 3 squads)",
 );
 hsFunctions.push(newFunc);
