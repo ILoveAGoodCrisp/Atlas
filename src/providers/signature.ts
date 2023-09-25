@@ -20,8 +20,6 @@ function getSignatureInformation(hsFunction: HSFunction, argIndex: number, newSt
             joinedArgs = "";
         signature.label = "(" + hsFunction.name + joinedArgs + ")";
     }
-
-
     return signature;
 }
 
@@ -109,6 +107,8 @@ export class hsProvider implements vscode.SignatureHelpProvider{
             }
 
             for (let i = position.character - 1; i < line.length; i--) {
+                if (i < 0)
+                    return;
                 if (line[i] === delimiter && line[i - 1] !== delimiter)
                     argIndex++
                 if (line[i] === '(') {
@@ -155,14 +155,14 @@ export class hsProvider implements vscode.SignatureHelpProvider{
             
             
             if (match == null) {
-                return null;
+                return;
             }
 
             const functionName = match[0];
 
             const foundFunc = hsFunctions.find((def) => def.name === functionName && def.games.includes(game));
             if(foundFunc == null) {
-                return null;
+                return;
             }
 
             const signatureHelp = new vscode.SignatureHelp();
@@ -171,7 +171,6 @@ export class hsProvider implements vscode.SignatureHelpProvider{
             signatureHelp.activeSignature = 0; // Index of the active signature
             signatureHelp.activeParameter = realArgIndex; // Index of the active parameter
             const signature = getSignatureInformation(foundFunc, realArgIndex, newStyle, game);
-
             // Add the signature to the SignatureHelp
             signatureHelp.signatures.push(signature);
             
