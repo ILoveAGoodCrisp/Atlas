@@ -3147,7 +3147,7 @@ var newFunc = new HSFunction(
 	['looping_sound'],
 	"void",
 	['H1', 'H2', 'H3', 'HO', 'HR', 'H4'],
-	"Your mom",
+	"Loads a looping sound into the sound cache ready for playback",
 );
 hsFunctions.push(newFunc);
 
@@ -5703,7 +5703,7 @@ var newFunc = new HSFunction(
 	['ai', 'short?'],
 	"void",
 	['H2', 'H3', 'HO', 'HR', 'H4'],
-	"Places the given number of members of the specified squad",
+	"Places the named squad, optionally with the given number of actors",
 );
 hsFunctions.push(newFunc);
 
@@ -7512,7 +7512,7 @@ var newFunc = new HSFunction(
 	['sound'],
 	"void",
 	['H2', 'H3', 'HO', 'HR', 'H4'],
-	"Your mom part 2",
+	"Loads an impulse sound into the sound cache ready for playback",
 );
 hsFunctions.push(newFunc);
 
@@ -7746,7 +7746,7 @@ var newFunc = new HSFunction(
 	[],
 	"void",
 	['H2', 'H3', 'HO'],
-	"Guess",
+	"Triggers training hud elements. Will not trigger on heroic or legendary",
 );
 hsFunctions.push(newFunc);
 
@@ -7755,7 +7755,7 @@ var newFunc = new HSFunction(
 	[],
 	"void",
 	['H2', 'H3', 'HO', 'HR', 'H4'],
-	"Guess",
+	"Triggers training hud elements. Will not trigger on heroic or legendary",
 );
 hsFunctions.push(newFunc);
 
@@ -7764,7 +7764,7 @@ var newFunc = new HSFunction(
 	[],
 	"void",
 	['H2', 'H3', 'HO', 'HR', 'H4'],
-	"Guess",
+	"Triggers training hud elements. Will not trigger on heroic or legendary",
 );
 hsFunctions.push(newFunc);
 
@@ -13164,7 +13164,7 @@ var newFunc = new HSFunction(
 	[],
 	"void",
 	['H3', 'HO', 'HR', 'H4'],
-	"Guess",
+	"Triggers training hud elements. Will not trigger on heroic or legendary",
 );
 hsFunctions.push(newFunc);
 
@@ -13173,7 +13173,7 @@ var newFunc = new HSFunction(
 	[],
 	"void",
 	['H3', 'HO', 'HR', 'H4'],
-	"Guess",
+	"Triggers training hud elements. Will not trigger on heroic or legendary",
 );
 hsFunctions.push(newFunc);
 
@@ -21885,7 +21885,7 @@ var newFunc = new HSFunction(
 	[],
 	"void",
 	['HR', 'H4'],
-	"Guess",
+	"Triggers training hud elements. Will not trigger on heroic or legendary",
 );
 hsFunctions.push(newFunc);
 
