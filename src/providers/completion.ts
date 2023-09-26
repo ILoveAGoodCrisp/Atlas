@@ -6,6 +6,12 @@ import {hsKeywords} from '../definitions/keywords'
 import {hsScriptTypes} from '../definitions/scriptTypes'
 import {hsValueTypes} from '../definitions/valueTypes'
 
+const path = require('path');
+
+const FUNC_REGEX_CLASSIC = /(?<=\(\bscript\b\s\b(startup|continuous|dormant|command_script)\b\s)(.+)|(?<=\(\bscript\b\s\b(static|stub)\b\s\b(mp_team|cinematic_scene_definition|object_list|delivery_method|unit_name|object_name|scenery|function_name|ai_behavior|bitmap|render_model|currency_type|event|object_definition|string_id|damage|weapon|unit_seat_mapping|ai_line|animation_budget_reference|controller|firefight_wave_type|ai_default_state|sound_budget_reference|ai|effect_scenery|model_state|passthrough|cutscene_flag|hud_corner|hud_message|wave_difficulty|lightmap_definition|script|text_justification|text_drop_shadow_type|network_event|point_reference|real|shader|object|secondary_skull|actor_variant|firefight_goal|ai_command_script|voice_mask|cinematic_lightprobe|structure_definition|effect|cutscene_recording|vehicle_name|subtitle_setting|string|device|actor_type|any_tag_not_resolving|device_group|effect_scenery_name|voice_output_setting|cinematic_definition|navpoint|bink_definition|player_character_type|cutscene_title|looping_sound_budget_reference|unit|character_physics|player|ai_command_list|animation_graph|style|vehicle|player_color|zone_set|boolean|any_tag|havok_group|trigger_volume|text_alignment|designer_zone|cutscene_camera_point|team|font|cinematic_transition_definition|conversation|starting_profile|long|skull|sound|button_preset|cinematic_scene_data_definition|damage_region|primary_skull|void|structure_bsp|looping_sound|device_name|short|damage_effect|firing_point_evaluator|weapon_name|scenery_name|folder|joystick_preset|ai_orders|game_difficulty|point_set_reference|player_model_choice|cui_screen_definition|sound_event)\b\s)\(*\w+/gi;
+const FUNC_REGEX_NEW = /(?<=\bscript\b\s\b(startup|continuous|dormant|command_script)\b\s)(.+)|(?<=\bscript\b\s\b(static|stub)\b\s\b(mp_team|cinematic_scene_definition|object_list|delivery_method|unit_name|object_name|scenery|function_name|ai_behavior|bitmap|render_model|currency_type|event|object_definition|string_id|damage|weapon|unit_seat_mapping|ai_line|animation_budget_reference|controller|firefight_wave_type|ai_default_state|sound_budget_reference|ai|effect_scenery|model_state|passthrough|cutscene_flag|hud_corner|hud_message|wave_difficulty|lightmap_definition|script|text_justification|text_drop_shadow_type|network_event|point_reference|real|shader|object|secondary_skull|actor_variant|firefight_goal|ai_command_script|voice_mask|cinematic_lightprobe|structure_definition|effect|cutscene_recording|vehicle_name|subtitle_setting|string|device|actor_type|any_tag_not_resolving|device_group|effect_scenery_name|voice_output_setting|cinematic_definition|navpoint|bink_definition|player_character_type|cutscene_title|looping_sound_budget_reference|unit|character_physics|player|ai_command_list|animation_graph|style|vehicle|player_color|zone_set|boolean|any_tag|havok_group|trigger_volume|text_alignment|designer_zone|cutscene_camera_point|team|font|cinematic_transition_definition|conversation|starting_profile|long|skull|sound|button_preset|cinematic_scene_data_definition|damage_region|primary_skull|void|structure_bsp|looping_sound|device_name|short|damage_effect|firing_point_evaluator|weapon_name|scenery_name|folder|joystick_preset|ai_orders|game_difficulty|point_set_reference|player_model_choice|cui_screen_definition|sound_event)\b\s)\w+/gi;
+const VAR_REGEX = /(?<=\(\bglobal\b\s\b(mp_team|cinematic_scene_definition|object_list|delivery_method|unit_name|object_name|scenery|function_name|ai_behavior|bitmap|render_model|currency_type|event|object_definition|string_id|damage|weapon|unit_seat_mapping|ai_line|animation_budget_reference|controller|firefight_wave_type|ai_default_state|sound_budget_reference|ai|effect_scenery|model_state|passthrough|cutscene_flag|hud_corner|hud_message|wave_difficulty|lightmap_definition|script|text_justification|text_drop_shadow_type|network_event|point_reference|real|shader|object|secondary_skull|actor_variant|firefight_goal|ai_command_script|voice_mask|cinematic_lightprobe|structure_definition|effect|cutscene_recording|vehicle_name|subtitle_setting|string|device|actor_type|any_tag_not_resolving|device_group|effect_scenery_name|voice_output_setting|cinematic_definition|navpoint|bink_definition|player_character_type|cutscene_title|looping_sound_budget_reference|unit|character_physics|player|ai_command_list|animation_graph|style|vehicle|player_color|zone_set|boolean|any_tag|havok_group|trigger_volume|text_alignment|designer_zone|cutscene_camera_point|team|font|cinematic_transition_definition|conversation|starting_profile|long|skull|sound|button_preset|cinematic_scene_data_definition|damage_region|primary_skull|void|structure_bsp|looping_sound|device_name|short|damage_effect|firing_point_evaluator|weapon_name|scenery_name|folder|joystick_preset|ai_orders|game_difficulty|point_set_reference|player_model_choice|cui_screen_definition|sound_event)\b\s)\w+/gi;
+
 // Provides function completion
 export class hsProvider {
 	itemsHS1: vscode.CompletionItem[];
@@ -195,37 +201,80 @@ export class hsProvider {
 		token: vscode.CancellationToken,
 		context: vscode.CompletionContext
 		): Thenable<vscode.CompletionItem[]> | vscode.CompletionItem[] {
-			return new Promise<vscode.CompletionItem[]>((resolve, reject) => {
-				// Get the text of the current line
-				const currentLine = vscode.window.activeTextEditor?.document.lineAt(position.line).text.trim();
-		
-				// Otherwise, provide completion items as usual
+			return new Promise<vscode.CompletionItem[]>(async (resolve, reject) => {
 				let funcItems: vscode.CompletionItem[] = [];
+				const newStyle = document.languageId == "hsc4";
+				// Get the folder of the current document
+				const folderPath = path.dirname(document.uri.fsPath);
+
+				// Find .hsc files in the same folder as the current document
+				const hscFiles = await vscode.workspace.findFiles(new vscode.RelativePattern(folderPath, '*.hsc'));
+
+				const suggestedUserFuncs = [];
+				const suggestedUserVars = [];
+				let funcRegex = FUNC_REGEX_CLASSIC;
+				if (newStyle)
+					funcRegex = FUNC_REGEX_NEW;
+
 				if (document.languageId == "hsc1")
 				{
-					resolve(this.itemsHS1.concat(funcItems));
+					funcItems = this.itemsHS1.concat(funcItems);
 				}
 				else if (document.languageId == "hsc2")
 				{
-					resolve(this.itemsHS2.concat(funcItems));
+					funcItems = this.itemsHS2.concat(funcItems);
 				}
 				else if (document.languageId == "hsc3")
 				{
-					resolve(this.itemsHS3.concat(funcItems));
+					funcItems = this.itemsHS3.concat(funcItems);
 				}
 				else if (document.languageId == "hsco")
 				{
-					resolve(this.itemsHSO.concat(funcItems));
+					funcItems = this.itemsHSO.concat(funcItems);
 				}
 				else if (document.languageId == "hscr")
 				{
-					resolve(this.itemsHSR.concat(funcItems));
+					funcItems = this.itemsHSR.concat(funcItems);
 				}
 				else if (document.languageId == "hsc4")
 				{
-					resolve(this.itemsHS4.concat(funcItems));
+					funcItems = this.itemsHS4.concat(funcItems);
 				}
-					
+
+				for (const file of hscFiles) {
+					const fileContent = (await vscode.workspace.fs.readFile(file)).toString();
+					const fileName = path.basename(file.fsPath);
+					// Extract words from the open document and add them as suggestions
+					const userFuncs = fileContent.match(funcRegex);
+					if (userFuncs) {
+						for (const word of userFuncs) {
+							if (funcItems.some((item) => item.label === word))
+								continue;
+							const suggestion = new vscode.CompletionItem(word);
+							if (newStyle)
+								suggestion.detail = word + '()' + ' [User Defined]'
+							else
+								suggestion.detail = '(' + word + ')' + ' [User Defined Function]';
+							suggestion.kind = vscode.CompletionItemKind.Function;
+							suggestion.documentation = "Source: " + fileName
+							suggestion.command = {command: 'atlas.triggerSignatureHelp', title: 'Trigger Signature Help',};
+							funcItems.push(suggestion);
+						}
+					}
+					const userVars = fileContent.match(VAR_REGEX);
+					if (userVars) {
+						for (const word of userVars) {
+							if (funcItems.some((item) => item.label === word))
+								continue;
+							const suggestion = new vscode.CompletionItem(word);
+							suggestion.detail = word + ' [User Defined Variable]';
+							suggestion.documentation = "Source: " + fileName
+							suggestion.kind = vscode.CompletionItemKind.Variable;
+							funcItems.push(suggestion);
+						}
+					}
+				}
+				resolve(funcItems);
 			});
 		}
 	}		
