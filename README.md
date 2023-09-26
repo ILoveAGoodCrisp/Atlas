@@ -89,4 +89,4 @@ Script compilation directly from VSCode is supported for Halo 4 only. While edit
 
 [Crisp](https://github.com/ILoveAGoodCrisp) - Extension Developer
 
-### 2.0.2
+### 2.1.0
