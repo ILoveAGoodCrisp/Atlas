@@ -210,7 +210,7 @@ hsFunctions.push(newFunc);
 
 var newFunc = new HSFunction(
 	"wake",
-	['script', 'name'],
+	['script_name'],
 	"void",
 	['H1', 'H2', 'H3', 'HO', 'HR', 'H4'],
 	"Wakes a sleeping script in the next update",

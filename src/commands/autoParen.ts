@@ -18,6 +18,19 @@ export function AutoParen()
           {
             return;
           }
+          const rangeMatch = new RegExp(/\s*\w+\s*/g);
+          const currentWordRange = editor.document.getWordRangeAtPosition(cursorPosition, rangeMatch);
+          if (currentWordRange)
+          {
+            const start = currentWordRange.start
+            if (start.character > 2)
+            {
+              const beforeStart = start.translate(0, -3);
+              const wordRange = editor.document.getWordRangeAtPosition(beforeStart);
+              const word = editor.document.getText(wordRange);
+              if (word == "wake")
+                return;
+            }}
           editor.insertSnippet(snip);
         }
         else
@@ -33,6 +46,14 @@ export function AutoParen()
               const beforeStart = start.translate(0, -1);
               const char = editor.document.getText(new vscode.Range(beforeStart, start));
               if (char == "(")
+                return;
+            }
+            if (start.character > 1)
+            {
+              const beforeStart = start.translate(0, -2);
+              const wordRange = editor.document.getWordRangeAtPosition(beforeStart);
+              const word = editor.document.getText(wordRange);
+              if (word == "wake")
                 return;
             }
           }
