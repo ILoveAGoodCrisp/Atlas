@@ -83,10 +83,14 @@ Script compilation directly from VSCode is supported for Halo 4 only. While edit
 
 ![Hover Descriptions in Halo ODST Script](images/script_compile.jpg)
 
+### Error Checking
+
+HaloScript includes a basic level of debugging. The extension will report unmatched opening and closing parentheses, with plans to expand error checking further in the future.
+
 ## Credits
 
 [Alexis Jonsson](https://github.com/AlexisJonsson) - Icon design
 
 [Crisp](https://github.com/ILoveAGoodCrisp) - Extension Developer
 
-### 2.1.0
+### 2.2
