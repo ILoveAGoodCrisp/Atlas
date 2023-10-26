@@ -25,7 +25,7 @@
 				{
 					"name": "comment.line",
 					"begin": "//[^*]",
-					"end": "\\n",
+					"end": "$",
 					"captures":{
 						"0":{
 							"name": "comment.line.hsc4"

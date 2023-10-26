@@ -20,28 +20,68 @@ export function activate(context: vscode.ExtensionContext) {
 }
 
 function checkForUnmatchedParentheses(textDocument: vscode.TextDocument) {
+    const newStyle = textDocument.languageId == "hsc4";
     const text = textDocument.getText();
     const diagnostics: vscode.Diagnostic[] = [];
-
     const stack: { char: string; position: number }[] = [];
-    for (let i = 0; i < text.length; i++) {
-        if (text[i] === '(') {
-            stack.push({ char: '(', position: i });
-        } else if (text[i] === ')') {
-            if (stack.length === 0) {
-                // Unmatched closing parenthesis
-                diagnostics.push(new vscode.Diagnostic(
-                    new vscode.Range(textDocument.positionAt(i), textDocument.positionAt(i + 1)),
-                    'Unmatched closing parenthesis',
-                    vscode.DiagnosticSeverity.Error
-                ));
-            } else {
-                stack.pop();
+    let inComment = false;
+    if (newStyle)
+    {
+        for (let i = 0; i < text.length; i++) {
+            if (text[i] === '/' && text[i + 1] === '/') {
+                inComment = true;
+            } else if (text[i] === '\n') {
+                inComment = false;
+            } else if (text[i] === '/' && text[i + 1] === '*') {
+                inComment = true;
+            } else if (text[i] === '*' && text[i + 1] === '/') {
+                inComment = false;
+            } else if (!inComment) {
+                if (text[i] === '(') {
+                    stack.push({ char: '(', position: i });
+                } else if (text[i] === ')') {
+                    if (stack.length === 0) {
+                        diagnostics.push(new vscode.Diagnostic(
+                            new vscode.Range(textDocument.positionAt(i), textDocument.positionAt(i + 1)),
+                            'Unmatched closing parenthesis',
+                            vscode.DiagnosticSeverity.Error
+                        ));
+                    } else {
+                        stack.pop();
+                    }
+                }
+            }
+        }
+    }
+    else 
+    {
+        for (let i = 0; i < text.length; i++) {
+            if (text[i] === ';') {
+                inComment = true;
+            } else if (text[i] === '\n') {
+                inComment = false;
+            } else if (text[i] === ';' && text[i + 1] === '*') {
+                inComment = true;
+            } else if (text[i] === '*' && text[i + 1] === ';') {
+                inComment = false;
+            } else if (!inComment) {
+                if (text[i] === '(') {
+                    stack.push({ char: '(', position: i });
+                } else if (text[i] === ')') {
+                    if (stack.length === 0) {
+                        diagnostics.push(new vscode.Diagnostic(
+                            new vscode.Range(textDocument.positionAt(i), textDocument.positionAt(i + 1)),
+                            'Unmatched closing parenthesis',
+                            vscode.DiagnosticSeverity.Error
+                        ));
+                    } else {
+                        stack.pop();
+                    }
+                }
             }
         }
     }
 
-    // Unmatched opening parentheses
     diagnostics.push(...stack.map(item => {
         return new vscode.Diagnostic(
             new vscode.Range(textDocument.positionAt(item.position), textDocument.positionAt(item.position + 1)),

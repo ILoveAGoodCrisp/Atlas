@@ -206,10 +206,11 @@ export class hsProvider {
 				const newStyle = document.languageId == "hsc4";
 				// Get the folder of the current document
 				const folderPath = path.dirname(document.uri.fsPath);
-
+				const folderUri = vscode.Uri.file(folderPath);
 				// Find .hsc files in the same folder as the current document
-				const hscFiles = await vscode.workspace.findFiles(new vscode.RelativePattern(folderPath, '*.hsc'));
-
+				const fs = vscode.workspace.fs;
+				const files = await fs.readDirectory(folderUri);
+				const hscFiles = files.filter(([_, type]) => type === vscode.FileType.File && _.endsWith('.hsc')).map(([name]) => vscode.Uri.joinPath(folderUri, name));
 				const suggestedUserFuncs = [];
 				const suggestedUserVars = [];
 				let funcRegex = FUNC_REGEX_CLASSIC;
