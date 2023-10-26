@@ -5,6 +5,7 @@
 - Function argument hints
 - Syntax highlighting
 - Snippets
+- Error Checking
 
 ## Supported Games
 
