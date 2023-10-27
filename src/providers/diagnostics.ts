@@ -20,11 +20,14 @@ export function activate(context: vscode.ExtensionContext) {
 }
 
 function checkForUnmatchedParentheses(textDocument: vscode.TextDocument) {
+    if (!textDocument.languageId.startsWith('hsc'))
+        return;
     const newStyle = textDocument.languageId == "hsc4";
     const text = textDocument.getText();
     const diagnostics: vscode.Diagnostic[] = [];
     const stack: { char: string; position: number }[] = [];
     let inComment = false;
+    let inBlockComment = false;
     if (newStyle)
     {
         for (let i = 0; i < text.length; i++) {
@@ -33,10 +36,10 @@ function checkForUnmatchedParentheses(textDocument: vscode.TextDocument) {
             } else if (text[i] === '\n') {
                 inComment = false;
             } else if (text[i] === '/' && text[i + 1] === '*') {
-                inComment = true;
+                inBlockComment = true;
             } else if (text[i] === '*' && text[i + 1] === '/') {
-                inComment = false;
-            } else if (!inComment) {
+                inBlockComment = false;
+            } else if (!inComment && !inBlockComment) {
                 if (text[i] === '(') {
                     stack.push({ char: '(', position: i });
                 } else if (text[i] === ')') {
@@ -56,15 +59,15 @@ function checkForUnmatchedParentheses(textDocument: vscode.TextDocument) {
     else 
     {
         for (let i = 0; i < text.length; i++) {
-            if (text[i] === ';') {
+            if (text[i] === ';' && text[i + 1] !== '*') {
                 inComment = true;
             } else if (text[i] === '\n') {
                 inComment = false;
             } else if (text[i] === ';' && text[i + 1] === '*') {
-                inComment = true;
+                inBlockComment = true;
             } else if (text[i] === '*' && text[i + 1] === ';') {
-                inComment = false;
-            } else if (!inComment) {
+                inBlockComment = false;
+            } else if (!inComment && !inBlockComment) {
                 if (text[i] === '(') {
                     stack.push({ char: '(', position: i });
                 } else if (text[i] === ')') {

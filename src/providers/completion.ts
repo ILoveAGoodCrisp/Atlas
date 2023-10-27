@@ -248,13 +248,15 @@ export class hsProvider {
 					const userFuncs = fileContent.match(funcRegex);
 					if (userFuncs) {
 						for (const word of userFuncs) {
-							if (funcItems.some((item) => item.label === word))
+							const wordTrimmed = word.replace(')','').replace('(','')
+							console.log(wordTrimmed)
+							if (funcItems.some((item) => item.label === wordTrimmed))
 								continue;
-							const suggestion = new vscode.CompletionItem(word);
+							const suggestion = new vscode.CompletionItem(wordTrimmed);
 							if (newStyle)
-								suggestion.detail = word + '()' + ' [User Defined]'
+								suggestion.detail = wordTrimmed + '()' + ' [User Defined]'
 							else
-								suggestion.detail = '(' + word + ')' + ' [User Defined Function]';
+								suggestion.detail = '(' + wordTrimmed + ')' + ' [User Defined Function]';
 							suggestion.kind = vscode.CompletionItemKind.Function;
 							suggestion.documentation = "Source: " + fileName
 							suggestion.command = {command: 'atlas.triggerSignatureHelp', title: 'Trigger Signature Help',};
@@ -264,10 +266,11 @@ export class hsProvider {
 					const userVars = fileContent.match(VAR_REGEX);
 					if (userVars) {
 						for (const word of userVars) {
-							if (funcItems.some((item) => item.label === word))
+							const wordTrimmed = word.replace(')','').replace('(','')
+							if (funcItems.some((item) => item.label === wordTrimmed))
 								continue;
-							const suggestion = new vscode.CompletionItem(word);
-							suggestion.detail = word + ' [User Defined Variable]';
+							const suggestion = new vscode.CompletionItem(wordTrimmed);
+							suggestion.detail = wordTrimmed + ' [User Defined Variable]';
 							suggestion.documentation = "Source: " + fileName
 							suggestion.kind = vscode.CompletionItemKind.Variable;
 							funcItems.push(suggestion);
