@@ -94,4 +94,4 @@ HaloScript includes a basic level of debugging. The extension will report unmatc
 
 [Crisp](https://github.com/ILoveAGoodCrisp) - Extension Developer
 
-### 2.2
+### 2.2.1
