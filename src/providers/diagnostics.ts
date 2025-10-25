@@ -28,57 +28,67 @@ function checkForUnmatchedParentheses(textDocument: vscode.TextDocument) {
     const stack: { char: string; position: number }[] = [];
     let inComment = false;
     let inBlockComment = false;
+    let inString = false;
     if (newStyle)
     {
         for (let i = 0; i < text.length; i++) {
-            if (text[i] === '/' && text[i + 1] === '/') {
-                inComment = true;
-            } else if (text[i] === '\n') {
-                inComment = false;
-            } else if (text[i] === '/' && text[i + 1] === '*') {
-                inBlockComment = true;
-            } else if (text[i] === '*' && text[i + 1] === '/') {
-                inBlockComment = false;
-            } else if (!inComment && !inBlockComment) {
-                if (text[i] === '(') {
-                    stack.push({ char: '(', position: i });
-                } else if (text[i] === ')') {
-                    if (stack.length === 0) {
-                        diagnostics.push(new vscode.Diagnostic(
-                            new vscode.Range(textDocument.positionAt(i), textDocument.positionAt(i + 1)),
-                            'Unmatched closing parenthesis',
-                            vscode.DiagnosticSeverity.Error
-                        ));
-                    } else {
-                        stack.pop();
+            if (text[i] === '"' && (i === 0 || text[i - 1] !== '\\')) {
+                inString = !inString;
+            } else if (!inString) {
+                if (text[i] === '/' && text[i + 1] === '/') {
+                    inComment = true;
+                } else if (text[i] === '\n') {
+                    inComment = false;
+                } else if (text[i] === '/' && text[i + 1] === '*') {
+                    inBlockComment = true;
+                } else if (text[i] === '*' && text[i + 1] === '/') {
+                    inBlockComment = false;
+                } else if (!inComment && !inBlockComment) {
+                    if (text[i] === '(') {
+                        stack.push({ char: '(', position: i });
+                    } else if (text[i] === ')') {
+                        if (stack.length === 0) {
+                            diagnostics.push(new vscode.Diagnostic(
+                                new vscode.Range(textDocument.positionAt(i), textDocument.positionAt(i + 1)),
+                                'Unmatched closing parenthesis',
+                                vscode.DiagnosticSeverity.Error
+                            ));
+                        } else {
+                            stack.pop();
+                        }
                     }
                 }
             }
         }
     }
-    else 
+    else
     {
         for (let i = 0; i < text.length; i++) {
-            if (text[i] === ';' && text[i + 1] !== '*') {
-                inComment = true;
-            } else if (text[i] === '\n') {
-                inComment = false;
-            } else if (text[i] === ';' && text[i + 1] === '*') {
-                inBlockComment = true;
-            } else if (text[i] === '*' && text[i + 1] === ';') {
-                inBlockComment = false;
-            } else if (!inComment && !inBlockComment) {
-                if (text[i] === '(') {
-                    stack.push({ char: '(', position: i });
-                } else if (text[i] === ')') {
-                    if (stack.length === 0) {
-                        diagnostics.push(new vscode.Diagnostic(
-                            new vscode.Range(textDocument.positionAt(i), textDocument.positionAt(i + 1)),
-                            'Unmatched closing parenthesis',
-                            vscode.DiagnosticSeverity.Error
-                        ));
-                    } else {
-                        stack.pop();
+            if (text[i] === '"' && (i === 0 || text[i - 1] !== '\\')) {
+                inString = !inString;
+            }
+            else if (!inString) {
+                if (text[i] === ';' && text[i + 1] !== '*') {
+                    inComment = true;
+                } else if (text[i] === '\n') {
+                    inComment = false;
+                } else if (text[i] === ';' && text[i + 1] === '*') {
+                    inBlockComment = true;
+                } else if (text[i] === '*' && text[i + 1] === ';') {
+                    inBlockComment = false;
+                } else if (!inComment && !inBlockComment) {
+                    if (text[i] === '(') {
+                        stack.push({ char: '(', position: i });
+                    } else if (text[i] === ')') {
+                        if (stack.length === 0) {
+                            diagnostics.push(new vscode.Diagnostic(
+                                new vscode.Range(textDocument.positionAt(i), textDocument.positionAt(i + 1)),
+                                'Unmatched closing parenthesis',
+                                vscode.DiagnosticSeverity.Error
+                            ));
+                        } else {
+                            stack.pop();
+                        }
                     }
                 }
             }
