@@ -4,7 +4,6 @@ import * as completion from './providers/completion'
 import * as hover from './providers/hover'
 import * as signature from './providers/signature'
 // import * as semantics from './providers/semantics'
-import {runToolExecutable} from './commands/scriptCompiler'
 import {AutoParen} from './commands/autoParen'
 import { DocumentSelector } from 'vscode-languageserver';
 import * as diagnostics from './providers/diagnostics';
@@ -40,13 +39,6 @@ export function activate(context: vscode.ExtensionContext) {
 	diagnostics.activate(context);
 	// Saving implementation of semantics until it can fully parse the code. It does not gel well with tmLanguage
 	// context.subscriptions.push(vscode.languages.registerDocumentSemanticTokensProvider(selector, new semantics.hsProvider(legend), legend));
-	
-	// Script Compile
-	const command = 'atlas.compileScenarioScripts';
-	const commandHandler = () => {
-		runToolExecutable();
-	};
-	context.subscriptions.push(vscode.commands.registerCommand(command, commandHandler));
 
 	// SignatureHelp Trigger
 	const commandTrigger = 'atlas.triggerSignatureHelp';

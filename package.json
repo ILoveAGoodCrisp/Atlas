@@ -48,33 +48,6 @@
         "Language Packs"
     ],
     "contributes": {
-        "commands": [
-            {
-                "command": "atlas.compileScenarioScripts",
-                "title": "Compile Scenario Scripts"
-            }
-        ],
-        "keybindings": [
-            {
-                "key": "ctrl+shift+c",
-                "command": "atlas.compileScenarioScripts",
-                "when": "editorTextFocus"
-            }
-        ],
-        "menus": {
-            "commandPalette": [
-                {
-                    "command": "atlas.compileScenarioScripts",
-                    "when": "editorLangId == hsc4"
-                }
-            ],
-            "editor/context": [
-                {
-                    "command": "atlas.compileScenarioScripts",
-                    "when": "editorLangId == hsc4"
-                }
-            ]
-        },
         "languages": [
             {
                 "id": "hsc4",

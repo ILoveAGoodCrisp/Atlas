@@ -76,22 +76,14 @@ Simply hover over any HaloScript function, built-in global, value type, or keywo
 
 [TabOut](https://marketplace.visualstudio.com/items?itemName=albert.TabOut) lets you use the tab key to jump out parentheses using `TAB`. This will make it a much smoother experience to work with HaloScript given its heavy use of parentheses.
 
-## Script Compilation
-
-Script compilation directly from VSCode is supported for Halo 4 only. While editing a Halo 4 Script file you can use the ***Command Palette*** (shortcut `CTRL+SHIFT+P`) to access the command **Compile Scenario Scripts** or simply `right-click` in the editor and select the command from the context menu.
-
-> Note that script compilation will only work correctly while editing a scenario script file. Compilation directly from a global or object script file is not supported.
-
-![Hover Descriptions in Halo ODST Script](images/script_compile.jpg)
-
 ### Error Checking
 
 HaloScript includes a basic level of debugging. The extension will report unmatched opening and closing parentheses, with plans to expand error checking further in the future.
 
 ## Credits
 
-[Alexis Jonsson](https://github.com/AlexisJonsson) - Icon design
-
 [Crisp](https://github.com/ILoveAGoodCrisp) - Extension Developer
+[Alexis Jonsson](https://github.com/AlexisJonsson) - Icon design
+[tdanese](https://github.com/tdanese) - Fixing an issue with matching parentheses error handling
 
-### 2.2.1
+### 2.3.0
