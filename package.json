@@ -38,7 +38,7 @@
         "url": "https://github.com/ILoveAGoodCrisp/Atlas"
     },
     "engines": {
-        "vscode": "^1.61.0",
+        "vscode": "^1.105.0",
         "node": "^20.5.1"
     },
     "main": "./out/extension",
@@ -213,9 +213,9 @@
     },
     "devDependencies": {
         "@types/node": "^10.17.60",
-        "@types/vscode": "^1.61.0",
+        "@types/vscode": "^1.105.0",
         "esbuild": "^0.19.3",
-        "typescript": "^5.2.2"
+        "typescript": "^5.9.3"
     },
     "dependencies": {
         "vsce": "^2.15.0",
