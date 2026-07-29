@@ -6,6 +6,7 @@
 - Syntax highlighting
 - Snippets
 - Error Checking
+- On-demand scenario script compilation
 
 ## Supported Games
 
@@ -17,18 +18,21 @@
 | Halo ODST MCC | hsco | 
 | Halo Reach MCC | hscr | 
 | Halo 4 MCC | hsc4 | 
+| Halo 2 Anniversary MP MCC | hsc4 |
 
 ## Getting Started
 
 ### Setting the language
 
-This extension contributes each game's Halo Script iteration as a separate language. Once you've opened a hsc file, you can select the correct HaloScript language for your current file from the ***Status Bar***.
+This extension contributes each game's Halo Script iteration as a separate language. For a saved `.hsc` file inside a detected Editing Kit's canonical `data` or `tags` folder, HaloScript automatically switches to the matching game language. Detection uses the configured Editing Kit paths, standard kit folder names, and Steam installations.
+
+Files outside an Editing Kit keep their current language selection. You can select a language manually from the ***Status Bar***, or disable `atlas.compiler.autoDetectScriptLanguage` if you always prefer manual language selection. Compiler commands still detect the containing Editing Kit so Halo 4 and Halo 2 Anniversary MP use the correct `tool.exe`.
 
 ![Status Bar](images/status_bar.jpg)
 
 ![HaloScript Languages](images/languages.jpg)
 
-The HaloScript syntax comes in two flavours, the classic lisp styled syntax used in Halo 1 - Halo Reach, and the newer C-like syntax featured in Halo 4.
+The HaloScript syntax comes in two flavours: the classic Lisp-style syntax used in Halo 1 through Reach, and the newer C-like syntax used by Halo 4 and Halo 2 Anniversary MP.
 
  You can set the default .hsc file language by editing your user settings.json file. For example to set Halo 4 Script as the default you would add:
 
@@ -80,10 +84,40 @@ Simply hover over any HaloScript function, built-in global, value type, or keywo
 
 HaloScript includes a basic level of debugging. The extension will report unmatched opening and closing parentheses, with plans to expand error checking further in the future.
 
+### Compiling Scenario Scripts
+
+While editing a saved `.hsc` file, select the **Compile HaloScript** tools button in the editor title or status bar. You can also run **HaloScript: Compile Scenario Scripts** from the Command Palette or the editor context menu.
+
+If an automatic or remembered target is not the scenario you want, run **HaloScript: Compile Scenario Scripts (Choose Scenario)** to replace that association.
+
+The compiler:
+
+- detects the containing Editing Kit before choosing the game language and Tool command;
+- saves dirty `.hsc` files from the same `scripts` folder by default;
+- auto-detects Steam library locations, with manual paths available in the `HaloScript` settings;
+- mirrors a classic `data\...\scripts` location to the corresponding `tags\...` directory;
+- selects an unambiguous `.scenario` automatically and asks when more than one target is possible; and
+- streams the exact command and all Tool output to the **HaloScript Compiler** output channel.
+
+Stock standalone compilation is available for Halo 2 (`rebuild-scenario-scripts`), Halo 4 (`compile-scripts`), and Halo 2 Anniversary MP (`compile-scripts`). Compile controls are disabled for Halo 1, Halo 3, ODST, and Reach because their stock tools do not expose an equivalent standalone script compiler.
+
+Example manual configuration:
+
+```json
+"atlas.compiler.autoDetectScriptLanguage": true,
+"atlas.compiler.editingKitPaths": {
+    "hsc2": "D:\\SteamLibrary\\steamapps\\common\\H2EK",
+    "hsc4": "D:\\SteamLibrary\\steamapps\\common\\H4EK",
+    "h2amp": "D:\\SteamLibrary\\steamapps\\common\\H2AMPEK"
+}
+```
+
+Stock compilation requires the active project's canonical `data` and `tags` directory names; alternate roots such as `data (backup)` and `tags (current)` are rejected to avoid modifying the wrong project. Compilation runs only for saved local files in a trusted workspace. Close the same scenario in Sapien before compiling, since saving an older copy from Sapien afterward can overwrite Tool's changes.
+
 ## Credits
 
 [Crisp](https://github.com/ILoveAGoodCrisp) - Extension Developer
 [Alexis Jonsson](https://github.com/AlexisJonsson) - Icon design
 [tdanese](https://github.com/tdanese) - Fixing an issue with matching parentheses error handling
 
-### 2.3.0
+### 2.4.2

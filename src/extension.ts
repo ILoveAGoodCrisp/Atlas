@@ -5,6 +5,7 @@ import * as hover from './providers/hover'
 import * as signature from './providers/signature'
 // import * as semantics from './providers/semantics'
 import {AutoParen} from './commands/autoParen'
+import * as scriptCompiler from './commands/scriptCompiler'
 import { DocumentSelector } from 'vscode-languageserver';
 import * as diagnostics from './providers/diagnostics';
 
@@ -37,6 +38,7 @@ export function activate(context: vscode.ExtensionContext) {
 	context.subscriptions.push(vscode.languages.registerHoverProvider(selector, new hover.hsProvider()));
 	context.subscriptions.push(vscode.languages.registerSignatureHelpProvider(selector, sighelp, '(', ',', ' ',));
 	diagnostics.activate(context);
+	scriptCompiler.activate(context);
 	// Saving implementation of semantics until it can fully parse the code. It does not gel well with tmLanguage
 	// context.subscriptions.push(vscode.languages.registerDocumentSemanticTokensProvider(selector, new semantics.hsProvider(legend), legend));
 
@@ -59,6 +61,7 @@ export function activate(context: vscode.ExtensionContext) {
 }
 
 export function deactivate() {
+	scriptCompiler.deactivate()
 	diagnostics.deactivate()
 	console.log("Atlas: End");
 }

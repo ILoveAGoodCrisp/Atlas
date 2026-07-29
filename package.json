@@ -30,7 +30,7 @@
         "color": "#eff1f3",
         "theme": "light"
     },
-    "version": "2.3.0",
+    "version": "2.4.2",
     "license": "MIT",
     "icon": "icons/icon.png",
     "repository": {
@@ -47,7 +47,127 @@
         "Programming Languages",
         "Language Packs"
     ],
+    "capabilities": {
+        "untrustedWorkspaces": {
+            "supported": "limited",
+            "description": "HaloScript language features remain available, but compiling is disabled because it runs Halo Editing Kit tool.exe.",
+            "restrictedConfigurations": [
+                "atlas.compiler.editingKitPaths"
+            ]
+        },
+        "virtualWorkspaces": {
+            "supported": true,
+            "description": "Language features work in virtual workspaces. Compiling requires a saved local Windows file."
+        }
+    },
     "contributes": {
+        "commands": [
+            {
+                "command": "atlas.compileScenarioScripts",
+                "title": "HaloScript: Compile Scenario Scripts",
+                "shortTitle": "Compile Scripts",
+                "icon": "$(tools)",
+                "enablement": "atlas.compiler.activeScriptCanCompile"
+            },
+            {
+                "command": "atlas.compileScenarioScripts.chooseScenario",
+                "title": "HaloScript: Compile Scenario Scripts (Choose Scenario)",
+                "shortTitle": "Choose Scenario and Compile",
+                "icon": "$(list-selection)",
+                "enablement": "atlas.compiler.activeScriptCanCompile"
+            }
+        ],
+        "menus": {
+            "commandPalette": [
+                {
+                    "command": "atlas.compileScenarioScripts",
+                    "when": "editorLangId == hsc1 || editorLangId == hsc2 || editorLangId == hsc3 || editorLangId == hsco || editorLangId == hscr || editorLangId == hsc4"
+                },
+                {
+                    "command": "atlas.compileScenarioScripts.chooseScenario",
+                    "when": "editorLangId == hsc1 || editorLangId == hsc2 || editorLangId == hsc3 || editorLangId == hsco || editorLangId == hscr || editorLangId == hsc4"
+                }
+            ],
+            "editor/context": [
+                {
+                    "command": "atlas.compileScenarioScripts",
+                    "group": "1_modification@10",
+                    "when": "resourceScheme == file && resourceExtname == .hsc && isWorkspaceTrusted && (editorLangId == hsc1 || editorLangId == hsc2 || editorLangId == hsc3 || editorLangId == hsco || editorLangId == hscr || editorLangId == hsc4)"
+                },
+                {
+                    "command": "atlas.compileScenarioScripts.chooseScenario",
+                    "group": "1_modification@11",
+                    "when": "resourceScheme == file && resourceExtname == .hsc && isWorkspaceTrusted && (editorLangId == hsc1 || editorLangId == hsc2 || editorLangId == hsc3 || editorLangId == hsco || editorLangId == hscr || editorLangId == hsc4)"
+                }
+            ],
+            "editor/title": [
+                {
+                    "command": "atlas.compileScenarioScripts",
+                    "group": "navigation@10",
+                    "when": "resourceScheme == file && resourceExtname == .hsc && isWorkspaceTrusted && (editorLangId == hsc1 || editorLangId == hsc2 || editorLangId == hsc3 || editorLangId == hsco || editorLangId == hscr || editorLangId == hsc4)"
+                }
+            ]
+        },
+        "configuration": {
+            "title": "HaloScript",
+            "properties": {
+                "atlas.compiler.autoDetectScriptLanguage": {
+                    "type": "boolean",
+                    "default": true,
+                    "scope": "window",
+                    "description": "Automatically switch each saved .hsc document to the HaloScript language for the Editing Kit that contains it. Compiler selection still uses the detected Editing Kit when this is disabled."
+                },
+                "atlas.compiler.autoDetectEditingKits": {
+                    "type": "boolean",
+                    "default": true,
+                    "scope": "machine",
+                    "description": "Automatically find installed Halo Editing Kits from Steam libraries."
+                },
+                "atlas.compiler.editingKitPaths": {
+                    "type": "object",
+                    "default": {},
+                    "scope": "machine",
+                    "description": "Optional Editing Kit root folders. Each folder must contain tool.exe.",
+                    "properties": {
+                        "hsc1": {
+                            "type": "string",
+                            "description": "Halo 1 Editing Kit root (usually HCEEK)."
+                        },
+                        "hsc2": {
+                            "type": "string",
+                            "description": "Halo 2 Editing Kit root (usually H2EK)."
+                        },
+                        "hsc3": {
+                            "type": "string",
+                            "description": "Halo 3 Editing Kit root (usually H3EK)."
+                        },
+                        "hsco": {
+                            "type": "string",
+                            "description": "Halo 3: ODST Editing Kit root (usually H3ODSTEK)."
+                        },
+                        "hscr": {
+                            "type": "string",
+                            "description": "Halo: Reach Editing Kit root (usually HREK)."
+                        },
+                        "hsc4": {
+                            "type": "string",
+                            "description": "Halo 4 Editing Kit root (usually H4EK)."
+                        },
+                        "h2amp": {
+                            "type": "string",
+                            "description": "Halo 2 Anniversary MP Editing Kit root (usually H2AMPEK). Uses the Halo 4 language."
+                        }
+                    },
+                    "additionalProperties": false
+                },
+                "atlas.compiler.saveBeforeCompile": {
+                    "type": "boolean",
+                    "default": true,
+                    "scope": "window",
+                    "description": "Save all dirty .hsc files in the same scripts folder before running tool.exe."
+                }
+            }
+        },
         "languages": [
             {
                 "id": "hsc4",
@@ -209,10 +329,11 @@
         "vscode:prepublish": "npm run compile",
         "compile": "tsc -p ./",
         "lint": "eslint \"src/**/*.ts\"",
+        "test": "tsc -p ./ && node --test test/compilerCore.test.js",
         "watch": "tsc -watch -p ./"
     },
     "devDependencies": {
-        "@types/node": "^10.17.60",
+        "@types/node": "^20.17.0",
         "@types/vscode": "^1.105.0",
         "esbuild": "^0.19.3",
         "typescript": "^5.9.3"
